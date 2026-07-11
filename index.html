@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadvaro Navbar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container container--header">
+            <nav class="navbar">
+                <div class="navbar__inner" id="navbarInner">
+                    <a href="#" class="logo__link">
+                        <img class="logo__img" src="./assets/img/logo.png" alt="Leadvaro">
+                    </a>
+
+                    <ul class="nav-menu" id="navMenu">
+                        <li class="nav-menu__item" data-index="0">
+                            <a href="#" class="nav-menu__link">
+                                Product
+                                <svg class="nav-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#analytics" class="dropdown__item">Analytics</a><a href="#automation"
+                                    class="dropdown__item">Automation</a><a href="#integrations"
+                                    class="dropdown__item">Integrations</a><a href="#api" class="dropdown__item">API</a>
+                            </div>
+                        </li>
+                        <li class="nav-menu__item" data-index="1">
+                            <a href="#" class="nav-menu__link">
+                                Use Cases
+                                <svg class="nav-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#marketing" class="dropdown__item">Marketing</a><a href="#sales"
+                                    class="dropdown__item">Sales</a><a href="#support"
+                                    class="dropdown__item">Support</a>
+                            </div>
+                        </li>
+                        <li class="nav-menu__item"><a href="#compare" class="nav-menu__link">Compare</a></li>
+                        <li class="nav-menu__item" data-index="3">
+                            <a href="#" class="nav-menu__link">
+                                Resources
+                                <svg class="nav-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#blog" class="dropdown__item">Blog</a><a href="#docs"
+                                    class="dropdown__item">Docs</a><a href="#community"
+                                    class="dropdown__item">Community</a>
+                                <div class="dropdown__item dropdown__item--nested">
+                                    <span class="dropdown__nested-arrow">
+                                        Guides
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="m9 18 6-6-6-6"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="dropdown__nested">
+                                        <a href="#getting-started" class="dropdown__item">Getting Started</a><a
+                                            href="#advanced" class="dropdown__item">Advanced</a>
+                                        <div class="dropdown__item dropdown__item--nested">
+                                            <span class="dropdown__nested-arrow">
+                                                Tutorials
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path d="m9 18 6-6-6-6"></path>
+                                                </svg>
+                                            </span>
+                                            <div class="dropdown__nested">
+                                                <a href="#video" class="dropdown__item">Video Tutorials</a><a
+                                                    href="#written" class="dropdown__item">Written Tutorials</a>
+                                                <div class="dropdown__item dropdown__item--nested">
+                                                    <span class="dropdown__nested-arrow">
+                                                        Deep Dive
+                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="m9 18 6-6-6-6"></path>
+                                                        </svg>
+                                                    </span>
+                                                    <div class="dropdown__nested">
+                                                        <a href="#architecture"
+                                                            class="dropdown__item">Architecture</a><a
+                                                            href="#best-practices" class="dropdown__item">Best
+                                                            Practices</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-menu__item"><a href="#pricing" class="nav-menu__link">Pricing</a></li>
+                    </ul>
+
+                    <div class="nav-actions">
+                        <a href="#" class="btn btn--signin">Sign in</a>
+                        <a href="#" class="btn btn--primary">Get free Consultation</a>
+                    </div>
+
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                        <span class="mobile-toggle__bar"></span>
+                        <span class="mobile-toggle__bar"></span>
+                        <span class="mobile-toggle__bar"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__header">
+            <a href="#" class="logo">
+                <div class="logo__icon"></div>
+                <span class="logo__text">Leadvaro</span>
+            </a>
+            <button class="mobile-menu__close" id="mobileCloseBtn" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-menu__scroll" id="mobileMenuScroll">
+            <div class="mobile-menu__item" id="mob-0-0-krp4m">
+                <button class="mobile-menu__link" onclick="toggleMobileAccordion(event, 'mob-0-0-krp4m')">
+                    <span style="padding-left:0px">Product</span>
+                    <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="width:18px;height:18px;transition:transform 0.3s">
+                        <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="mobile-menu__submenu">
+                    <div class="mobile-menu__item">
+                        <a href="#analytics" class="mobile-menu__link" style="padding-left:28px">Analytics</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#automation" class="mobile-menu__link" style="padding-left:28px">Automation</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#integrations" class="mobile-menu__link" style="padding-left:28px">Integrations</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#api" class="mobile-menu__link" style="padding-left:28px">API</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu__item" id="mob-0-1-e8zk6">
+                <button class="mobile-menu__link" onclick="toggleMobileAccordion(event, 'mob-0-1-e8zk6')">
+                    <span style="padding-left:0px">Use Cases</span>
+                    <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="width:18px;height:18px;transition:transform 0.3s">
+                        <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="mobile-menu__submenu">
+                    <div class="mobile-menu__item">
+                        <a href="#marketing" class="mobile-menu__link" style="padding-left:28px">Marketing</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#sales" class="mobile-menu__link" style="padding-left:28px">Sales</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#support" class="mobile-menu__link" style="padding-left:28px">Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu__item">
+                <a href="#compare" class="mobile-menu__link" style="padding-left:16px">Compare</a>
+            </div>
+            <div class="mobile-menu__item mobile-menu__item--active" id="mob-0-3-72awc">
+                <button class="mobile-menu__link" onclick="toggleMobileAccordion(event, 'mob-0-3-72awc')">
+                    <span style="padding-left:0px">Resources</span>
+                    <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="width:18px;height:18px;transition:transform 0.3s">
+                        <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="mobile-menu__submenu">
+                    <div class="mobile-menu__item">
+                        <a href="#blog" class="mobile-menu__link" style="padding-left:28px">Blog</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#docs" class="mobile-menu__link" style="padding-left:28px">Docs</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#community" class="mobile-menu__link" style="padding-left:28px">Community</a>
+                    </div>
+                    <div class="mobile-menu__item mobile-menu__item--active" id="mob-1-3-i0ayo">
+                        <button class="mobile-menu__link" onclick="toggleMobileAccordion(event, 'mob-1-3-i0ayo')">
+                            <span style="padding-left:12px">Guides</span>
+                            <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width:18px;height:18px;transition:transform 0.3s">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </button>
+                        <div class="mobile-menu__submenu">
+                            <div class="mobile-menu__item">
+                                <a href="#getting-started" class="mobile-menu__link" style="padding-left:40px">Getting
+                                    Started</a>
+                            </div>
+                            <div class="mobile-menu__item">
+                                <a href="#advanced" class="mobile-menu__link" style="padding-left:40px">Advanced</a>
+                            </div>
+                            <div class="mobile-menu__item mobile-menu__item--active" id="mob-2-2-tln4e">
+                                <button class="mobile-menu__link"
+                                    onclick="toggleMobileAccordion(event, 'mob-2-2-tln4e')">
+                                    <span style="padding-left:24px">Tutorials</span>
+                                    <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        style="width:18px;height:18px;transition:transform 0.3s">
+                                        <path d="m6 9 6 6 6-6"></path>
+                                    </svg>
+                                </button>
+                                <div class="mobile-menu__submenu">
+                                    <div class="mobile-menu__item">
+                                        <a href="#video" class="mobile-menu__link" style="padding-left:52px">Video
+                                            Tutorials</a>
+                                    </div>
+                                    <div class="mobile-menu__item">
+                                        <a href="#written" class="mobile-menu__link" style="padding-left:52px">Written
+                                            Tutorials</a>
+                                    </div>
+                                    <div class="mobile-menu__item mobile-menu__item--active" id="mob-3-2-xemuw">
+                                        <button class="mobile-menu__link"
+                                            onclick="toggleMobileAccordion(event, 'mob-3-2-xemuw')">
+                                            <span style="padding-left:36px">Deep Dive</span>
+                                            <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                style="width:18px;height:18px;transition:transform 0.3s">
+                                                <path d="m6 9 6 6 6-6"></path>
+                                            </svg>
+                                        </button>
+                                        <div class="mobile-menu__submenu">
+                                            <div class="mobile-menu__item">
+                                                <a href="#architecture" class="mobile-menu__link"
+                                                    style="padding-left:64px">Architecture</a>
+                                            </div>
+                                            <div class="mobile-menu__item">
+                                                <a href="#best-practices" class="mobile-menu__link"
+                                                    style="padding-left:64px">Best Practices</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu__item">
+                <a href="#pricing" class="mobile-menu__link" style="padding-left:16px">Pricing</a>
+            </div>
+        </div>
+        <div class="mobile-menu__actions">
+            <a href="#" class="btn btn--signin">Sign in</a>
+            <a href="#" class="btn btn--primary">Get free Consultation</a>
+        </div>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <main class="main">
+
+    </main>
+
+    <footer class="footer">
+        <div class="container container--footer">
+            <div class="footer__content">
+                <div class="footer__column">
+                    <h3 class="footer__title">Product</h3>
+                    <ul class="footer__list">
+                        <li><a href="#about" class="footer__link">Home</a></li>
+                        <li><a href="#careers" class="footer__link">People Search</a></li>
+                        <li><a href="#contact" class="footer__link">Company Search</a></li>
+                        <li><a href="#contact" class="footer__link">Email Finder</a></li>
+                        <li><a href="#contact" class="footer__link">Enrichment</a></li>
+                        <li><a href="#contact" class="footer__link">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h3 class="footer__title">Use cases</h3>
+                    <ul class="footer__list">
+                        <li><a href="#about" class="footer__link">For Agencies</a></li>
+                        <li><a href="#careers" class="footer__link">For Sales Teams</a></li>
+                        <li><a href="#contact" class="footer__link">For Founders</a></li>
+                        <li><a href="#contact" class="footer__link">For Recruiters</a></li>
+                        <li><a href="#contact" class="footer__link">For RevOps</a></li>
+                        <li><a href="#contact" class="footer__link">Compare</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h3 class="footer__title">Resources</h3> 
+                    <ul class="footer__list">
+                        <li><a href="#about" class="footer__link">Documentation</a></li>
+                        <li><a href="#about" class="footer__link"></a>API Docs</li>
+                        <li><a href="#about" class="footer__link"></a>Help Center</li>
+                        <li><a href="#about" class="footer__link"></a>Blog</li>
+                        <li><a href="#about" class="footer__link">Case Studies</a></li>
+                        <li><a href="#about" class="footer__link">Sales Hub</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h3 class="footer__title">Company</h3>
+                    <ul class="footer__list">
+                        <li><a href="#about" class="footer__link">About us</a></li>
+                        <li><a href="#about" class="footer__link">Careers</a></li>
+                        <li><a href="#about" class="footer__link">Contact</a></li>
+                        <li><a href="#about" class="footer__link">Style guide</a></li>
+                        <li><a href="#about" class="footer__link">Privacy</a></li>
+                        <li><a href="#about" class="footer__link">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2023 LeadVaro. All rights reserved.</p>
+
+                <ul class="footer__list footer__list--inline">
+                    <li><a href="#about" class="footer__link">Privacy Policy</a></li>
+                    <li><a href="#about" class="footer__link">Terms of Service</a></li>
+                    <li><a href="#about" class="footer__link">Cookies Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT JS -->
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
