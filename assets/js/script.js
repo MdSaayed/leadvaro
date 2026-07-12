@@ -37,7 +37,7 @@ document.addEventListener('keydown', (e) => {
 
 
 /* =============================
-* 6. Faq
+  6. Faq
 ============================= */
 document.querySelectorAll('.faq__item').forEach(item => {
     item.addEventListener('click', function () {
@@ -83,3 +83,156 @@ document.querySelectorAll('.faq__item--active').forEach(item => {
     icon.classList.remove('fa-plus');
     icon.classList.add('fa-minus');
 });
+
+
+/* =============================
+  6. Testimonials Slider
+============================= */
+// Thumbnail Slider
+const thumbsSwiper = new Swiper(".testimonials__slider--thumb", {
+    slidesPerView: "auto",
+    spaceBetween: 8,
+    watchSlidesProgress: true,
+    freeMode: true,
+    loop: false,
+    centeredSlides: false,
+    slideToClickedSlide: true,
+    slidesPerView: 7,
+    spaceBetween: 8,
+
+    breakpoints: {
+        0: {
+            slidesPerView: 1.4,
+            spaceBetween: 4,
+        },
+        576: {
+            slidesPerView: 6,
+            spaceBetween: 4,
+        },
+    },
+});
+
+// Main Slider
+// const testimonialSwiper = new Swiper(".testimonials__slider", {
+//     slidesPerView: 3,
+//     centeredSlides: true,
+//     spaceBetween: 24,
+//     loop: true,
+//     speed: 600,
+//     autoHeight: true,
+
+//     navigation: {
+//         nextEl: ".testimonials__button--next",
+//         prevEl: ".testimonials__button--prev",
+//     },
+
+//     thumbs: {
+//         swiper: thumbsSwiper,
+//         autoScrollOffset: 1,
+//     },
+
+//     breakpoints: {
+//         0: {
+//             slidesPerView: 1.1,
+//             spaceBetween: 16,
+//         },
+//         576: {
+//             slidesPerView: 1.3,
+//             spaceBetween: 20,
+//         },
+//         768: {
+//             slidesPerView: 2,
+//             spaceBetween: 20,
+//         },
+//         992: {
+//             slidesPerView: 2.5,
+//             spaceBetween: 24,
+//         },
+//         1200: {
+//             slidesPerView: 3,
+//             spaceBetween: 24,
+//         },
+//     },
+// });
+
+
+const testimonialSwiper = new Swiper(".testimonials__slider", {
+    slidesPerView: 3,
+    centeredSlides: true,
+    spaceBetween: 24,
+    loop: true,
+    speed: 600,
+
+    navigation: {
+        nextEl: ".testimonials__button--next",
+        prevEl: ".testimonials__button--prev",
+    },
+
+    thumbs: {
+        swiper: thumbsSwiper,
+        autoScrollOffset: 1,
+    },
+
+    breakpoints: {
+        0: {
+            slidesPerView: 1.1,
+            spaceBetween: 16,
+        },
+        576: {
+            slidesPerView: 1.3,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        992: {
+            slidesPerView: 2.5,
+            spaceBetween: 24,
+        },
+        1200: {
+            slidesPerView: 3,
+            spaceBetween: 24,
+        },
+    },
+
+    on: {
+        init() {
+            updateEqualHeight();
+        },
+        resize() {
+            updateEqualHeight();
+        },
+        slideChangeTransitionEnd() {
+            updateEqualHeight();
+        },
+    },
+});
+
+function updateEqualHeight() {
+    const cards = document.querySelectorAll(
+        ".testimonials__slider .swiper-slide .testimonial-card"
+    );
+
+    let maxHeight = 0;
+
+    // Reset
+    cards.forEach((card) => {
+        card.style.height = "auto";
+    });
+
+    // Get tallest card
+    cards.forEach((card) => {
+        maxHeight = Math.max(maxHeight, card.offsetHeight);
+    });
+
+    // Apply equal height
+    cards.forEach((card) => {
+        card.style.height = `${maxHeight}px`;
+    });
+
+    testimonialSwiper.update();
+}
+
+window.addEventListener("load", updateEqualHeight);
+window.addEventListener("resize", updateEqualHeight);
