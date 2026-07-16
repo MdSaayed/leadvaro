@@ -34,8 +34,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-
-
 /* =============================
   6. Faq
 ============================= */
@@ -88,151 +86,192 @@ document.querySelectorAll('.faq__item--active').forEach(item => {
 /* =============================
   6. Testimonials Slider
 ============================= */
-// Thumbnail Slider
-const thumbsSwiper = new Swiper(".testimonials__slider--thumb", {
-    slidesPerView: "auto",
-    spaceBetween: 8,
-    watchSlidesProgress: true,
-    freeMode: true,
-    loop: false,
-    centeredSlides: false,
-    slideToClickedSlide: true,
-    slidesPerView: 7,
-    spaceBetween: 8,
+function initTestimonialsSlider() {
+    const mainSlider = document.querySelector(".testimonials__slider");
+    const thumbSlider = document.querySelector(".testimonials__slider--thumb");
 
-    breakpoints: {
-        0: {
-            slidesPerView: 1.4,
-            spaceBetween: 4,
+    // Stop if required elements don't exist
+    if (!mainSlider || !thumbSlider) return;
+
+    const thumbsSwiper = new Swiper(".testimonials__slider--thumb", {
+        slidesPerView: 7,
+        spaceBetween: 8,
+        watchSlidesProgress: true,
+        freeMode: true,
+        loop: false,
+        centeredSlides: false,
+        slideToClickedSlide: true,
+
+        breakpoints: {
+            0: {
+                slidesPerView: 1.4,
+                spaceBetween: 4,
+            },
+            576: {
+                slidesPerView: 6,
+                spaceBetween: 4,
+            },
+            768: {
+                slidesPerView: 7,
+                spaceBetween: 8,
+            },
         },
-        576: {
-            slidesPerView: 6,
-            spaceBetween: 4,
-        },
-    },
-});
-
-// Main Slider
-// const testimonialSwiper = new Swiper(".testimonials__slider", {
-//     slidesPerView: 3,
-//     centeredSlides: true,
-//     spaceBetween: 24,
-//     loop: true,
-//     speed: 600,
-//     autoHeight: true,
-
-//     navigation: {
-//         nextEl: ".testimonials__button--next",
-//         prevEl: ".testimonials__button--prev",
-//     },
-
-//     thumbs: {
-//         swiper: thumbsSwiper,
-//         autoScrollOffset: 1,
-//     },
-
-//     breakpoints: {
-//         0: {
-//             slidesPerView: 1.1,
-//             spaceBetween: 16,
-//         },
-//         576: {
-//             slidesPerView: 1.3,
-//             spaceBetween: 20,
-//         },
-//         768: {
-//             slidesPerView: 2,
-//             spaceBetween: 20,
-//         },
-//         992: {
-//             slidesPerView: 2.5,
-//             spaceBetween: 24,
-//         },
-//         1200: {
-//             slidesPerView: 3,
-//             spaceBetween: 24,
-//         },
-//     },
-// });
-
-
-const testimonialSwiper = new Swiper(".testimonials__slider", {
-    slidesPerView: 3,
-    centeredSlides: true,
-    spaceBetween: 24,
-    loop: true,
-    speed: 600,
-
-    navigation: {
-        nextEl: ".testimonials__button--next",
-        prevEl: ".testimonials__button--prev",
-    },
-
-    thumbs: {
-        swiper: thumbsSwiper,
-        autoScrollOffset: 1,
-    },
-
-    breakpoints: {
-        0: {
-            slidesPerView: 1.1,
-            spaceBetween: 16,
-        },
-        576: {
-            slidesPerView: 1.3,
-            spaceBetween: 20,
-        },
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-        },
-        992: {
-            slidesPerView: 2.5,
-            spaceBetween: 24,
-        },
-        1200: {
-            slidesPerView: 3,
-            spaceBetween: 24,
-        },
-    },
-
-    on: {
-        init() {
-            updateEqualHeight();
-        },
-        resize() {
-            updateEqualHeight();
-        },
-        slideChangeTransitionEnd() {
-            updateEqualHeight();
-        },
-    },
-});
-
-function updateEqualHeight() {
-    const cards = document.querySelectorAll(
-        ".testimonials__slider .swiper-slide .testimonial-card"
-    );
-
-    let maxHeight = 0;
-
-    // Reset
-    cards.forEach((card) => {
-        card.style.height = "auto";
     });
 
-    // Get tallest card
-    cards.forEach((card) => {
-        maxHeight = Math.max(maxHeight, card.offsetHeight);
+    const testimonialSwiper = new Swiper(".testimonials__slider", {
+        slidesPerView: 3,
+        centeredSlides: true,
+        spaceBetween: 24,
+        loop: true,
+        speed: 600,
+
+        navigation: {
+            nextEl: ".testimonials__button--next",
+            prevEl: ".testimonials__button--prev",
+        },
+
+        thumbs: {
+            swiper: thumbsSwiper,
+            autoScrollOffset: 1,
+        },
+
+        breakpoints: {
+            0: {
+                slidesPerView: 1.1,
+                spaceBetween: 16,
+            },
+            576: {
+                slidesPerView: 1.3,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            992: {
+                slidesPerView: 2.5,
+                spaceBetween: 24,
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+            },
+        },
+
+        on: {
+            init() {
+                updateEqualHeight();
+            },
+            resize() {
+                updateEqualHeight();
+            },
+            slideChangeTransitionEnd() {
+                updateEqualHeight();
+            },
+        },
     });
 
-    // Apply equal height
-    cards.forEach((card) => {
-        card.style.height = `${maxHeight}px`;
-    });
+    function updateEqualHeight() {
+        const cards = mainSlider.querySelectorAll(
+            ".swiper-slide .testimonial-card"
+        );
 
-    testimonialSwiper.update();
+        if (!cards.length) return;
+
+        let maxHeight = 0;
+
+        // Reset heights
+        cards.forEach((card) => {
+            card.style.height = "auto";
+        });
+
+        // Find tallest card
+        cards.forEach((card) => {
+            maxHeight = Math.max(maxHeight, card.offsetHeight);
+        });
+
+        // Apply equal height
+        cards.forEach((card) => {
+            card.style.height = `${maxHeight}px`;
+        });
+    }
+
+    window.addEventListener("load", updateEqualHeight);
 }
 
-window.addEventListener("load", updateEqualHeight);
-window.addEventListener("resize", updateEqualHeight);
+// Initialize after DOM is ready
+document.addEventListener("DOMContentLoaded", initTestimonialsSlider);
+
+
+/* =============================
+  6. Hero Light Box
+============================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const lightboxElement = document.querySelector(".glightbox");
+
+    if (!lightboxElement || typeof GLightbox === "undefined") return;
+
+    GLightbox({
+        selector: ".glightbox",
+        touchNavigation: true,
+        loop: false,
+        autoplayVideos: true,
+        openEffect: "zoom",
+        closeEffect: "fade",
+        plyr: {
+            css: "https://cdn.plyr.io/3.7.8/plyr.css",
+            js: "https://cdn.plyr.io/3.7.8/plyr.js"
+        }
+    });
+});
+
+/* =============================
+  6. Counter
+============================= */
+document.addEventListener("DOMContentLoaded", () => {
+
+    const counters = document.querySelectorAll("[data-counter]");
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            if (!entry.isIntersecting) return;
+
+            const el = entry.target;
+
+            const end = Number(el.dataset.counter);
+            const prefix = el.dataset.prefix || "";
+            const suffix = el.dataset.suffix || "";
+            const duration = Number(el.dataset.duration) || 2;
+
+            // Auto detect decimal places (or use data-decimals if provided)
+            const decimalPlaces = el.dataset.decimals !== undefined
+                ? Number(el.dataset.decimals)
+                : ((el.dataset.counter.split(".")[1] || "").length);
+
+            const counter = new countUp.CountUp(el, end, {
+                duration,
+                prefix,
+                suffix,
+                decimalPlaces,
+                useGrouping: true
+            });
+
+            if (!counter.error) {
+                counter.start();
+            } else {
+                console.error(counter.error);
+            }
+
+            observer.unobserve(el);
+
+        });
+
+    }, {
+        threshold: 0.4
+    });
+
+    counters.forEach(counter => observer.observe(counter));
+
+});

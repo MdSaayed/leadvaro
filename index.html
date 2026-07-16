@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leadvaro Navbar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
 
 </head>
 
@@ -21,7 +22,7 @@
         <div class="header__container container">
             <nav class="navbar">
                 <div class="navbar__inner" id="navbarInner">
-                    <a href="#" class="logo__link">
+                    <a href="./index.html" class="logo__link">
                         <img class="logo__img" src="./assets/img/logo.png" alt="Leadvaro">
                     </a>
 
@@ -67,50 +68,6 @@
                                 <a href="#blog" class="dropdown__item">Blog</a><a href="#docs"
                                     class="dropdown__item">Docs</a><a href="#community"
                                     class="dropdown__item">Community</a>
-                                <div class="dropdown__item dropdown__item--nested">
-                                    <span class="dropdown__nested-arrow">
-                                        Guides
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="m9 18 6-6-6-6"></path>
-                                        </svg>
-                                    </span>
-                                    <div class="dropdown__nested">
-                                        <a href="#getting-started" class="dropdown__item">Getting Started</a><a
-                                            href="#advanced" class="dropdown__item">Advanced</a>
-                                        <div class="dropdown__item dropdown__item--nested">
-                                            <span class="dropdown__nested-arrow">
-                                                Tutorials
-                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path d="m9 18 6-6-6-6"></path>
-                                                </svg>
-                                            </span>
-                                            <div class="dropdown__nested">
-                                                <a href="#video" class="dropdown__item">Video Tutorials</a><a
-                                                    href="#written" class="dropdown__item">Written Tutorials</a>
-                                                <div class="dropdown__item dropdown__item--nested">
-                                                    <span class="dropdown__nested-arrow">
-                                                        Deep Dive
-                                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round">
-                                                            <path d="m9 18 6-6-6-6"></path>
-                                                        </svg>
-                                                    </span>
-                                                    <div class="dropdown__nested">
-                                                        <a href="#architecture"
-                                                            class="dropdown__item">Architecture</a><a
-                                                            href="#best-practices" class="dropdown__item">Best
-                                                            Practices</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </li>
                         <li class="nav-menu__item"><a href="#pricing" class="nav-menu__link">Pricing</a></li>
@@ -134,9 +91,8 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu__header">
-            <a href="#" class="logo">
-                <div class="logo__icon"></div>
-                <span class="logo__text">Leadvaro</span>
+            <a href="./index.html" class="logo__link">
+                <img class="logo__img" src="./assets/img/logo.png" alt="Leadvaro">
             </a>
             <button class="mobile-menu__close" id="mobileCloseBtn" aria-label="Close menu">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -195,7 +151,7 @@
             <div class="mobile-menu__item">
                 <a href="#compare" class="mobile-menu__link" style="padding-left:16px">Compare</a>
             </div>
-            <div class="mobile-menu__item mobile-menu__item--active" id="mob-0-3-72awc">
+            <div class="mobile-menu__item" id="mob-0-3-72awc">
                 <button class="mobile-menu__link" onclick="toggleMobileAccordion(event, 'mob-0-3-72awc')">
                     <span style="padding-left:0px">Resources</span>
                     <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -214,7 +170,7 @@
                     <div class="mobile-menu__item">
                         <a href="#community" class="mobile-menu__link" style="padding-left:28px">Community</a>
                     </div>
-                    <div class="mobile-menu__item mobile-menu__item--active" id="mob-1-3-i0ayo">
+                    <div class="mobile-menu__item" id="mob-1-3-i0ayo">
                         <button class="mobile-menu__link" onclick="toggleMobileAccordion(event, 'mob-1-3-i0ayo')">
                             <span style="padding-left:12px">Guides</span>
                             <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -231,7 +187,7 @@
                             <div class="mobile-menu__item">
                                 <a href="#advanced" class="mobile-menu__link" style="padding-left:40px">Advanced</a>
                             </div>
-                            <div class="mobile-menu__item mobile-menu__item--active" id="mob-2-2-tln4e">
+                            <div class="mobile-menu__item" id="mob-2-2-tln4e">
                                 <button class="mobile-menu__link"
                                     onclick="toggleMobileAccordion(event, 'mob-2-2-tln4e')">
                                     <span style="padding-left:24px">Tutorials</span>
@@ -251,7 +207,7 @@
                                         <a href="#written" class="mobile-menu__link" style="padding-left:52px">Written
                                             Tutorials</a>
                                     </div>
-                                    <div class="mobile-menu__item mobile-menu__item--active" id="mob-3-2-xemuw">
+                                    <div class="mobile-menu__item" id="mob-3-2-xemuw">
                                         <button class="mobile-menu__link"
                                             onclick="toggleMobileAccordion(event, 'mob-3-2-xemuw')">
                                             <span style="padding-left:36px">Deep Dive</span>
@@ -295,7 +251,7 @@
         <!-- Hero Area -->
         <section class="hero hero--home spacing-xxl">
             <div class="hero__container container">
-                <div class="hero__header-area header-area">
+                <div class="hero__header-area header-area-center">
                     <p class="subtitle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_1345_3205)">
@@ -344,9 +300,49 @@
 
                 <div class="hero__content">
                     <div class="hero__image-wrap">
-                        <img src="./assets/img/leadvaro-dashboard.png" alt="" class="hero__image">
+                        <img src="./assets/img/leadvaro-dashboard.svg" alt="" class="hero__image">
 
-                        <img src="./assets/img/hero-img-2.png" class="hero__image--small" alt="">
+                        <img src="./assets/img/hero-img-2.svg" class="hero__image--small" alt="">
+
+                        <a href="https://youtu.be/MLpWrANjFbI?si=l7LkmW23rih8G6Yw" class="hero__play-btn glightbox"
+                            data-gallery="video">
+                            <svg width="198" height="198" viewBox="0 0 198 198" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g filter="url(#filter0_d_1099_19941)">
+                                    <g clip-path="url(#clip0_1099_19941)">
+                                        <rect x="23.8867" y="19.9062" width="149.295" height="149.295" rx="74.6473"
+                                            fill="white" />
+                                        <path
+                                            d="M98.5339 19.9062C57.3074 19.9062 23.8867 53.3269 23.8867 94.5534C23.8867 135.78 57.3074 169.201 98.5339 169.201C139.76 169.201 173.181 135.78 173.181 94.5534C173.137 53.3454 139.742 19.9503 98.5339 19.9062ZM129.971 96.9319C129.454 97.9685 128.614 98.8089 127.577 99.3256V99.3522L84.9215 120.68C82.2872 121.996 79.0849 120.928 77.7684 118.294C77.3941 117.545 77.2013 116.718 77.206 115.881V73.2258C77.2048 70.281 79.5907 67.8929 82.5356 67.8913C83.3638 67.891 84.1808 68.0834 84.9215 68.4536L127.577 89.7815C130.213 91.095 131.284 94.2963 129.971 96.9319Z"
+                                            fill="#4F46E5" />
+                                    </g>
+                                    <rect x="31.8491" y="27.8686" width="133.37" height="133.37" rx="66.685"
+                                        stroke="#E9F0FF" stroke-width="15.9248" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_d_1099_19941" x="-0.000427246" y="0.000295162" width="197.069"
+                                        height="197.069" filterUnits="userSpaceOnUse"
+                                        color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                        <feOffset dy="3.98119" />
+                                        <feGaussianBlur stdDeviation="11.9436" />
+                                        <feComposite in2="hardAlpha" operator="out" />
+                                        <feColorMatrix type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
+                                        <feBlend mode="normal" in2="BackgroundImageFix"
+                                            result="effect1_dropShadow_1099_19941" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1099_19941"
+                                            result="shape" />
+                                    </filter>
+                                    <clipPath id="clip0_1099_19941">
+                                        <rect x="23.8867" y="19.9062" width="149.295" height="149.295" rx="74.6473"
+                                            fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -358,8 +354,8 @@
 
         <!-- Brands Area -->
         <section class="brands">
-            <div class="brands__container container">
-                <div class="brands__header header-area">
+            <div class="brands__container container" data-animation="fade-in">
+                <div class="brands__header header-area" data-animation="fade-in">
                     <p class="subtitle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_1345_3205)">
@@ -425,7 +421,7 @@
         <section class="how-it-works">
             <div class="how-it-works__container container gap-xxl">
                 <div class="how-it-works__header-area header__grid">
-                    <div class="how-it-works__header-left header-area">
+                    <div class="how-it-works__header-left header-area" data-animation="fade-in">
                         <p class="subtitle">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 fill="none">
@@ -465,51 +461,285 @@
                         </p>
                         <h2 class="how-it-works__title">Three steps. No learning curve.</h2>
                     </div>
-                    <div class="how-it-works__header-right align-right">
+                    <div class="how-it-works__header-right align-right" data-animation="fade-in">
                         <p class="how-it-works__desc">Automate lead generation with our integrated platform. Prospect
                             smarter and close deals faster.</p>
                     </div>
                 </div>
 
                 <div class="how-it-works__grid-area">
-                    <div class="how-it-works__grid">
+                    <div class="how-it-works__grid" data-animation="fade-in">
                         <div class="how-it-works__item">
                             <div class="how-it-works__item-img-wrap">
-                                <img src="./assets/img/how-it-works-1.png" alt="">
+                                <img class="how-it-works__item-img how-it-works__item-img--large"
+                                    src="./assets/img/company-1.svg" alt="">
+                                <img class="how-it-works__item-img how-it-works__item-img--small"
+                                    src="./assets/img/company-2.svg" alt="">
                             </div>
 
                             <div class="how-it-works__item-content">
-                                <h3 class="how-it-works__item-title text-125">Search companies</h3>
-                                <p class="how-it-works__item-text text-0875">Filter accounts by industry, location,
+                                <h3 class="how-it-works__item-title text-lg">Search companies</h3>
+                                <p class="how-it-works__item-text text-sm">Filter accounts by industry, location,
                                     size,
                                     tech stack, or funding stage, and save reusable segments.</p>
                             </div>
+
+                            <div class="bg-wrap how-it-works__item-bg">
+                                <img src="./assets/img/how-it-works-1.png" alt="" class="bg-img">
+                            </div>
                         </div>
+
                         <div class="how-it-works__item">
-                            <div class="how-it-works__item-img-wrap">
-                                <img src="./assets/img/how-it-works-2.png" alt="">
+                            <div class="problems__items problems__item--how-it-work">
+                                <div class="problems__item">
+                                    <div class="problems__item-left">
+                                        <div class="problems__item-avatar-wrap">
+                                            <img class="problems__item-avatar" src="./assets/img/Dhawal Joshi.png"
+                                                alt="Brenda Groce">
+                                        </div>
+                                        <div class="problems__item-info">
+                                            <h3 class="problems__item-name">Dhawal Joshi</h3>
+                                            <p class="problems__item-role">Chief Product Owner</p>
+                                            <p class="problems__item-workplace">Sap</p>
+                                            <div class="problems__item-location">
+                                                <svg width="8" height="10" viewBox="0 0 8 10" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
+                                                        stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M3.46377 5.01544C4.10338 5.01544 4.62189 4.49694 4.62189 3.85733C4.62189 3.21772 4.10338 2.69922 3.46377 2.69922C2.82417 2.69922 2.30566 3.21772 2.30566 3.85733C2.30566 4.49694 2.82417 5.01544 3.46377 5.01544Z"
+                                                        stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+
+                                                <span>Bengaluru, India</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="problems__item-right">
+                                        <div class="problems__item-actions">
+                                            <a href="" class="problems__item-btn problems__item-btn--email">
+                                                <svg width="10" height="9" viewBox="0 0 15 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M0.716334 2.41284L6.02332 6.41079C6.45306 6.73453 6.66794 6.8964 6.90543 6.96449C7.11521 7.02463 7.33655 7.03236 7.55002 6.98699C7.79168 6.93564 8.01732 6.78915 8.4686 6.49618L14.0415 2.87817M3.61192 11.1859L10.541 11.4279C11.6605 11.467 12.2202 11.4865 12.6553 11.2836C13.0381 11.1051 13.3546 10.81 13.5593 10.4406C13.7921 10.0206 13.8117 9.46093 13.8508 8.34151L13.9997 4.07744C14.0388 2.95802 14.0583 2.39831 13.8554 1.96314C13.6769 1.58035 13.3818 1.2639 13.0124 1.05913C12.5924 0.826347 12.0327 0.806802 10.9133 0.767711L3.98418 0.525741C2.86476 0.48665 2.30505 0.467104 1.86988 0.670028C1.48709 0.848524 1.17064 1.14362 0.965876 1.51302C0.733091 1.93298 0.713546 2.49269 0.674454 3.61211L0.52555 7.87618C0.486459 8.9956 0.466913 9.55532 0.669837 9.99049C0.848333 10.3733 1.14343 10.6897 1.51283 10.8945C1.93279 11.1273 2.4925 11.1468 3.61192 11.1859Z"
+                                                        stroke="#4F46E5" stroke-linecap="round" stroke-linejoin="round">
+                                                    </path>
+                                                </svg>
+                                                <span class="problems__item-btn-icon"><!-- Email Icon --></span>
+                                                Reveal email
+                                            </a>
+                                            <a href="" class="problems__item-btn problems__item-btn--mobile">
+                                                <svg width="10" height="9" viewBox="0 0 14 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M4.07774 4.74134C4.50773 5.72335 5.10826 6.65064 5.88087 7.47916C6.65347 8.30768 7.53661 8.97143 8.48624 9.46887C8.56792 9.51166 8.60876 9.53306 8.66079 9.55021C8.84568 9.61118 9.07641 9.58008 9.23856 9.47234C9.28418 9.44202 9.32359 9.40526 9.40241 9.33176C9.64348 9.10697 9.76401 8.99457 9.88378 8.92252C10.3355 8.65078 10.9048 8.67067 11.3365 8.97325C11.4509 9.05348 11.5633 9.17401 11.7881 9.41507L11.9134 9.54944C12.2551 9.91588 12.426 10.0991 12.5155 10.2926C12.6936 10.6774 12.678 11.124 12.4735 11.4955C12.3707 11.6822 12.1875 11.8531 11.821 12.1948L11.7123 12.2962C11.3472 12.6367 11.1646 12.807 10.92 12.9334C10.6486 13.0736 10.2314 13.1667 9.92616 13.1551C9.65106 13.1447 9.46489 13.0847 9.09255 12.9649C7.09154 12.3206 5.22226 11.1717 3.6868 9.52515C2.15135 7.87858 1.13562 5.9337 0.632566 3.89264C0.538958 3.51284 0.492154 3.32295 0.500944 3.04779C0.510696 2.74246 0.632642 2.33281 0.79146 2.07185C0.934586 1.83668 1.11718 1.66641 1.48237 1.32587L1.59106 1.22451C1.95751 0.882793 2.14073 0.711936 2.33423 0.622404C2.71905 0.444346 3.16562 0.45994 3.53708 0.664409C3.72386 0.76722 3.89472 0.950441 4.23644 1.31689L4.36174 1.45125C4.58653 1.69232 4.69893 1.81285 4.77098 1.93262C5.04271 2.38431 5.02283 2.95368 4.72025 3.38531C4.64002 3.49976 4.51949 3.61216 4.27842 3.83696C4.1996 3.91046 4.16019 3.94721 4.12676 3.99061C4.00797 4.14485 3.96085 4.37285 4.00877 4.56154C4.02226 4.61463 4.04075 4.65687 4.07774 4.74134Z"
+                                                        stroke="#4F46E5" stroke-linecap="round" stroke-linejoin="round">
+                                                    </path>
+                                                </svg>
+
+                                                <span class="problems__item-btn-icon"><!-- Phone Icon --></span>
+                                                Reveal Mobile
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="problems__item">
+                                    <div class="problems__item-left">
+                                        <div class="problems__item-avatar-wrap">
+                                            <img class="problems__item-avatar" src="./assets/img/Eric Gang.png"
+                                                alt="Brenda Groce">
+                                        </div>
+                                        <div class="problems__item-info">
+                                            <h3 class="problems__item-name">Eric Gang</h3>
+                                            <p class="problems__item-role">Founder CEO</p>
+                                            <p class="problems__item-workplace">Staqs</p>
+                                            <div class="problems__item-location">
+                                                <svg width="8" height="10" viewBox="0 0 8 10" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
+                                                        stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M3.46377 5.01544C4.10338 5.01544 4.62189 4.49694 4.62189 3.85733C4.62189 3.21772 4.10338 2.69922 3.46377 2.69922C2.82417 2.69922 2.30566 3.21772 2.30566 3.85733C2.30566 4.49694 2.82417 5.01544 3.46377 5.01544Z"
+                                                        stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+
+                                                <span>United States</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="problems__item-right">
+                                        <div class="problems__item-actions">
+                                            <a href="" class="problems__item-btn problems__item-btn--email">
+                                                <svg width="10" height="9" viewBox="0 0 15 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M0.716334 2.41284L6.02332 6.41079C6.45306 6.73453 6.66794 6.8964 6.90543 6.96449C7.11521 7.02463 7.33655 7.03236 7.55002 6.98699C7.79168 6.93564 8.01732 6.78915 8.4686 6.49618L14.0415 2.87817M3.61192 11.1859L10.541 11.4279C11.6605 11.467 12.2202 11.4865 12.6553 11.2836C13.0381 11.1051 13.3546 10.81 13.5593 10.4406C13.7921 10.0206 13.8117 9.46093 13.8508 8.34151L13.9997 4.07744C14.0388 2.95802 14.0583 2.39831 13.8554 1.96314C13.6769 1.58035 13.3818 1.2639 13.0124 1.05913C12.5924 0.826347 12.0327 0.806802 10.9133 0.767711L3.98418 0.525741C2.86476 0.48665 2.30505 0.467104 1.86988 0.670028C1.48709 0.848524 1.17064 1.14362 0.965876 1.51302C0.733091 1.93298 0.713546 2.49269 0.674454 3.61211L0.52555 7.87618C0.486459 8.9956 0.466913 9.55532 0.669837 9.99049C0.848333 10.3733 1.14343 10.6897 1.51283 10.8945C1.93279 11.1273 2.4925 11.1468 3.61192 11.1859Z"
+                                                        stroke="#4F46E5" stroke-linecap="round" stroke-linejoin="round">
+                                                    </path>
+                                                </svg>
+                                                <span class="problems__item-btn-icon"><!-- Email Icon --></span>
+                                                Reveal email
+                                            </a>
+                                            <a href="" class="problems__item-btn problems__item-btn--mobile">
+                                                <svg width="10" height="9" viewBox="0 0 14 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M4.07774 4.74134C4.50773 5.72335 5.10826 6.65064 5.88087 7.47916C6.65347 8.30768 7.53661 8.97143 8.48624 9.46887C8.56792 9.51166 8.60876 9.53306 8.66079 9.55021C8.84568 9.61118 9.07641 9.58008 9.23856 9.47234C9.28418 9.44202 9.32359 9.40526 9.40241 9.33176C9.64348 9.10697 9.76401 8.99457 9.88378 8.92252C10.3355 8.65078 10.9048 8.67067 11.3365 8.97325C11.4509 9.05348 11.5633 9.17401 11.7881 9.41507L11.9134 9.54944C12.2551 9.91588 12.426 10.0991 12.5155 10.2926C12.6936 10.6774 12.678 11.124 12.4735 11.4955C12.3707 11.6822 12.1875 11.8531 11.821 12.1948L11.7123 12.2962C11.3472 12.6367 11.1646 12.807 10.92 12.9334C10.6486 13.0736 10.2314 13.1667 9.92616 13.1551C9.65106 13.1447 9.46489 13.0847 9.09255 12.9649C7.09154 12.3206 5.22226 11.1717 3.6868 9.52515C2.15135 7.87858 1.13562 5.9337 0.632566 3.89264C0.538958 3.51284 0.492154 3.32295 0.500944 3.04779C0.510696 2.74246 0.632642 2.33281 0.79146 2.07185C0.934586 1.83668 1.11718 1.66641 1.48237 1.32587L1.59106 1.22451C1.95751 0.882793 2.14073 0.711936 2.33423 0.622404C2.71905 0.444346 3.16562 0.45994 3.53708 0.664409C3.72386 0.76722 3.89472 0.950441 4.23644 1.31689L4.36174 1.45125C4.58653 1.69232 4.69893 1.81285 4.77098 1.93262C5.04271 2.38431 5.02283 2.95368 4.72025 3.38531C4.64002 3.49976 4.51949 3.61216 4.27842 3.83696C4.1996 3.91046 4.16019 3.94721 4.12676 3.99061C4.00797 4.14485 3.96085 4.37285 4.00877 4.56154C4.02226 4.61463 4.04075 4.65687 4.07774 4.74134Z"
+                                                        stroke="#4F46E5" stroke-linecap="round" stroke-linejoin="round">
+                                                    </path>
+                                                </svg>
+
+                                                <span class="problems__item-btn-icon"><!-- Phone Icon --></span>
+                                                Reveal Mobile
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="problems__item">
+                                    <div class="problems__item-left">
+                                        <div class="problems__item-avatar-wrap">
+                                            <img class="problems__item-avatar" src="./assets/img/Jason Uncles.png"
+                                                alt="Brenda Groce">
+                                        </div>
+                                        <div class="problems__item-info">
+                                            <h3 class="problems__item-name">Jason Uncles</h3>
+                                            <p class="problems__item-role">Founder & CEO</p>
+                                            <p class="problems__item-workplace">Emerge Qa</p>
+                                            <div class="problems__item-location">
+                                                <svg width="8" height="10" viewBox="0 0 8 10" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
+                                                        stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M3.46377 5.01544C4.10338 5.01544 4.62189 4.49694 4.62189 3.85733C4.62189 3.21772 4.10338 2.69922 3.46377 2.69922C2.82417 2.69922 2.30566 3.21772 2.30566 3.85733C2.30566 4.49694 2.82417 5.01544 3.46377 5.01544Z"
+                                                        stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+
+                                                <span>United Kingdom</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="problems__item-right">
+                                        <div class="problems__item-actions">
+                                            <a href="" class="problems__item-btn problems__item-btn--email">
+                                                <svg width="10" height="9" viewBox="0 0 15 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M0.716334 2.41284L6.02332 6.41079C6.45306 6.73453 6.66794 6.8964 6.90543 6.96449C7.11521 7.02463 7.33655 7.03236 7.55002 6.98699C7.79168 6.93564 8.01732 6.78915 8.4686 6.49618L14.0415 2.87817M3.61192 11.1859L10.541 11.4279C11.6605 11.467 12.2202 11.4865 12.6553 11.2836C13.0381 11.1051 13.3546 10.81 13.5593 10.4406C13.7921 10.0206 13.8117 9.46093 13.8508 8.34151L13.9997 4.07744C14.0388 2.95802 14.0583 2.39831 13.8554 1.96314C13.6769 1.58035 13.3818 1.2639 13.0124 1.05913C12.5924 0.826347 12.0327 0.806802 10.9133 0.767711L3.98418 0.525741C2.86476 0.48665 2.30505 0.467104 1.86988 0.670028C1.48709 0.848524 1.17064 1.14362 0.965876 1.51302C0.733091 1.93298 0.713546 2.49269 0.674454 3.61211L0.52555 7.87618C0.486459 8.9956 0.466913 9.55532 0.669837 9.99049C0.848333 10.3733 1.14343 10.6897 1.51283 10.8945C1.93279 11.1273 2.4925 11.1468 3.61192 11.1859Z"
+                                                        stroke="#4F46E5" stroke-linecap="round" stroke-linejoin="round">
+                                                    </path>
+                                                </svg>
+                                                <span class="problems__item-btn-icon"><!-- Email Icon --></span>
+                                                Reveal email
+                                            </a>
+                                            <a href="" class="problems__item-btn problems__item-btn--mobile">
+                                                <svg width="10" height="9" viewBox="0 0 14 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M4.07774 4.74134C4.50773 5.72335 5.10826 6.65064 5.88087 7.47916C6.65347 8.30768 7.53661 8.97143 8.48624 9.46887C8.56792 9.51166 8.60876 9.53306 8.66079 9.55021C8.84568 9.61118 9.07641 9.58008 9.23856 9.47234C9.28418 9.44202 9.32359 9.40526 9.40241 9.33176C9.64348 9.10697 9.76401 8.99457 9.88378 8.92252C10.3355 8.65078 10.9048 8.67067 11.3365 8.97325C11.4509 9.05348 11.5633 9.17401 11.7881 9.41507L11.9134 9.54944C12.2551 9.91588 12.426 10.0991 12.5155 10.2926C12.6936 10.6774 12.678 11.124 12.4735 11.4955C12.3707 11.6822 12.1875 11.8531 11.821 12.1948L11.7123 12.2962C11.3472 12.6367 11.1646 12.807 10.92 12.9334C10.6486 13.0736 10.2314 13.1667 9.92616 13.1551C9.65106 13.1447 9.46489 13.0847 9.09255 12.9649C7.09154 12.3206 5.22226 11.1717 3.6868 9.52515C2.15135 7.87858 1.13562 5.9337 0.632566 3.89264C0.538958 3.51284 0.492154 3.32295 0.500944 3.04779C0.510696 2.74246 0.632642 2.33281 0.79146 2.07185C0.934586 1.83668 1.11718 1.66641 1.48237 1.32587L1.59106 1.22451C1.95751 0.882793 2.14073 0.711936 2.33423 0.622404C2.71905 0.444346 3.16562 0.45994 3.53708 0.664409C3.72386 0.76722 3.89472 0.950441 4.23644 1.31689L4.36174 1.45125C4.58653 1.69232 4.69893 1.81285 4.77098 1.93262C5.04271 2.38431 5.02283 2.95368 4.72025 3.38531C4.64002 3.49976 4.51949 3.61216 4.27842 3.83696C4.1996 3.91046 4.16019 3.94721 4.12676 3.99061C4.00797 4.14485 3.96085 4.37285 4.00877 4.56154C4.02226 4.61463 4.04075 4.65687 4.07774 4.74134Z"
+                                                        stroke="#4F46E5" stroke-linecap="round" stroke-linejoin="round">
+                                                    </path>
+                                                </svg>
+
+                                                <span class="problems__item-btn-icon"><!-- Phone Icon --></span>
+                                                Reveal Mobile
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="problems__item">
+                                    <div class="problems__item-left">
+                                        <div class="problems__item-avatar-wrap">
+                                            <img class="problems__item-avatar" src="./assets/img/Ching Man Chow.png"
+                                                alt="Brenda Groce">
+                                        </div>
+                                        <div class="problems__item-info">
+                                            <h3 class="problems__item-name">Ching Man Chow</h3>
+                                            <p class="problems__item-role">CEO</p>
+                                            <p class="problems__item-workplace">Salesforce</p>
+                                            <div class="problems__item-location">
+                                                <svg width="8" height="10" viewBox="0 0 8 10" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
+                                                        stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M3.46377 5.01544C4.10338 5.01544 4.62189 4.49694 4.62189 3.85733C4.62189 3.21772 4.10338 2.69922 3.46377 2.69922C2.82417 2.69922 2.30566 3.21772 2.30566 3.85733C2.30566 4.49694 2.82417 5.01544 3.46377 5.01544Z"
+                                                        stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+
+                                                <span>Hong Kong</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="problems__item-right">
+                                        <div class="problems__item-actions">
+                                            <a href="" class="problems__item-btn problems__item-btn--email">
+                                                <svg width="10" height="9" viewBox="0 0 15 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M0.716334 2.41284L6.02332 6.41079C6.45306 6.73453 6.66794 6.8964 6.90543 6.96449C7.11521 7.02463 7.33655 7.03236 7.55002 6.98699C7.79168 6.93564 8.01732 6.78915 8.4686 6.49618L14.0415 2.87817M3.61192 11.1859L10.541 11.4279C11.6605 11.467 12.2202 11.4865 12.6553 11.2836C13.0381 11.1051 13.3546 10.81 13.5593 10.4406C13.7921 10.0206 13.8117 9.46093 13.8508 8.34151L13.9997 4.07744C14.0388 2.95802 14.0583 2.39831 13.8554 1.96314C13.6769 1.58035 13.3818 1.2639 13.0124 1.05913C12.5924 0.826347 12.0327 0.806802 10.9133 0.767711L3.98418 0.525741C2.86476 0.48665 2.30505 0.467104 1.86988 0.670028C1.48709 0.848524 1.17064 1.14362 0.965876 1.51302C0.733091 1.93298 0.713546 2.49269 0.674454 3.61211L0.52555 7.87618C0.486459 8.9956 0.466913 9.55532 0.669837 9.99049C0.848333 10.3733 1.14343 10.6897 1.51283 10.8945C1.93279 11.1273 2.4925 11.1468 3.61192 11.1859Z"
+                                                        stroke="#4F46E5" stroke-linecap="round" stroke-linejoin="round">
+                                                    </path>
+                                                </svg>
+                                                <span class="problems__item-btn-icon"><!-- Email Icon --></span>
+                                                Reveal email
+                                            </a>
+                                            <a href="" class="problems__item-btn problems__item-btn--mobile">
+                                                <svg width="10" height="9" viewBox="0 0 14 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M4.07774 4.74134C4.50773 5.72335 5.10826 6.65064 5.88087 7.47916C6.65347 8.30768 7.53661 8.97143 8.48624 9.46887C8.56792 9.51166 8.60876 9.53306 8.66079 9.55021C8.84568 9.61118 9.07641 9.58008 9.23856 9.47234C9.28418 9.44202 9.32359 9.40526 9.40241 9.33176C9.64348 9.10697 9.76401 8.99457 9.88378 8.92252C10.3355 8.65078 10.9048 8.67067 11.3365 8.97325C11.4509 9.05348 11.5633 9.17401 11.7881 9.41507L11.9134 9.54944C12.2551 9.91588 12.426 10.0991 12.5155 10.2926C12.6936 10.6774 12.678 11.124 12.4735 11.4955C12.3707 11.6822 12.1875 11.8531 11.821 12.1948L11.7123 12.2962C11.3472 12.6367 11.1646 12.807 10.92 12.9334C10.6486 13.0736 10.2314 13.1667 9.92616 13.1551C9.65106 13.1447 9.46489 13.0847 9.09255 12.9649C7.09154 12.3206 5.22226 11.1717 3.6868 9.52515C2.15135 7.87858 1.13562 5.9337 0.632566 3.89264C0.538958 3.51284 0.492154 3.32295 0.500944 3.04779C0.510696 2.74246 0.632642 2.33281 0.79146 2.07185C0.934586 1.83668 1.11718 1.66641 1.48237 1.32587L1.59106 1.22451C1.95751 0.882793 2.14073 0.711936 2.33423 0.622404C2.71905 0.444346 3.16562 0.45994 3.53708 0.664409C3.72386 0.76722 3.89472 0.950441 4.23644 1.31689L4.36174 1.45125C4.58653 1.69232 4.69893 1.81285 4.77098 1.93262C5.04271 2.38431 5.02283 2.95368 4.72025 3.38531C4.64002 3.49976 4.51949 3.61216 4.27842 3.83696C4.1996 3.91046 4.16019 3.94721 4.12676 3.99061C4.00797 4.14485 3.96085 4.37285 4.00877 4.56154C4.02226 4.61463 4.04075 4.65687 4.07774 4.74134Z"
+                                                        stroke="#4F46E5" stroke-linecap="round" stroke-linejoin="round">
+                                                    </path>
+                                                </svg>
+
+                                                <span class="problems__item-btn-icon"><!-- Phone Icon --></span>
+                                                Reveal Mobile
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="how-it-works__item-content">
-                                <h3 class="how-it-works__item-title text-125">Find decision makers</h3>
-                                <p class="how-it-works__item-text text-0875">Pull the right contacts from each company
+                                <h3 class="how-it-works__item-title text-lg">Find decision makers</h3>
+                                <p class="how-it-works__item-text text-sm">Pull the right contacts from each company
                                     with verified emails and direct LinkedIn links.</p>
                             </div>
                         </div>
+
                         <div class="how-it-works__item">
-                            <div class="how-it-works__item-img-wrap">
-                                <img src="./assets/img/how-it-works-3.png" alt="">
-                            </div>
+                            <div class="blank__element"></div>
 
                             <div class="how-it-works__item-content">
-                                <h3 class="how-it-works__item-title text-125">Export lead list</h3>
-                                <p class="how-it-works__item-text text-0875">Share updates, feedback, and approvals in
+                                <h3 class="how-it-works__item-title text-lg">Export lead list</h3>
+                                <p class="how-it-works__item-text text-sm">Share updates, feedback, and approvals in
                                     one place.</p>
+                            </div>
+
+                            <div class="bg-wrap how-it-works__item-bg">
+                                <img src="./assets/img/how-it-works-3.svg" alt="" class="bg-img">
                             </div>
                         </div>
                     </div>
 
-                    <div class="how-it-works__features-list">
+                    <div class="how-it-works__features-list" data-animation="fade-in">
                         <div class="how-it-works__features-item">
                             <div class="how-it-works__features-item-icon">
                                 <img src="./assets/img/credit-card.png" alt="">
@@ -542,7 +772,7 @@
         <!-- Stats Area -->
         <section class="stats">
             <div class="stats__container container gap-xxl">
-                <div class="stats__header-area header-area">
+                <div class="stats__header-area header-area" data-animation="fade-in">
                     <p class="subtitle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_1345_3205)">
@@ -579,10 +809,10 @@
                         </svg>
                         <span>BUILT ON TRUTH</span>
                     </p>
-                    <h2 class="problems__title text-125">Data you can actually send to</h2>
+                    <h2 class="problems__title text-lg">Data you can actually send to</h2>
                 </div>
 
-                <div class="stats__grid">
+                <div class="stats__grid" data-animation="fade-in">
                     <div class="stats__card">
                         <div class="stats__icon-wrapper">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
@@ -606,7 +836,7 @@
                             </svg>
                         </div>
                         <div class="stats__content">
-                            <span class="stats__number text-h2">200M+</span>
+                            <span data-counter="200" data-suffix="M+" class="stats__number text-h2">200M+</span>
                             <p class="stats__label">Verified contacts</p>
                         </div>
                     </div>
@@ -621,7 +851,7 @@
                             </svg>
                         </div>
                         <div class="stats__content">
-                            <span class="stats__number text-h2">95.4%</span>
+                            <span data-counter="95.4" data-suffix="%" class="stats__number text-h2">95.4%</span>
                             <p class="stats__label">Deliverability</p>
                         </div>
                     </div>
@@ -636,7 +866,7 @@
                             </svg>
                         </div>
                         <div class="stats__content">
-                            <span class="stats__number text-h2">180+</span>
+                            <span data-counter="180" data-suffix="+" class="stats__number text-h2">180+</span>
                             <p class="stats__label">Countries covered</p>
                         </div>
                     </div>
@@ -673,7 +903,7 @@
                             </svg>
                         </div>
                         <div class="stats__content">
-                            <span class="stats__number text-h2">24hr</span>
+                            <span data-counter="24" data-suffix="hr" class="stats__number text-h2">24hr</span>
                             <p class="stats__label">Re-verification</p>
                         </div>
                     </div>
@@ -686,7 +916,7 @@
             <div class="problems__container container">
                 <div class="problems__grid">
                     <div class="problems__left-column">
-                        <div class="problems__header-area header-area">
+                        <div class="problems__header-area header-area" data-animation="fade-in">
                             <p class="subtitle">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                     fill="none">
@@ -726,7 +956,8 @@
                             </p>
                             <h2 class="problems__title">Accurate prospect data is hard to find.</h2>
                         </div>
-                        <div class="problems__info-list">
+
+                        <div class="problems__info-list" data-animation="fade-in">
                             <div class="problems__info-item">
                                 <div class="problems__info-item-icon">
                                     <img src="./assets/img/hand-shaik.png" alt="">
@@ -792,45 +1023,6 @@
                             <div class="problems__item">
                                 <div class="problems__item-left">
                                     <div class="problems__item-avatar-wrap">
-                                        <img class="problems__item-avatar" src="./assets/img/problem-avatar-2.png"
-                                            alt="Brenda Groce">
-                                    </div>
-                                    <div class="problems__item-info">
-                                        <h3 class="problems__item-name">Jon Commers</h3>
-                                        <p class="problems__item-role">Senior Director</p>
-                                    </div>
-                                </div>
-                                <div class="problems__item-right">
-                                    <div class="problems__item-actions">
-                                        <a href="mailto:jhaukaas@waconia.org"
-                                            class="problems__item-btn problems__item-btn--email">
-                                            <svg width="15" height="12" viewBox="0 0 15 12" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M0.716334 2.41284L6.02332 6.41079C6.45306 6.73453 6.66794 6.8964 6.90543 6.96449C7.11521 7.02463 7.33655 7.03236 7.55002 6.98699C7.79168 6.93564 8.01732 6.78915 8.4686 6.49618L14.0415 2.87817M3.61192 11.1859L10.541 11.4279C11.6605 11.467 12.2202 11.4865 12.6553 11.2836C13.0381 11.1051 13.3546 10.81 13.5593 10.4406C13.7921 10.0206 13.8117 9.46093 13.8508 8.34151L13.9997 4.07744C14.0388 2.95802 14.0583 2.39831 13.8554 1.96314C13.6769 1.58035 13.3818 1.2639 13.0124 1.05913C12.5924 0.826347 12.0327 0.806802 10.9133 0.767711L3.98418 0.525741C2.86476 0.48665 2.30505 0.467104 1.86988 0.670028C1.48709 0.848524 1.17064 1.14362 0.965876 1.51302C0.733091 1.93298 0.713546 2.49269 0.674454 3.61211L0.52555 7.87618C0.486459 8.9956 0.466913 9.55532 0.669837 9.99049C0.848333 10.3733 1.14343 10.6897 1.51283 10.8945C1.93279 11.1273 2.4925 11.1468 3.61192 11.1859Z"
-                                                    stroke="#4F46E5" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            <span class="problems__item-btn-icon"><!-- Email Icon --></span>
-                                            jhaukaas@waconia.org
-                                        </a>
-                                        <a href="tel:+1 970-817-0764"
-                                            class="problems__item-btn problems__item-btn--mobile">
-                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M4.07774 4.74134C4.50773 5.72335 5.10826 6.65064 5.88087 7.47916C6.65347 8.30768 7.53661 8.97143 8.48624 9.46887C8.56792 9.51166 8.60876 9.53306 8.66079 9.55021C8.84568 9.61118 9.07641 9.58008 9.23856 9.47234C9.28418 9.44202 9.32359 9.40526 9.40241 9.33176C9.64348 9.10697 9.76401 8.99457 9.88378 8.92252C10.3355 8.65078 10.9048 8.67067 11.3365 8.97325C11.4509 9.05348 11.5633 9.17401 11.7881 9.41507L11.9134 9.54944C12.2551 9.91588 12.426 10.0991 12.5155 10.2926C12.6936 10.6774 12.678 11.124 12.4735 11.4955C12.3707 11.6822 12.1875 11.8531 11.821 12.1948L11.7123 12.2962C11.3472 12.6367 11.1646 12.807 10.92 12.9334C10.6486 13.0736 10.2314 13.1667 9.92616 13.1551C9.65106 13.1447 9.46489 13.0847 9.09255 12.9649C7.09154 12.3206 5.22226 11.1717 3.6868 9.52515C2.15135 7.87858 1.13562 5.9337 0.632566 3.89264C0.538958 3.51284 0.492154 3.32295 0.500944 3.04779C0.510696 2.74246 0.632642 2.33281 0.79146 2.07185C0.934586 1.83668 1.11718 1.66641 1.48237 1.32587L1.59106 1.22451C1.95751 0.882793 2.14073 0.711936 2.33423 0.622404C2.71905 0.444346 3.16562 0.45994 3.53708 0.664409C3.72386 0.76722 3.89472 0.950441 4.23644 1.31689L4.36174 1.45125C4.58653 1.69232 4.69893 1.81285 4.77098 1.93262C5.04271 2.38431 5.02283 2.95368 4.72025 3.38531C4.64002 3.49976 4.51949 3.61216 4.27842 3.83696C4.1996 3.91046 4.16019 3.94721 4.12676 3.99061C4.00797 4.14485 3.96085 4.37285 4.00877 4.56154C4.02226 4.61463 4.04075 4.65687 4.07774 4.74134Z"
-                                                    stroke="#4F46E5" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-
-                                            <span class="problems__item-btn-icon"><!-- Phone Icon --></span>
-                                            +1 970-817-0764
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="problems__item">
-                                <div class="problems__item-left">
-                                    <div class="problems__item-avatar-wrap">
                                         <img class="problems__item-avatar" src="./assets/img/problem-avatar-3.png"
                                             alt="Brenda Groce">
                                     </div>
@@ -867,7 +1059,45 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="problems__item">
+                                <div class="problems__item-left">
+                                    <div class="problems__item-avatar-wrap">
+                                        <img class="problems__item-avatar" src="./assets/img/problem-avatar-2.png"
+                                            alt="Brenda Groce">
+                                    </div>
+                                    <div class="problems__item-info">
+                                        <h3 class="problems__item-name">Jon Commers</h3>
+                                        <p class="problems__item-role">Senior Director</p>
+                                    </div>
+                                </div>
+                                <div class="problems__item-right">
+                                    <div class="problems__item-actions">
+                                        <a href="mailto:jhaukaas@waconia.org"
+                                            class="problems__item-btn problems__item-btn--email">
+                                            <svg width="15" height="12" viewBox="0 0 15 12" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M0.716334 2.41284L6.02332 6.41079C6.45306 6.73453 6.66794 6.8964 6.90543 6.96449C7.11521 7.02463 7.33655 7.03236 7.55002 6.98699C7.79168 6.93564 8.01732 6.78915 8.4686 6.49618L14.0415 2.87817M3.61192 11.1859L10.541 11.4279C11.6605 11.467 12.2202 11.4865 12.6553 11.2836C13.0381 11.1051 13.3546 10.81 13.5593 10.4406C13.7921 10.0206 13.8117 9.46093 13.8508 8.34151L13.9997 4.07744C14.0388 2.95802 14.0583 2.39831 13.8554 1.96314C13.6769 1.58035 13.3818 1.2639 13.0124 1.05913C12.5924 0.826347 12.0327 0.806802 10.9133 0.767711L3.98418 0.525741C2.86476 0.48665 2.30505 0.467104 1.86988 0.670028C1.48709 0.848524 1.17064 1.14362 0.965876 1.51302C0.733091 1.93298 0.713546 2.49269 0.674454 3.61211L0.52555 7.87618C0.486459 8.9956 0.466913 9.55532 0.669837 9.99049C0.848333 10.3733 1.14343 10.6897 1.51283 10.8945C1.93279 11.1273 2.4925 11.1468 3.61192 11.1859Z"
+                                                    stroke="#4F46E5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="problems__item-btn-icon"><!-- Email Icon --></span>
+                                            jhaukaas@waconia.org
+                                        </a>
+                                        <a href="tel:+1 970-817-0764"
+                                            class="problems__item-btn problems__item-btn--mobile">
+                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M4.07774 4.74134C4.50773 5.72335 5.10826 6.65064 5.88087 7.47916C6.65347 8.30768 7.53661 8.97143 8.48624 9.46887C8.56792 9.51166 8.60876 9.53306 8.66079 9.55021C8.84568 9.61118 9.07641 9.58008 9.23856 9.47234C9.28418 9.44202 9.32359 9.40526 9.40241 9.33176C9.64348 9.10697 9.76401 8.99457 9.88378 8.92252C10.3355 8.65078 10.9048 8.67067 11.3365 8.97325C11.4509 9.05348 11.5633 9.17401 11.7881 9.41507L11.9134 9.54944C12.2551 9.91588 12.426 10.0991 12.5155 10.2926C12.6936 10.6774 12.678 11.124 12.4735 11.4955C12.3707 11.6822 12.1875 11.8531 11.821 12.1948L11.7123 12.2962C11.3472 12.6367 11.1646 12.807 10.92 12.9334C10.6486 13.0736 10.2314 13.1667 9.92616 13.1551C9.65106 13.1447 9.46489 13.0847 9.09255 12.9649C7.09154 12.3206 5.22226 11.1717 3.6868 9.52515C2.15135 7.87858 1.13562 5.9337 0.632566 3.89264C0.538958 3.51284 0.492154 3.32295 0.500944 3.04779C0.510696 2.74246 0.632642 2.33281 0.79146 2.07185C0.934586 1.83668 1.11718 1.66641 1.48237 1.32587L1.59106 1.22451C1.95751 0.882793 2.14073 0.711936 2.33423 0.622404C2.71905 0.444346 3.16562 0.45994 3.53708 0.664409C3.72386 0.76722 3.89472 0.950441 4.23644 1.31689L4.36174 1.45125C4.58653 1.69232 4.69893 1.81285 4.77098 1.93262C5.04271 2.38431 5.02283 2.95368 4.72025 3.38531C4.64002 3.49976 4.51949 3.61216 4.27842 3.83696C4.1996 3.91046 4.16019 3.94721 4.12676 3.99061C4.00797 4.14485 3.96085 4.37285 4.00877 4.56154C4.02226 4.61463 4.04075 4.65687 4.07774 4.74134Z"
+                                                    stroke="#4F46E5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
 
+                                            <span class="problems__item-btn-icon"><!-- Phone Icon --></span>
+                                            +1 970-817-0764
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="problems__item">
                                 <div class="problems__item-left">
                                     <div class="problems__item-avatar-wrap">
@@ -910,7 +1140,7 @@
                             <div class="problems__item">
                                 <div class="problems__item-left">
                                     <div class="problems__item-avatar-wrap">
-                                        <img class="problems__item-avatar" src="./assets/img/problem-avatar-3.png"
+                                        <img class="problems__item-avatar" src="./assets/img/problem-5.png"
                                             alt="Brenda Groce">
                                     </div>
                                     <div class="problems__item-info">
@@ -958,7 +1188,7 @@
         <!-- Features Area -->
         <section class="features">
             <div class="features__container container gap-xxl">
-                <div class="features__header header-area">
+                <div class="features__header header-area" data-animation="fade-in">
                     <p class="subtitle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_1345_3205)">
@@ -1002,13 +1232,13 @@
                 </div>
 
                 <div class="features__list">
-                    <div class="features__list-inner col-3">
+                    <div class="features__list-inner col-3" data-animation="fade-in">
                         <div class="features__item">
                             <div class="features__item-img-wrap">
-                                <img src="./assets/img/features-img-1.jpg" alt="" class="features__item-img">
+                                <img src="./assets/img/features-img-1.svg" alt="" class="features__item-img">
                             </div>
                             <div class="features__item-content">
-                                <h3 class="features__item-title">People Search</h3>
+                                <h3 class="features__item-title text-h6">People Search</h3>
                                 <p class="features__item-text text-sm">Secure, role-based access and scalable design
                                     protect
                                     your data as you grow.</p>
@@ -1016,42 +1246,42 @@
                         </div>
                         <div class="features__item">
                             <div class="features__item-img-wrap">
-                                <img src="./assets/img/features-img-2.jpg" alt="" class="features__item-img">
+                                <img src="./assets/img/features-img-2.svg" alt="" class="features__item-img">
                             </div>
                             <div class="features__item-content">
-                                <h3 class="features__item-title">Company Search</h3>
+                                <h3 class="features__item-title text-h6">Company Search</h3>
                                 <p class="features__item-text text-sm">Find accounts by industry, size, tech, funding,
                                     and signals. Build ICP-matched lists.</p>
                             </div>
                         </div>
                         <div class="features__item">
                             <div class="features__item-img-wrap">
-                                <img src="./assets/img/features-img-3.jpg" alt="" class="features__item-img">
+                                <img src="./assets/img/features-img-3.svg" alt="" class="features__item-img">
                             </div>
                             <div class="features__item-content">
-                                <h3 class="features__item-title">Email Finder</h3>
+                                <h3 class="features__item-title text-h6">Email Finder</h3>
                                 <p class="features__item-text text-sm">Get verified work emails instantly with 95%+
                                     deliverability and no bounces.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="features__list-inner col-2">
+                    <div class="features__list-inner col-2" data-animation="fade-in">
                         <div class="features__item">
                             <div class="features__item-img-wrap">
-                                <img src="./assets/img/features-img-4.jpg" alt="" class="features__item-img">
+                                <img src="./assets/img/features-img-4.svg" alt="" class="features__item-img">
                             </div>
                             <div class="features__item-content">
-                                <h3 class="features__item-title">Data Enrichment</h3>
+                                <h3 class="features__item-title text-h6">Data Enrichment</h3>
                                 <p class="features__item-text text-sm">Use real-time analytics to track performance,
                                     user behavior, and agent efficiency for better decisions.</p>
                             </div>
                         </div>
                         <div class="features__item">
                             <div class="features__item-img-wrap">
-                                <img src="./assets/img/features-img-5.jpg" alt="" class="features__item-img">
+                                <img src="./assets/img/features-img-5.svg" alt="" class="features__item-img">
                             </div>
                             <div class="features__item-content">
-                                <h3 class="features__item-title">Vendor Breakdown</h3>
+                                <h3 class="features__item-title text-h6">Vendor Breakdown</h3>
                                 <p class="features__item-text text-sm">Explore vendor distribution by category,
                                     industry, location, and company size.</p>
                             </div>
@@ -1064,7 +1294,7 @@
         <!-- Reach Area -->
         <section class="reach">
             <div class="reach__container container gap-xxl">
-                <div class="reach__header-area header-area">
+                <div class="reach__header-area header-area" data-animation="fade-in">
                     <p class="subtitle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_1345_3205)">
@@ -1109,380 +1339,382 @@
                 </div>
 
                 <div class="reach__map-wrap">
-                    <div class="reach-card reach-card__1">
-                        <div class="reach-card__left-column">
-                            <div class="reach-card__avatar-wrap">
-                                <img src="./assets/img/Alis Fray.png" class="reach-card__avatar">
-                            </div>
-                            <div class="reach-card__info">
-                                <h3 class="reach-card__author-name">Alis Fray</h3>
-                                <p class="reach-card__author-role">Senior Manager </p>
-                                <p class="reach-card__author-workplace">Save The Children Uk</p>
-                                <div class="reach-card__location-wrap">
-                                    <div class="icon-wrap">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10" viewBox="0 0 8 10"
-                                            fill="none">
-                                            <path
-                                                d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
+                    <div class="reach-card__list" data-animation="zoom-in">
+                        <div class="reach-card reach-card__1">
+                            <div class="reach-card__left-column">
+                                <div class="reach-card__avatar-wrap">
+                                    <img src="./assets/img/Alis Fray.png" class="reach-card__avatar">
+                                </div>
+                                <div class="reach-card__info">
+                                    <h3 class="reach-card__author-name">Alis Fray</h3>
+                                    <p class="reach-card__author-role">Senior Manager </p>
+                                    <p class="reach-card__author-workplace">Save The Children Uk</p>
+                                    <div class="reach-card__location-wrap">
+                                        <div class="icon-wrap">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10"
+                                                viewBox="0 0 8 10" fill="none">
+                                                <path
+                                                    d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <a href="" class="location__name">Brazil</a>
                                     </div>
-                                    <a href="" class="location__name">Brazil</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="reach-card__right-column">
-                            <div class="reach-card__contact-wrap">
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reach-card reach-card__2">
-                        <div class="reach-card__left-column">
-                            <div class="reach-card__avatar-wrap">
-                                <img src="./assets/img/Kristin Coccia.png" class="reach-card__avatar">
-                            </div>
-                            <div class="reach-card__info">
-                                <h3 class="reach-card__author-name">Kristin Coccia</h3>
-                                <p class="reach-card__author-role">Manager, Learning Projects </p>
-                                <p class="reach-card__author-workplace">Walmart Canada</p>
-                                <div class="reach-card__location-wrap">
-                                    <div class="icon-wrap">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10" viewBox="0 0 8 10"
-                                            fill="none">
-                                            <path
-                                                d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
+                            <div class="reach-card__right-column">
+                                <div class="reach-card__contact-wrap">
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
                                     </div>
-                                    <a href="" class="location__name">Canada</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="reach-card__right-column">
-                            <div class="reach-card__contact-wrap">
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reach-card reach-card__3">
-                        <div class="reach-card__left-column">
-                            <div class="reach-card__avatar-wrap">
-                                <img src="./assets/img/Jan Heti.png" class="reach-card__avatar">
-                            </div>
-                            <div class="reach-card__info">
-                                <h3 class="reach-card__author-name">Jan Heti</h3>
-                                <p class="reach-card__author-role">Service Manager</p>
-                                <p class="reach-card__author-workplace">Radis Community Care</p>
-                                <div class="reach-card__location-wrap">
-                                    <div class="icon-wrap">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10" viewBox="0 0 8 10"
-                                            fill="none">
-                                            <path
-                                                d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
                                     </div>
-                                    <a href="" class="location__name">United Kingdom</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="reach-card__right-column">
-                            <div class="reach-card__contact-wrap">
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
+                        <div class="reach-card reach-card__2">
+                            <div class="reach-card__left-column">
+                                <div class="reach-card__avatar-wrap">
+                                    <img src="./assets/img/Kristin Coccia.png" class="reach-card__avatar">
                                 </div>
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reach-card reach-card__4">
-                        <div class="reach-card__left-column">
-                            <div class="reach-card__avatar-wrap">
-                                <img src="./assets/img/Jack Bilbao.png" class="reach-card__avatar">
-                            </div>
-                            <div class="reach-card__info">
-                                <h3 class="reach-card__author-name">Jack Bilbao</h3>
-                                <p class="reach-card__author-role">Account Manager</p>
-                                <p class="reach-card__author-workplace">Axle Logistics</p>
-                                <div class="reach-card__location-wrap">
-                                    <div class="icon-wrap">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10" viewBox="0 0 8 10"
-                                            fill="none">
-                                            <path
-                                                d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
+                                <div class="reach-card__info">
+                                    <h3 class="reach-card__author-name">Kristin Coccia</h3>
+                                    <p class="reach-card__author-role">Manager, Learning Projects </p>
+                                    <p class="reach-card__author-workplace">Walmart Canada</p>
+                                    <div class="reach-card__location-wrap">
+                                        <div class="icon-wrap">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10"
+                                                viewBox="0 0 8 10" fill="none">
+                                                <path
+                                                    d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <a href="" class="location__name">Canada</a>
                                     </div>
-                                    <a href="" class="location__name">Tamil Nadu,India</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="reach-card__right-column">
-                            <div class="reach-card__contact-wrap">
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reach-card reach-card__5">
-                        <div class="reach-card__left-column">
-                            <div class="reach-card__avatar-wrap">
-                                <img src="./assets/img/Mohab Anis.png" class="reach-card__avatar">
-                            </div>
-                            <div class="reach-card__info">
-                                <h3 class="reach-card__author-name">Mohab Anis</h3>
-                                <p class="reach-card__author-role">Professor</p>
-                                <p class="reach-card__author-workplace">The American University In Cairo</p>
-                                <div class="reach-card__location-wrap">
-                                    <div class="icon-wrap">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10" viewBox="0 0 8 10"
-                                            fill="none">
-                                            <path
-                                                d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
+                            <div class="reach-card__right-column">
+                                <div class="reach-card__contact-wrap">
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
                                     </div>
-                                    <a href="" class="location__name">Tamil Nadu,India</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="reach-card__right-column">
-                            <div class="reach-card__contact-wrap">
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reach-card reach-card__6">
-                        <div class="reach-card__left-column">
-                            <div class="reach-card__avatar-wrap">
-                                <img src="./assets/img/Leticia Stedile.png" class="reach-card__avatar">
-                            </div>
-                            <div class="reach-card__info">
-                                <h3 class="reach-card__author-name">Leticia Stedile</h3>
-                                <p class="reach-card__author-role">Sr HR Project Manager</p>
-                                <p class="reach-card__author-workplace">Bat</p>
-                                <div class="reach-card__location-wrap">
-                                    <div class="icon-wrap">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10" viewBox="0 0 8 10"
-                                            fill="none">
-                                            <path
-                                                d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
                                     </div>
-                                    <a href="" class="location__name">Brazil</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="reach-card__right-column">
-                            <div class="reach-card__contact-wrap">
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
+                        <div class="reach-card reach-card__3">
+                            <div class="reach-card__left-column">
+                                <div class="reach-card__avatar-wrap">
+                                    <img src="./assets/img/Jan Heti.png" class="reach-card__avatar">
                                 </div>
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reach-card reach-card__7">
-                        <div class="reach-card__left-column">
-                            <div class="reach-card__avatar-wrap">
-                                <img src="./assets/img/Jason Glass.png" class="reach-card__avatar">
-                            </div>
-                            <div class="reach-card__info">
-                                <h3 class="reach-card__author-name">Jason Glass</h3>
-                                <p class="reach-card__author-role">Project Manager</p>
-                                <p class="reach-card__author-workplace">Production Resource Group</p>
-                                <div class="reach-card__location-wrap">
-                                    <div class="icon-wrap">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10" viewBox="0 0 8 10"
-                                            fill="none">
-                                            <path
-                                                d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
-                                                stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
+                                <div class="reach-card__info">
+                                    <h3 class="reach-card__author-name">Jan Heti</h3>
+                                    <p class="reach-card__author-role">Service Manager</p>
+                                    <p class="reach-card__author-workplace">Radis Community Care</p>
+                                    <div class="reach-card__location-wrap">
+                                        <div class="icon-wrap">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10"
+                                                viewBox="0 0 8 10" fill="none">
+                                                <path
+                                                    d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <a href="" class="location__name">United Kingdom</a>
                                     </div>
-                                    <a href="" class="location__name">Australia</a>
+                                </div>
+                            </div>
+                            <div class="reach-card__right-column">
+                                <div class="reach-card__contact-wrap">
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="reach-card__right-column">
-                            <div class="reach-card__contact-wrap">
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
+                        <div class="reach-card reach-card__4">
+                            <div class="reach-card__left-column">
+                                <div class="reach-card__avatar-wrap">
+                                    <img src="./assets/img/Jack Bilbao.png" class="reach-card__avatar">
                                 </div>
-                                <div class="reach-card__contact-link">
-                                    <a href="">
-                                        <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
-                                                stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
+                                <div class="reach-card__info">
+                                    <h3 class="reach-card__author-name">Jack Bilbao</h3>
+                                    <p class="reach-card__author-role">Account Manager</p>
+                                    <p class="reach-card__author-workplace">Axle Logistics</p>
+                                    <div class="reach-card__location-wrap">
+                                        <div class="icon-wrap">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10"
+                                                viewBox="0 0 8 10" fill="none">
+                                                <path
+                                                    d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <a href="" class="location__name">Tamil Nadu,India</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reach-card__right-column">
+                                <div class="reach-card__contact-wrap">
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reach-card reach-card__5">
+                            <div class="reach-card__left-column">
+                                <div class="reach-card__avatar-wrap">
+                                    <img src="./assets/img/Mohab Anis.png" class="reach-card__avatar">
+                                </div>
+                                <div class="reach-card__info">
+                                    <h3 class="reach-card__author-name">Mohab Anis</h3>
+                                    <p class="reach-card__author-role">Professor</p>
+                                    <p class="reach-card__author-workplace">The American University In Cairo</p>
+                                    <div class="reach-card__location-wrap">
+                                        <div class="icon-wrap">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10"
+                                                viewBox="0 0 8 10" fill="none">
+                                                <path
+                                                    d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <a href="" class="location__name">Tamil Nadu,India</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reach-card__right-column">
+                                <div class="reach-card__contact-wrap">
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reach-card reach-card__6">
+                            <div class="reach-card__left-column">
+                                <div class="reach-card__avatar-wrap">
+                                    <img src="./assets/img/Leticia Stedile.png" class="reach-card__avatar">
+                                </div>
+                                <div class="reach-card__info">
+                                    <h3 class="reach-card__author-name">Leticia Stedile</h3>
+                                    <p class="reach-card__author-role">Sr HR Project Manager</p>
+                                    <p class="reach-card__author-workplace">Bat</p>
+                                    <div class="reach-card__location-wrap">
+                                        <div class="icon-wrap">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10"
+                                                viewBox="0 0 8 10" fill="none">
+                                                <path
+                                                    d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <a href="" class="location__name">Brazil</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reach-card__right-column">
+                                <div class="reach-card__contact-wrap">
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reach-card reach-card__7">
+                            <div class="reach-card__left-column">
+                                <div class="reach-card__avatar-wrap">
+                                    <img src="./assets/img/Jason Glass.png" class="reach-card__avatar">
+                                </div>
+                                <div class="reach-card__info">
+                                    <h3 class="reach-card__author-name">Jason Glass</h3>
+                                    <p class="reach-card__author-role">Project Manager</p>
+                                    <p class="reach-card__author-workplace">Production Resource Group</p>
+                                    <div class="reach-card__location-wrap">
+                                        <div class="icon-wrap">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10"
+                                                viewBox="0 0 8 10" fill="none">
+                                                <path
+                                                    d="M6.55257 3.86173C6.55257 6.17795 3.46427 8.49418 3.46427 8.49418C3.46427 8.49418 0.375977 6.17795 0.375977 3.86173C0.375977 3.04267 0.70135 2.25715 1.28052 1.67798C1.85969 1.09881 2.64521 0.773438 3.46427 0.773438C4.28334 0.773438 5.06886 1.09881 5.64803 1.67798C6.22719 2.25715 6.55257 3.04267 6.55257 3.86173Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M3.46377 5.01739C4.10338 5.01739 4.62189 4.49889 4.62189 3.85928C4.62189 3.21968 4.10338 2.70117 3.46377 2.70117C2.82417 2.70117 2.30566 3.21968 2.30566 3.85928C2.30566 4.49889 2.82417 5.01739 3.46377 5.01739Z"
+                                                    stroke="#64748B" stroke-width="0.694867" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <a href="" class="location__name">Australia</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reach-card__right-column">
+                                <div class="reach-card__contact-wrap">
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="7" viewBox="0 0 11 9" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M0.385742 1.93087L4.58836 4.8727C4.92867 5.11092 5.09883 5.23003 5.28392 5.27616C5.4474 5.31692 5.6184 5.31692 5.78189 5.27616C5.96697 5.23003 6.13713 5.11092 6.47745 4.8727L10.6801 1.93087M2.85638 8.62217H8.20942C9.07423 8.62217 9.50663 8.62217 9.83694 8.45387C10.1275 8.30583 10.3637 8.06961 10.5118 7.77906C10.6801 7.44874 10.6801 7.01634 10.6801 6.15154V2.85736C10.6801 1.99255 10.6801 1.56015 10.5118 1.22984C10.3637 0.939288 10.1275 0.703063 9.83694 0.555021C9.50663 0.386719 9.07423 0.386719 8.20942 0.386719L2.85638 0.386719C1.99157 0.386719 1.55917 0.386719 1.22886 0.555021C0.938312 0.703063 0.702087 0.939288 0.554044 1.22984C0.385742 1.56015 0.385742 1.99255 0.385742 2.85736L0.385742 6.15154C0.385742 7.01634 0.385742 7.44874 0.554044 7.77906C0.702087 8.06961 0.938312 8.30583 1.22886 8.45387C1.55917 8.62217 1.99157 8.62217 2.85638 8.62217Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="reach-card__contact-link">
+                                        <a href="">
+                                            <svg width="8" height="8" viewBox="0 0 13 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M4.31332 4.55648C4.67156 5.30262 5.15992 6.00193 5.77839 6.6204C6.39686 7.23888 7.09617 7.72723 7.84232 8.08547C7.9065 8.11629 7.93859 8.1317 7.97919 8.14353C8.12349 8.1856 8.30069 8.15538 8.4229 8.06788C8.45729 8.04325 8.48671 8.01383 8.54555 7.95499C8.72549 7.77505 8.81547 7.68507 8.90594 7.62625C9.24714 7.40441 9.68701 7.40441 10.0282 7.62625C10.1187 7.68507 10.2087 7.77505 10.3886 7.95499L10.4889 8.0553C10.7625 8.32884 10.8992 8.46561 10.9735 8.6125C11.1213 8.90463 11.1213 9.24963 10.9735 9.54176C10.8992 9.68865 10.7625 9.82542 10.4889 10.099L10.4078 10.1801C10.1352 10.4527 9.99886 10.589 9.81355 10.6931C9.60792 10.8086 9.28854 10.8917 9.05269 10.891C8.84014 10.8903 8.69487 10.8491 8.40434 10.7667C6.84301 10.3235 5.3697 9.48735 4.14057 8.25822C2.91144 7.02909 2.0753 5.55579 1.63214 3.99445C1.54968 3.70392 1.50845 3.55865 1.50782 3.3461C1.50711 3.11025 1.59017 2.79087 1.70568 2.58524C1.80978 2.39993 1.94609 2.26362 2.21869 1.99102L2.29983 1.90988C2.57337 1.63634 2.71014 1.49957 2.85703 1.42527C3.14916 1.27751 3.49416 1.27751 3.78629 1.42527C3.93318 1.49957 4.06995 1.63634 4.3435 1.90988L4.4438 2.01018C4.62375 2.19013 4.71372 2.28011 4.77255 2.37058C4.99438 2.71178 4.99439 3.15165 4.77255 3.49285C4.71372 3.58332 4.62375 3.6733 4.4438 3.85325C4.38496 3.91208 4.35554 3.9415 4.33092 3.97589C4.24341 4.0981 4.21319 4.2753 4.25526 4.4196C4.2671 4.46021 4.2825 4.4923 4.31332 4.55648Z"
+                                                    stroke="#4F46E5" stroke-width="0.772074" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1498,7 +1730,7 @@
         <!-- Use Cases Area -->
         <section class="use-cases">
             <div class="use-cases__container container gap-xxl">
-                <div class="use-cases__header-area header-area">
+                <div class="use-cases__header-area header-area" data-animation="fade-in">
                     <p class="subtitle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_1345_3205)">
@@ -1540,7 +1772,7 @@
                         don't waste time on inactive emails.</p>
                 </div>
 
-                <div class="use-cases__list">
+                <div class="use-cases__list" data-animation="fade-in">
                     <div class="use-cases__item">
                         <div class="use-cases__item-inner">
                             <div class="use-cases__item-icon">
@@ -1548,12 +1780,12 @@
                             </div>
 
                             <div class="use-cases__item-content">
-                                <h3 class="use-cases__item-title text-175">For Agencies</h3>
-                                <p class="use-cases__item-text text-1">Build targeted outreach lists for multiple
+                                <h3 class="use-cases__item-title text-h6">For Agencies</h3>
+                                <p class="use-cases__item-text text-base">Build targeted outreach lists for multiple
                                     clients.
                                     Scale
                                     campaigns without scaling headcount.</p>
-                                <a href="" class="use-cases__item-link text-0875">Learn more →</a>
+                                <a href="" class="use-cases__item-link text-sm">Learn more →</a>
                             </div>
 
                             <div class="use-cases__circle"></div>
@@ -1566,11 +1798,11 @@
                             </div>
 
                             <div class="use-cases__item-content">
-                                <h3 class="use-cases__item-title text-175">For Sales Teams</h3>
-                                <p class="use-cases__item-text text-1">Connect with decision makers quickly. Stop
+                                <h3 class="use-cases__item-title text-h6">For Sales Teams</h3>
+                                <p class="use-cases__item-text text-base">Connect with decision makers quickly. Stop
                                     guessing
                                     and start booking more meetings.</p>
-                                <a href="" class="use-cases__item-link text-0875">Learn more →</a>
+                                <a href="" class="use-cases__item-link text-sm">Learn more →</a>
                             </div>
 
                             <div class="use-cases__circle"></div>
@@ -1583,10 +1815,10 @@
                             </div>
 
                             <div class="use-cases__item-content">
-                                <h3 class="use-cases__item-title text-175">For Recruiters</h3>
-                                <p class="use-cases__item-text text-1">Test new audiences fast. Find your first 100
+                                <h3 class="use-cases__item-title text-h6">For Recruiters</h3>
+                                <p class="use-cases__item-text text-base">Test new audiences fast. Find your first 100
                                     customers without hiring a full sales team.</p>
-                                <a href="" class="use-cases__item-link text-0875">Learn more →</a>
+                                <a href="" class="use-cases__item-link text-sm">Learn more →</a>
                             </div>
 
                             <div class="use-cases__circle"></div>
@@ -1599,10 +1831,10 @@
                             </div>
 
                             <div class="use-cases__item-content">
-                                <h3 class="use-cases__item-title text-175">For SaaS Founders</h3>
-                                <p class="use-cases__item-text text-1">Source qualified candidates with verified contact
+                                <h3 class="use-cases__item-title text-h6">For SaaS Founders</h3>
+                                <p class="use-cases__item-text text-base">Source qualified candidates with verified contact
                                     info directly from targeted companies.</p>
-                                <a href="" class="use-cases__item-link text-0875">Learn more →</a>
+                                <a href="" class="use-cases__item-link text-sm">Learn more →</a>
                             </div>
 
                             <div class="use-cases__circle"></div>
@@ -1618,7 +1850,7 @@
         <!-- Integrations Area -->
         <section class="integrations">
             <div class="integrations__container container gap-xxl">
-                <div class="integrations__header-area header-area">
+                <div class="integrations__header-area header-area" data-animation="fade-in">
                     <p class="subtitle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_1345_3205)">
@@ -1660,7 +1892,7 @@
                         tools in minutes — not days.</p>
                 </div>
 
-                <div class="integrations__list">
+                <div class="integrations__list" data-animation="fade-in">
                     <div class="integrations__item">
                         <div class="integrations__item-top">
                             <div class="integrations__item-icon">
@@ -1780,7 +2012,7 @@
         <!-- Testimonials Area -->
         <section class="testimonials">
             <div class="testimonials__container container gap-xxl">
-                <div class="testimonials__header-area header-area">
+                <div class="testimonials__header-area header-area" data-animation="fade-in">
                     <p class="subtitle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <g clip-path="url(#clip0_1345_3205)">
@@ -1820,7 +2052,7 @@
                     <h2 class="testimonials__title">What our customers are saying</h2>
                 </div>
 
-                <div class="testimonials__slider-area">
+                <div class="testimonials__slider-area" data-animation="fade-in">
                     <div class="testimonials__slider swiper testimonials__slider">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -2284,7 +2516,7 @@
         <section class="faq">
             <div class="faq__container container">
                 <div class="faq__inner">
-                    <div class="faq__left">
+                    <div class="faq__left" data-animation="fade-in">
                         <p class="subtitle">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 fill="none">
@@ -2327,11 +2559,11 @@
                             setup.</p>
                     </div>
 
-                    <div class="faq__content">
+                    <div class="faq__content" data-animation="fade-in">
                         <div class="faq__item faq__item--active">
                             <div class="faq__question">
                                 <div class="faq__question-inner">
-                                    <h3 class="faq__question-text">How do credits work?</h3>
+                                    <h3 class="faq__question-text text-lg">How do credits work?</h3>
                                     <button class="faq__toggle">
                                         <i class="fa-solid fa-plus faq__toggle-icon"></i>
                                     </button>
@@ -2349,7 +2581,7 @@
                         <div class="faq__item">
                             <div class="faq__question">
                                 <div class="faq__question-inner">
-                                    <h3 class="faq__question-text">Do unused credits roll over?</h3>
+                                    <h3 class="faq__question-text text-lg">Do unused credits roll over?</h3>
                                     <button class="faq__toggle">
                                         <i class="fa-solid fa-plus faq__toggle-icon"></i>
                                     </button>
@@ -2367,7 +2599,7 @@
                         <div class="faq__item">
                             <div class="faq__question">
                                 <div class="faq__question-inner">
-                                    <h3 class="faq__question-text">What happens when I run out of credits?</h3>
+                                    <h3 class="faq__question-text text-lg">What happens when I run out of credits?</h3>
                                     <button class="faq__toggle">
                                         <i class="fa-solid fa-plus faq__toggle-icon"></i>
                                     </button>
@@ -2385,7 +2617,7 @@
                         <div class="faq__item">
                             <div class="faq__question">
                                 <div class="faq__question-inner">
-                                    <h3 class="faq__question-text">Can I upgrade, downgrade, or cancel at any time?</h3>
+                                    <h3 class="faq__question-text text-lg">Can I upgrade, downgrade, or cancel at any time?</h3>
                                     <button class="faq__toggle">
                                         <i class="fa-solid fa-plus faq__toggle-icon"></i>
                                     </button>
@@ -2403,7 +2635,7 @@
                         <div class="faq__item">
                             <div class="faq__question">
                                 <div class="faq__question-inner">
-                                    <h3 class="faq__question-text">Does browsing cost credits?</h3>
+                                    <h3 class="faq__question-text text-lg">Does browsing cost credits?</h3>
                                     <button class="faq__toggle">
                                         <i class="fa-solid fa-plus faq__toggle-icon"></i>
                                     </button>
@@ -2421,7 +2653,7 @@
                         <div class="faq__item">
                             <div class="faq__question">
                                 <div class="faq__question-inner">
-                                    <h3 class="faq__question-text">What integrations are included?</h3>
+                                    <h3 class="faq__question-text text-lg">What integrations are included?</h3>
                                     <button class="faq__toggle">
                                         <i class="fa-solid fa-plus faq__toggle-icon"></i>
                                     </button>
@@ -2443,9 +2675,9 @@
 
         <!-- CTA Area -->
         <section class="cta">
-            <div class="container">
+            <div class="container" data-animation="fade-in">
                 <div class="cta__content">
-                    <div class="cta__content-inner">
+                    <div class="cta__content-inner" data-animation="fade-in">
                         <p class="subtitle">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                 fill="none">
@@ -2494,7 +2726,9 @@
                         </div>
                     </div>
 
-                    <div class="bg-wrap">
+                    <div class="cta__overlay"></div>
+
+                    <div class="bg-wrap cta__bg">
                         <img src="./assets/img/cta-bg.png" alt="" class="bg-img">
                     </div>
                 </div>
@@ -2510,7 +2744,7 @@
                     <h3 class="footer__title">Product</h3>
                     <ul class="footer__list">
                         <li><a href="#about" class="footer__link">Home</a></li>
-                        <li><a href="#careers" class="footer__link">People Search</a></li>
+                        <li><a href="./people-search.html" class="footer__link">People Search</a></li>
                         <li><a href="#contact" class="footer__link">Company Search</a></li>
                         <li><a href="#contact" class="footer__link">Email Finder</a></li>
                         <li><a href="#contact" class="footer__link">Enrichment</a></li>
@@ -2564,8 +2798,19 @@
         </div>
     </footer>
 
+
+    <!-- Counter Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.9.0/countUp.umd.min.js"></script>>
+    <!-- Lightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <!-- Gsap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <!-- Swiper Js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
-    <!-- SCRIPT JS -->
+    <!-- Script Js -->
+    <script src="./assets/js/gsap.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
