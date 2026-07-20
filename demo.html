@@ -1,204 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Swiper demo</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
-    />
-    <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css"
-    />
 
-    <!-- Demo styles -->
-    <style>
-      html,
-      body {
-        position: relative;
-        height: 100%;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Email Widget</title>
+  <style>
+    :root {
+      --primary: #312E81;
+      --primary-dark: #4338ca;
+      --color-primary-light: #C7D2FE;
+      --text: #334155;
+      --text-light: #6b7280;
+      --white: #ffffff;
+      --light-indigo: #EEF2FF;
+      --color-dark: #1f2937;
+      --color-navy: #0F172A;
+      --color-surface: #F8F7F6;
+      --border: #e5e7eb;
+      --color-muted: #F1F5F9;
+      --shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 25px rgba(0, 0, 0, 0.10);
+      --shadow-lg: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, 0.1), 0 0.25rem 0.375rem -0.125rem rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --max-width: 80rem;
+      --font-primary: "Geist", sans-serif;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.75rem;
+      --radius-0: 0;
+      --radius-xs: 0.125rem;
+      --radius-sm: 0.25rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.25rem;
+      --radius-3xl: 1.5rem;
+      --radius-full: 9999px;
+    }
 
-      body {
-        background: #000;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color: #fff;
-        margin: 0;
-        padding: 0;
-      }
+    * {
+      box-sizing: border-box;
+    }
 
-      .swiper {
-        width: 100%;
-        height: 100%;
-      }
+    body {
+      margin: 0;
+      font-family: var(--font-primary);
+      background: var(--color-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
 
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #444;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+   
+</head>
 
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+<body>
 
-      body {
-        background: #000;
-        color: #000;
-      }
 
-      .swiper {
-        width: 100%;
-        height: 300px;
-        margin-left: auto;
-        margin-right: auto;
-      }
 
-      .swiper-slide {
-        background-size: cover;
-        background-position: center;
-      }
+  <script>
+    // Simple tab switching behavior
+    
+  </script>
 
-      .testimonials__slider-thumb {
-        height: 80%;
-        width: 100%;
-      }
+</body>
 
-      .testimonials__slider--thumb {
-        height: 20%;
-        box-sizing: border-box;
-        padding: 10px 0;
-      }
-
-      .testimonials__slider--thumb .swiper-slide {
-        width: 25%;
-        height: 100%;
-        opacity: 0.4;
-      }
-
-      .testimonials__slider--thumb .swiper-slide-thumb-active {
-        opacity: 1;
-      }
-
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Swiper -->
-
-    <div class="swiper testimonials__slider-thumb">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-1.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-2.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-3.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-4.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-5.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-6.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-7.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-8.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-9.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-10.jpg" />
-        </div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-    <div thumbsSlider="" class="swiper testimonials__slider--thumb">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-1.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-2.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-3.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-4.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-5.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-6.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-7.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-8.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-9.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/abstract-10.jpg" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper('.testimonials__slider--thumb', {
-        spaceBetween: 10,
-        slidesPerView: 4,
-        freeMode: true,
-        watchSlidesProgress: true,
-      });
-
-      var swiper2 = new Swiper('.testimonials__slider-thumb', {
-        slidesPerView: 1.9, // পাশের slide-এর কিছু অংশ দেখা যাবে
-        centeredSlides: true, // Active slide center-এ থাকবে
-        spaceBetween: 20,
-        loop: true, // Optional
-
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-
-        thumbs: {
-          swiper: swiper,
-        },
-      });
-    </script>
-  </body>
 </html>

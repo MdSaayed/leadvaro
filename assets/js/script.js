@@ -275,3 +275,15 @@ document.addEventListener("DOMContentLoaded", () => {
     counters.forEach(counter => observer.observe(counter));
 
 });
+
+/* =============================
+  6. Find Email
+============================= */
+document.querySelectorAll('.find-email__tab').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+        document.querySelectorAll('.find-email__tab').forEach(function (t) {
+            t.classList.remove('find-email__tab--active');
+        });
+        tab.classList.add('find-email__tab--active');
+    });
+});

@@ -36,7 +36,6 @@
 }
 
 
-
 * {
     margin: 0;
     padding: 0;
@@ -80,7 +79,7 @@ h3,
 .text-h3 {
     font-size: 2.75rem;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.136;
     letter-spacing: -0.125rem;
     color: var(--color-navy);
@@ -88,7 +87,6 @@ h3,
 
 .h4,
 .text-h4 {
-    font-family: Geist;
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 400;
@@ -113,6 +111,13 @@ h6,
 /* Base */
 .text-base {
     font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.text-md {
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
     line-height: 1.7;
@@ -717,9 +722,10 @@ h6,
 /* =============================
     Brands Area
 ============================= */
-.brands{
+.brands {
     background: var(--color-surface);
 }
+
 .brands__container {
     display: flex;
     flex-direction: column;
@@ -819,7 +825,7 @@ h6,
 }
 
 .how-it-works__item-bg {
-    border-radius: var(--radius-1);
+    border-radius: var(--radius-xl);
 }
 
 .how-it-works__item:nth-child(even) {
@@ -2067,6 +2073,23 @@ h6,
     background-color: transparent;
 }
 
+/* Faq Style Two */
+.faq--style-two .faq__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.faq--style-two .faq__left {
+    align-items: center;
+    text-align: center;
+    max-width: 29.25rem;
+    margin: 0 auto;
+}
+
+.faq--style-two .faq__content {
+    max-width: 53.75rem;
+    margin: 0 auto;
+}
 
 /* ===============================================================
                 Cta Styles
@@ -2405,16 +2428,12 @@ h6,
     object-fit: cover;
 }
 
-
-
 /* ==============================
-   Responsive Styles
+   Hero People
 ============================== */
 .hero--people-search {
     overflow: hidden;
 }
-
-.hero--people-search .hero__container {}
 
 .hero--people-search .hero__cta-wrap {
     justify-content: start;
@@ -2454,11 +2473,288 @@ h6,
 }
 
 /* ==============================
+   Hero Email Finder Area
+============================== */
+.hero--find-email {
+    position: relative;
+}
+
+.subtitle__wrapper--find-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: fit-content;
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--light-indigo);
+    background: var(--white);
+    padding: 0.4rem;
+}
+
+.subtitle__icon-wrapper {
+    padding-right: 0.5rem;
+}
+
+.subtitle__wrapper span {
+    color: #4F46E5;
+}
+
+.subtitle__badge {
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--light-indigo);
+    background: var(--white);
+    padding: 0.15rem 0.60rem;
+}
+
+.hero__content-wrapper--find-email {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.find-email {
+    border-radius: var(--radius-xl);
+    border: 1.192px solid var(--light-indigo);
+    background: var(--light-indigo);
+    box-shadow: 0 7.149px 9.532px -2.383px var(--Colors-Effects-Shadows-shadow-lg_01, rgba(10, 13, 18, 0.08)), 0 2.383px 3.575px -1.192px var(--Colors-Effects-Shadows-shadow-lg_02, rgba(10, 13, 18, 0.03)), 0 1.192px 1.192px -0.596px var(--Colors-Effects-Shadows-shadow-lg_03, rgba(10, 13, 18, 0.04));
+    padding: 1rem;
+}
+
+
+/* Block: find-email */
+.find-email {
+    width: 100%;
+    background: linear-gradient(180deg, var(--light-indigo) 0%, var(--color-surface) 100%);
+    border-radius: var(--radius-2xl);
+    padding: 20px;
+    box-shadow: var(--shadow-md);
+}
+
+/* Element: tabs */
+.find-email__tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+/* Element: tab (button inside tabs) */
+.find-email__tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0.34rem 0.70rem;
+    color: var(--white);
+    font-size: 0.68913rem;
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.find-email__tab:hover {
+    border-color: var(--primary);
+}
+
+/* Modifier: active tab */
+.find-email__tab--active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.find-email__tab--active:hover {
+    border-color: var(--primary);
+}
+
+.find-email__tab-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* Element: card (white content area) */
+.find-email__card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: 18px;
+}
+
+/* Element: input field */
+.find-email__input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: var(--text-base);
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--border);
+    color: var(--text);
+    outline: none;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.find-email__input::placeholder {
+    color: var(--text-light);
+    font-size: 1rem;
+    color: #94A3B8;
+}
+
+.find-email__input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+/* Element: hint text below input */
+.find-email__hint {
+    margin: 0.75rem 0 1.5rem 0;
+    font-size: var(--text-sm);
+    color: var(--text);
+}
+
+/* Element: submit button */
+.find-email__submit {
+    width: 100%;
+    font-size: var(--text-sm);
+    display: block;
+}
+
+.find-email__submit:hover {
+    background: var(--primary-dark);
+}
+
+.find-email__submit:active {
+    transform: translateY(1px);
+}
+
+/* ==============================
+   Hero Email Finder Area
+============================== */
+.why-us__header-area {
+    max-width: 32rem;
+}
+
+.why-us__card-description {
+    margin-top: 1rem;
+}
+
+.why-us__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3.75rem;
+}
+
+.why-us__list-text {
+    margin-top: 0.1rem;
+}
+
+.why-us__list .why-us__list-item .why-us__list-icon {
+    display: grid;
+    place-items: center;
+}
+
+.why-us__list-item {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.why-us__list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.125rem;
+}
+
+.why-us__card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+    gap: 6rem;
+}
+
+.why-us__card--reverse .why-us__content {
+    order: 2;
+}
+
+.why-us__image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.why-us__card-title {
+    margin-top: 1.125rem;
+}
+
+.why-us__media {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+}
+
+.why-us__loop-area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.why-us__loop,
+.why-us__loop-item,
+.why-us__loop-inner,
+.why-us__loop-item-icon {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.why-us__loop-inner {
+    animation: loop-left 30s linear infinite;
+}
+
+.why-us__loop-item {
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.16);
+    padding: 0.25rem;
+}
+
+
+
+/* ==============================
+   Animation
+============================== */
+@keyframes loop-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* ==============================
    Responsive Styles
 ============================== */
 @media (max-width: 1200px) {
     .how-it-works__grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Why Us Area */
+    .why-us__card {
+        gap: 3rem;
     }
 }
 
@@ -2470,6 +2766,10 @@ h6,
     /* Benefits */
     .benefits__grid-inner--bottom {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero__content-wrapper--find-email {
+        gap: 3rem;
     }
 }
 
@@ -2685,6 +2985,32 @@ h6,
         align-items: center;
         gap: 3rem;
         margin-right: 0;
+    }
+
+    /* Email Find */
+    .hero__content-wrapper--find-email {
+        grid-template-columns: 1fr;
+    }
+
+    .find-email__tabs {
+        flex-wrap: wrap;
+    }
+
+    /* Why Us Area */
+    .why-us__card {
+        gap: 2rem;
+    }
+
+    .why-us__card {
+        grid-template-columns: 1fr;
+    }
+
+    .why-us__loop-area {
+        gap: 1.5rem;
+    }
+
+    .why-us__list {
+        margin-top: 1.5rem;
     }
 }
 
