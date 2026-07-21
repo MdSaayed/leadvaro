@@ -85,12 +85,21 @@ h3,
     color: var(--color-navy);
 }
 
-.h4,
+h4,
 .text-h4 {
     font-size: 2.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: 1.2;
+}
+
+h5,
+.text-h5 {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
 }
 
 h6,
@@ -957,6 +966,28 @@ h6,
     font-weight: 500;
     color: var(--primary);
     margin-top: 0.375rem;
+}
+
+
+/* Stats Style Two */
+.stats--two .stats__container {
+    padding-top: 0;
+}
+
+.stats--two .stats__grid {
+    background: var(--white);
+}
+
+.stats--two .stats__label {
+    color: #64748B;
+}
+
+.stats--two .stats__card {
+    padding: 2.5rem;
+}
+
+.stats--two .stats__card:not(:last-child) {
+    border-right: 1px solid #E5E7EB;
 }
 
 /* =============================
@@ -2323,6 +2354,14 @@ h6,
     z-index: 10;
 }
 
+.discovery--data-enrichment-page .discovery__header-area {
+    max-width: 45rem;
+}
+
+.discovery--data-enrichment-page .discovery__desc {
+    max-width: 34rem;
+}
+
 /* ==============================
    Feature Showcase
 ============================== */
@@ -2441,9 +2480,8 @@ h6,
 
 .hero--people-search .hero__content {
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    /* display: flex; */
-    align-items: center;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: stretch;
     gap: 2.65rem;
     margin-top: 0;
     margin-right: -5rem;
@@ -2457,6 +2495,11 @@ h6,
     margin: 0 auto;
     margin-bottom: 0;
     position: relative;
+}
+
+.hero--people-search .hero__image-wrap img {
+    height: 100%;
+    object-fit: contain;
 }
 
 .hero--people-search .hero__image-wrap .hero__image--large {
@@ -2730,6 +2773,163 @@ h6,
 }
 
 
+
+/* ==============================
+   Enrichment Hero Area
+============================== */
+.hero--enrichment .hero__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.hero--enrichment .hero__cta-wrap {
+    justify-content: start;
+}
+
+
+/* ==============================
+   Enrich Data Area
+============================== */
+
+.enrich-data__header-area {
+    max-width: 45rem;
+    margin: 0 auto;
+}
+
+.enrich-data__desc {
+    max-width: 34rem;
+}
+
+.enrich-data__media {
+    overflow: hidden;
+}
+
+.enrich-data__media img {
+    width: 100%;
+}
+
+/* ==============================
+   Use Cases
+============================== */
+.header-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+    row-gap: 1rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.services--two .services__desc {
+    max-width: 30rem;
+}
+
+
+.services__heder-left {
+    max-width: 27rem;
+}
+
+.header-cta {
+    margin-top: 1.25rem;
+    justify-content: start;
+}
+
+.services--two {
+    background: var(--color-surface);
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.services__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 2.25rem;
+    border: 1px solid #E0E7FF;
+}
+
+.services__card-title {
+    font-weight: 500;
+}
+
+
+/* ==============================
+   Bulk Area
+============================== */
+.bulk {
+    background: var(--color-surface);
+}
+
+.bulk__header-area {
+    max-width: 34rem;
+}
+
+.bulk__desc {
+    color: #535862;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.25rem;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.list li {
+    display: flex;
+    align-items: start;
+    gap: 0.75rem;
+}
+
+.list li span {
+    margin-top: 3px;
+}
+
+.bulk__item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem;
+    row-gap: 2rem;
+}
+
+.bulk__item--reverse .bulk__item-right {
+    order: -1;
+}
+
+.bulk__item-title {
+    margin-bottom: 1rem;
+    max-width: 28rem;
+}
+
+.bulk__feature-list {
+    padding-left: 1rem;
+    margin-top: 1.5rem;
+}
+
+.bulk__list {
+    display: flex;
+    flex-direction: column;
+    gap: 3.75rem
+}
+
+.bulk__item-cta {
+    margin-top: 3rem;
+}
+
+.bulk__item-right img {
+    width: 100%;
+    max-width: 37rem;
+}
 
 /* ==============================
    Animation
@@ -3012,6 +3212,45 @@ h6,
     .why-us__list {
         margin-top: 1.5rem;
     }
+
+    /* Header Grid */
+    .header-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-right {
+        justify-content: start;
+    }
+
+    .services__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services__card {
+        padding: 1.75rem;
+    }
+
+    /* Bulk Area */
+    .bulk__item {
+        grid-template-columns: 1fr;
+    }
+
+    .bulk__item--reverse .bulk__item-right {
+        order: 2;
+    }
+
+    .bulk__item-cta {
+        margin-top: 2rem;
+    }
+
+    .list {
+        gap: 1rem;
+    }
+
+    .list li span {
+        margin-top: 0px;
+    }
 }
 
 @media (max-width: 850px) {
@@ -3191,6 +3430,15 @@ h6,
     .testimonials__slider--thumb.swiper.swiper-initialized.swiper-horizontal.swiper-free-mode.swiper-watch-progress.swiper-backface-hidden.swiper-thumbs {
         display: none;
     }
+
+    /* Services Area */
+    .services__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services__card {
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -3230,6 +3478,10 @@ h6,
         grid-template-columns: repeat(1, 1fr);
     }
 
+    .stats--two .stats__card:not(:last-child) {
+        border-bottom: 1px solid #E5E7EB;
+    }
+
     .problems .problems__items {
         gap: 1rem;
     }
@@ -3257,6 +3509,8 @@ h6,
     .use-cases__list {
         grid-template-columns: repeat(1, 1fr);
     }
+
+
 
 
     /* Footer Styles */
