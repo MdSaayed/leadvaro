@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimal Reveal Test</title>
+  <style>
+    /* Required Core Animation Styles (Using Classes) */
+    .reveal-wrapper {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      --c-width: 0%;
+      --c-left: 0%;
+    }
+
+    .reveal-wrapper::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: var(--c-left);
+      width: var(--c-width);
+      height: 100%;
+      background-color: #8B2626;  
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .reveal-text-box {
+      width: 0%;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0;
+    }
+
+ 
+  </style>
+</head>
+<body>
+
+  <!-- Test Content -->
+  <div class="reveal-wrapper" data-reveal-wrapper>
+    <h1 class="reveal-text-box" data-title-text>BE PART OF THE ACTION,</h1>
+  </div>
+  
+  <br>
+
+  <div class="reveal-wrapper" data-reveal-wrapper>
+    <h1 class="reveal-text-box" data-title-text>FEEL THE ENERGY.</h1>
+  </div>
+
+  
+  <!-- GSAP Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // JS only selects using Data Attributes
+      const wrappers = document.querySelectorAll('[data-reveal-wrapper]');
+      const masterTL = gsap.timeline();
+
+      wrappers.forEach((wrapper, index) => {
+        const titleText = wrapper.querySelector('[data-title-text]');
+        const lineTL = gsap.timeline();
+
+        // 1. Curtain expands (0% -> 100%)
+        lineTL.to(wrapper, {
+          "--c-width": "100%",
+          duration: 1,
+          ease: "power2.in"
+        })
+        // 2. Curtain collapses to right & Title expands simultaneously
+        .to(wrapper, {
+          "--c-left": "100%",
+          "--c-width": "0%",
+          duration: 0.55,
+          ease: "power2.out"
+        })
+        .to(titleText, {
+          width: "100%",
+          duration: 0.55,
+          ease: "power2.out"
+        }, "<");
+
+        masterTL.add(lineTL, index * 0.25);
+      });
+
+      // Reveal Button
+      masterTL.to('[data-reveal-btn]', {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "power2.out"
+      }, "-=0.2");
+    });
+  </script>
+</body>
+</html>

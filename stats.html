@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSAP Counter with Progress Bar</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: system-ui, -apple-system, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Top Spacer */
+    .hero-spacer {
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0d0d0d;
+    }
+
+    /* Pinned Main Section */
+    .counter-pinned-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-color: #000000;
+      overflow: hidden;
+    }
+
+    /* Container Area */
+    .counter-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 3rem 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* 1. Content 1: Top Left (FIXED - Will Not Change) */
+    .content-1-fixed {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ffffff;
+      z-index: 5;
+    }
+
+    /* 2. Content 2: Center Big Number (CHANGES ON SCROLL) */
+    .content-2-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 180px; /* Fixed viewport height for number clip */
+      overflow: hidden;
+    }
+
+    .number-track {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      will-change: transform;
+    }
+
+    .number-item {
+      height: 180px;
+      font-size: clamp(5rem, 14vw, 12rem);
+      font-weight: 900;
+      font-family: 'Impact', sans-serif, system-ui;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    /* 3. Content 3: Bottom Right (CHANGES ON SCROLL) */
+    .content-3-wrapper {
+      align-self: flex-end;
+      height: 30px; /* Fixed viewport height for text clip */
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .label-track {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      will-change: transform;
+    }
+
+    .label-item {
+      height: 30px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+    }
+
+    /* 4. Progress Bar (Bottom Line) */
+    .progress-bar-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.15);
+      z-index: 10;
+    }
+
+    .progress-bar-fill {
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      transform: scaleX(0); /* Initially 0% */
+      transform-origin: left center;
+      will-change: transform;
+    }
+
+    /* Footer Spacer */
+    .footer-spacer {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111111;
+    }
+
+    /* Mobile Responsive Adjustments */
+    @media (max-width: 768px) {
+      .content-2-center {
+        height: 100px;
+      }
+      .number-item {
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-spacer">
+    <h2>SCROLL DOWN FOR COUNTER SECTION</h2>
+  </div>
+
+  <!-- Pinned Counter Section -->
+  <div class="counter-pinned-section" id="counter-section">
+    <div class="counter-container">
+      
+      <div class="content-1-fixed">
+        OUR SUCCESSFUL RESULT
+      </div>
+
+      <!-- 2. Animated Center Big Number -->
+      <div class="content-2-center">
+        <div class="number-track">
+          <div class="number-item">12,000+</div>
+          <div class="number-item">3000+</div>
+          <div class="number-item">500+</div>
+          <div class="number-item">72+</div>
+        </div>
+      </div>
+
+      <!-- 3. Animated Bottom-Right Label -->
+      <div class="content-3-wrapper">
+        <div class="label-track">
+          <div class="label-item">MEMBERS</div>
+          <div class="label-item">TOURNAMENTS</div>
+          <div class="label-item">CERTIFIED</div>
+          <div class="label-item">YEARS</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 4. Progress Bar -->
+    <div class="progress-bar-container">
+      <div class="progress-bar-fill"></div>
+    </div>
+  </div>
+
+  <div class="footer-spacer">
+    <h2>NEXT SECTION CONTENT</h2>
+  </div>
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const numberItems = document.querySelectorAll(".number-item");
+      const totalItems = numberItems.length;
+
+      // Master Timeline linked to ScrollTrigger
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#counter-section",
+          start: "top top",
+          end: `+=${totalItems * 100}%`, // Scroll distance proportional to items
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1
+        }
+      });
+
+      // 1. Progress Bar Fill Animation (0% to 100% across the whole pinned scroll)
+      tl.to(".progress-bar-fill", {
+        scaleX: 1,
+        ease: "none",
+        duration: totalItems - 1
+      }, 0);
+
+      // 2. Sequential Slide Animation for Number & Bottom Label
+      for (let index = 1; index < totalItems; index++) {
+        const timePosition = index - 1; // Align timings in timeline
+
+        tl.to(".number-track", {
+          yPercent: -(100 / totalItems) * index,
+          duration: 0.8,
+          ease: "power2.inOut"
+        }, timePosition + 0.2) // Delay slightly for smooth step transitions
+
+        .to(".label-track", {
+          yPercent: -(100 / totalItems) * index,
+          duration: 0.8,
+          ease: "power2.inOut"
+        }, "<"); // Run label animation concurrently with number slide
+      }
+    });
+  </script>
+</body>
+</html>

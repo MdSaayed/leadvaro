@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSAP Overlapping Zoom & Next Section Reveal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    .hero-spacer {
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+    }
+
+    /* Pinned Main Section Container */
+    .pinned-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #000;
+    }
+ 
+
+    /* 2. Text Wrapper Layer */
+    .text-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-origin: center center;
+      will-change: transform;
+    }
+
+    .text-style {
+      font-size: clamp(4rem, 13vw, 16rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-family: 'Impact', sans-serif, system-ui;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    /* Solid White Text Layer */
+    .white-text {
+      position: absolute;
+      color: #ffffff;
+      z-index: 1;
+    }
+
+    /* Image Clipped Text Layer */
+    .image-clipped-text {
+      position: absolute;
+      z-index: 2;
+      background: url('https://cdn.prod.website-files.com/6a5e2831c12318e8f7a49e03/6a605343074fa9d47830e903_Frame%20112%20(1).jpg') center/cover no-repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    }
+ 
+  </style>
+</head>
+<body>
+
+  <div class="hero-spacer">
+    <h2>SCROLL DOWN</h2>
+  </div>
+
+  <div class="pinned-section">
+    <!-- Dual-layer Animated Text -->
+    <div class="text-wrapper">
+      <div class="text-style white-text">FAN LOVE</div>
+      <div class="text-style image-clipped-text">FAN LOVE</div>
+    </div>
+
+    <!-- Overlapping Next Section -->
+    <div class="next-section">
+      <h2>NEXT SECTION READY! 🚀</h2>
+    </div>
+  </div>
+
+  <div style="height: 100vh; background: #151515; display: flex; justify-content: center; align-items: center;">
+    <h2>BOTTOM CONTENT</h2>
+  </div>
+
+  <!-- GSAP CDNs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".pinned-section",
+        start: "top top",
+        end: "+=250%", 
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1
+      }
+    });
+
+    // Step 1: Text Clip Fill (Bottom to Top)
+    tl.to(".image-clipped-text", {
+      clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0 100%)",
+      duration: 1,
+      ease: "none"
+    })
+    
+    // Step 2: Zoom in text mask (Duration: 2 unit)
+    .to(".text-wrapper", {
+      scale: 50,
+      opacity: 0,
+      duration: 2,
+      ease: "power2.in"
+    })
+
+    // Step 3: Slide up next section to top:0 BEFORE zoom finishes 
+    // Position Parameter "-=0.3" / "<90%" means text zoom-in 90% হওয়া মাত্রই এটি শুরু হয়ে top:0 তে পৌঁছে যাবে
+    .to(".next-section", {
+      top: "0%",
+      duration: 0.8,
+      ease: "power1.out"
+    }, "-=0.3"); 
+  </script>
+</body>
+</html>

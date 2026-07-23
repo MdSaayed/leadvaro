@@ -184,7 +184,7 @@ h6,
     width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 7rem 5rem;
+    padding: 5rem 5rem;
 }
 
 /* ==============================
@@ -3543,7 +3543,7 @@ h6,
 
 @media (max-width: 992px) {
 
-    .container {
+     .container {
         padding: 5rem 3rem;
     }
 
@@ -3599,7 +3599,7 @@ h6,
 
 @media (max-width: 768px) {
 
-    .container {
+     .container {
         padding: 4.5rem 2rem;
     }
 
@@ -3651,7 +3651,7 @@ h6,
 
 @media (max-width: 576px) {
 
-    .container {
+ .container {
         padding: 4.5rem 1.5rem;
     }
 
@@ -3703,8 +3703,8 @@ h6,
 
 @media (max-width: 480px) {
 
-    .container {
-        padding: 4.5rem 1rem;
+.container {
+        padding: 4rem 1rem;
     }
 
     /* Headings */
