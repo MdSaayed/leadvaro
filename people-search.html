@@ -73,7 +73,20 @@
                                     class="dropdown__item">Community</a>
                             </div>
                         </li>
-                        <li class="nav-menu__item"><a href="#pricing" class="nav-menu__link">Pricing</a></li>
+                        <li class="nav-menu__item" data-index="0">
+                            <a href="#" class="nav-menu__link">
+                                Pages
+                                <svg class="nav-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <a href="./privacy-policy.html" class="dropdown__item">Privacy & Policy</a>
+                                <a href="./cdpr.html" class="dropdown__item">CDPR</a>
+                                <a href="./terms-services.html" class="dropdown__item">Terms</a>
+                            </div>
+                        </li>
                     </ul>
 
                     <div class="nav-actions">
@@ -94,7 +107,7 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu__header">
-            <a href="index.html" class="logo__link">
+            <a href="./index.html" class="logo__link">
                 <img class="logo__img" src="./assets/img/logo.png" alt="Leadvaro">
             </a>
             <button class="mobile-menu__close" id="mobileCloseBtn" aria-label="Close menu">
@@ -238,8 +251,22 @@
                     </div>
                 </div>
             </div>
-            <div class="mobile-menu__item">
-                <a href="#pricing" class="mobile-menu__link" style="padding-left:16px">Pricing</a>
+            <div class="mobile-menu__item" id="mob-0-0-krp4m2">
+                <button class="mobile-menu__link" onclick="toggleMobileAccordion(event, 'mob-0-0-krp4m2')">
+                    <span style="padding-left:0px">Pages</span>
+                    <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="width:18px;height:18px;transition:transform 0.3s">
+                        <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="mobile-menu__submenu">
+                    <div class="mobile-menu__item">
+                        <a href="./privacy-policy.html" class="mobile-menu__link" style="padding-left:28px">Privacy & Policy</a>
+                        <a href="./cdpr.html" class="mobile-menu__link" style="padding-left:28px">CDPR</a>
+                        <a href="./terms-services.html" class="mobile-menu__link" style="padding-left:28px">Terms</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="mobile-menu__actions">

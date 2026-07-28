@@ -11,6 +11,8 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Link Swiper's CSS -->
+
 </head>
 
 <body>
@@ -260,7 +262,8 @@
                 </button>
                 <div class="mobile-menu__submenu">
                     <div class="mobile-menu__item">
-                        <a href="./privacy-policy.html" class="mobile-menu__link" style="padding-left:28px">Privacy & Policy</a>
+                        <a href="./privacy-policy.html" class="mobile-menu__link" style="padding-left:28px">Privacy &
+                            Policy</a>
                         <a href="./cdpr.html" class="mobile-menu__link" style="padding-left:28px">CDPR</a>
                         <a href="./terms-services.html" class="mobile-menu__link" style="padding-left:28px">Terms</a>
                     </div>
@@ -277,65 +280,107 @@
     <main class="main">
 
         <!-- Hero Area -->
-        <section class="hero hero--people-search spacing-xxl">
+        <section class="hero hero--home spacing-xxl">
             <div class="hero__container container">
+                <div class="hero__header-area header-area-center">
+                    <p class="subtitle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_1345_3205)">
+                                <path
+                                    d="M10.9901 8.57858C11.2336 8.49158 11.3971 8.25908 11.3971 8.00058C11.3971 7.74208 11.2336 7.50958 10.9911 7.42258L9.87614 7.02058C8.77514 6.62408 7.91614 5.76458 7.51914 4.66358L7.11714 3.54858C7.02964 3.30608 6.79764 3.14258 6.54014 3.14258C6.28214 3.14258 6.04964 3.30558 5.96164 3.54858L5.56014 4.66358C5.16314 5.76508 4.30414 6.62408 3.20264 7.02058L2.08864 7.42258C1.84514 7.51008 1.68164 7.74208 1.68164 8.00058C1.68164 8.25908 1.84514 8.49108 2.08764 8.57858L3.20264 8.98058C4.30364 9.37708 5.16264 10.2361 5.55964 11.3376L5.96164 12.4531C6.04914 12.6956 6.28164 12.8586 6.53964 12.8586C6.79764 12.8586 7.03014 12.6951 7.11714 12.4526L7.51914 11.3376C7.91564 10.2366 8.77514 9.37758 9.87614 8.98058L10.9901 8.57858ZM9.53714 8.03958C8.15464 8.53758 7.07614 9.61608 6.57814 10.9986L6.53914 11.1066L6.50014 10.9986C6.00164 9.61608 4.92314 8.53758 3.54114 8.03958L3.43364 8.00058L3.54164 7.96158C4.92414 7.46358 6.00264 6.38508 6.50064 5.00258L6.53964 4.89458L6.57864 5.00258C7.07664 6.38508 8.15514 7.46358 9.53714 7.96158L9.64514 8.00058L9.53714 8.03958Z"
+                                    fill="url(#paint0_linear_1345_3205)" />
+                                <path
+                                    d="M9.27525 3.7315L9.83975 3.935C10.3283 4.111 10.7088 4.492 10.8848 4.98L11.0878 5.544C11.1673 5.765 11.3783 5.9135 11.6128 5.9135C11.8473 5.9135 12.0588 5.765 12.1378 5.5445L12.3413 4.98C12.5173 4.4915 12.8983 4.1105 13.3863 3.935L13.9513 3.7315C14.1708 3.652 14.3193 3.4415 14.3198 3.208C14.3203 2.9745 14.1733 2.763 13.9513 2.682L13.3863 2.4785C12.8983 2.3025 12.5173 1.9215 12.3413 1.4335L12.1378 0.869C12.0583 0.648 11.8478 0.5 11.6133 0.5C11.3783 0.5 11.1673 0.6485 11.0883 0.869L10.8848 1.4335C10.7088 1.922 10.3278 2.3025 9.83975 2.4785L9.27375 2.6825C9.05375 2.7625 8.90575 2.974 8.90625 3.208C8.90675 3.442 9.05525 3.6525 9.27525 3.7315ZM11.6133 2.2275C11.8503 2.6335 12.1868 2.97 12.5923 3.2065C12.1863 3.4435 11.8498 3.78 11.6133 4.1855C11.3763 3.78 11.0398 3.443 10.6343 3.2065C11.0398 2.9695 11.3763 2.633 11.6133 2.2275Z"
+                                    fill="url(#paint1_linear_1345_3205)" />
+                                <path
+                                    d="M13.9493 12.2679L13.3848 12.0644C12.8968 11.8884 12.5158 11.5074 12.3398 11.0194L12.1363 10.4549C12.0568 10.2344 11.8458 10.0859 11.6113 10.0859C11.3763 10.0859 11.1653 10.2344 11.0863 10.4549L10.8828 11.0194C10.7068 11.5079 10.3258 11.8889 9.8378 12.0644L9.2738 12.2674C9.0533 12.3464 8.9048 12.5574 8.9043 12.7914C8.9038 13.0254 9.0513 13.2369 9.2733 13.3174L9.8378 13.5209C10.3263 13.6969 10.7073 14.0774 10.8828 14.5659L11.0858 15.1299C11.1658 15.3509 11.3768 15.4994 11.6118 15.4994C11.8468 15.4994 12.0578 15.3509 12.1368 15.1304L12.3403 14.5659C12.5163 14.0779 12.8973 13.6969 13.3853 13.5209L13.9523 13.3169C14.1718 13.2364 14.3193 13.0254 14.3188 12.7914C14.3183 12.5574 14.1693 12.3474 13.9493 12.2679ZM11.6118 13.7719C11.3748 13.3659 11.0383 13.0294 10.6328 12.7929C11.0383 12.5559 11.3753 12.2194 11.6118 11.8139C11.8488 12.2194 12.1853 12.5564 12.5908 12.7929C12.1853 13.0299 11.8483 13.3664 11.6118 13.7719Z"
+                                    fill="url(#paint2_linear_1345_3205)" />
+                            </g>
+                            <defs>
+                                <linearGradient id="paint0_linear_1345_3205" x1="1.68164" y1="8.00058" x2="11.3971"
+                                    y2="8.00058" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#155DFC" />
+                                    <stop offset="1" stop-color="#9810FA" />
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_1345_3205" x1="8.90625" y1="3.20675" x2="14.3198"
+                                    y2="3.20675" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#155DFC" />
+                                    <stop offset="1" stop-color="#9810FA" />
+                                </linearGradient>
+                                <linearGradient id="paint2_linear_1345_3205" x1="8.9043" y1="12.7927" x2="14.3188"
+                                    y2="12.7927" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#155DFC" />
+                                    <stop offset="1" stop-color="#9810FA" />
+                                </linearGradient>
+                                <clipPath id="clip0_1345_3205">
+                                    <rect width="16" height="16" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <span>Helped over 100+ businesses</span>
+                    </p>
+                    <h1 class="hero__title">Push verified leads straight into your CRM.</h1>
+                    <p class="hero__desc">Sync verified emails, mobile numbers, and firmographics from Leadvaro to
+                        HubSpot, Salesforce, Pipedrive, and 40+ other tools with automatic mapping and deduplication.
+                    </p>
+
+                    <div class="hero__cta-wrap cta-wrap">
+                        <a href="#" class="btn btn--primary">Start Free Trial</a>
+                        <a href="#" class="btn btn--secondary">See Integrations</a>
+                    </div>
+                </div>
+
                 <div class="hero__content">
-                    <div class="hero__header-area header-area">
-                        <p class="subtitle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                fill="none">
-                                <g clip-path="url(#clip0_1345_3205)">
-                                    <path
-                                        d="M10.9901 8.57858C11.2336 8.49158 11.3971 8.25908 11.3971 8.00058C11.3971 7.74208 11.2336 7.50958 10.9911 7.42258L9.87614 7.02058C8.77514 6.62408 7.91614 5.76458 7.51914 4.66358L7.11714 3.54858C7.02964 3.30608 6.79764 3.14258 6.54014 3.14258C6.28214 3.14258 6.04964 3.30558 5.96164 3.54858L5.56014 4.66358C5.16314 5.76508 4.30414 6.62408 3.20264 7.02058L2.08864 7.42258C1.84514 7.51008 1.68164 7.74208 1.68164 8.00058C1.68164 8.25908 1.84514 8.49108 2.08764 8.57858L3.20264 8.98058C4.30364 9.37708 5.16264 10.2361 5.55964 11.3376L5.96164 12.4531C6.04914 12.6956 6.28164 12.8586 6.53964 12.8586C6.79764 12.8586 7.03014 12.6951 7.11714 12.4526L7.51914 11.3376C7.91564 10.2366 8.77514 9.37758 9.87614 8.98058L10.9901 8.57858ZM9.53714 8.03958C8.15464 8.53758 7.07614 9.61608 6.57814 10.9986L6.53914 11.1066L6.50014 10.9986C6.00164 9.61608 4.92314 8.53758 3.54114 8.03958L3.43364 8.00058L3.54164 7.96158C4.92414 7.46358 6.00264 6.38508 6.50064 5.00258L6.53964 4.89458L6.57864 5.00258C7.07664 6.38508 8.15514 7.46358 9.53714 7.96158L9.64514 8.00058L9.53714 8.03958Z"
-                                        fill="url(#paint0_linear_1345_3205)" />
-                                    <path
-                                        d="M9.27525 3.7315L9.83975 3.935C10.3283 4.111 10.7088 4.492 10.8848 4.98L11.0878 5.544C11.1673 5.765 11.3783 5.9135 11.6128 5.9135C11.8473 5.9135 12.0588 5.765 12.1378 5.5445L12.3413 4.98C12.5173 4.4915 12.8983 4.1105 13.3863 3.935L13.9513 3.7315C14.1708 3.652 14.3193 3.4415 14.3198 3.208C14.3203 2.9745 14.1733 2.763 13.9513 2.682L13.3863 2.4785C12.8983 2.3025 12.5173 1.9215 12.3413 1.4335L12.1378 0.869C12.0583 0.648 11.8478 0.5 11.6133 0.5C11.3783 0.5 11.1673 0.6485 11.0883 0.869L10.8848 1.4335C10.7088 1.922 10.3278 2.3025 9.83975 2.4785L9.27375 2.6825C9.05375 2.7625 8.90575 2.974 8.90625 3.208C8.90675 3.442 9.05525 3.6525 9.27525 3.7315ZM11.6133 2.2275C11.8503 2.6335 12.1868 2.97 12.5923 3.2065C12.1863 3.4435 11.8498 3.78 11.6133 4.1855C11.3763 3.78 11.0398 3.443 10.6343 3.2065C11.0398 2.9695 11.3763 2.633 11.6133 2.2275Z"
-                                        fill="url(#paint1_linear_1345_3205)" />
-                                    <path
-                                        d="M13.9493 12.2679L13.3848 12.0644C12.8968 11.8884 12.5158 11.5074 12.3398 11.0194L12.1363 10.4549C12.0568 10.2344 11.8458 10.0859 11.6113 10.0859C11.3763 10.0859 11.1653 10.2344 11.0863 10.4549L10.8828 11.0194C10.7068 11.5079 10.3258 11.8889 9.8378 12.0644L9.2738 12.2674C9.0533 12.3464 8.9048 12.5574 8.9043 12.7914C8.9038 13.0254 9.0513 13.2369 9.2733 13.3174L9.8378 13.5209C10.3263 13.6969 10.7073 14.0774 10.8828 14.5659L11.0858 15.1299C11.1658 15.3509 11.3768 15.4994 11.6118 15.4994C11.8468 15.4994 12.0578 15.3509 12.1368 15.1304L12.3403 14.5659C12.5163 14.0779 12.8973 13.6969 13.3853 13.5209L13.9523 13.3169C14.1718 13.2364 14.3193 13.0254 14.3188 12.7914C14.3183 12.5574 14.1693 12.3474 13.9493 12.2679ZM11.6118 13.7719C11.3748 13.3659 11.0383 13.0294 10.6328 12.7929C11.0383 12.5559 11.3753 12.2194 11.6118 11.8139C11.8488 12.2194 12.1853 12.5564 12.5908 12.7929C12.1853 13.0299 11.8483 13.3664 11.6118 13.7719Z"
-                                        fill="url(#paint2_linear_1345_3205)" />
+                    <div class="hero__image-wrap">
+                        <img src="./assets/img/leadvaro-dashboard.svg" alt="" class="hero__image">
+
+                        <img src="./assets/img/hero-img-2.svg" class="hero__image--small" alt="">
+
+                        <a href="https://youtu.be/MLpWrANjFbI?si=l7LkmW23rih8G6Yw" class="hero__play-btn glightbox"
+                            data-gallery="video">
+                            <svg width="198" height="198" viewBox="0 0 198 198" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g filter="url(#filter0_d_1099_19941)">
+                                    <g clip-path="url(#clip0_1099_19941)">
+                                        <rect x="23.8867" y="19.9062" width="149.295" height="149.295" rx="74.6473"
+                                            fill="white" />
+                                        <path
+                                            d="M98.5339 19.9062C57.3074 19.9062 23.8867 53.3269 23.8867 94.5534C23.8867 135.78 57.3074 169.201 98.5339 169.201C139.76 169.201 173.181 135.78 173.181 94.5534C173.137 53.3454 139.742 19.9503 98.5339 19.9062ZM129.971 96.9319C129.454 97.9685 128.614 98.8089 127.577 99.3256V99.3522L84.9215 120.68C82.2872 121.996 79.0849 120.928 77.7684 118.294C77.3941 117.545 77.2013 116.718 77.206 115.881V73.2258C77.2048 70.281 79.5907 67.8929 82.5356 67.8913C83.3638 67.891 84.1808 68.0834 84.9215 68.4536L127.577 89.7815C130.213 91.095 131.284 94.2963 129.971 96.9319Z"
+                                            fill="#4F46E5" />
+                                    </g>
+                                    <rect x="31.8491" y="27.8686" width="133.37" height="133.37" rx="66.685"
+                                        stroke="#E9F0FF" stroke-width="15.9248" />
                                 </g>
                                 <defs>
-                                    <linearGradient id="paint0_linear_1345_3205" x1="1.68164" y1="8.00058" x2="11.3971"
-                                        y2="8.00058" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#155DFC" />
-                                        <stop offset="1" stop-color="#9810FA" />
-                                    </linearGradient>
-                                    <linearGradient id="paint1_linear_1345_3205" x1="8.90625" y1="3.20675" x2="14.3198"
-                                        y2="3.20675" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#155DFC" />
-                                        <stop offset="1" stop-color="#9810FA" />
-                                    </linearGradient>
-                                    <linearGradient id="paint2_linear_1345_3205" x1="8.9043" y1="12.7927" x2="14.3188"
-                                        y2="12.7927" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#155DFC" />
-                                        <stop offset="1" stop-color="#9810FA" />
-                                    </linearGradient>
-                                    <clipPath id="clip0_1345_3205">
-                                        <rect width="16" height="16" fill="white" />
+                                    <filter id="filter0_d_1099_19941" x="-0.000427246" y="0.000295162" width="197.069"
+                                        height="197.069" filterUnits="userSpaceOnUse"
+                                        color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                        <feOffset dy="3.98119" />
+                                        <feGaussianBlur stdDeviation="11.9436" />
+                                        <feComposite in2="hardAlpha" operator="out" />
+                                        <feColorMatrix type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
+                                        <feBlend mode="normal" in2="BackgroundImageFix"
+                                            result="effect1_dropShadow_1099_19941" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1099_19941"
+                                            result="shape" />
+                                    </filter>
+                                    <clipPath id="clip0_1099_19941">
+                                        <rect x="23.8867" y="19.9062" width="149.295" height="149.295" rx="74.6473"
+                                            fill="white" />
                                     </clipPath>
                                 </defs>
                             </svg>
-                            <span>Find. Verify. Grow.</span>
-                        </p>
-                        <h1 class="hero__title">Find Verified Leads from an 155M+ Database</h1>
-                        <br class="hero__desc">Use 75+ filters and real-time buying signals to find verified leads in
-                        </br>
-                        seconds with AI Search. Sign up and get up to 50 free credits.</p>
-
-                        <div class="hero__cta-wrap cta-wrap">
-                            <a href="#" class="btn btn--primary">Get free Consultation</a>
-                        </div>
-                    </div>
-
-                    <div class="hero__image-wrap">
-                        <img src="./assets/img/hero-img-lead-finder.svg" alt="" class="hero__image">
+                        </a>
                     </div>
                 </div>
             </div>
 
             <div class="bg-wrap bg-wrap--wide">
-                <img src="./assets/img/hero-bg-search-people.svg" alt="" class="bg-img">
+                <img src="./assets/img/hero-bg.png" alt="" class="bg-img">
             </div>
         </section>
 
@@ -442,20 +487,22 @@
                                 </clipPath>
                             </defs>
                         </svg>
-                        <span>What's in the Box?</span>
+                        <span>CRM Export</span>
                     </p>
-                    <h2 class="bulk__title">Search Smarter. Enrich Leads. Launch Outreach.</h2>
-                    <p class="bulk__desc text-md">Define your ideal buyers with 75+ smart filters and pay only for
-                        real-time verified contacts.</p>
+                    <h2 class="bulk__title">From Lead Finder to your CRM — no CSVs required.</h2>
+                    <p class="bulk__desc text-md">Every search result, every enriched contact, every account list pushes
+                        straight to your CRM with mapped fields, deduplication, and verified data — exactly the way your
+                        reps need it.</p>
                 </div>
 
                 <div class="bulk__list">
                     <div class="bulk__item">
                         <div class="bulk__item-left">
                             <div class="bulk__item-text">
-                                <h3 class="bulk__item-title text-h4">Switch Between People & Company Data</h3>
-                                <p class="bulk__item-text text-h5">Easily switch between people and company tabs using
-                                    shared filters to build targeted lists faster.</p>
+                                <h3 class="bulk__item-title text-h4">Native sync to the tools you already use.</h3>
+                                <p class="bulk__item-text text-h5">HubSpot, Salesforce, Pipedrive, Smartlead, Lemlist,
+                                    Instantly — connect once, sync forever. Two-way sync keeps Leadvaro and your CRM in
+                                    lockstep, with field mapping handled automatically.</p>
                             </div>
                             <ul class="bulk__feature-list list">
                                 <li class="bulk__feature-item">
@@ -475,7 +522,7 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    <span>Shared smart filters</span>
+                                    <span>HubSpot, Salesforce, Pipedrive + 40 more</span>
                                 </li>
                                 <li class="bulk__feature-item">
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
@@ -494,7 +541,7 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    <span>Switch tabs instantly</span>
+                                    <span>Two-way sync — no exports, ever</span>
                                 </li>
                                 <li class="bulk__feature-item">
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
@@ -513,24 +560,24 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    <span>Build targeted lists</span>
+                                    <span>Connect in under 2 minutes</span>
                                 </li>
                             </ul>
                             <div class="bulk__item-cta">
-                                <a href="./" class="btn btn--primary">Start Finding Leads</a>
+                                <a href="./" class="btn btn--primary">Connect Your CRM</a>
                             </div>
                         </div>
                         <div class="bulk__item-right">
-                            <img src="./assets/img/bulk-item-img-4.svg" alt="" class="bulk__item-img">
+                            <img src="./assets/img/crm-1.svg" alt="" class="bulk__item-img">
                         </div>
                     </div>
                     <div class="bulk__item bulk__item--reverse">
                         <div class="bulk__item-left">
                             <div class="bulk__item-text">
-                                <h3 class="bulk__item-title text-h4">Reach the Right Contacts, Every Time</h3>
-                                <p class="bulk__item-text text-h5">Access verified emails and rich contact
-                                    insights—including job titles, industry, and revenue—so you can segment smarter,
-                                    personalize outreach, and convert faster.</p>
+                                <h3 class="bulk__item-title text-h4">Field mapping that figures itself out.</h3>
+                                <p class="bulk__item-text text-h5">Leadvaro reads your CRM schema and auto-maps every
+                                    field — Email, Phone, Title, Company, Industry, Headcount. Custom properties
+                                    supported. Override anything in one click.</p>
                             </div>
                             <ul class="bulk__feature-list list">
                                 <li class="bulk__feature-item">
@@ -550,7 +597,7 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    <span>Verified emails & contact data</span>
+                                    <span>Auto-map standard + custom fields</span>
                                 </li>
                                 <li class="bulk__feature-item">
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
@@ -569,7 +616,7 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    <span>Job titles & role insights</span>
+                                    <span>Override mappings in a single click</span>
                                 </li>
                                 <li class="bulk__feature-item">
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
@@ -588,22 +635,24 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    <span>Industry & company details</span>
+                                    <span>Preview every record before sync</span>
                                 </li>
                             </ul>
                             <div class="bulk__item-cta">
-                                <a href="./" class="btn btn--primary">Start Finding Leads</a>
+                                <a href="./" class="btn btn--primary">See Field Mapping</a>
                             </div>
                         </div>
                         <div class="bulk__item-right">
-                            <img src="./assets/img/bulk-item-img-5.svg" alt="" class="bulk__item-img">
+                            <img src="./assets/img/crm-2.svg" alt="" class="bulk__item-img">
                         </div>
                     </div>
                     <div class="bulk__item">
                         <div class="bulk__item-left">
                             <div class="bulk__item-text">
-                                <h3 class="bulk__item-title text-h4">Search-ready leads, zero cleanup.</h3>
-                                <p class="bulk__item-text text-h5">Every lead surfaces pre-verified and CRM-ready. No more spending an hour scrubbing a list before a campaign — just hit Find, get clean rows back, and start dialing.</p>
+                                <h3 class="bulk__item-title text-h4">No duplicates. No bad records.</h3>
+                                <p class="bulk__item-text text-h5">Every contact is deduped against your existing CRM
+                                    before sync. Enterprise leads route to AEs, SMB to PLG, and unverified records are
+                                    flagged — not pushed. Clean pipeline, every time.</p>
                             </div>
                             <ul class="bulk__feature-list list">
                                 <li class="bulk__feature-item">
@@ -623,7 +672,7 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    <span>Pre-verified emails — no bounces</span>
+                                    <span>Real-time dedup against your CRM</span>
                                 </li>
                                 <li class="bulk__feature-item">
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
@@ -642,7 +691,7 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    <span>Auto-deduped against your existing CRM</span>
+                                    <span>Route leads by ICP fit automatically</span>
                                 </li>
                                 <li class="bulk__feature-item">
                                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
@@ -661,15 +710,15 @@
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                    <span>One-click export to sequences or HubSpot</span>
+                                    <span>Verified records only — no junk</span>
                                 </li>
                             </ul>
                             <div class="bulk__item-cta">
-                                <a href="./" class="btn btn--primary">Start Finding Leads</a>
+                                <a href="./" class="btn btn--primary">See Sync Rules</a>
                             </div>
                         </div>
                         <div class="bulk__item-right">
-                            <img src="./assets/img/bulk-item-img-6.svg" alt="" class="bulk__item-img">
+                            <img src="./assets/img/crm-3.svg" alt="" class="bulk__item-img">
                         </div>
                     </div>
                 </div>
@@ -677,7 +726,7 @@
         </section>
 
         <!-- Services Area -->
-        <section class="services services--two">
+        <section class="services services--three">
             <div class="services__container container gap-xxl">
                 <div class="services__header-grid header-grid">
                     <div class="services__heder-left header-left header-area">
@@ -718,17 +767,15 @@
                             </svg>
                             <span>USE CASES</span>
                         </p>
-                        <h2 class="services__title title-lg">What Data Does Leadvaro Provide?</h2>
+                        <h2 class="services__title title-lg">Lead Finder → CRM workflows teams ship every day.</h2>
                     </div>
                     <div class="services__heder-right header-right">
-                        <p class="services__desc">Access verified emails, mobile numbers, and enriched B2B
-                            data—including job
-                            titles, company insights, and intent signals—to power smarter prospecting and outreach.</p>
+                        <p class="services__desc">See how teams take a Leadvaro search and turn it into a clean pipeline — without leaving the tools their reps already work in.</p>
                     </div>
 
                     <div class="services__heder-cta header-cta cta-wrap">
-                        <a href="./" class="btn btn--primary">People Data</a>
-                        <a href="./" class="btn btn--secondary">Company Data</a>
+                        <a href="./" class="btn btn--primary">Sales & RevOps</a>
+                        <a href="./" class="btn btn--secondary">Agencies & Growth</a>
                     </div>
                 </div>
 
