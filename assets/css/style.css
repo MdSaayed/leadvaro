@@ -104,7 +104,7 @@ h5,
 
 h6,
 .text-h6 {
-    font-size: 1.75rem;
+    font-size: 1.125rem;
     font-weight: 500;
     line-height: 1.28;
     letter-spacing: -0.0375rem;
@@ -2928,7 +2928,6 @@ h6,
 
 .bulk__item-right img {
     width: 100%;
-    max-width: 37rem;
 }
 
 /* Domain Search Page */
@@ -2945,11 +2944,16 @@ h6,
     max-width: 100%;
 }
 
+/* For Agencies Page */
+.bulk--for-agencies-page .bulk__header-area {
+    max-width: 48rem;
+}
+
 /* ==============================
    Services Three
 ============================== */
-.services--three .header-grid{
-    grid-template-columns: 1.3fr 1fr;
+.services--three .header-grid {
+    grid-template-columns: 1.3fr 0.8fr;
 }
 
 .services--three .services__heder-left {
@@ -3349,6 +3353,120 @@ h6,
 
 
 /* ==============================
+   For Agencies
+============================== */
+.hero--for-agencies .hero__header-area {
+    max-width: 59rem;
+}
+
+.hero--for-agencies .hero__image-wrap {
+    margin-bottom: 0;
+}
+
+/* ==============================
+   Reporting
+============================== */
+.reporting {
+    background-color: var(--color-surface);
+}
+
+.reporting .reporting__subtitle {
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.reporting .bulk__item {
+    background: var(--light-indigo);
+    padding: 3rem 1.5rem;
+    border-radius: var(--radius-xl);
+}
+
+.reporting .bulk__feature-item svg {
+    margin-top: 0.65rem;
+}
+
+.bulk__item img {
+    width: 100%;
+}
+
+/* ==============================
+   Metrics Area
+============================== */
+.metrics {
+    background: var(--color-surface);
+}
+
+.metrics__badge {
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.metrics__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.metrics-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.metrics-card__title {
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.0125rem;
+}
+
+.metrics-card__description {
+    line-height: 1.4;
+}
+
+
+/* ==============================
+   Pain Points
+============================== */
+.pain-points {
+    background: var(--color-surface);
+}
+
+.pain-points__badge {
+    border-radius: var(--radius-sm);
+    border: 1px solid #E0E7FF;
+    background: var(--white);
+    padding: 0.25rem 0.75rem;
+}
+
+.pain-points__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.pain-points__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.5rem;
+    background: var(--white);
+    border-radius: var(--radius-xl);
+}
+
+.pain-points__icon {
+    max-width: 2.875rem;
+    overflow: hidden;
+}
+
+.pain-points__card-title {
+    color: var(--color-navy);
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.36;
+    letter-spacing: -0.01875rem;
+}
+
+/* ==============================
    Animation
 ============================== */
 @keyframes loop-left {
@@ -3387,6 +3505,12 @@ h6,
 
     .hero__content-wrapper--find-email {
         gap: 3rem;
+    }
+
+    /* Metrics Area */
+    .metrics__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
     }
 }
 
@@ -3678,6 +3802,12 @@ h6,
     .hero--domain-search .hero__content {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    /* Pain Points */
+
+    .pain-points__card {
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 850px) {
@@ -3709,6 +3839,11 @@ h6,
     /* Features Showcase */
     .feature-showcase__content {
         padding: 1.5rem;
+    }
+
+    /* Metrics Area */
+    .metrics__grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -3884,6 +4019,15 @@ h6,
     .search-card__bottom {
         padding: 1rem;
     }
+
+    /* Pain Points */
+    .pain-points__grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .pain-points__card {
+        padding: 1.2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -3955,8 +4099,14 @@ h6,
         grid-template-columns: repeat(1, 1fr);
     }
 
+    /* Metrics Area */
+    .metrics__grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
-
+    .metrics-card {
+        align-items: center;
+    }
 
     /* Footer Styles */
     .footer__content {
