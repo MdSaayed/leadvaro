@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Card Section</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(238, 242, 255, 0.8) 0%, transparent 40%),
+        radial-gradient(circle at 90% 50%, rgba(238, 242, 255, 0.8) 0%, transparent 40%);
+      padding: 60px 20px;
+      min-height: 100vh;
+    }
+
+    /* Filter Toggle Buttons */
+    .pricing-card__filter-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      background: #ffffff;
+      padding: 6px;
+      border-radius: 12px;
+      width: fit-content;
+      margin: 0 auto 40px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f1f5f9;
+    }
+
+    .pricing-card__filter-btn {
+      border: none;
+      background: transparent;
+      padding: 10px 22px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #64748b;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .pricing-card__filter-btn--active {
+      background: #ffffff;
+      color: #0f172a;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Grid Layout */
+    .pricing-card__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: flex-start;
+    }
+
+    /* Card Container */
+    .pricing-card__item {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Highlighted / Best Value Card */
+    .pricing-card__item--featured {
+      border: 2px solid #4f46e5;
+      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.12);
+      padding-top: 52px;
+    }
+
+    .pricing-card__badge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #4f46e5;
+      color: #ffffff;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 0;
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+    }
+
+    /* Icon */
+    .pricing-card__icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      margin-bottom: 16px;
+    }
+
+    .pricing-card__icon--blue-light {
+      background-color: #eff6ff;
+      color: #3b82f6;
+    }
+
+    .pricing-card__icon--blue {
+      background-color: #e0e7ff;
+      color: #4f46e5;
+    }
+
+    /* Card Content */
+    .pricing-card__title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #4f46e5;
+      margin: 0 0 8px;
+    }
+
+    .pricing-card__description {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.5;
+      min-height: 40px;
+      margin: 0 0 20px;
+    }
+
+    .pricing-card__price {
+      font-size: 36px;
+      font-weight: 700;
+      color: #0f172a;
+      transition: opacity 0.2s ease;
+    }
+
+    .pricing-card__unit {
+      font-size: 18px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .pricing-card__credits {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #64748b;
+      margin: 8px 0 24px;
+    }
+
+    .pricing-card__credit-num {
+      color: #4f46e5;
+    }
+
+    /* Buttons */
+    .pricing-card__btn {
+      display: block;
+      text-align: center;
+      background: #4f46e5;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      margin-bottom: 28px;
+    }
+
+    .pricing-card__btn:hover {
+      background: #4338ca;
+    }
+
+    .pricing-card__btn--light {
+      background: #eef2ff;
+      color: #4f46e5;
+    }
+
+    .pricing-card__btn--light:hover {
+      background: #e0e7ff;
+    }
+
+    /* Features List */
+    .pricing-card__features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .pricing-card__features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: #334155;
+      font-weight: 500;
+    }
+
+    .pricing-card__check {
+      width: 18px;
+      height: 18px;
+      color: #6366f1;
+      background: #e0e7ff;
+      border-radius: 50%;
+      padding: 2px;
+      flex-shrink: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .pricing-card__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .pricing-card__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="pricing-card">
+    <!-- Billing Toggle Filter -->
+    <div class="pricing-card__filter-wrap">
+      <button class="pricing-card__filter-btn pricing-card__filter-btn--active" data-billing="monthly">Monthly billing</button>
+      <button class="pricing-card__filter-btn" data-billing="annual">Annual billing</button>
+    </div>
+
+    <!-- Pricing Grid -->
+    <div class="pricing-card__grid">
+      
+      <!-- 1. Free Card -->
+      <div class="pricing-card__item">
+        <div class="pricing-card__icon pricing-card__icon--blue-light">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+        </div>
+        <h3 class="pricing-card__title">Free</h3>
+        <p class="pricing-card__description">To see if we are a good fit.</p>
+        
+        <div class="pricing-card__price" data-monthly="$0" data-annual="$0">$0</div>
+        <div class="pricing-card__credits"><span class="pricing-card__credit-num">100</span> CREDITS PER MONTH</div>
+        
+        <a href="#" class="pricing-card__btn pricing-card__btn--light">Upgrade to Pro</a>
+        
+        <ul class="pricing-card__features">
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            25 row selection
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            3 intent topics max
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2. Growth Card -->
+      <div class="pricing-card__item">
+        <div class="pricing-card__icon pricing-card__icon--blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        </div>
+        <h3 class="pricing-card__title">Growth</h3>
+        <p class="pricing-card__description">Scale your outreach with advanced filters, CRM integrations & job tracking.</p>
+        
+        <div class="pricing-card__price" data-monthly="$69<span class='pricing-card__unit'>/mth</span>" data-annual="$55<span class='pricing-card__unit'>/mth</span>">$69<span class="pricing-card__unit">/mth</span></div>
+        <div class="pricing-card__credits"><span class="pricing-card__credit-num">100</span> CREDITS PER MONTH</div>
+        
+        <a href="#" class="pricing-card__btn">Upgrade to Pro</a>
+        
+        <ul class="pricing-card__features">
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            20,000 row selection
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            6 intent topics max
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Basic integrations
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Advanced filters
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. Growth Card (Best Value) -->
+      <div class="pricing-card__item pricing-card__item--featured">
+        <div class="pricing-card__badge">Best value</div>
+        <div class="pricing-card__icon pricing-card__icon--blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+        </div>
+        <h3 class="pricing-card__title">Growth</h3>
+        <p class="pricing-card__description">Scale your outreach with advanced filters, CRM integrations & job tracking.</p>
+        
+        <div class="pricing-card__price" data-monthly="$69<span class='pricing-card__unit'>/mth</span>" data-annual="$55<span class='pricing-card__unit'>/mth</span>">$69<span class="pricing-card__unit">/mth</span></div>
+        <div class="pricing-card__credits"><span class="pricing-card__credit-num">100</span> CREDITS PER MONTH</div>
+        
+        <a href="#" class="pricing-card__btn">Upgrade to Pro</a>
+        
+        <ul class="pricing-card__features">
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            20,000 row selection
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            9 intent topics max
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Basic integrations
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            HubSpot-Salesforce Integration
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Duplicate control
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Job change tracking
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Advanced filters
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Priority support
+          </li>
+        </ul>
+      </div>
+
+      <!-- 4. Pro Card -->
+      <div class="pricing-card__item">
+        <div class="pricing-card__icon pricing-card__icon--blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+        </div>
+        <h3 class="pricing-card__title">Pro</h3>
+        <p class="pricing-card__description">Maximize your lead generation with massive credit allocation & enterprise-grade rate limits.</p>
+        
+        <div class="pricing-card__price" data-monthly="$169<span class='pricing-card__unit'>/mth</span>" data-annual="$139<span class='pricing-card__unit'>/mth</span>">$169<span class="pricing-card__unit">/mth</span></div>
+        <div class="pricing-card__credits"><span class="pricing-card__credit-num">100</span> CREDITS PER MONTH</div>
+        
+        <a href="#" class="pricing-card__btn">Upgrade to Pro</a>
+        
+        <ul class="pricing-card__features">
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            20,000 row selection
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            12 intent topics max
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Basic integrations
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            HubSpot-Salesforce Integration
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Duplicate control
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Job change tracking
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Advanced filters
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Higher rate limit on API
+          </li>
+          <li>
+            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Priority support
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Filter Switcher Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('.pricing-card__filter-btn');
+      const priceElements = document.querySelectorAll('.pricing-card__price');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Toggle Active Class
+          filterButtons.forEach(btn => btn.classList.remove('pricing-card__filter-btn--active'));
+          button.classList.add('pricing-card__filter-btn--active');
+
+          const billingType = button.getAttribute('data-billing');
+
+          // Update Prices with Smooth Transition
+          priceElements.forEach(priceEl => {
+            priceEl.style.opacity = '0';
+            setTimeout(() => {
+              priceEl.innerHTML = priceEl.getAttribute(`data-${billingType}`);
+              priceEl.style.opacity = '1';
+            }, 150);
+          });
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

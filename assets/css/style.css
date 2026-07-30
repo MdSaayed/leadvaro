@@ -3407,6 +3407,10 @@ h6,
     gap: 2rem;
 }
 
+.metrics__grid--col-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .metrics-card {
     display: flex;
     flex-direction: column;
@@ -3465,6 +3469,823 @@ h6,
     line-height: 1.36;
     letter-spacing: -0.01875rem;
 }
+
+/* ==============================
+   Pricing Addon Area
+============================== */
+.pricing-addon {
+    background: var(--color-surface);
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.06);
+}
+
+.pricing-addon__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 0.75rem;
+    row-gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: clamp(1.75rem, 4vw, 3rem);
+}
+
+.pricing-addon__title-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 0.75rem;
+}
+
+.pricing-addon__title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.pricing-addon__title {
+    font-weight: 500;
+}
+
+.pricing-addon__info {
+    width: clamp(1.2rem, 3vw, 1.5rem);
+    height: clamp(1.2rem, 3vw, 1.5rem);
+    border-radius: 50%;
+    border: 0.125rem solid #d0d5dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #667085;
+    font-size: clamp(0.625rem, 1.4vw, 0.875rem);
+    flex-shrink: 0;
+}
+
+.pricing-addon__link {
+    color: #475467;
+    text-decoration: underline;
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+}
+
+.pricing-addon__price {
+    font-weight: 500;
+    color: var(--color-navy);
+    text-align: right;
+    display: block;
+    white-space: nowrap;
+}
+
+.pricing-addon__slider {
+    width: 100%;
+}
+
+/* ========================================
+   Range Track
+======================================== */
+
+.pricing-addon__range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: clamp(0.375rem, 0.8vw, 0.625rem);
+    border-radius: 999rem;
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(to right,
+            #071028 0%,
+            #071028 var(--progress),
+            #e5e7eb var(--progress),
+            #e5e7eb 100%);
+}
+
+.pricing-addon__range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: clamp(1.375rem, 3vw, 1.875rem);
+    height: clamp(1.375rem, 3vw, 1.875rem);
+    border-radius: clamp(0.5rem, 1vw, 0.75rem);
+    background-color: var(--white, #fff);
+    border: 0.0625rem solid #cccfd4;
+    box-shadow:
+        0 0.25rem 0.75rem rgba(16, 24, 40, 0.12),
+        0 0.125rem 0.25rem rgba(16, 24, 40, 0.06);
+    background-image:
+        linear-gradient(#667085, #667085),
+        linear-gradient(#667085, #667085);
+    background-size:
+        0.125rem clamp(0.5rem, 1vw, 0.75rem),
+        0.125rem clamp(0.5rem, 1vw, 0.75rem);
+    background-position:
+        calc(50% - 0.1875rem) center,
+        calc(50% + 0.1875rem) center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.pricing-addon__range::-moz-range-thumb {
+    width: clamp(1.375rem, 3vw, 1.875rem);
+    height: clamp(1.375rem, 3vw, 1.875rem);
+    border-radius: clamp(0.5rem, 1vw, 0.75rem);
+    background-color: var(--white, #fff);
+    border: 0.0625rem solid #cccfd4;
+    box-shadow:
+        0 0.25rem 0.75rem rgba(16, 24, 40, 0.12),
+        0 0.125rem 0.25rem rgba(16, 24, 40, 0.06);
+    cursor: pointer;
+}
+
+.pricing-addon__range::-moz-focus-outer {
+    border: 0;
+}
+
+.pricing-addon__ticks {
+    display: grid;
+    grid-template-columns: repeat(33, minmax(0, 1fr));
+    margin-top: clamp(1rem, 2vw, 1.75rem);
+}
+
+.pricing-addon__tick {
+    position: relative;
+    text-align: center;
+    min-width: 0;
+}
+
+.pricing-addon__tick::before {
+    content: "";
+    position: absolute;
+    top: calc(clamp(1rem, 2vw, 1.75rem) * -1 + 0.375rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(0.0625rem, 0.15vw, 0.125rem);
+    height: clamp(0.375rem, 1vw, 0.75rem);
+    border-radius: 999rem;
+    background: #d0d5dd;
+}
+
+.pricing-addon__tick-label {
+    display: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    color: #667085;
+    font-size: clamp(0.5625rem, 0.9vw, 0.875rem);
+    line-height: 1.2;
+}
+
+.pricing-addon__tick:nth-child(2n + 1) .pricing-addon__tick-label {
+    display: block;
+}
+
+@media (max-width: 72rem) {
+
+    .pricing-addon__tick-label {
+        display: none;
+    }
+
+    .pricing-addon__tick:nth-child(4n + 1) .pricing-addon__tick-label {
+        display: block;
+    }
+
+    .pricing-addon__tick-label {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 62rem) {
+
+    .pricing-addon__price {
+        text-align: right;
+        width: 100%;
+    }
+
+    .pricing-addon__tick-label {
+        display: none;
+    }
+
+    .pricing-addon__tick:nth-child(6n + 1) .pricing-addon__tick-label {
+        display: block;
+    }
+
+    .pricing-addon__tick-label {
+        font-size: 0.6875rem;
+    }
+}
+
+@media (max-width: 48rem) {
+
+    .pricing-addon__header {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 1rem;
+    }
+
+    .pricing-addon__price {
+        white-space: normal;
+    }
+
+    .pricing-addon__ticks {
+        position: relative;
+        display: block;
+        height: 2.75rem;
+        margin-top: 1.25rem;
+    }
+
+    /* Keep all tick marks */
+
+    .pricing-addon__tick {
+        position: absolute;
+        top: 0;
+        width: 0;
+    }
+
+    .pricing-addon__tick::before {
+        top: 0;
+        left: 0;
+        transform: translateX(-50%);
+        width: 0.0625rem;
+        height: 0.5rem;
+    }
+
+    /* Evenly distribute all 33 ticks */
+
+    .pricing-addon__tick:nth-child(1) {
+        left: 0%;
+    }
+
+    .pricing-addon__tick:nth-child(2) {
+        left: 3.125%;
+    }
+
+    .pricing-addon__tick:nth-child(3) {
+        left: 6.25%;
+    }
+
+    .pricing-addon__tick:nth-child(4) {
+        left: 9.375%;
+    }
+
+    .pricing-addon__tick:nth-child(5) {
+        left: 12.5%;
+    }
+
+    .pricing-addon__tick:nth-child(6) {
+        left: 15.625%;
+    }
+
+    .pricing-addon__tick:nth-child(7) {
+        left: 18.75%;
+    }
+
+    .pricing-addon__tick:nth-child(8) {
+        left: 21.875%;
+    }
+
+    .pricing-addon__tick:nth-child(9) {
+        left: 25%;
+    }
+
+    .pricing-addon__tick:nth-child(10) {
+        left: 28.125%;
+    }
+
+    .pricing-addon__tick:nth-child(11) {
+        left: 31.25%;
+    }
+
+    .pricing-addon__tick:nth-child(12) {
+        left: 34.375%;
+    }
+
+    .pricing-addon__tick:nth-child(13) {
+        left: 37.5%;
+    }
+
+    .pricing-addon__tick:nth-child(14) {
+        left: 40.625%;
+    }
+
+    .pricing-addon__tick:nth-child(15) {
+        left: 43.75%;
+    }
+
+    .pricing-addon__tick:nth-child(16) {
+        left: 46.875%;
+    }
+
+    .pricing-addon__tick:nth-child(17) {
+        left: 50%;
+    }
+
+    .pricing-addon__tick:nth-child(18) {
+        left: 53.125%;
+    }
+
+    .pricing-addon__tick:nth-child(19) {
+        left: 56.25%;
+    }
+
+    .pricing-addon__tick:nth-child(20) {
+        left: 59.375%;
+    }
+
+    .pricing-addon__tick:nth-child(21) {
+        left: 62.5%;
+    }
+
+    .pricing-addon__tick:nth-child(22) {
+        left: 65.625%;
+    }
+
+    .pricing-addon__tick:nth-child(23) {
+        left: 68.75%;
+    }
+
+    .pricing-addon__tick:nth-child(24) {
+        left: 71.875%;
+    }
+
+    .pricing-addon__tick:nth-child(25) {
+        left: 75%;
+    }
+
+    .pricing-addon__tick:nth-child(26) {
+        left: 78.125%;
+    }
+
+    .pricing-addon__tick:nth-child(27) {
+        left: 81.25%;
+    }
+
+    .pricing-addon__tick:nth-child(28) {
+        left: 84.375%;
+    }
+
+    .pricing-addon__tick:nth-child(29) {
+        left: 87.5%;
+    }
+
+    .pricing-addon__tick:nth-child(30) {
+        left: 90.625%;
+    }
+
+    .pricing-addon__tick:nth-child(31) {
+        left: 93.75%;
+    }
+
+    .pricing-addon__tick:nth-child(32) {
+        left: 96.875%;
+    }
+
+    .pricing-addon__tick:nth-child(33) {
+        left: 100%;
+    }
+
+    /* Hide all labels */
+
+    .pricing-addon__tick-label {
+        display: none !important;
+    }
+
+    /* Show only evenly spaced major labels */
+
+    .pricing-addon__tick:nth-child(1) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(5) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(9) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(13) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(18) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(23) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(27) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(33) .pricing-addon__tick-label {
+        display: block !important;
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-92%);
+        font-size: 0.625rem;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 30rem) {
+
+    .pricing-addon__ticks {
+        height: 2.5rem;
+    }
+
+    .pricing-addon__tick:nth-child(1) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(5) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(18) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(23) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(33) .pricing-addon__tick-label {
+        font-size: 0.5625rem;
+    }
+
+    .pricing-addon__range {
+        height: 0.375rem;
+    }
+}
+
+@media (max-width: 22.5rem) {
+
+    .pricing-addon__tick:nth-child(1) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(5) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(18) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(23) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(33) .pricing-addon__tick-label {
+        font-size: 0.5rem;
+    }
+}
+
+/* ==============================
+   Pricing Comparison
+============================== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.pricing-comparison__header {
+    margin-bottom: 3rem;
+}
+
+.pricing-comparison__title {
+    margin-bottom: 1rem;
+}
+
+.pricing-comparison__filter-wrap {
+    margin-bottom: 3rem;
+    border-radius: var(--radius-md);
+    border: 1px solid #E9EAEB;
+    background: #FAFAFA;
+    max-width: fit-content;
+    padding: 0.35rem 0.35rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.pricing-comparison__filter-btn {
+    padding: 0.6rem 0.75rem;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    color: #414651;
+    transition: 0.6ms ease-in;
+    border-radius: 0.375rem;
+}
+
+.pricing-comparison__filter-btn--active,
+.pricing-comparison__filter-btn:hover {
+    color: var(--white);
+    background-color: var(--primary);
+    box-shadow: 0 1px 3px 0 rgba(10, 13, 18, 0.10), 0 1px 2px -1px rgba(10, 13, 18, 0.10);
+}
+
+/* Overflow wrapper for smooth mobile horizontal scrolling */
+.pricing-comparison__wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 12px 6px;
+}
+
+.pricing-comparison__table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 720px;
+    /* Ensures minimum width on small screens */
+}
+
+/* Table Cells General Styling */
+.pricing-comparison__cell {
+    padding: 16px 0;
+    font-size: 0.95rem;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ffffff;
+}
+
+/* Table Header Row */
+.pricing-comparison__cell--header {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    padding-bottom: 24px;
+}
+
+/* Row Label Column (First Column) */
+.pricing-comparison__cell--label {
+    text-align: left;
+    font-weight: 500;
+    color: var(--text-dark);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Category Headers */
+.pricing-comparison__category-title {
+    padding: 32px 20px 16px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: left;
+}
+
+/* Tooltip Circle */
+.pricing-comparison__tooltip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #d0d5dd;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    cursor: help;
+    user-select: none;
+}
+
+/* Icons Styling */
+.pricing-comparison__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing-comparison__icon--check {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.pricing-comparison__icon--dash {
+    color: #d0d5dd;
+    font-size: 1.1rem;
+}
+
+/* Highlighted Column (Enterprise Column Border Feature) */
+.pricing-comparison__cell--highlighted {
+    position: relative;
+}
+
+/* Constructing seamless vertical pill border for column 4 */
+.pricing-comparison__cell--highlighted::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-left: 2px solid var(--primary-color);
+    border-right: 2px solid var(--primary-color);
+    pointer-events: none;
+}
+
+/* Top border rounding */
+.pricing-comparison__row--header .pricing-comparison__cell--highlighted::before {
+    border-top: 2px solid var(--primary-color);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+/* Bottom border rounding */
+.pricing-comparison__row:last-child .pricing-comparison__cell--highlighted::before {
+    border-bottom: 2px solid var(--primary-color);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+
+/* Hide / Show Tables */
+.pricing-comparison__table--hidden {
+    display: none !important;
+}
+
+.pricing-comparison__table--active {
+    display: table;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Smooth Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==============================
+   Hero Pricing
+============================== */
+.hero__avatar-area {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.avatar__img {
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.avatar__img:not(:first-child) {
+    margin-left: -1.2rem;
+}
+
+/* Filter Toggle Buttons */
+.pricing-card__filter-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--white);
+    padding: 6px;
+    border-radius: 12px;
+    width: fit-content;
+    margin: 2.5rem auto 3rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f1f5f9;
+}
+
+.pricing-card__filter-btn {
+    border: none;
+    background: transparent;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.pricing-card__filter-btn--active {
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--primary);
+}
+
+/* Grid Layout */
+.pricing-card__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* Card Container */
+.pricing-card__item {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem 1rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Highlighted / Best Value Card */
+.pricing-card__item--featured {
+    border: 1px solid var(--primary);
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.12);
+    padding-top: 52px;
+}
+
+.pricing-card__item--last {
+    border: 1px solid var(--primary);
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.12);
+}
+
+.pricing-card__badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary);
+    color: #ffffff;
+    text-align: center;
+    padding: 8px 0;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+/* Icon */
+.pricing-card__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.pricing-card__icon img {
+    width: 100%;
+}
+
+/* Card Content */
+.pricing-card__title {
+    font-weight: 500;
+    color: var(--primary);
+    margin: 0 0 0.75rem;
+}
+
+.pricing-card__description {
+    margin-bottom: 1.25rem;
+}
+
+.pricing-card__price {
+    font-weight: 400;
+    color: var(--color-navy);
+    transition: opacity 0.2s ease;
+}
+
+.pricing-card__unit {
+    font-size: 18px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.pricing-card__credits {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    margin: 8px 0 24px;
+}
+
+.pricing-card__credit-num {
+    color: var(--primary);
+}
+
+
+.pricing-card__btn {
+    margin-bottom: 2rem;
+}
+
+/* Features List */
+.pricing-card__features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pricing-card__features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.pricing-card__check {
+    width: 1.2rem;
+    height: 1.2rem;
+    color: var(--primary);
+    background: #e0e7ff;
+    border-radius: 50%;
+    padding: 2px;
+    flex-shrink: 0;
+}
+
+
+
+
+/* ==============================
+   Animation
+============================== */
 
 /* ==============================
    Animation
@@ -3808,6 +4629,17 @@ h6,
     .pain-points__card {
         padding: 1.5rem;
     }
+
+    /* Pricing Comparison Area */
+    .pricing-comparison__filter-wrap,
+    .pricing-comparison__header {
+        margin-bottom: 2rem;
+    }
+
+    /* Pricing Card Filter */
+    .pricing-card__filter-wrap {
+        margin: 2rem auto 2rem;
+    }
 }
 
 @media (max-width: 850px) {
@@ -4136,6 +4968,10 @@ h6,
    ≤ 992px
 ========================== */
 
+/* ==========================
+   ≤ 992px
+========================== */
+
 @media (max-width: 992px) {
 
     .container {
@@ -4167,6 +5003,27 @@ h6,
         font-size: 2.375rem;
         line-height: 1.14;
         letter-spacing: -0.1rem;
+    }
+
+    h4,
+    .text-h4 {
+        font-size: 2.125rem;
+        line-height: 1.22;
+        letter-spacing: -0.06rem;
+    }
+
+    h5,
+    .text-h5 {
+        font-size: 1.1875rem;
+        line-height: 1.42;
+        letter-spacing: -0.01rem;
+    }
+
+    h6,
+    .text-h6 {
+        font-size: 1.0625rem;
+        line-height: 1.32;
+        letter-spacing: -0.03rem;
     }
 
     /* Text */
@@ -4225,6 +5082,27 @@ h6,
         letter-spacing: -0.08rem;
     }
 
+    h4,
+    .text-h4 {
+        font-size: 1.875rem;
+        line-height: 1.24;
+        letter-spacing: -0.05rem;
+    }
+
+    h5,
+    .text-h5 {
+        font-size: 1.125rem;
+        line-height: 1.45;
+        letter-spacing: -0.01rem;
+    }
+
+    h6,
+    .text-h6 {
+        font-size: 1rem;
+        line-height: 1.34;
+        letter-spacing: -0.025rem;
+    }
+
     /* Text */
 
     .text-2xl {
@@ -4277,6 +5155,27 @@ h6,
         letter-spacing: -0.06rem;
     }
 
+    h4,
+    .text-h4 {
+        font-size: 1.625rem;
+        line-height: 1.26;
+        letter-spacing: -0.04rem;
+    }
+
+    h5,
+    .text-h5 {
+        font-size: 1.0625rem;
+        line-height: 1.46;
+        letter-spacing: -0.008rem;
+    }
+
+    h6,
+    .text-h6 {
+        font-size: 0.9375rem;
+        line-height: 1.36;
+        letter-spacing: -0.02rem;
+    }
+
     /* Text */
 
     .text-2xl {
@@ -4323,6 +5222,27 @@ h6,
         font-size: 1.75rem;
         line-height: 1.2;
         letter-spacing: -0.05rem;
+    }
+
+    h4,
+    .text-h4 {
+        font-size: 1.5rem;
+        line-height: 1.28;
+        letter-spacing: -0.03rem;
+    }
+
+    h5,
+    .text-h5 {
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: -0.005rem;
+    }
+
+    h6,
+    .text-h6 {
+        font-size: 0.875rem;
+        line-height: 1.4;
+        letter-spacing: -0.015rem;
     }
 
     /* Text */

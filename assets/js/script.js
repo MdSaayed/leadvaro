@@ -287,3 +287,100 @@ document.querySelectorAll('.find-email__tab').forEach(function (tab) {
         tab.classList.add('find-email__tab--active');
     });
 });
+
+/* =============================
+  6. Pricing Addon
+============================= */
+
+const labels = [
+    '0', '1K', '2K', '5K', '10K', '20K', '35K', '50K', '75K',
+    '100K', '150K', '200K', '250K', '300K', '350K', '400K', '450K', '500K',
+    '600K', '700K', '800K', '900K', '1M', '1.3M', '1.5M', '1.8M',
+    '2M', '2.3M', '2.5M', '2.8M', '3M', '3.3M', '3.5M'
+];
+
+const prices = [
+    0, 50, 100, 200, 300, 450, 600, 800, 1000,
+    1200, 1500, 1800, 2200, 2600, 3000, 3400, 3800, 4200,
+    4800, 5400, 6000, 6600, 7200, 7800, 8400, 9000,
+    9600, 10200, 10800, 11400, 12000, 12600, 13200
+];
+
+const range = document.getElementById('pricing-addon-range');
+const price = document.getElementById('pricing-addon-price');
+const ticks = document.getElementById('pricing-addon-ticks');
+
+labels.forEach(label => {
+    const div = document.createElement('div');
+    div.className = 'pricing-addon__tick';
+    div.innerHTML = `<span class="pricing-addon__tick-label">${label}</span>`;
+    ticks.appendChild(div);
+});
+
+function updatePricingAddon() {
+    const value = +range.value;
+    const progress = (value / range.max) * 100;
+
+    range.style.setProperty('--progress', `${progress}%`);
+    price.textContent = `$${prices[value].toLocaleString()}/year`;
+}
+
+range.addEventListener('input', updatePricingAddon);
+updatePricingAddon();
+
+/* =============================
+  6. Pricing Table Filter
+============================= */
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.pricing-comparison__filter-btn');
+    const tables = document.querySelectorAll('.pricing-comparison__table');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // ১. Active Button State টগল
+            filterButtons.forEach(btn => btn.classList.remove('pricing-comparison__filter-btn--active'));
+            button.classList.add('pricing-comparison__filter-btn--active');
+
+            // ২. Target Table ID বের করা
+            const targetTableId = button.getAttribute('data-target');
+
+            // ৩. টেবিল Show/Hide করা
+            tables.forEach(table => {
+                if (table.id === targetTableId) {
+                    table.classList.remove('pricing-comparison__table--hidden');
+                    table.classList.add('pricing-comparison__table--active');
+                } else {
+                    table.classList.add('pricing-comparison__table--hidden');
+                    table.classList.remove('pricing-comparison__table--active');
+                }
+            });
+        });
+    });
+});
+
+/* =============================
+  6. Pricing Card Filter
+============================= */
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.pricing-card__filter-btn');
+    const priceElements = document.querySelectorAll('.pricing-card__price');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Toggle Active Class
+            filterButtons.forEach(btn => btn.classList.remove('pricing-card__filter-btn--active'));
+            button.classList.add('pricing-card__filter-btn--active');
+
+            const billingType = button.getAttribute('data-billing');
+
+            // Update Prices with Smooth Transition
+            priceElements.forEach(priceEl => {
+                priceEl.style.opacity = '0';
+                setTimeout(() => {
+                    priceEl.innerHTML = priceEl.getAttribute(`data-${billingType}`);
+                    priceEl.style.opacity = '1';
+                }, 150);
+            });
+        });
+    });
+});
