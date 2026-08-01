@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pricing Card Section</title>
+  <title>How It Works - Campaign Workflow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
+    /* --- Reset & Base Styles --- */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -14,428 +16,489 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: #f8fafc;
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(238, 242, 255, 0.8) 0%, transparent 40%),
-        radial-gradient(circle at 90% 50%, rgba(238, 242, 255, 0.8) 0%, transparent 40%);
-      padding: 60px 20px;
-      min-height: 100vh;
-    }
-
-    /* Filter Toggle Buttons */
-    .pricing-card__filter-wrap {
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-      background: #ffffff;
-      padding: 6px;
-      border-radius: 12px;
-      width: fit-content;
-      margin: 0 auto 40px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-      border: 1px solid #f1f5f9;
-    }
-
-    .pricing-card__filter-btn {
-      border: none;
-      background: transparent;
-      padding: 10px 22px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #64748b;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.25s ease;
-    }
-
-    .pricing-card__filter-btn--active {
-      background: #ffffff;
       color: #0f172a;
-      font-weight: 600;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-      border: 1px solid #e2e8f0;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Grid Layout */
-    .pricing-card__grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
+    /* --- Block: how-it-works --- */
+    .how-it-works {
+      width: 100%;
+      padding: 80px 24px;
+    }
+
+    .how-it-works__container {
+      max-width: 1140px;
       margin: 0 auto;
-      align-items: flex-start;
     }
 
-    /* Card Container */
-    .pricing-card__item {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 28px 24px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-      position: relative;
-      display: flex;
-      flex-direction: column;
+    .how-it-works__header {
+      margin-bottom: 48px;
     }
 
-    /* Highlighted / Best Value Card */
-    .pricing-card__item--featured {
-      border: 2px solid #4f46e5;
-      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.12);
-      padding-top: 52px;
-    }
-
-    .pricing-card__badge {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: #4f46e5;
-      color: #ffffff;
-      text-align: center;
-      font-size: 13px;
+    .how-it-works__badge {
+      display: inline-block;
+      font-size: 11px;
       font-weight: 600;
-      padding: 8px 0;
-      border-top-left-radius: 14px;
-      border-top-right-radius: 14px;
+      letter-spacing: 0.08em;
+      color: #6366f1;
+      background-color: #eef2ff;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
     }
 
-    /* Icon */
-    .pricing-card__icon {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
+    .how-it-works__title {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: #0f172a;
       margin-bottom: 16px;
     }
 
-    .pricing-card__icon--blue-light {
-      background-color: #eff6ff;
-      color: #3b82f6;
-    }
-
-    .pricing-card__icon--blue {
-      background-color: #e0e7ff;
-      color: #4f46e5;
-    }
-
-    /* Card Content */
-    .pricing-card__title {
-      font-size: 22px;
-      font-weight: 700;
-      color: #4f46e5;
-      margin: 0 0 8px;
-    }
-
-    .pricing-card__description {
-      font-size: 13px;
+    .how-it-works__description {
+      font-size: 15px;
+      line-height: 1.6;
       color: #64748b;
-      line-height: 1.5;
-      min-height: 40px;
-      margin: 0 0 20px;
     }
 
-    .pricing-card__price {
-      font-size: 36px;
-      font-weight: 700;
-      color: #0f172a;
-      transition: opacity 0.2s ease;
+    .how-it-works__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    .pricing-card__unit {
-      font-size: 18px;
-      color: #64748b;
-      font-weight: 500;
-    }
-
-    .pricing-card__credits {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: #64748b;
-      margin: 8px 0 24px;
-    }
-
-    .pricing-card__credit-num {
-      color: #4f46e5;
-    }
-
-    /* Buttons */
-    .pricing-card__btn {
-      display: block;
+    .how-it-works__footer {
       text-align: center;
-      background: #4f46e5;
-      color: #ffffff;
       font-size: 14px;
-      font-weight: 600;
-      padding: 12px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.2s ease;
-      margin-bottom: 28px;
+      color: #64748b;
+      margin-top: 40px;
     }
 
-    .pricing-card__btn:hover {
-      background: #4338ca;
-    }
-
-    .pricing-card__btn--light {
-      background: #eef2ff;
-      color: #4f46e5;
-    }
-
-    .pricing-card__btn--light:hover {
-      background: #e0e7ff;
-    }
-
-    /* Features List */
-    .pricing-card__features {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    /* --- Block: step-card --- */
+    .step-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .pricing-card__features li {
+    .step-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.06);
+    }
+
+    .step-card__preview {
+      background-color: #fafafa;
+      height: 240px;
+      padding: 20px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      color: #334155;
+      justify-content: center;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .step-card__content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .step-card__badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #6366f1;
+      background-color: #eef2ff;
+      padding: 4px 10px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .step-card__title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .step-card__text {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: #64748b;
+    }
+
+    /* --- Block: ui-mockup --- */
+    .ui-mockup {
+      width: 100%;
+      max-width: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ui-mockup__browser {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      color: #64748b;
+    }
+
+    .ui-mockup__dots {
+      width: 6px;
+      height: 6px;
+      background: #f87171;
+      box-shadow: 10px 0 0 #fbbf24, 20px 0 0 #34d399;
+      border-radius: 50%;
+      margin-right: 16px;
+    }
+
+    .ui-mockup__input {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    .ui-mockup__button {
+      background: #4f46e5;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px;
+      font-size: 11px;
+      font-weight: 500;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .ui-mockup__search {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px;
+      font-size: 11px;
+      color: #1e293b;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ui-mockup__search-icon {
+      font-size: 10px;
+      color: #94a3b8;
+    }
+
+    .ui-mockup__tags {
+      display: flex;
+      gap: 4px;
+    }
+
+    .ui-mockup__tag {
+      font-size: 9px;
+      padding: 3px 6px;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      color: #64748b;
       font-weight: 500;
     }
 
-    .pricing-card__check {
-      width: 18px;
-      height: 18px;
-      color: #6366f1;
-      background: #e0e7ff;
+    .ui-mockup__tag--active {
+      background: #4f46e5;
+      color: #ffffff;
+      border-color: #4f46e5;
+    }
+
+    .ui-mockup__count {
+      font-size: 9px;
+      color: #94a3b8;
+    }
+
+    .ui-mockup__list-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 6px 8px;
+      font-size: 10px;
+      font-weight: 500;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ui-mockup__avatar {
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
-      padding: 2px;
+      display: inline-block;
       flex-shrink: 0;
     }
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .pricing-card__grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .ui-mockup__avatar--purple { background-color: #6366f1; }
+    .ui-mockup__avatar--red { background-color: #ef4444; }
+
+    .ui-mockup__contact-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
-    @media (max-width: 640px) {
-      .pricing-card__grid {
-        grid-template-columns: 1fr;
-      }
+    .ui-mockup__contact-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ui-mockup__name {
+      font-size: 11px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .ui-mockup__verified {
+      font-size: 8px;
+      background: #dcfce7;
+      color: #166534;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .ui-mockup__email {
+      font-size: 10px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .ui-mockup__phone {
+      font-size: 9px;
+      color: #64748b;
+    }
+
+    .ui-mockup__credit-pill {
+      align-self: flex-start;
+      font-size: 9px;
+      color: #4f46e5;
+      background: #eef2ff;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .ui-mockup__sublabel {
+      font-size: 9px;
+      font-weight: 600;
+      color: #94a3b8;
+      letter-spacing: 0.05em;
+    }
+
+    .ui-mockup__export-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px;
+      font-size: 10px;
+      font-weight: 500;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .ui-mockup__export-item--active {
+      border-color: #818cf8;
+    }
+
+    .ui-mockup__export-info {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ui-mockup__status {
+      font-size: 8px;
+      background: #dcfce7;
+      color: #15803d;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .ui-mockup__radio {
+      width: 10px;
+      height: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
     }
   </style>
 </head>
 <body>
 
-  <section class="pricing-card">
-    <!-- Billing Toggle Filter -->
-    <div class="pricing-card__filter-wrap">
-      <button class="pricing-card__filter-btn pricing-card__filter-btn--active" data-billing="monthly">Monthly billing</button>
-      <button class="pricing-card__filter-btn" data-billing="annual">Annual billing</button>
-    </div>
-
-    <!-- Pricing Grid -->
-    <div class="pricing-card__grid">
+  <section class="how-it-works">
+    <div class="how-it-works__container">
       
-      <!-- 1. Free Card -->
-      <div class="pricing-card__item">
-        <div class="pricing-card__icon pricing-card__icon--blue-light">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
-        </div>
-        <h3 class="pricing-card__title">Free</h3>
-        <p class="pricing-card__description">To see if we are a good fit.</p>
+      <!-- Header -->
+      <header class="how-it-works__header">
+        <span class="how-it-works__badge">HOW IT WORKS</span>
+        <h2 class="how-it-works__title">
+          From sign-up to first campaign<br>in under an hour.
+        </h2>
+        <p class="how-it-works__description">
+          Four steps. No onboarding call required. Most teams send<br>
+          their first sequence the same day they sign up.
+        </p>
+      </header>
+
+      <!-- Cards Grid -->
+      <div class="how-it-works__grid">
         
-        <div class="pricing-card__price" data-monthly="$0" data-annual="$0">$0</div>
-        <div class="pricing-card__credits"><span class="pricing-card__credit-num">100</span> CREDITS PER MONTH</div>
-        
-        <a href="#" class="pricing-card__btn pricing-card__btn--light">Upgrade to Pro</a>
-        
-        <ul class="pricing-card__features">
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            25 row selection
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            3 intent topics max
-          </li>
-        </ul>
+        <!-- Step 1 -->
+        <article class="step-card">
+          <div class="step-card__preview">
+            <div class="ui-mockup">
+              <div class="ui-mockup__browser">
+                <span class="ui-mockup__dots"></span>
+                <span>leadvaro.io/start</span>
+              </div>
+              <div class="ui-mockup__input">you@company.com</div>
+              <div class="ui-mockup__input">••••••••</div>
+              <button class="ui-mockup__button">Start free trial</button>
+            </div>
+          </div>
+          <div class="step-card__content">
+            <span class="step-card__badge">STEP 01</span>
+            <h3 class="step-card__title">Sign up free</h3>
+            <p class="step-card__text">
+              Email and password — no credit card. Pick your plan after the trial, or stay on the free tier forever.
+            </p>
+          </div>
+        </article>
+
+        <!-- Step 2 -->
+        <article class="step-card">
+          <div class="step-card__preview">
+            <div class="ui-mockup">
+              <div class="ui-mockup__search">
+                <span class="ui-mockup__search-icon">🔍</span> CTO at SaaS
+              </div>
+              <div class="ui-mockup__tags">
+                <span class="ui-mockup__tag">USA</span>
+                <span class="ui-mockup__tag">50-500</span>
+                <span class="ui-mockup__tag ui-mockup__tag--active">CEO</span>
+              </div>
+              <div class="ui-mockup__count">142 results found</div>
+              <div class="ui-mockup__list-item">
+                <span class="ui-mockup__avatar ui-mockup__avatar--purple"></span>
+                Mira Hassan
+              </div>
+              <div class="ui-mockup__list-item">
+                <span class="ui-mockup__avatar ui-mockup__avatar--red"></span>
+                Daniel Roe
+              </div>
+            </div>
+          </div>
+          <div class="step-card__content">
+            <span class="step-card__badge">STEP 02</span>
+            <h3 class="step-card__title">Build your list</h3>
+            <p class="step-card__text">
+              Search by industry, headcount, role. One-click filters for CEOs, founders, and decision makers.
+            </p>
+          </div>
+        </article>
+
+        <!-- Step 3 -->
+        <article class="step-card">
+          <div class="step-card__preview">
+            <div class="ui-mockup">
+              <div class="ui-mockup__contact-card">
+                <div class="ui-mockup__contact-header">
+                  <span class="ui-mockup__avatar ui-mockup__avatar--purple"></span>
+                  <span class="ui-mockup__name">Mira Hassan</span>
+                  <span class="ui-mockup__verified">✓</span>
+                </div>
+                <div class="ui-mockup__email">mira@helix.io</div>
+                <div class="ui-mockup__phone">📱 +1 415 ••• 4421</div>
+              </div>
+              <div class="ui-mockup__credit-pill">-1 credit</div>
+            </div>
+          </div>
+          <div class="step-card__content">
+            <span class="step-card__badge">STEP 03</span>
+            <h3 class="step-card__title">Reveal contacts</h3>
+            <p class="step-card__text">
+              Verified emails and direct mobile numbers. Credits only burn on confirmed hits — never on bad data.
+            </p>
+          </div>
+        </article>
+
+        <!-- Step 4 -->
+        <article class="step-card">
+          <div class="step-card__preview">
+            <div class="ui-mockup">
+              <span class="ui-mockup__sublabel">EXPORT TO</span>
+              <div class="ui-mockup__export-item ui-mockup__export-item--active">
+                <div class="ui-mockup__export-info">
+                  <span class="ui-mockup__avatar ui-mockup__avatar--purple"></span>
+                  HubSpot
+                </div>
+                <span class="ui-mockup__status">Connected</span>
+              </div>
+              <div class="ui-mockup__export-item">
+                <div><span class="ui-mockup__radio"></span>Salesforce</div>
+              </div>
+              <div class="ui-mockup__export-item">
+                <div><span class="ui-mockup__radio"></span>CSV download</div>
+              </div>
+            </div>
+          </div>
+          <div class="step-card__content">
+            <span class="step-card__badge">STEP 04</span>
+            <h3 class="step-card__title">Send & measure</h3>
+            <p class="step-card__text">
+              Push directly to HubSpot, Salesforce, Smartlead, or download a CSV. Track replies in your stack.
+            </p>
+          </div>
+        </article>
+
       </div>
 
-      <!-- 2. Growth Card -->
-      <div class="pricing-card__item">
-        <div class="pricing-card__icon pricing-card__icon--blue">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-        </div>
-        <h3 class="pricing-card__title">Growth</h3>
-        <p class="pricing-card__description">Scale your outreach with advanced filters, CRM integrations & job tracking.</p>
-        
-        <div class="pricing-card__price" data-monthly="$69<span class='pricing-card__unit'>/mth</span>" data-annual="$55<span class='pricing-card__unit'>/mth</span>">$69<span class="pricing-card__unit">/mth</span></div>
-        <div class="pricing-card__credits"><span class="pricing-card__credit-num">100</span> CREDITS PER MONTH</div>
-        
-        <a href="#" class="pricing-card__btn">Upgrade to Pro</a>
-        
-        <ul class="pricing-card__features">
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            20,000 row selection
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            6 intent topics max
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Basic integrations
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Advanced filters
-          </li>
-        </ul>
-      </div>
-
-      <!-- 3. Growth Card (Best Value) -->
-      <div class="pricing-card__item pricing-card__item--featured">
-        <div class="pricing-card__badge">Best value</div>
-        <div class="pricing-card__icon pricing-card__icon--blue">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
-        </div>
-        <h3 class="pricing-card__title">Growth</h3>
-        <p class="pricing-card__description">Scale your outreach with advanced filters, CRM integrations & job tracking.</p>
-        
-        <div class="pricing-card__price" data-monthly="$69<span class='pricing-card__unit'>/mth</span>" data-annual="$55<span class='pricing-card__unit'>/mth</span>">$69<span class="pricing-card__unit">/mth</span></div>
-        <div class="pricing-card__credits"><span class="pricing-card__credit-num">100</span> CREDITS PER MONTH</div>
-        
-        <a href="#" class="pricing-card__btn">Upgrade to Pro</a>
-        
-        <ul class="pricing-card__features">
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            20,000 row selection
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            9 intent topics max
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Basic integrations
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            HubSpot-Salesforce Integration
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Duplicate control
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Job change tracking
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Advanced filters
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Priority support
-          </li>
-        </ul>
-      </div>
-
-      <!-- 4. Pro Card -->
-      <div class="pricing-card__item">
-        <div class="pricing-card__icon pricing-card__icon--blue">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-        </div>
-        <h3 class="pricing-card__title">Pro</h3>
-        <p class="pricing-card__description">Maximize your lead generation with massive credit allocation & enterprise-grade rate limits.</p>
-        
-        <div class="pricing-card__price" data-monthly="$169<span class='pricing-card__unit'>/mth</span>" data-annual="$139<span class='pricing-card__unit'>/mth</span>">$169<span class="pricing-card__unit">/mth</span></div>
-        <div class="pricing-card__credits"><span class="pricing-card__credit-num">100</span> CREDITS PER MONTH</div>
-        
-        <a href="#" class="pricing-card__btn">Upgrade to Pro</a>
-        
-        <ul class="pricing-card__features">
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            20,000 row selection
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            12 intent topics max
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Basic integrations
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            HubSpot-Salesforce Integration
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Duplicate control
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Job change tracking
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Advanced filters
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Higher rate limit on API
-          </li>
-          <li>
-            <svg class="pricing-card__check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Priority support
-          </li>
-        </ul>
-      </div>
+      <!-- Footer -->
+      <footer class="how-it-works__footer">
+        Most teams ship their first campaign in under 60 minutes.
+      </footer>
 
     </div>
   </section>
-
-  <!-- Filter Switcher Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const filterButtons = document.querySelectorAll('.pricing-card__filter-btn');
-      const priceElements = document.querySelectorAll('.pricing-card__price');
-
-      filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          // Toggle Active Class
-          filterButtons.forEach(btn => btn.classList.remove('pricing-card__filter-btn--active'));
-          button.classList.add('pricing-card__filter-btn--active');
-
-          const billingType = button.getAttribute('data-billing');
-
-          // Update Prices with Smooth Transition
-          priceElements.forEach(priceEl => {
-            priceEl.style.opacity = '0';
-            setTimeout(() => {
-              priceEl.innerHTML = priceEl.getAttribute(`data-${billingType}`);
-              priceEl.style.opacity = '1';
-            }, 150);
-          });
-        });
-      });
-    });
-  </script>
 
 </body>
 </html>

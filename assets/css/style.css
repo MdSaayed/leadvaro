@@ -775,7 +775,7 @@ h6,
     overflow: hidden;
 }
 
-.how-it-works::after {
+.how-it-works--one::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -801,7 +801,7 @@ h6,
     justify-content: end;
 }
 
-.how-it-works__header-right {
+.how-it-works--one .how-it-works__header-right {
     display: flex;
     justify-content: end;
 }
@@ -810,17 +810,17 @@ h6,
     max-width: 30rem;
 }
 
-.how-it-works__desc {
+.how-it-works--one .how-it-works__desc {
     max-width: 23rem;
 }
 
-.how-it-works__grid {
+.how-it-works--one .how-it-works__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
-.how-it-works__item {
+.how-it-works--one .how-it-works__item {
     min-height: 27rem;
     position: relative;
     display: flex;
@@ -4493,6 +4493,389 @@ h6,
 }
 
 /* ==============================
+   Hero Free Trail
+============================== */
+/* BEM Block: Hero Section */
+.hero--free-trail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1.5rem;
+}
+
+/* Dedicated Extra Wrapper for CSS Grid */
+.hero--free-trail .hero__grid {
+    display: grid;
+    grid-template-columns: 5.5fr 4.5fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* BEM Element: Hero Content Area (Left Side) */
+.hero--free-trail .hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero--free-trail .hero__badge-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.hero--free-trail .hero__badge,
+.subtitle-badge {
+    background-color: #EEF2FF;
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+    border-radius: 62.4375rem;
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
+    line-height: 1.11;
+}
+
+.hero--free-trail .hero__badge-text {
+    color: #535862;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.hero--free-trail .hero__title {
+    color: var(--color-navy);
+}
+
+.hero--free-trail .hero__description {
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Feature List */
+.hero--free-trail .hero__features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.hero--free-trail .hero__feature-item {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 1rem;
+}
+
+.hero--free-trail .hero__feature-item svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background-color: #EEF2FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.2rem;
+    padding: 0.2rem;
+    flex-shrink: 0;
+    border: 1px solid rgba(79, 70, 229, 0.40);
+    margin-top: 3px;
+}
+
+.hero--free-trail .hero__avatar-area {
+    justify-content: start;
+}
+
+
+/* BEM Block: Signup Card (Right Side) */
+.hero--free-trail .signup-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.hero--free-trail .signup-card__title {
+    margin-bottom: 0.35rem;
+    letter-spacing: 0;
+}
+
+.hero--free-trail .signup-card__subtitle {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 1.75rem;
+}
+
+.hero--free-trail .signup-card__form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.hero--free-trail .signup-card__label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+.signup-card__input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.signup-card__input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.signup-card__hint {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+
+/* Buttons with Modifiers */
+.signup-card__btn {
+    width: 100%;
+    padding: 0.85rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+}
+
+.signup-card__btn--primary {
+    background-color: #4f46e5;
+    color: #ffffff;
+    margin-top: 0.5rem;
+}
+
+.signup-card__btn--primary:hover {
+    background-color: #4338ca;
+}
+
+.signup-card__btn--google {
+    background-color: #ffffff;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+}
+
+.signup-card__btn--google:hover {
+    background-color: #f8fafc;
+}
+
+.signup-card__google-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.signup-card__footer {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-top: 1.5rem;
+}
+
+.signup-card__link {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-card__link:hover {
+    text-decoration: underline;
+}
+
+/* ==============================
+   App Preview
+============================== */
+.trial-feature,
+.brands--free-trail {
+    background: #F1F5F9;
+}
+
+/* Dedicated CSS Grid Wrapper */
+.trial-feature__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Left Content Column */
+.trial-feature__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.trial-feature__badge,
+.subtitle-badge {
+    align-self: flex-start;
+    background-color: #E0E7FF;
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.trial-feature__title {
+    line-height: 1.15;
+    font-weight: 400;
+}
+
+
+/* Highlight Stats List */
+.trial-feature__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 1rem;
+}
+
+.trial-feature__stat-item {
+    display: flex;
+    gap: 1.13rem;
+    align-items: flex-start;
+}
+
+.trial-feature__stat-number {
+    font-weight: 400;
+    color: var(--primary);
+    line-height: 1;
+    min-width: 60px;
+}
+
+.trial-feature__stat-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.trial-feature__stat-title {
+    font-weight: 500;
+}
+
+.trial-feature__stat-text {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.app-preview img {
+    width: 100%;
+}
+
+/* ==============================
+   .How It Works
+============================== */
+/* --- Block: how-it-works --- */
+.how-it-works--style-two {
+    background: #F1F5F9;
+}
+
+.how-it-works--style-two .how-it-works__header {
+    max-width: 32rem;
+}
+
+.how-it-works--style-two .how-it-works__title {
+    max-width: 100%
+}
+
+.how-it-works--style-two .how-it-works__description {
+    margin-top: 0.25rem;
+}
+
+.how-it-works--style-two .how-it-works__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.how-it-works--style-two .how-it-works__footer {
+    text-align: center;
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 1.5rem;
+}
+
+/* --- Block: step-card --- */
+.how-it-works--style-two .step-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(16, 24, 40, 0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.how-it-works--style-two .step-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.06);
+}
+
+.how-it-works--style-two .step-card__preview img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.how-it-works--style-two .step-card__content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 0.75rem;
+    background: var(--white);
+}
+
+.how-it-works--style-two .step-card__badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: #6366f1;
+    background-color: #eef2ff;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.how-it-works--style-two.step-card__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.how-it-works--style-two.step-card__text {
+    color: #535862;
+}
+
+
+
+
+
+/* ==============================
    Animation
 ============================== */
 @keyframes loop-left {
@@ -4850,6 +5233,21 @@ h6,
     .contact--page .contact__content {
         gap: 3rem;
     }
+
+    /* Hero Free Trail */
+    .hero--free-trail .hero__grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* App Preview */
+    .trial-feature__grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .trial-feature__stats {
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 850px) {
@@ -5029,6 +5427,20 @@ h6,
         gap: 1rem;
         margin-top: 3rem;
     }
+
+    /* Hero Free Trail */
+    .hero--free-trail .signup-card {
+        padding: 1.5rem;
+    }
+
+    /*  */
+    .trial-feature__stat-item {
+        gap: 0.5rem;
+    }
+
+    .trial-feature__content {
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -5081,6 +5493,12 @@ h6,
     .pain-points__card {
         padding: 1.2rem;
     }
+
+    /* How It Works */
+    .how-it-works--style-two .how-it-works__grid {
+        gap: 1rem;
+    }
+
 }
 
 @media (max-width: 480px) {
