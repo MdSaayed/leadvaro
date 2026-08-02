@@ -384,3 +384,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+/* =============================
+  6. Booking Calendar
+============================= */
