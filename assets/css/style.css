@@ -4000,6 +4000,7 @@ h6,
     text-align: left;
 }
 
+
 /* Tooltip Circle */
 .pricing-comparison__tooltip {
     display: inline-flex;
@@ -5621,10 +5622,29 @@ ul.green li::marker {
     gap: 0.25rem;
 }
 
+.comparison__brand--alt {
+    align-items: center;
+}
+
 .comparison__brand-name {
     font-size: 1rem;
     font-weight: 600;
     color: #0f172a;
+}
+
+.comparison__brand-badge-title {
+    font-weight: 600;
+    font-size: 0.8125rem;
+    text-align: center;
+    display: block;
+}
+
+.comparison__brand-desc {
+    text-align: center;
+    color: #535862;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    display: block;
 }
 
 .comparison__brand-badge {
@@ -5655,6 +5675,10 @@ ul.green li::marker {
     letter-spacing: 0.05rem;
 }
 
+.comparison--alt .comparison__category-title{
+    color: var(--primary);
+}
+
 /* Table Body Cells */
 .comparison__cell {
     padding: 1rem 1.5rem;
@@ -5662,6 +5686,14 @@ ul.green li::marker {
     color: #334155;
     border-bottom: 1px solid #f1f5f9;
     vertical-align: middle;
+}
+
+.comparison--alt .comparison__cell {
+    text-align: center;
+}
+
+.comparison--alt .comparison__cell--left  {
+    text-align: left;
 }
 
 .comparison__cell strong {
@@ -5682,6 +5714,14 @@ ul.green li::marker {
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
+}
+
+.comparison__status--active{
+    background:#EEF2FF;
+    padding: 0.25rem 0.60rem;
+    border-radius: var(--radius-full);
+    color: var(--primary);
+    font-weight: 500;
 }
 
 .comparison__status--success::before {
@@ -5717,6 +5757,14 @@ ul.green li::marker {
     margin-right: 0.375rem;
     padding: 5px;
     border-radius: 50%;
+}
+
+.comparison--alt tfoot td{
+    padding: 2rem;
+    text-align: center;
+}
+.comparison--alt tfoot {
+    background-color: #F8FAFC;
 }
 
 /* ==============================
@@ -5778,7 +5826,7 @@ ul.green li::marker {
     font-weight: 500;
     font-size: 0.75rem;
 }
- 
+
 
 /* ==============================
    Animation
@@ -6497,7 +6545,7 @@ ul.green li::marker {
     }
 
     .switch-reasons__grid {
-        grid-template-columns:   1fr;
+        grid-template-columns: 1fr;
     }
 
 }
