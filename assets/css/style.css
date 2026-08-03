@@ -5675,7 +5675,7 @@ ul.green li::marker {
     letter-spacing: 0.05rem;
 }
 
-.comparison--alt .comparison__category-title{
+.comparison--alt .comparison__category-title {
     color: var(--primary);
 }
 
@@ -5692,7 +5692,7 @@ ul.green li::marker {
     text-align: center;
 }
 
-.comparison--alt .comparison__cell--left  {
+.comparison--alt .comparison__cell--left {
     text-align: left;
 }
 
@@ -5716,8 +5716,8 @@ ul.green li::marker {
     gap: 0.375rem;
 }
 
-.comparison__status--active{
-    background:#EEF2FF;
+.comparison__status--active {
+    background: #EEF2FF;
     padding: 0.25rem 0.60rem;
     border-radius: var(--radius-full);
     color: var(--primary);
@@ -5759,10 +5759,11 @@ ul.green li::marker {
     border-radius: 50%;
 }
 
-.comparison--alt tfoot td{
+.comparison--alt tfoot td {
     padding: 2rem;
     text-align: center;
 }
+
 .comparison--alt tfoot {
     background-color: #F8FAFC;
 }
@@ -5787,9 +5788,8 @@ ul.green li::marker {
 
 .switch-reasons__header {
     text-align: left;
+    max-width: 40rem;
 }
-
-.switch-reasons__description {}
 
 /* Grid Layout */
 .switch-reasons__grid {
@@ -5827,6 +5827,9 @@ ul.green li::marker {
     font-size: 0.75rem;
 }
 
+.switch-reasons--contact-out .switch-reasons__card:nth-child(odd) .switch-reasons__card-stat {
+    color: var(--primary);
+}
 
 /* ==============================
    Animation

@@ -291,7 +291,6 @@ document.querySelectorAll('.find-email__tab').forEach(function (tab) {
 /* =============================
   6. Pricing Addon
 ============================= */
-
 const labels = [
     '0', '1K', '2K', '5K', '10K', '20K', '35K', '50K', '75K',
     '100K', '150K', '200K', '250K', '300K', '350K', '400K', '450K', '500K',
@@ -310,23 +309,32 @@ const range = document.getElementById('pricing-addon-range');
 const price = document.getElementById('pricing-addon-price');
 const ticks = document.getElementById('pricing-addon-ticks');
 
-labels.forEach(label => {
-    const div = document.createElement('div');
-    div.className = 'pricing-addon__tick';
-    div.innerHTML = `<span class="pricing-addon__tick-label">${label}</span>`;
-    ticks.appendChild(div);
-});
+if (ticks) {
+    labels.forEach(label => {
+        const div = document.createElement('div');
+        div.className = 'pricing-addon__tick';
+        div.innerHTML = `<span class="pricing-addon__tick-label">${label}</span>`;
+        ticks.appendChild(div);
+    });
+}
 
 function updatePricingAddon() {
+    if (!range || !price) return;
+
     const value = +range.value;
     const progress = (value / range.max) * 100;
 
     range.style.setProperty('--progress', `${progress}%`);
-    price.textContent = `$${prices[value].toLocaleString()}/year`;
+    
+    if (prices[value] !== undefined) {
+        price.textContent = `$${prices[value].toLocaleString()}/year`;
+    }
 }
 
-range.addEventListener('input', updatePricingAddon);
-updatePricingAddon();
+if (range) {
+    range.addEventListener('input', updatePricingAddon);
+    updatePricingAddon();
+}
 
 /* =============================
   6. Pricing Table Filter
