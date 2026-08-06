@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadvaro Navbar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Link Swiper's CSS -->
+</head>
+
+<body>
+
+    <!-- Header Area -->
+    <header class="header">
+        <div class="header__container container">
+            <nav class="navbar">
+                <div class="navbar__inner" id="navbarInner">
+                    <a href="./index.html" class="logo__link">
+                        <img class="logo__img" src="./assets/img/logo.png" alt="Leadvaro">
+                    </a>
+
+                    <ul class="nav-menu" id="navMenu">
+                        <li class="nav-menu__item" data-index="0">
+                            <a href="#" class="nav-menu__link">
+                                Product
+                                <svg class="nav-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <a href="./company-search.html" class="dropdown__item">Company Search</a>
+                                <a href="./data-enrichment.html" class="dropdown__item">Data Enrichment</a>
+                                <a href="./lead-finder.html" class="dropdown__item">Lead Finder</a>
+                                <a href="./email-finder.html" class="dropdown__item">Email Finder</a>
+                                <a href="./people-search.html" class="dropdown__item">People Search</a>
+                                <a href="./domain-search.html" class="dropdown__item">Domain Search</a>
+                            </div>
+                        </li>
+                        <li class="nav-menu__item" data-index="1">
+                            <a href="#" class="nav-menu__link">
+                                Use Cases
+                                <svg class="nav-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#marketing" class="dropdown__item">Marketing</a><a href="#sales"
+                                    class="dropdown__item">Sales</a><a href="#support"
+                                    class="dropdown__item">Support</a>
+                            </div>
+                        </li>
+                        <li class="nav-menu__item"><a href="#compare" class="nav-menu__link">Compare</a></li>
+                        <li class="nav-menu__item" data-index="3">
+                            <a href="#" class="nav-menu__link">
+                                Resources
+                                <svg class="nav-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#blog" class="dropdown__item">Blog</a><a href="#docs"
+                                    class="dropdown__item">Docs</a><a href="#community"
+                                    class="dropdown__item">Community</a>
+                            </div>
+                        </li>
+                        <li class="nav-menu__item" data-index="0">
+                            <a href="#" class="nav-menu__link">
+                                Pages
+                                <svg class="nav-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <a href="./privacy-policy.html" class="dropdown__item">Privacy & Policy</a>
+                                <a href="./cdpr.html" class="dropdown__item">CDPR</a>
+                                <a href="./terms-services.html" class="dropdown__item">Terms</a>
+                                <a href="./crm-export.html" class="dropdown__item">CRM Export</a>
+                                <a href="./for-agencies.html" class="dropdown__item">For Agencies</a>
+                                <a href="./for-sales-teams.html" class="dropdown__item">For Teams</a>
+                                <a href="./for-saas-founders.html" class="dropdown__item">For SaaS Founders</a>
+                                <a href="./for-fecruiters.html" class="dropdown__item">For SaaS Fecruiters</a>
+                                <a href="./pricing.html" class="dropdown__item">Pricing</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="nav-actions">
+                        <a href="#" class="btn btn--secondary">Sign in</a>
+                        <a href="#" class="btn btn--primary">Get free Consultation</a>
+                    </div>
+
+                    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                        <span class="mobile-toggle__bar"></span>
+                        <span class="mobile-toggle__bar"></span>
+                        <span class="mobile-toggle__bar"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__header">
+            <a href="./index.html" class="logo__link">
+                <img class="logo__img" src="./assets/img/logo.png" alt="Leadvaro">
+            </a>
+            <button class="mobile-menu__close" id="mobileCloseBtn" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-menu__scroll" id="mobileMenuScroll">
+            <div class="mobile-menu__item" id="mob-0-0-krp4m">
+                <button class="mobile-menu__link" onclick="toggleMobileAccordion(event, 'mob-0-0-krp4m')">
+                    <span style="padding-left:0px">Product</span>
+                    <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="width:18px;height:18px;transition:transform 0.3s">
+                        <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="mobile-menu__submenu">
+                    <div class="mobile-menu__item">
+                        <a href="#analytics" class="mobile-menu__link" style="padding-left:28px">Analytics</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#automation" class="mobile-menu__link" style="padding-left:28px">Automation</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#integrations" class="mobile-menu__link" style="padding-left:28px">Integrations</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#api" class="mobile-menu__link" style="padding-left:28px">API</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu__item" id="mob-0-1-e8zk6">
+                <button class="mobile-menu__link" onclick="toggleMobileAccordion(event, 'mob-0-1-e8zk6')">
+                    <span style="padding-left:0px">Use Cases</span>
+                    <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="width:18px;height:18px;transition:transform 0.3s">
+                        <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="mobile-menu__submenu">
+                    <div class="mobile-menu__item">
+                        <a href="#marketing" class="mobile-menu__link" style="padding-left:28px">Marketing</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#sales" class="mobile-menu__link" style="padding-left:28px">Sales</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#support" class="mobile-menu__link" style="padding-left:28px">Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu__item">
+                <a href="#compare" class="mobile-menu__link" style="padding-left:16px">Compare</a>
+            </div>
+            <div class="mobile-menu__item" id="mob-0-3-72awc">
+                <button class="mobile-menu__link" onclick="toggleMobileAccordion(event, 'mob-0-3-72awc')">
+                    <span style="padding-left:0px">Resources</span>
+                    <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="width:18px;height:18px;transition:transform 0.3s">
+                        <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="mobile-menu__submenu">
+                    <div class="mobile-menu__item">
+                        <a href="#blog" class="mobile-menu__link" style="padding-left:28px">Blog</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#docs" class="mobile-menu__link" style="padding-left:28px">Docs</a>
+                    </div>
+                    <div class="mobile-menu__item">
+                        <a href="#community" class="mobile-menu__link" style="padding-left:28px">Community</a>
+                    </div>
+                    <div class="mobile-menu__item" id="mob-1-3-i0ayo">
+                        <button class="mobile-menu__link" onclick="toggleMobileAccordion(event, 'mob-1-3-i0ayo')">
+                            <span style="padding-left:12px">Guides</span>
+                            <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width:18px;height:18px;transition:transform 0.3s">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </button>
+                        <div class="mobile-menu__submenu">
+                            <div class="mobile-menu__item">
+                                <a href="#getting-started" class="mobile-menu__link" style="padding-left:40px">Getting
+                                    Started</a>
+                            </div>
+                            <div class="mobile-menu__item">
+                                <a href="#advanced" class="mobile-menu__link" style="padding-left:40px">Advanced</a>
+                            </div>
+                            <div class="mobile-menu__item" id="mob-2-2-tln4e">
+                                <button class="mobile-menu__link"
+                                    onclick="toggleMobileAccordion(event, 'mob-2-2-tln4e')">
+                                    <span style="padding-left:24px">Tutorials</span>
+                                    <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        style="width:18px;height:18px;transition:transform 0.3s">
+                                        <path d="m6 9 6 6 6-6"></path>
+                                    </svg>
+                                </button>
+                                <div class="mobile-menu__submenu">
+                                    <div class="mobile-menu__item">
+                                        <a href="#video" class="mobile-menu__link" style="padding-left:52px">Video
+                                            Tutorials</a>
+                                    </div>
+                                    <div class="mobile-menu__item">
+                                        <a href="#written" class="mobile-menu__link" style="padding-left:52px">Written
+                                            Tutorials</a>
+                                    </div>
+                                    <div class="mobile-menu__item" id="mob-3-2-xemuw">
+                                        <button class="mobile-menu__link"
+                                            onclick="toggleMobileAccordion(event, 'mob-3-2-xemuw')">
+                                            <span style="padding-left:36px">Deep Dive</span>
+                                            <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                style="width:18px;height:18px;transition:transform 0.3s">
+                                                <path d="m6 9 6 6 6-6"></path>
+                                            </svg>
+                                        </button>
+                                        <div class="mobile-menu__submenu">
+                                            <div class="mobile-menu__item">
+                                                <a href="#architecture" class="mobile-menu__link"
+                                                    style="padding-left:64px">Architecture</a>
+                                            </div>
+                                            <div class="mobile-menu__item">
+                                                <a href="#best-practices" class="mobile-menu__link"
+                                                    style="padding-left:64px">Best Practices</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu__item" id="mob-0-0-krp4m2">
+                <button class="mobile-menu__link" onclick="toggleMobileAccordion(event, 'mob-0-0-krp4m2')">
+                    <span style="padding-left:0px">Pages</span>
+                    <svg class="mobile-menu__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="width:18px;height:18px;transition:transform 0.3s">
+                        <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="mobile-menu__submenu">
+                    <div class="mobile-menu__item">
+                        <a href="./privacy-policy.html" class="mobile-menu__link" style="padding-left:28px">Privacy &
+                            Policy</a>
+                        <a href="./cdpr.html" class="mobile-menu__link" style="padding-left:28px">CDPR</a>
+                        <a href="./terms-services.html" class="mobile-menu__link" style="padding-left:28px">Terms</a>
+                        <a href="./crm-export.html" class="mobile-menu__link" style="padding-left:28px">CRM Export</a>
+                        <a href="./crm-export.html" class="mobile-menu__link" style="padding-left:28px">CRM Export</a>
+                        <a href="./for-agencies.html" class="mobile-menu__link" style="padding-left:28px">For
+                            Agencies</a>
+                        <a href="./for-sales-teams.html" class="mobile-menu__link" style="padding-left:28px">For
+                            Teams</a>
+                        <a href="./for-saas-founders.html" class="mobile-menu__link" style="padding-left:28px">For SaaS
+                            Founders</a>
+                        <a href="./for-fecruiters.html" class="mobile-menu__link" style="padding-left:28px">For SaaS
+                            Fecruiters</a>
+                        <a href="./pricing.html" class="mobile-menu__link" style="padding-left:28px">Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu__actions">
+            <a href="#" class="btn btn--secondary">Sign in</a>
+            <a href="#" class="btn btn--primary">Get free Consultation</a>
+        </div>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <main class="main">
+
+        <!-- Hero Area -->
+        <section class="hero hero--our-data spacing-xxl">
+            <div class="hero__container container">
+                <div class="hero__header header-area-center">
+                    <div class="hero__badge">
+                        <span class="hero__badge-dot"></span>
+                        <span class="hero__badge-text">THE LEADVARO DATA ENGINE</span>
+                    </div>
+
+                    <h1 class="hero__title text-h2">
+                        The only provider that verifies every single contact
+                    </h1>
+
+                    <p class="hero__description">
+                        Every record passes a five-step verification before it reaches your list — so the<br>
+                        pipeline you build on is data you can actually trust.
+                    </p>
+                </div>
+
+                <div class="hero__stats-card">
+                    <div class="hero__stat-item">
+                        <h3 class="hero__stat-number hero__stat-number--purple text-h4">300M+</h3>
+                        <h4 class="hero__stat-title text-base">Verified profiles</h4>
+                        <p class="hero__stat-desc">From 800M+ collected records, only the best pass verification.</p>
+                    </div>
+
+                    <div class="hero__stat-item">
+                        <h3 class="hero__stat-number hero__stat-number--green  text-h4">98%</h3>
+                        <h4 class="hero__stat-title text-base">Accuracy rate</h4>
+                        <p class="hero__stat-desc">Every field checked five times before it reaches you.</p>
+                    </div>
+
+                    <div class="hero__stat-item">
+                        <h3 class="hero__stat-number hero__stat-number--yellow  text-h4">30%</h3>
+                        <h4 class="hero__stat-title text-base">Connect rate</h4>
+                        <p class="hero__stat-desc">125M+ mobile numbers verified live for real reach.</p>
+                    </div>
+
+                    <div class="hero__stat-item">
+                        <h3 class="hero__stat-number hero__stat-number--blue  text-h4">7 days</h3>
+                        <h4 class="hero__stat-title text-base">Refresh cadence</h4>
+                        <p class="hero__stat-desc">High-intent leads refreshed weekly, all data ~30 days.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Breakdown -->
+        <section class="data-breakdown">
+            <div class="data-breakdown__container container gap-xxl">
+                <div class="data-breakdown__header header-area-center">
+                    <span class="data-breakdown__badge badge--style-two">Accurate B2B Data</span>
+                    <h2 class="data-breakdown__title">Every field your reps<br>actually use</h2>
+                    <p class="data-breakdown__description">
+                        One reveal returns a complete, outreach-ready record — the person, their role, and the company
+                        behind them, all verified before it lands in your list.
+                    </p>
+                </div>
+
+                <div class="data-breakdown__grid">
+                    <div class="data-breakdown__card">
+                        <div class="data-breakdown__card-header">
+                            <div class="data-breakdown__meta">
+                                <span class="data-breakdown__category">PEOPLE DATA</span>
+                                <span class="data-breakdown__count">6 fields</span>
+                            </div>
+                            <h3 class="data-breakdown__card-title text-2xl">The person you're calling</h3>
+                        </div>
+                        <div class="data-breakdown__list">
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.5 5.25L7.62369 9.53658C8.11957 9.8837 8.36751 10.0573 8.6372 10.1245C8.87542 10.1839 9.12458 10.1839 9.3628 10.1245C9.63249 10.0573 9.88043 9.8837 10.3763 9.53658L16.5 5.25M5.1 15H12.9C14.1601 15 14.7902 15 15.2715 14.7548C15.6948 14.539 16.039 14.1948 16.2548 13.7715C16.5 13.2902 16.5 12.6601 16.5 11.4V6.6C16.5 5.33988 16.5 4.70982 16.2548 4.22852C16.039 3.80516 15.6948 3.46095 15.2715 3.24524C14.7902 3 14.1601 3 12.9 3H5.1C3.83988 3 3.20982 3 2.72852 3.24524C2.30516 3.46095 1.96095 3.80516 1.74524 4.22852C1.5 4.70982 1.5 5.33988 1.5 6.6V11.4C1.5 12.6601 1.5 13.2902 1.74524 13.7715C1.96095 14.1948 2.30516 14.539 2.72852 14.7548C3.20982 15 3.83988 15 5.1 15Z"
+                                            stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">Verified email + phone</h4>
+                                    <p class="data-breakdown__item-text text-sm">Work email checked in five steps, plus
+                                        a direct
+                                        dial where one exists — not a switchboard number.</p>
+                                </div>
+                            </div>
+
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15.75 9L6.75 9M15.75 4.5L6.75 4.5M15.75 13.5L6.75 13.5M3.75 9C3.75 9.41421 3.41421 9.75 3 9.75C2.58579 9.75 2.25 9.41421 2.25 9C2.25 8.58579 2.58579 8.25 3 8.25C3.41421 8.25 3.75 8.58579 3.75 9ZM3.75 4.5C3.75 4.91421 3.41421 5.25 3 5.25C2.58579 5.25 2.25 4.91421 2.25 4.5C2.25 4.08579 2.58579 3.75 3 3.75C3.41421 3.75 3.75 4.08579 3.75 4.5ZM3.75 13.5C3.75 13.9142 3.41421 14.25 3 14.25C2.58579 14.25 2.25 13.9142 2.25 13.5C2.25 13.0858 2.58579 12.75 3 12.75C3.41421 12.75 3.75 13.0858 3.75 13.5Z"
+                                            stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">Name & how they go by</h4>
+                                    <p class="data-breakdown__item-text text-sm">Full legal name and the version they
+                                        actually
+                                        use
+                                        in their inbox signature.</p>
+                                </div>
+                            </div>
+
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1933_10526)">
+                                            <path
+                                                d="M6 6H6.0075M1.5 3.9L1.5 7.25589C1.5 7.62277 1.5 7.80622 1.54145 7.97885C1.57819 8.1319 1.6388 8.27822 1.72104 8.41243C1.8138 8.5638 1.94352 8.69351 2.20294 8.95294L7.95441 14.7044C8.84545 15.5955 9.29097 16.041 9.80471 16.2079C10.2566 16.3547 10.7434 16.3547 11.1953 16.2079C11.709 16.041 12.1545 15.5955 13.0456 14.7044L14.7044 13.0456C15.5955 12.1545 16.041 11.709 16.2079 11.1953C16.3547 10.7434 16.3547 10.2566 16.2079 9.80471C16.041 9.29097 15.5955 8.84545 14.7044 7.95441L8.95294 2.20294C8.69351 1.94352 8.5638 1.8138 8.41243 1.72104C8.27822 1.6388 8.1319 1.57819 7.97885 1.54145C7.80622 1.5 7.62277 1.5 7.25589 1.5L3.9 1.5C3.05992 1.5 2.63988 1.5 2.31901 1.66349C2.03677 1.8073 1.8073 2.03677 1.66349 2.31901C1.5 2.63988 1.5 3.05992 1.5 3.9ZM6.375 6C6.375 6.20711 6.20711 6.375 6 6.375C5.79289 6.375 5.625 6.20711 5.625 6C5.625 5.79289 5.79289 5.625 6 5.625C6.20711 5.625 6.375 5.79289 6.375 6Z"
+                                                stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1933_10526">
+                                                <rect width="18" height="18" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">Title, seniority & function</h4>
+                                    <p class="data-breakdown__item-text text-sm">Exact job title, seniority band, and
+                                        the
+                                        department
+                                        or function they sit in.</p>
+                                </div>
+                            </div>
+
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.46101 2.59041C8.63388 2.24021 8.72031 2.06511 8.83764 2.00916C8.93973 1.96049 9.05834 1.96049 9.16043 2.00916C9.27776 2.06511 9.3642 2.24021 9.53706 2.59041L11.1771 5.91289C11.2281 6.01628 11.2536 6.06797 11.2909 6.10811C11.3239 6.14365 11.3635 6.17244 11.4075 6.19289C11.4572 6.21599 11.5142 6.22433 11.6283 6.24101L15.2968 6.77721C15.6831 6.83367 15.8762 6.8619 15.9656 6.95625C16.0434 7.03835 16.08 7.15115 16.0652 7.26326C16.0481 7.39211 15.9083 7.52831 15.6286 7.80071L12.9751 10.3852C12.8924 10.4658 12.851 10.5061 12.8243 10.554C12.8007 10.5965 12.7856 10.6431 12.7797 10.6913C12.7731 10.7458 12.7829 10.8027 12.8024 10.9165L13.4285 14.567C13.4945 14.952 13.5275 15.1446 13.4655 15.2588C13.4115 15.3582 13.3155 15.4279 13.2043 15.4485C13.0765 15.4722 12.9036 15.3813 12.5579 15.1995L9.27831 13.4748C9.17612 13.4211 9.12503 13.3942 9.0712 13.3836C9.02355 13.3743 8.97453 13.3743 8.92687 13.3836C8.87304 13.3942 8.82195 13.4211 8.71977 13.4748L5.44022 15.1995C5.09446 15.3813 4.92158 15.4722 4.79375 15.4485C4.68253 15.4279 4.58657 15.3582 4.53258 15.2588C4.47052 15.1446 4.50354 14.952 4.56958 14.567L5.19569 10.9165C5.21521 10.8027 5.22497 10.7458 5.21836 10.6913C5.21252 10.6431 5.19736 10.5965 5.17373 10.554C5.14704 10.5061 5.10568 10.4658 5.02296 10.3852L2.36944 7.80071C2.08977 7.52831 1.94993 7.39211 1.93292 7.26326C1.91811 7.15115 1.95469 7.03835 2.03246 6.95625C2.12185 6.8619 2.315 6.83367 2.70131 6.77721L6.36976 6.24101C6.48384 6.22433 6.54088 6.21599 6.59056 6.19289C6.63455 6.17244 6.67414 6.14365 6.70716 6.10811C6.74445 6.06797 6.76997 6.01628 6.821 5.91289L8.46101 2.59041Z"
+                                            stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">Where they work now</h4>
+                                    <p class="data-breakdown__item-text text-sm">Current employer, domain, industry, and
+                                        how
+                                        long
+                                        they've been there.</p>
+                                </div>
+                            </div>
+
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.625 8.25H3.45C3.02996 8.25 2.81994 8.25 2.65951 8.33175C2.51839 8.40365 2.40365 8.51839 2.33175 8.65951C2.25 8.81994 2.25 9.02996 2.25 9.45V15.75M12.375 8.25H14.55C14.97 8.25 15.1801 8.25 15.3405 8.33175C15.4816 8.40365 15.5963 8.51839 15.6683 8.65951C15.75 8.81994 15.75 9.02996 15.75 9.45V15.75M12.375 15.75V4.65C12.375 3.80992 12.375 3.38988 12.2115 3.06901C12.0677 2.78677 11.8382 2.5573 11.556 2.41349C11.2351 2.25 10.8151 2.25 9.975 2.25H8.025C7.18492 2.25 6.76488 2.25 6.44401 2.41349C6.16177 2.5573 5.9323 2.78677 5.78849 3.06901C5.625 3.38988 5.625 3.80992 5.625 4.65V15.75M16.5 15.75H1.5M8.25 5.25H9.75M8.25 8.25H9.75M8.25 11.25H9.75"
+                                            stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">City & time zone</h4>
+                                    <p class="data-breakdown__item-text text-sm">Precise city, region, and country — so
+                                        your
+                                        send
+                                        time actually lands in business hours.</p>
+                                </div>
+                            </div>
+
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15.75 9L6.75 9M15.75 4.5L6.75 4.5M15.75 13.5L6.75 13.5M3.75 9C3.75 9.41421 3.41421 9.75 3 9.75C2.58579 9.75 2.25 9.41421 2.25 9C2.25 8.58579 2.58579 8.25 3 8.25C3.41421 8.25 3.75 8.58579 3.75 9ZM3.75 4.5C3.75 4.91421 3.41421 5.25 3 5.25C2.58579 5.25 2.25 4.91421 2.25 4.5C2.25 4.08579 2.58579 3.75 3 3.75C3.41421 3.75 3.75 4.08579 3.75 4.5ZM3.75 13.5C3.75 13.9142 3.41421 14.25 3 14.25C2.58579 14.25 2.25 13.9142 2.25 13.5C2.25 13.0858 2.58579 12.75 3 12.75C3.41421 12.75 3.75 13.0858 3.75 13.5Z"
+                                            stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">Career trail</h4>
+                                    <p class="data-breakdown__item-text text-sm">Previous roles and companies, so you
+                                        know what
+                                        they
+                                        cared about before this one.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="data-breakdown__card">
+                        <div class="data-breakdown__card-header">
+                            <div class="data-breakdown__meta">
+                                <span class="data-breakdown__category">COMPANY DATA</span>
+                                <span class="data-breakdown__count">8 fields</span>
+                            </div>
+                            <h3 class="data-breakdown__card-title text-2xl">The account they work for</h3>
+                        </div>
+
+                        <div class="data-breakdown__list">
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.625 8.25H3.45C3.02996 8.25 2.81994 8.25 2.65951 8.33175C2.51839 8.40365 2.40365 8.51839 2.33175 8.65951C2.25 8.81994 2.25 9.02996 2.25 9.45V15.75M12.375 8.25H14.55C14.97 8.25 15.1801 8.25 15.3405 8.33175C15.4816 8.40365 15.5963 8.51839 15.6683 8.65951C15.75 8.81994 15.75 9.02996 15.75 9.45V15.75M12.375 15.75V4.65C12.375 3.80992 12.375 3.38988 12.2115 3.06901C12.0677 2.78677 11.8382 2.5573 11.556 2.41349C11.2351 2.25 10.8151 2.25 9.975 2.25H8.025C7.18492 2.25 6.76488 2.25 6.44401 2.41349C6.16177 2.5573 5.9323 2.78677 5.78849 3.06901C5.625 3.38988 5.625 3.80992 5.625 4.65V15.75M16.5 15.75H1.5M8.25 5.25H9.75M8.25 8.25H9.75M8.25 11.25H9.75"
+                                            stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">Company identity</h4>
+                                    <p class="data-breakdown__item-text text-sm">Legal name, main domain, website, and
+                                        logo
+                                        ready
+                                        for CRM.</p>
+                                </div>
+                            </div>
+
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1933_10556)">
+                                            <path
+                                                d="M6 6H6.0075M1.5 3.9L1.5 7.25589C1.5 7.62277 1.5 7.80622 1.54145 7.97885C1.57819 8.1319 1.6388 8.27822 1.72104 8.41243C1.8138 8.5638 1.94352 8.69351 2.20294 8.95294L7.95441 14.7044C8.84545 15.5955 9.29097 16.041 9.80471 16.2079C10.2566 16.3547 10.7434 16.3547 11.1953 16.2079C11.709 16.041 12.1545 15.5955 13.0456 14.7044L14.7044 13.0456C15.5955 12.1545 16.041 11.709 16.2079 11.1953C16.3547 10.7434 16.3547 10.2566 16.2079 9.80471C16.041 9.29097 15.5955 8.84545 14.7044 7.95441L8.95294 2.20294C8.69351 1.94352 8.5638 1.8138 8.41243 1.72104C8.27822 1.6388 8.1319 1.57819 7.97885 1.54145C7.80622 1.5 7.62277 1.5 7.25589 1.5L3.9 1.5C3.05992 1.5 2.63988 1.5 2.31901 1.66349C2.03677 1.8073 1.8073 2.03677 1.66349 2.31901C1.5 2.63988 1.5 3.05992 1.5 3.9ZM6.375 6C6.375 6.20711 6.20711 6.375 6 6.375C5.79289 6.375 5.625 6.20711 5.625 6C5.625 5.79289 5.79289 5.625 6 5.625C6.20711 5.625 6.375 5.79289 6.375 6Z"
+                                                stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1933_10556">
+                                                <rect width="18" height="18" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">Where they show up online</h4>
+                                    <p class="data-breakdown__item-text text-sm">Updated LinkedIn, Facebook, Crunchbase,
+                                        and
+                                        blog
+                                        URLs.</p>
+                                </div>
+                            </div>
+
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1933_10571)">
+                                            <path
+                                                d="M6 6H6.0075M1.5 3.9L1.5 7.25589C1.5 7.62277 1.5 7.80622 1.54145 7.97885C1.57819 8.1319 1.6388 8.27822 1.72104 8.41243C1.8138 8.5638 1.94352 8.69351 2.20294 8.95294L7.95441 14.7044C8.84545 15.5955 9.29097 16.041 9.80471 16.2079C10.2566 16.3547 10.7434 16.3547 11.1953 16.2079C11.709 16.041 12.1545 15.5955 13.0456 14.7044L14.7044 13.0456C15.5955 12.1545 16.041 11.709 16.2079 11.1953C16.3547 10.7434 16.3547 10.2566 16.2079 9.80471C16.041 9.29097 15.5955 8.84545 14.7044 7.95441L8.95294 2.20294C8.69351 1.94352 8.5638 1.8138 8.41243 1.72104C8.27822 1.6388 8.1319 1.57819 7.97885 1.54145C7.80622 1.5 7.62277 1.5 7.25589 1.5L3.9 1.5C3.05992 1.5 2.63988 1.5 2.31901 1.66349C2.03677 1.8073 1.8073 2.03677 1.66349 2.31901C1.5 2.63988 1.5 3.05992 1.5 3.9ZM6.375 6C6.375 6.20711 6.20711 6.375 6 6.375C5.79289 6.375 5.625 6.20711 5.625 6C5.625 5.79289 5.79289 5.625 6 5.625C6.20711 5.625 6.375 5.79289 6.375 6Z"
+                                                stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1933_10571">
+                                                <rect width="18" height="18" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">HQ address</h4>
+                                    <p class="data-breakdown__item-text text-sm">Complete street address including
+                                        postal code
+                                        for
+                                        compliance.</p>
+                                </div>
+                            </div>
+
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M3.75 13.875C3.75 14.2233 3.75 14.3975 3.76925 14.5437C3.90217 15.5533 4.69667 16.3478 5.70632 16.4808C5.85253 16.5 6.02668 16.5 6.375 16.5H12.15C13.4101 16.5 14.0402 16.5 14.5215 16.2548C14.9448 16.039 15.289 15.6948 15.5048 15.2715C15.75 14.7902 15.75 14.1601 15.75 12.9V7.49117C15.75 6.94084 15.75 6.66568 15.6878 6.40673C15.6327 6.17715 15.5418 5.95767 15.4184 5.75636C15.2793 5.5293 15.0847 5.33472 14.6956 4.94558L12.3044 2.55442C11.9153 2.16527 11.7207 1.9707 11.4936 1.83156C11.2923 1.7082 11.0729 1.61729 10.8433 1.56217C10.5843 1.5 10.3092 1.5 9.75883 1.5H6.375C6.02668 1.5 5.85253 1.5 5.70632 1.51925C4.69667 1.65217 3.90217 2.44667 3.76925 3.45632C3.75 3.60253 3.75 3.77668 3.75 4.125M6.75 10.875L8.625 9L6.75 7.125M3.75 7.125L1.875 9L3.75 10.875"
+                                            stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">Headcount & revenue</h4>
+                                    <p class="data-breakdown__item-text text-sm">Estimated employee count and revenue,
+                                        updated
+                                        as
+                                        the company grows.</p>
+                                </div>
+                            </div>
+
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.25 8.25C4.55252 8.25 4.20378 8.25 3.91766 8.32667C3.1412 8.53472 2.53472 9.1412 2.32667 9.91766C2.25 10.2038 2.25 10.5525 2.25 11.25V12.15C2.25 13.4101 2.25 14.0402 2.49524 14.5215C2.71095 14.9448 3.05516 15.289 3.47852 15.5048C3.95982 15.75 4.58988 15.75 5.85 15.75H12.15C13.4101 15.75 14.0402 15.75 14.5215 15.5048C14.9448 15.289 15.289 14.9448 15.5048 14.5215C15.75 14.0402 15.75 13.4101 15.75 12.15V11.25C15.75 10.5525 15.75 10.2038 15.6733 9.91766C15.4653 9.1412 14.8588 8.53472 14.0823 8.32667C13.7962 8.25 13.4475 8.25 12.75 8.25M6 5.25L9 2.25L12 5.25M9 2.25V11.25"
+                                            stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">Sector & positioning</h4>
+                                    <p class="data-breakdown__item-text text-sm">Industry, tags, and both short and long
+                                        SEO
+                                        summaries.</p>
+                                </div>
+                            </div>
+
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.46101 2.59041C8.63388 2.24021 8.72031 2.06511 8.83764 2.00916C8.93973 1.96049 9.05834 1.96049 9.16043 2.00916C9.27776 2.06511 9.3642 2.24021 9.53706 2.59041L11.1771 5.91289C11.2281 6.01628 11.2536 6.06797 11.2909 6.10811C11.3239 6.14365 11.3635 6.17244 11.4075 6.19289C11.4572 6.21599 11.5142 6.22433 11.6283 6.24101L15.2968 6.77721C15.6831 6.83367 15.8762 6.8619 15.9656 6.95625C16.0434 7.03835 16.08 7.15115 16.0652 7.26326C16.0481 7.39211 15.9083 7.52831 15.6286 7.80071L12.9751 10.3852C12.8924 10.4658 12.851 10.5061 12.8243 10.554C12.8007 10.5965 12.7856 10.6431 12.7797 10.6913C12.7731 10.7458 12.7829 10.8027 12.8024 10.9165L13.4285 14.567C13.4945 14.952 13.5275 15.1446 13.4655 15.2588C13.4115 15.3582 13.3155 15.4279 13.2043 15.4485C13.0765 15.4722 12.9036 15.3813 12.5579 15.1995L9.27831 13.4748C9.17612 13.4211 9.12503 13.3942 9.0712 13.3836C9.02355 13.3743 8.97453 13.3743 8.92687 13.3836C8.87304 13.3942 8.82195 13.4211 8.71977 13.4748L5.44022 15.1995C5.09446 15.3813 4.92158 15.4722 4.79375 15.4485C4.68253 15.4279 4.58657 15.3582 4.53258 15.2588C4.47052 15.1446 4.50354 14.952 4.56958 14.567L5.19569 10.9165C5.21521 10.8027 5.22497 10.7458 5.21836 10.6913C5.21252 10.6431 5.19736 10.5965 5.17373 10.554C5.14704 10.5061 5.10568 10.4658 5.02296 10.3852L2.36944 7.80071C2.08977 7.52831 1.94993 7.39211 1.93292 7.26326C1.91811 7.15115 1.95469 7.03835 2.03246 6.95625C2.12185 6.8619 2.315 6.83367 2.70131 6.77721L6.36976 6.24101C6.48384 6.22433 6.54088 6.21599 6.59056 6.19289C6.63455 6.17244 6.67414 6.14365 6.70716 6.10811C6.74445 6.06797 6.76997 6.01628 6.821 5.91289L8.46101 2.59041Z"
+                                            stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">Funding history</h4>
+                                    <p class="data-breakdown__item-text text-sm">Total raised, latest round, and the
+                                        story of
+                                        every
+                                        round before it.</p>
+                                </div>
+                            </div>
+
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1933_10578)">
+                                            <path
+                                                d="M9 6V12M6 9H12M16.5 9C16.5 13.1421 13.1421 16.5 9 16.5C4.85786 16.5 1.5 13.1421 1.5 9C1.5 4.85786 4.85786 1.5 9 1.5C13.1421 1.5 16.5 4.85786 16.5 9Z"
+                                                stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1933_10578">
+                                                <rect width="18" height="18" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">Tech they run on</h4>
+                                    <p class="data-breakdown__item-text text-sm">Current and past tools detected across
+                                        the
+                                        stack
+                                        for your pitch.</p>
+                                </div>
+                            </div>
+
+                            <div class="data-breakdown__item">
+                                <div class="data-breakdown__icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1933_10593)">
+                                            <path
+                                                d="M5.625 9L7.875 11.25L12.375 6.75M16.5 9C16.5 13.1421 13.1421 16.5 9 16.5C4.85786 16.5 1.5 13.1421 1.5 9C1.5 4.85786 4.85786 1.5 9 1.5C13.1421 1.5 16.5 4.85786 16.5 9Z"
+                                                stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1933_10593">
+                                                <rect width="18" height="18" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="data-breakdown__content">
+                                    <h4 class="data-breakdown__item-title text-base">Public or private</h4>
+                                    <p class="data-breakdown__item-text text-sm">Legal entity type to identify who signs
+                                        the
+                                        contract.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Feedback -->
+        <section class="user-feedback">
+            <div class="user-feedback__container container gap-xxl">
+                <div class="user-feedback__header header-area-center">
+                    <span class="user-feedback__tag">STRAIGHT FROM OUR USERS</span>
+                    <h2 class="user-feedback__title">Why teams choose LeadVaro</h2>
+                    <p class="user-feedback__description">
+                        Unfiltered feedback from sales professionals who use LeadVaro every day.
+                    </p>
+                </div>
+
+                <div class="user-feedback__grid">
+                    <article class="user-feedback__card">
+                        <div class="user-feedback__author">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                                alt="Tony Brophy" class="user-feedback__avatar">
+                            <div class="user-feedback__meta">
+                                <h3 class="user-feedback__name text-base">Alfie Lloyd</h3>
+                                <p class="user-feedback__role">Sales @ Northwind</p>
+                            </div>
+                        </div>
+                        <p class="user-feedback__text text-base">
+                            Cold calling in the US is not dead — calling crap numbers is. Since switching to LeadVaro
+                            we're smiling and dialing with a 1% connect rate after 97 dials. Someone picks up. It's a
+                            retired CFO's ex-number...
+                        </p>
+                        <div class="user-feedback__footer">
+                            <span class="user-feedback__stat">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                                </svg>
+                                31
+                            </span>
+                            <span class="user-feedback__stat">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                </svg>
+                                11 comments
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="user-feedback__card">
+                        <div class="user-feedback__author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
+                                alt="Alfie Lloyd" class="user-feedback__avatar">
+                            <div class="user-feedback__meta">
+                                <h3 class="user-feedback__name text-base">Alfie Lloyd</h3>
+                                <p class="user-feedback__role">GTM @ Vertex</p>
+                            </div>
+                        </div>
+                        <p class="user-feedback__text text-base">
+                            I've tested over 100 GTM tools in the past 12 months. Last week I launched our own outbound
+                            with just one of them: LeadVaro. 99% deliverability so far. For...
+                        </p>
+                        <div class="user-feedback__footer">
+                            <span class="user-feedback__stat">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                                </svg>
+                                18
+                            </span>
+                            <span class="user-feedback__stat">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                </svg>
+                                9 comments
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="user-feedback__card">
+                        <div class="user-feedback__author">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80"
+                                alt="Azam Ali" class="user-feedback__avatar">
+                            <div class="user-feedback__meta">
+                                <h3 class="user-feedback__name text-base">Azam Ali</h3>
+                                <p class="user-feedback__role">GTM @ Amber Insight</p>
+                            </div>
+                        </div>
+                        <p class="user-feedback__text text-base">
+                            LeadVaro has been my go-to tool so far in 2026. Excellent coverage, triple-verified emails,
+                            and a clean interface. It's made it hard to justify exploring alternatives...
+                        </p>
+                        <div class="user-feedback__footer">
+                            <span class="user-feedback__stat">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                                </svg>
+                                24
+                            </span>
+                            <span class="user-feedback__stat">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                </svg>
+                                4 comments
+                            </span>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- CTA Button -->
+                <div class="user-feedback__action">
+                    <button class="user-feedback__btn btn btn--primary">See all posts</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sale Triggers -->
+        <section class="sales-triggers">
+            <div class="sales-triggers__container container gap-xxl">
+                <div class="sales-triggers__header header-area">
+                    <h2 class="sales-triggers__title">Timing is everything in sales</h2>
+                    <p class="sales-triggers__description">
+                        LeadVaro's Signal Data turns every contact into a qualified opportunity by revealing exactly
+                        when prospects are ready to buy, expand, or switch solutions.
+                    </p>
+                </div>
+
+                <div class="sales-triggers__content">
+                    <div class="sales-triggers__grid">
+                        <article class="sales-triggers__card">
+                            <div class="sales-triggers__icon">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6.8776 10.0833H4.21927C3.70589 10.0833 3.4492 10.0833 3.25311 10.1832C3.08063 10.2711 2.9404 10.4114 2.85251 10.5838C2.7526 10.7799 2.7526 11.0366 2.7526 11.55V19.25M15.1276 10.0833H17.7859C18.2993 10.0833 18.556 10.0833 18.7521 10.1832C18.9246 10.2711 19.0648 10.4114 19.1527 10.5838C19.2526 10.7799 19.2526 11.0366 19.2526 11.55V19.25M15.1276 19.25V5.68333C15.1276 4.65657 15.1276 4.14319 14.9278 3.75102C14.752 3.40605 14.4716 3.12559 14.1266 2.94982C13.7344 2.75 13.221 2.75 12.1943 2.75H9.81094C8.78417 2.75 8.27079 2.75 7.87862 2.94982C7.53366 3.12559 7.25319 3.40605 7.07743 3.75102C6.8776 4.14319 6.8776 4.65657 6.8776 5.68333V19.25M20.1693 19.25H1.83594M10.0859 6.41667H11.9193M10.0859 10.0833H11.9193M10.0859 13.75H11.9193"
+                                        stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+
+                            </div>
+                            <h3 class="sales-triggers__card-title text-h5">Hiring trends</h3>
+                            <p class="sales-triggers__card-text text-base">
+                                Spot companies actively building teams in your target departments. When they're hiring
+                                sales
+                                reps, they need CRM software — perfect timing for your outreach.
+                            </p>
+                        </article>
+
+                        <article class="sales-triggers__card">
+                            <div class="sales-triggers__icon">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4.58073 16.959C4.58073 17.3847 4.58073 17.5976 4.60426 17.7763C4.76672 19.0103 5.73776 19.9813 6.97178 20.1438C7.15048 20.1673 7.36334 20.1673 7.78906 20.1673H14.8474C16.3875 20.1673 17.1576 20.1673 17.7459 19.8676C18.2633 19.6039 18.684 19.1832 18.9477 18.6658C19.2474 18.0775 19.2474 17.3075 19.2474 15.7673V9.15652C19.2474 8.4839 19.2474 8.14759 19.1714 7.8311C19.104 7.5505 18.9929 7.28225 18.8422 7.0362C18.6721 6.75868 18.4343 6.52086 17.9587 6.04525L15.0361 3.12271C14.5605 2.6471 14.3227 2.40929 14.0452 2.23922C13.7991 2.08845 13.5309 1.97733 13.2503 1.90997C12.9338 1.83398 12.5975 1.83398 11.9249 1.83398H7.78906C7.36334 1.83398 7.15048 1.83398 6.97178 1.85751C5.73776 2.01997 4.76672 2.99102 4.60426 4.22504C4.58073 4.40374 4.58073 4.6166 4.58073 5.04232M8.2474 13.2923L10.5391 11.0007L8.2474 8.70898M4.58073 8.70898L2.28906 11.0007L4.58073 13.2923"
+                                        stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h3 class="sales-triggers__card-title text-h5">Technographics</h3>
+                            <p class="sales-triggers__card-text text-base">
+                                See exactly which tools your prospects currently use and when their contracts expire.
+                                Reach
+                                out to teams still using outdated software that needs upgrading.
+                            </p>
+                        </article>
+
+                        <article class="sales-triggers__card">
+                            <div class="sales-triggers__icon">
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.3421 3.16519C10.5534 2.73717 10.659 2.52315 10.8024 2.45478C10.9272 2.39528 11.0722 2.39528 11.1969 2.45478C11.3404 2.52315 11.446 2.73717 11.6573 3.16519L13.6617 7.226C13.7241 7.35236 13.7553 7.41554 13.8009 7.4646C13.8412 7.50803 13.8896 7.54322 13.9434 7.56822C14.0041 7.59646 14.0738 7.60665 14.2133 7.62703L18.6969 8.28238C19.1691 8.3514 19.4051 8.3859 19.5144 8.50122C19.6094 8.60156 19.6542 8.73943 19.6361 8.87645C19.6153 9.03393 19.4443 9.2004 19.1025 9.53334L15.8593 12.6922C15.7582 12.7907 15.7077 12.8399 15.6751 12.8985C15.6462 12.9504 15.6277 13.0073 15.6205 13.0663C15.6124 13.1328 15.6244 13.2024 15.6482 13.3415L16.4135 17.8033C16.4942 18.2739 16.5345 18.5091 16.4587 18.6488C16.3927 18.7703 16.2754 18.8555 16.1395 18.8807C15.9832 18.9096 15.7719 18.7985 15.3494 18.5763L11.341 16.4683C11.2161 16.4027 11.1537 16.3698 11.0879 16.3569C11.0296 16.3455 10.9697 16.3455 10.9115 16.3569C10.8457 16.3698 10.7832 16.4027 10.6584 16.4683L6.65002 18.5763C6.22743 18.7985 6.01613 18.9096 5.8599 18.8807C5.72397 18.8555 5.60667 18.7703 5.54068 18.6488C5.46484 18.5091 5.5052 18.2739 5.58591 17.8033L6.35115 13.3415C6.37501 13.2024 6.38694 13.1328 6.37887 13.0663C6.37172 13.0073 6.35319 12.9504 6.32431 12.8985C6.29169 12.8399 6.24114 12.7907 6.14004 12.6922L2.89685 9.53334C2.55503 9.2004 2.38412 9.03393 2.36332 8.87645C2.34523 8.73943 2.38993 8.60156 2.48499 8.50122C2.59424 8.3859 2.83031 8.3514 3.30246 8.28238L7.78613 7.62703C7.92556 7.60665 7.99528 7.59646 8.056 7.56822C8.10976 7.54322 8.15816 7.50803 8.19851 7.4646C8.24409 7.41554 8.27528 7.35236 8.33765 7.226L10.3421 3.16519Z"
+                                        stroke="#4F46E5" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h3 class="sales-triggers__card-title text-h5">Intent signals</h3>
+                            <p class="sales-triggers__card-text text-base">
+                                Track what your prospects are researching online. When they're reading about email
+                                marketing
+                                automation or a data platform, they're in buying mode.
+                            </p>
+                        </article>
+                    </div>
+
+                    <footer class="sales-triggers__footer">
+                        <a href="#" class="sales-triggers__link">
+                            Learn more about these filters
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </a>
+                    </footer>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Preview Area -->
+        <section class="data-preview">
+            <div class="data-preview__container container gap-xxl">
+                <div class="data-preview__header header-area-center">
+                    <span class="data-preview__badge badge--style-two">JOIN 16,000+ COMPANIES</span>
+                    <h2 class="data-preview__title">The most accurate data,<br>seen at a glance</h2>
+                </div>
+
+                <div class="data-preview__media">
+                    <img src="./assets/img/data-preview-img.svg" alt="LeadVaro Dashboard and Accuracy Comparison"
+                        class="data-preview__image">
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Area -->
+        <section class="cta">
+            <div class="container" data-animation="fade-in">
+                <div class="cta__content">
+                    <div class="cta__content-inner" data-animation="fade-in">
+                        <p class="subtitle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none">
+                                <g clip-path="url(#clip0_1345_3205)">
+                                    <path
+                                        d="M10.9901 8.57858C11.2336 8.49158 11.3971 8.25908 11.3971 8.00058C11.3971 7.74208 11.2336 7.50958 10.9911 7.42258L9.87614 7.02058C8.77514 6.62408 7.91614 5.76458 7.51914 4.66358L7.11714 3.54858C7.02964 3.30608 6.79764 3.14258 6.54014 3.14258C6.28214 3.14258 6.04964 3.30558 5.96164 3.54858L5.56014 4.66358C5.16314 5.76508 4.30414 6.62408 3.20264 7.02058L2.08864 7.42258C1.84514 7.51008 1.68164 7.74208 1.68164 8.00058C1.68164 8.25908 1.84514 8.49108 2.08764 8.57858L3.20264 8.98058C4.30364 9.37708 5.16264 10.2361 5.55964 11.3376L5.96164 12.4531C6.04914 12.6956 6.28164 12.8586 6.53964 12.8586C6.79764 12.8586 7.03014 12.6951 7.11714 12.4526L7.51914 11.3376C7.91564 10.2366 8.77514 9.37758 9.87614 8.98058L10.9901 8.57858ZM9.53714 8.03958C8.15464 8.53758 7.07614 9.61608 6.57814 10.9986L6.53914 11.1066L6.50014 10.9986C6.00164 9.61608 4.92314 8.53758 3.54114 8.03958L3.43364 8.00058L3.54164 7.96158C4.92414 7.46358 6.00264 6.38508 6.50064 5.00258L6.53964 4.89458L6.57864 5.00258C7.07664 6.38508 8.15514 7.46358 9.53714 7.96158L9.64514 8.00058L9.53714 8.03958Z"
+                                        fill="url(#paint0_linear_1345_3205)" />
+                                    <path
+                                        d="M9.27525 3.7315L9.83975 3.935C10.3283 4.111 10.7088 4.492 10.8848 4.98L11.0878 5.544C11.1673 5.765 11.3783 5.9135 11.6128 5.9135C11.8473 5.9135 12.0588 5.765 12.1378 5.5445L12.3413 4.98C12.5173 4.4915 12.8983 4.1105 13.3863 3.935L13.9513 3.7315C14.1708 3.652 14.3193 3.4415 14.3198 3.208C14.3203 2.9745 14.1733 2.763 13.9513 2.682L13.3863 2.4785C12.8983 2.3025 12.5173 1.9215 12.3413 1.4335L12.1378 0.869C12.0583 0.648 11.8478 0.5 11.6133 0.5C11.3783 0.5 11.1673 0.6485 11.0883 0.869L10.8848 1.4335C10.7088 1.922 10.3278 2.3025 9.83975 2.4785L9.27375 2.6825C9.05375 2.7625 8.90575 2.974 8.90625 3.208C8.90675 3.442 9.05525 3.6525 9.27525 3.7315ZM11.6133 2.2275C11.8503 2.6335 12.1868 2.97 12.5923 3.2065C12.1863 3.4435 11.8498 3.78 11.6133 4.1855C11.3763 3.78 11.0398 3.443 10.6343 3.2065C11.0398 2.9695 11.3763 2.633 11.6133 2.2275Z"
+                                        fill="url(#paint1_linear_1345_3205)" />
+                                    <path
+                                        d="M13.9493 12.2679L13.3848 12.0644C12.8968 11.8884 12.5158 11.5074 12.3398 11.0194L12.1363 10.4549C12.0568 10.2344 11.8458 10.0859 11.6113 10.0859C11.3763 10.0859 11.1653 10.2344 11.0863 10.4549L10.8828 11.0194C10.7068 11.5079 10.3258 11.8889 9.8378 12.0644L9.2738 12.2674C9.0533 12.3464 8.9048 12.5574 8.9043 12.7914C8.9038 13.0254 9.0513 13.2369 9.2733 13.3174L9.8378 13.5209C10.3263 13.6969 10.7073 14.0774 10.8828 14.5659L11.0858 15.1299C11.1658 15.3509 11.3768 15.4994 11.6118 15.4994C11.8468 15.4994 12.0578 15.3509 12.1368 15.1304L12.3403 14.5659C12.5163 14.0779 12.8973 13.6969 13.3853 13.5209L13.9523 13.3169C14.1718 13.2364 14.3193 13.0254 14.3188 12.7914C14.3183 12.5574 14.1693 12.3474 13.9493 12.2679ZM11.6118 13.7719C11.3748 13.3659 11.0383 13.0294 10.6328 12.7929C11.0383 12.5559 11.3753 12.2194 11.6118 11.8139C11.8488 12.2194 12.1853 12.5564 12.5908 12.7929C12.1853 13.0299 11.8483 13.3664 11.6118 13.7719Z"
+                                        fill="url(#paint2_linear_1345_3205)" />
+                                </g>
+                                <defs>
+                                    <linearGradient id="paint0_linear_1345_3205" x1="1.68164" y1="8.00058" x2="11.3971"
+                                        y2="8.00058" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#155DFC" />
+                                        <stop offset="1" stop-color="#9810FA" />
+                                    </linearGradient>
+                                    <linearGradient id="paint1_linear_1345_3205" x1="8.90625" y1="3.20675" x2="14.3198"
+                                        y2="3.20675" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#155DFC" />
+                                        <stop offset="1" stop-color="#9810FA" />
+                                    </linearGradient>
+                                    <linearGradient id="paint2_linear_1345_3205" x1="8.9043" y1="12.7927" x2="14.3188"
+                                        y2="12.7927" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#155DFC" />
+                                        <stop offset="1" stop-color="#9810FA" />
+                                    </linearGradient>
+                                    <clipPath id="clip0_1345_3205">
+                                        <rect width="16" height="16" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span>One platform for the whole motion</span>
+                        </p>
+
+                        <h2 class="cta__title">Build your first <br />outbound list free</h2>
+                        <p class="cta__desc">Start with 100 free credits — no credit card required</p>
+
+                        <div class="cta-wrap">
+                            <a href="./contact.html" class="btn btn--primary">Start free</a>
+                            <a href="./contact.html" class="btn btn--secondary">Compare plans →</a>
+                        </div>
+                    </div>
+
+                    <div class="cta__overlay"></div>
+
+                    <div class="bg-wrap cta__bg">
+                        <img src="./assets/img/cta-bg.png" alt="" class="bg-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container container--footer">
+            <div class="footer__content">
+                <div class="footer__column">
+                    <h3 class="footer__title">Product</h3>
+                    <ul class="footer__list">
+                        <li><a href="./index.html" class="footer__link">Home</a></li>
+                        <li><a href="./people-search.html" class="footer__link">People Search</a></li>
+                        <li><a href="./company-search.html" class="footer__link">Company Search</a></li>
+                        <li><a href="./email-finder.html" class="footer__link">Email Finder</a></li>
+                        <li><a href="./data-enrichment.html" class="footer__link">Enrichment</a></li>
+                        <li><a href="./pricing.html" class="footer__link">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h3 class="footer__title">Use cases</h3>
+                    <ul class="footer__list">
+                        <li><a href="#about" class="footer__link">For Agencies</a></li>
+                        <li><a href="#careers" class="footer__link">For Sales Teams</a></li>
+                        <li><a href="#contact" class="footer__link">For Founders</a></li>
+                        <li><a href="#contact" class="footer__link">For Recruiters</a></li>
+                        <li><a href="#contact" class="footer__link">For RevOps</a></li>
+                        <li><a href="#contact" class="footer__link">Compare</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h3 class="footer__title">Resources</h3>
+                    <ul class="footer__list">
+                        <li><a href="#about" class="footer__link">Documentation</a></li>
+                        <li><a href="#about" class="footer__link"></a>API Docs</li>
+                        <li><a href="#about" class="footer__link"></a>Help Center</li>
+                        <li><a href="#about" class="footer__link"></a>Blog</li>
+                        <li><a href="#about" class="footer__link">Case Studies</a></li>
+                        <li><a href="#about" class="footer__link">Sales Hub</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h3 class="footer__title">Company</h3>
+                    <ul class="footer__list">
+                        <li><a href="#about" class="footer__link">About us</a></li>
+                        <li><a href="#about" class="footer__link">Careers</a></li>
+                        <li><a href="#about" class="footer__link">Contact</a></li>
+                        <li><a href="#about" class="footer__link">Style guide</a></li>
+                        <li><a href="#about" class="footer__link">Privacy</a></li>
+                        <li><a href="#about" class="footer__link">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2023 LeadVaro. All rights reserved.</p>
+
+                <ul class="footer__list footer__list--inline">
+                    <li><a href="#about" class="footer__link">Privacy Policy</a></li>
+                    <li><a href="#about" class="footer__link">Terms of Service</a></li>
+                    <li><a href="#about" class="footer__link">Cookies Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Counter Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.9.0/countUp.umd.min.js"></script>>
+    <!-- Lightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <!-- Gsap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <!-- Swiper Js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    <!-- Script Js -->
+    <script src="./assets/js/gsap.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
