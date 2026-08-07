@@ -155,6 +155,8 @@ h6,
     gap: 4rem;
 }
 
+
+
 .subtitle {
     display: inline-flex;
     align-items: center;
@@ -168,6 +170,11 @@ h6,
 
 .spacing-xxl {
     padding-top: 5.5rem
+}
+
+.spacing-xxxl {
+    padding-top: 5.5rem;
+    padding-bottom: 5rem;
 }
 
 .header-area {
@@ -8179,13 +8186,16 @@ ul.green li::marker {
     text-align: center;
 }
 
-.hero-integrations__badge-group {
+.hero-integrations__badge-group,
+.subtitle-group {
     display: inline-flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-.hero-integrations__badge-text {
+.hero-integrations__badge-text,
+.subtitle-transparent {
     padding: 0;
     margin: 0;
     background: transparent;
@@ -8676,6 +8686,642 @@ ul.green li::marker {
     font-weight: 300;
 }
 
+/* ==============================
+   Hero Study Index
+============================== */
+.hero--study-index {
+    background: #F8F7F6;
+    padding-bottom: 4rem;
+}
+
+/* ==============================
+   Client Case Studies
+============================== */
+.client-case-studies {
+    background-color: var(--white);
+}
+
+.client-case-studies__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.client-case-studies__card {
+    background-color: var(--white);
+    border-radius: var(--radius-2xl);
+    border: 1px solid #E2E8F0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.client-case-studies__company {
+    display: flex;
+    align-items: center;
+    gap: 0.60rem;
+}
+
+.client-case-studies__logo {
+    width: 28px;
+    height: 28px;
+    background-color: #312e81;
+    color: #ffffff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.client-case-studies__company-name {
+    color: var(--color-navy);
+    font-weight: 400;
+}
+
+.client-case-studies__badge {
+    border-radius: 0.375rem;
+}
+
+.client-case-studies__title {
+    max-width: 350px;
+}
+
+.client-case-studies__divider {
+    height: 1px;
+    background: #E2E8F0;
+}
+
+.client-case-studies__stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.client-case-studies__stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-case-studies__number {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.client-case-studies__label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-top: 0.20rem;
+}
+
+.client-case-studies__link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.client-case-studies__link:hover {
+    text-decoration: underline;
+}
+
+.client-case-studies__cta {
+    text-align: center;
+}
+
+.client-case-studies__cta-title {
+    font-weight: 500;
+    color: var(--color-navy);
+    margin-bottom: 0.75rem;
+}
+
+.link-text {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.link-text:hover {
+    text-decoration: underline;
+}
+
+/* ==============================
+   Hero First Prospecting Area
+============================== */
+.hero--first-prospecting {
+    background: #F8F7F6;
+}
+
+.hero--first-prospecting .cta-wrap {
+    justify-content: start;
+}
+
+.hero--first-prospecting .hero__container {
+    display: flex;
+    justify-content: center;
+}
+
+.hero--first-prospecting .hero__header-area {
+    max-width: 58rem;
+}
+
+/* ==============================
+   Prospecting Problem Area
+============================== */
+.prospecting-problem__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.38rem;
+    max-width: 48.75rem;
+}
+
+.prospecting-problem__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.38rem;
+}
+
+.prospecting-problem__workflow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.prospecting-problem__step {
+    border-radius: 6px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    border-radius: 0.625rem;
+    border: 1px solid #E2E8F0;
+    background: #F8FAFC;
+}
+
+.prospecting-problem__step-title {
+    color: var(--color-navy);
+    margin-bottom: 2px;
+}
+
+.prospecting-problem__step-sub {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.prospecting-problem__arrow {
+    color: #94a3b8;
+    font-size: 18px;
+    user-select: none;
+}
+
+
+/* ==============================
+   Animation
+============================== */
+
+.account-approach {
+    background-color: #F8FAFC;
+}
+
+.account-approach__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.37rem;
+    max-width: 48.75rem;
+}
+
+.account-approach__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.37rem;
+}
+
+.account-approach__diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.account-approach__target-card {
+    background-color: #312E81;
+    color: var(--white);
+    border-radius: 12px;
+    padding: 18px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(49, 46, 129, 0.15);
+}
+
+.account-approach__target-title {
+    color: var(--white);
+    line-height: 1;
+}
+
+.account-approach__target-sub {
+    font-size: 0.75rem;
+    color: var(--white);
+}
+
+.account-approach__arrow {
+    margin: 16px 0;
+    color: #64748B;
+    font-size: 18px;
+    user-select: none;
+}
+
+.account-approach__roles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.account-approach__role-card {
+    background-color: var(--white);
+    border-radius: 6px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #E2E8F0;
+    background: var(--white);
+}
+
+.account-approach__role-title {
+    font-size: 0.875rem;
+    color: var(--color-navy);
+    line-height: 1;
+}
+
+.account-approach__role-sub {
+    font-size: 0.75rem;
+    color: #64748B;
+}
+
+.account-approach__caption {
+    font-size: 13px;
+    color: #64748b;
+    text-align: center;
+}
+
+/* ==============================
+   Inverted Benefits Area
+============================== */
+.inverted-benefits {
+    background-color: var(--white);
+}
+
+.inverted-benefits__title {
+    margin-bottom: 3.7rem;
+    text-align: center;
+}
+
+.inverted-benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+}
+
+.inverted-benefits__card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.88rem;
+}
+
+.inverted-benefits__number {
+    font-weight: 400;
+    color: #CDC8FA;
+    ;
+    line-height: 1;
+}
+
+.inverted-benefits__card-title {
+    font-weight: 500;
+    color: var(--color-navy);
+}
+
+.inverted-benefits__card-text {
+    color: #334155;
+}
+
+/* ==============================
+   Product Showcase Area
+============================== */
+
+.product-showcase {
+    background-color: #F8FAFC;
+}
+
+.product-showcase__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-showcase__header {
+    text-align: center;
+    max-width: 60rem;
+}
+
+.product-showcase__media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.product-showcase__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+}
+
+.product-showcase__caption {
+    color: #64748B;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* ==============================
+   Free Trail Area
+============================== */
+.free-trial-cta {
+    padding: 100px 20px;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.free-trial-cta__container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.free-trial-cta__actions {
+    width: 100%;
+}
+
+/* ==============================
+   Hero Hub Spot Area
+============================== */
+.hero--hub-spot {
+    background: #F8F7F6
+}
+
+.hero--hub-spot .hero__header-area {
+    max-width: 50rem;
+}
+
+.hero--hub-spot .hero__desc {
+    max-width: 43rem;
+}
+
+.hero--hub-spot .hero__short-desc {
+    margin: 2rem 0 7rem 0;
+}
+
+.hubspot-integration__visual-card {
+    position: relative;
+    background-color: var(--white);
+    border-radius: var(--radius-xl);
+    padding: 1.22rem 1.55rem;
+    width: 100%;
+    max-width: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f1f5f9;
+    position: relative;
+}
+
+.hubspot-integration__visual-card::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 56.25rem;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(79, 70, 229, 0.12) 0%, rgba(79, 70, 229, 0.00) 100%);
+}
+
+.hubspot-integration__card-item {
+    flex-grow: 1;
+    padding: 1.5rem;
+    max-width: 12rem;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: var(--radius-3xl);
+    border: 1px solid rgba(16, 24, 40, 0.06);
+    box-shadow: 0 8px 24px 0 rgba(16, 24, 40, 0.08);
+}
+
+.hubspot-integration__card-item--rotated {
+    transform: rotate(8deg);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.hubspot-integration__logo-leadvaro {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hubspot-integration__logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.hubspot-integration__sync-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.hubspot-integration__sync-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #94a3b8;
+    letter-spacing: 0.08em;
+}
+
+.hubspot-integration__sync-dots {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.hubspot-integration__sync-dots span {
+    width: 4px;
+    height: 4px;
+    background-color: rgba(79, 70, 229, 0.35);
+    border-radius: 50%;
+}
+
+.hubspot-integration__sync-dots span:last-of-type {
+    background-color: var(--primary);
+}
+
+.hubspot-integration__logo-hubspot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.hubspot-integration__hubspot-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.hubspot-integration__tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.hubspot-integration__tag {
+    background-color: var(--white);
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.37rem 0.7rem;
+    border-radius: 20px;
+}
+
+/* ==============================
+   Integration Workflow Area
+============================== */
+.integration-workflow {
+    background-color: var(--white);
+}
+
+.integration-workflow__header {
+    text-align: center;
+}
+
+.integration-workflow__badge {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.integration-workflow__desc {
+    color: #334155;
+}
+
+.integration-workflow__card-wrapper {
+    border-radius: var(--radius-2xl);
+    border: 1px solid #E2E8F0;
+    background: var(--white);
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.integration-workflow__grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    gap: 0.3rem;
+}
+
+.integration-workflow__step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.12rem;
+}
+
+.integration-workflow__connector {
+    width: 2.5rem;
+    height: 0.175rem;
+    background-color: #e2e8f0;
+    margin-top: 100px;
+    flex-shrink: 0;
+}
+
+.integration-workflow__step-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.integration-workflow__step-number {
+    width: 22px;
+    height: 22px;
+    background-color: var(--primary-dark);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.integration-workflow__step-tag {
+    color: #64748B;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.33;
+    letter-spacing: 0.075rem;
+}
+
+.integration-workflow__mockup-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.integration-workflow__step-description {
+    color: #334155;
+}
+
+
+
+@media (max-width: 992px) {
+    .integration-workflow__grid {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .integration-workflow__connector {
+        display: none;
+    }
+
+    .integration-workflow__card-wrapper {
+        padding: 2rem;
+    }
+}
+
+
 
 /* ==============================
    Animation
@@ -8771,7 +9417,6 @@ ul.green li::marker {
 }
 
 @media (max-width: 992px) {
-
     .header__grid {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -9322,6 +9967,32 @@ ul.green li::marker {
     .press-news__grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* Hero Study Index */
+    .hero--study-index {
+        background: #F8F7F6;
+        padding-bottom: 0rem;
+    }
+
+    /* Client Case Studies */
+    .client-case-studies__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .client-case-studies__title {
+        min-height: auto;
+    }
+
+    /* Inverted Benefits Area */
+    .inverted-benefits__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 36px;
+    }
+
+    /* Hero Hub Spot Area */
+    .hero--hub-spot .hero__short-desc {
+        margin: 1.5rem 0 3rem 0;
+    }
 }
 
 @media (max-width: 850px) {
@@ -9393,27 +10064,21 @@ ul.green li::marker {
         padding: 2.5rem;
         gap: 2rem;
     }
-}
 
-@media (max-width: 640px) {
-    .team-members__grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    /* Prospecting Problem Area */
+    .prospecting-problem__workflow {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 12px;
     }
 
-    /* Press News Area */
-    .press-news__grid {
-        grid-template-columns: 1fr;
+    .prospecting-problem__step {
+        flex: 1 1 calc(50% - 24px);
+        min-width: 140px;
     }
 
-    .press-news__card {
-        padding: 1.5rem;
-    }
-
-    /* Our Journey Area */
-    .our-journey__timeline {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+    .prospecting-problem__arrow {
+        display: none;
     }
 }
 
@@ -9692,10 +10357,88 @@ ul.green li::marker {
     }
 
     /* Modern Platform Area */
-
     .modern-platform__card {
         padding: 1.5rem 1rem;
     }
+
+    /* Account Approach Area */
+    .account-approach__roles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Inverted Benefits Area */
+
+    .inverted-benefits__title {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .team-members__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Press News Area */
+    .press-news__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .press-news__card {
+        padding: 1.5rem;
+    }
+
+    /* Our Journey Area */
+    .our-journey__timeline {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Client Case Studies */
+    .client-case-studies__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .client-case-studies__card {
+        padding: 1.5rem;
+    }
+
+    /* Prospecting Problem Area */
+    .prospecting-problem__step {
+        flex: 1 1 100%;
+    }
+
+    /* Account Approach Area */
+    .account-approach__roles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .account-approach__target-card {
+        width: 100%;
+    }
+
+    /* Inverted Benefits Area */
+    .inverted-benefits__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    /* Hero Hub Spot Area */
+    .hubspot-integration__visual-card {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .hubspot-integration__card-item--rotated {
+        transform: none;
+    }
+
+    .hero--hub-spot .hero__short-desc {
+        margin-bottom: 2rem;
+    }
+
 }
 
 @media (max-width: 576px) {
@@ -9917,7 +10660,6 @@ ul.green li::marker {
     }
 
 }
-
 
 /* ===================================
    Responsive
