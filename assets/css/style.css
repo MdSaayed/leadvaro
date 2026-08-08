@@ -155,6 +155,11 @@ h6,
     gap: 4rem;
 }
 
+.gap-xl {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 
 
 .subtitle {
@@ -10077,6 +10082,164 @@ ul.green li::marker {
 /* ==============================
    Animation
 ============================== */
+.changelog {
+    background-color: var(--white);
+}
+
+.changelog__container {
+    max-width: 67.5rem;
+}
+
+.changelog__item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    padding: 2.5rem 0;
+}
+
+.changelog__item:not(:first-child) {
+    border-top: 1px solid var(--color-primary-light);
+}
+
+.changelog__item:first-child {
+    padding-top: 0;
+}
+
+.changelog__date {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+    padding-top: 4px;
+}
+
+.changelog__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.changelog__badge {
+    background-color: var(--light-indigo);
+    color: var(--primary);
+    padding: 0.25rem 0.63rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: var(--radius-full);
+}
+
+.changelog__badge--improvement {
+    background-color: #eef2ff;
+    color: #4f46e5;
+}
+
+.changelog__badge--bugfix {
+    background-color: #F1F5F9;
+    ;
+    color: #64748B;
+}
+
+.changelog__badge--feature {
+    background-color: #F0FDF4;
+    color: #16A34A;
+    padding: 0.25rem 0.63rem;
+}
+
+.changelog__title {
+    font-weight: 500;
+    color: var(--color-navy);
+}
+
+.changelog__media {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #f1f5f9;
+}
+
+.changelog__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.changelog__footer {
+    text-align: center;
+    padding-top: 4ren;
+    padding-bottom: 1.3rem;
+}
+
+.changelog__footer-text {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+/* ==============================
+   Hero Changelog
+============================== */
+
+
+.hero--changelog {
+    padding: 100px 20px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.hero--changelog .hero__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero__badge-text {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 400;
+}
+
+.hero--changelog .hero__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 480px;
+}
+
+.hero--changelog .hero__input {
+    flex: 1;
+    height: 44px;
+    padding: 0 16px;
+    font-size: 14px;
+    padding: 1.2rem 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #0f172a;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero--changelog .hero__input::placeholder {
+    color: #94a3b8;
+}
+
+.hero--changelog .hero__input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+
+/* ==============================
+   Animation
+============================== */
 @keyframes loop-left {
     from {
         transform: translateX(0);
@@ -10797,6 +10960,10 @@ ul.green li::marker {
     .integration-workflow__card-wrapper {
         padding: 2rem;
     }
+
+    .gap-xl {
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 850px) {
@@ -11301,6 +11468,28 @@ ul.green li::marker {
     /* Secondary Features */
     .secondary-features__grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Changelog Area */
+    .changelog__item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.5rem 0;
+    }
+
+    /* Hero Changelog Area */
+    .hero--changelog .hero__form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero--changelog .hero__input {
+        width: 100%;
+        padding: 0.8rem 0.5rem;
+    }
+
+    .hero--changelog button.hero__button {
+        width: 100%;
     }
 }
 
