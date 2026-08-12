@@ -11218,6 +11218,8 @@ ul.green li::marker {
     justify-content: center;
     gap: 20px;
     position: relative;
+    overflow: hidden;
+    padding-top: 1rem;
 }
 
 .cost-comparison__vs {
