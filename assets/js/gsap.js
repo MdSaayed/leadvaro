@@ -283,9 +283,10 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ==============================
    Problem Item Flip
 ============================== */
+
 document.querySelectorAll('.problems').forEach((section) => {
     const container = section.querySelector('.problems__items');
-    // if (!container) return;
+    if (!container) return;
 
     let rotationTimer = null;
     let isRunning = false;
@@ -294,13 +295,19 @@ document.querySelectorAll('.problems').forEach((section) => {
         const items = Array.from(container.children);
         if (items.length < 2) return;
 
-        const state = Flip.getState(items);
+        // ১. শুধুমাত্র আইটেমগুলোর স্টেট ক্যাপচার করুন
+        const state = Flip.getState(items, {
+            props: "transform, zIndex"
+        });
+
+        // ২. DOM Reorder
         container.appendChild(items[0]);
 
+        // ৩. Flip Animation
         Flip.from(state, {
             duration: 1,
             ease: 'power2.inOut',
-            absolute: true,
+            spin: false,
             onComplete: () => {
                 if (isRunning) {
                     rotationTimer = gsap.delayedCall(1.5, rotateItems);
@@ -310,7 +317,7 @@ document.querySelectorAll('.problems').forEach((section) => {
     }
 
     function startAnimation() {
-        if (isRunning) return; // already running হলে দ্বিতীয়বার শুরু করবে না
+        if (isRunning) return;
         isRunning = true;
         rotationTimer = gsap.delayedCall(2, rotateItems);
     }
@@ -321,11 +328,19 @@ document.querySelectorAll('.problems').forEach((section) => {
             rotationTimer.kill();
             rotationTimer = null;
         }
-        // চলমান কোনো Flip animation থাকলে সেটাও থামিয়ে item পজিশন reset করছি
         gsap.killTweensOf(container.children);
     }
 
-    // matchMedia দিয়ে breakpoint check করা
+    // Hover Pause/Resume
+    container.addEventListener('mouseenter', () => {
+        if (isRunning && rotationTimer) rotationTimer.pause();
+    });
+
+    container.addEventListener('mouseleave', () => {
+        if (isRunning && rotationTimer) rotationTimer.resume();
+    });
+
+    // Responsive Handling
     const mm = gsap.matchMedia();
 
     mm.add({

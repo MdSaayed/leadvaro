@@ -763,15 +763,22 @@ h6,
     margin-top: 5rem;
 }
 
-.hero__image-wrap {
+.hero__video-wrap {
     width: 100%;
     max-width: 68rem;
     height: 100%;
     max-height: 68rem;
     margin: 0 auto;
     position: relative;
+
 }
 
+.hero__video {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.hero__video-wrap video,
 .hero__image {
     width: 100%;
     height: 100%;
@@ -1136,7 +1143,6 @@ h6,
     gap: 0.5rem;
 }
 
-
 .problems__info-item-icon img {
     width: 100%;
     height: 100%;
@@ -1174,6 +1180,8 @@ h6,
 
 .problems .problems__items {
     min-height: 40rem;
+    width: 100%;
+    position: relative;
 }
 
 .problems .problems__item:not(:first-child) {
@@ -1213,7 +1221,6 @@ h6,
     margin-left: -15%;
     z-index: 10;
 }
-
 
 .problems__item-left {
     display: flex;
@@ -2618,7 +2625,6 @@ h6,
 }
 
 .hero--people-search .bg-wrap {
-    max-height: 100%;
     transform: translate(-50%, 0);
 }
 
@@ -2626,31 +2632,33 @@ h6,
     justify-content: start;
 }
 
-.hero--people-search .hero__content {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    align-items: stretch;
-    gap: 2.65rem;
-    margin-top: 0;
-    margin-right: -5rem;
-}
-
 .hero--people-search .hero__header-area {
-    max-width: 39rem;
+    max-width: 44rem;
 }
 
-.hero--people-search .hero__image-wrap {
+.hero--people-search .hero__video-wrap {
     margin: 0 auto;
     margin-bottom: 0;
     position: relative;
 }
 
+.hero--people-search .hero__image-wrap {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
 .hero--people-search .hero__image-wrap img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.hero--people-search .hero__video-wrap video {
     height: 100%;
     object-fit: contain;
 }
 
-.hero--people-search .hero__image-wrap .hero__image--large {
+.hero--people-search .hero__video-wrap .hero__image--large {
     height: auto;
     width: 100%;
 }
@@ -2664,15 +2672,20 @@ h6,
 }
 
 /* ==============================
+   Hero Lead Finder Area
+============================== */
+.hero--lead-finder{
+    position: relative;
+}
+.hero--lead-finder .hero__header-area {
+    max-width: 45rem;
+}
+
+/* ==============================
    Hero Email Finder Area
 ============================== */
 .hero--find-email {
     position: relative;
-}
-
-.hero--find-email .bg-wrap {
-    max-height: 100%;
-
 }
 
 .subtitle__wrapper--find-email {
@@ -2701,28 +2714,14 @@ h6,
     padding: 0.15rem 0.60rem;
 }
 
-.hero__content-wrapper--find-email {
-    display: grid;
-    grid-template-columns: 0.6fr 1fr;
-    justify-content: space-between;
-    gap: 5rem;
-}
 
 .find-email {
-    border-radius: var(--radius-xl);
-    border: 1.192px solid var(--light-indigo);
-    background: var(--light-indigo);
-    box-shadow: 0 7.149px 9.532px -2.383px var(--Colors-Effects-Shadows-shadow-lg_01, rgba(10, 13, 18, 0.08)), 0 2.383px 3.575px -1.192px var(--Colors-Effects-Shadows-shadow-lg_02, rgba(10, 13, 18, 0.03)), 0 1.192px 1.192px -0.596px var(--Colors-Effects-Shadows-shadow-lg_03, rgba(10, 13, 18, 0.04));
-    padding: 1rem;
-}
-
-
-/* Block: find-email */
-.find-email {
+    max-width: 66rem;
+    margin: 0 auto;
     width: 100%;
     background: linear-gradient(180deg, var(--light-indigo) 0%, var(--color-surface) 100%);
     border-radius: var(--radius-2xl);
-    padding: 20px;
+    padding: 4rem 2rem;
     box-shadow: var(--shadow-md);
 }
 
@@ -2738,7 +2737,6 @@ h6,
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 6px;
     padding: 0.34rem 0.70rem;
     color: var(--white);
@@ -3339,17 +3337,7 @@ h6,
     position: relative;
 }
 
-.hero--domain-search .bg-wrap {
-    max-height: 100%;
-}
-
-.hero--domain-search .hero__content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5rem;
-}
-
-.hero--domain-search .hero__header-area {
+.hero--domain-search .hero__desc {
     max-width: 39rem;
 }
 
@@ -3364,10 +3352,14 @@ h6,
 .search-card {
     width: 100%;
     background-color: var(--white);
-    border-radius: 20px;
-    box-shadow: 0 7.149px 9.532px -2.383px var(--Colors-Effects-Shadows-shadow-lg_01, rgba(10, 13, 18, 0.08)), 0 2.383px 3.575px -1.192px var(--Colors-Effects-Shadows-shadow-lg_02, rgba(10, 13, 18, 0.03)), 0 1.192px 1.192px -0.596px var(--Colors-Effects-Shadows-shadow-lg_03, rgba(10, 13, 18, 0.04));
     overflow: hidden;
-    border: 1px solid #D5D7DA;
+    max-width: 66rem;
+    padding: 1.5rem 2.5rem;
+    margin: 0 auto;
+    border-radius: var(--radius-3xl);
+    border: 1.868px solid #EEF2FF;
+    background: #EEF2FF;
+    box-shadow: 0 11.21px 14.947px -3.737px rgba(10, 13, 18, 0.08), 0 3.737px 5.605px -1.868px rgba(10, 13, 18, 0.03), 0 1.868px 1.868px -0.934px rgba(10, 13, 18, 0.04);
 }
 
 /* --- BEM: Elements --- */
@@ -3420,7 +3412,7 @@ h6,
 
 .search-card__btn--primary {
     background-color: var(--primary);
-    color: #ffffff;
+    color: var(--white);
 }
 
 .search-card__btn:hover {
@@ -3429,7 +3421,7 @@ h6,
 
 .search-card__bottom {
     padding: 24px 28px 28px;
-    background-color: #ffffff;
+    background-color: transparent;
     position: relative;
     z-index: 1;
 }
@@ -3438,7 +3430,9 @@ h6,
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    background-color: #ffffff;
+    background-color: var(--white);
+    padding: 5px;
+    border-radius: var(--radius-sm);
     border-radius: 8px;
 }
 
@@ -3450,8 +3444,8 @@ h6,
     gap: 8px;
     padding: 0.56rem 1rem;
     background: transparent;
-    border: 1px solid var(--primary);
     border-radius: 0.28681rem;
+    border: none;
     font-size: 0.875rem;
     flex: 1 0 150px;
     cursor: pointer;
@@ -3461,10 +3455,7 @@ h6,
 /* --- BEM: Modifiers --- */
 .search-card__toggle-btn:hover,
 .search-card__toggle-btn--active {
-    border-color: var(--primary);
-    color: var(--white);
-    background-color: var(--primary);
-    font-weight: 500;
+    border: 1px solid var(--primary);
 }
 
 .search-card__action-btn:hover,
@@ -3529,7 +3520,7 @@ h6,
     max-width: 59rem;
 }
 
-.hero--for-agencies .hero__image-wrap {
+.hero--for-agencies .hero__video-wrap {
     margin-bottom: 0;
 }
 
@@ -11172,7 +11163,7 @@ ul.green li::marker {
     align-items: center;
 }
 
-.hero--case-study-two .hero__image-wrap {
+.hero--case-study-two .hero__video-wrap {
     max-width: fit-content;
     overflow: hidden;
     text-align: center;
@@ -11186,7 +11177,7 @@ ul.green li::marker {
     text-align: 720px;
 }
 
-.hero--case-study-two .hero__image-wrap img {
+.hero--case-study-two .hero__video-wrap img {
     width: 100%;
     object-fit: contain;
 }
@@ -11276,7 +11267,7 @@ ul.green li::marker {
     position: absolute;
     left: 50%;
     top: 0;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     background-color: var(--primary);
     color: var(--white);
     font-size: 0.875rem;
@@ -11433,7 +11424,7 @@ ul.green li::marker {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
-.cost-card__stack-item img{
+.cost-card__stack-item img {
     object-fit: cover;
     width: 100%;
 }
@@ -11530,6 +11521,137 @@ ul.green li::marker {
 
 .cost-card__total-box--light .cost-card__credits {
     color: #334155;
+}
+
+/* ==============================
+   Security Trust Area
+============================== */
+.security-trust--style-two {
+    background-color: #F8F7F6;
+}
+
+.security-trust--style-two .security-trust__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.security-trust--style-two .security-trust__info {
+    max-width: 480px;
+}
+
+.security-trust--style-two .security-trust__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.security-trust--style-two .trust-card {
+    background-color: var(--white) !important;
+    border-radius: var(--radius-xl);
+    padding: 3.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.security-trust--style-two .trust-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.security-trust--style-two .trust-card__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==============================
+   Department Area
+============================== */
+.department {
+    background: #F8F7F6;
+}
+
+.department__desc {
+    max-width: 26rem;
+}
+
+.department .department__grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1.5rem;
+}
+
+.department__card:nth-child(1),
+.department__card:nth-child(2) {
+    grid-column: span 3;
+}
+
+.department__card:nth-child(3) {
+    grid-column: span 4;
+}
+
+
+.department__card:nth-child(4) {
+    grid-column: span 4;
+}
+
+.department__card:nth-child(5),
+.department__card:nth-child(6) {
+    grid-column: span 3;
+}
+
+.department .department__card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.department .department__card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.department .department__card-title {
+    font-weight: 500;
+}
+
+.department__card-img-area {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.department .department__card-img {
+    width: 100%;
+    object-fit: contain;
+}
+
+/* ==============================
+   Animation
+============================== */
+.hero--find-mobile {
+    position: relative;
+}
+
+.hero--find-mobile .hero__header-area {
+    max-width: 39rem;
+}
+
+.bulk--find-mobile .bulk__item--lg .bulk__item-text,
+.bulk--find-mobile .bulk__item--lg .bulk__item-title {
+    max-width: 52rem;
 }
 
 /* ==============================
@@ -11672,6 +11794,20 @@ ul.green li::marker {
     .solution-case__wrapper {
         grid-template-columns: 1fr;
         padding: 2.5rem;
+    }
+
+    /* Department Area */
+    .department .department__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .department__card:nth-child(1),
+    .department__card:nth-child(2),
+    .department__card:nth-child(3),
+    .department__card:nth-child(4),
+    .department__card:nth-child(5),
+    .department__card:nth-child(6) {
+        grid-column: span 1;
     }
 }
 
@@ -11879,13 +12015,6 @@ ul.green li::marker {
         margin-right: 0;
     }
 
-    .hero--people-search .hero__content {
-        grid-template-columns: 1fr;
-        align-items: center;
-        gap: 3rem;
-        margin-right: 0;
-    }
-
     /* Email Find */
     .hero__content-wrapper--find-email {
         grid-template-columns: 1fr;
@@ -11956,13 +12085,7 @@ ul.green li::marker {
         gap: 2.5rem;
     }
 
-    /* Hero Domain Search */
-    .hero--domain-search .hero__content {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
     /* Pain Points */
-
     .pain-points__card {
         padding: 1.5rem;
     }
@@ -12364,6 +12487,21 @@ ul.green li::marker {
     /* Hero Case Study Area */
     .hero--case-study-two .hero__content {
         gap: 2.5rem;
+    }
+
+    /* Security Trust Area  */
+    .security-trust--style-two .security-trust__wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .security-trust--style-two .security-trust__info {
+        max-width: 100%;
+    }
+
+    /* Find Email */
+    .find-email {
+        padding: 2.5rem 1.5rem;
     }
 }
 
@@ -12867,6 +13005,15 @@ ul.green li::marker {
     .results-impact__table-box {
         overflow-x: auto;
     }
+
+    /* Department Area */
+    .department .department__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-card {
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 640px) {
@@ -13014,7 +13161,6 @@ ul.green li::marker {
         top: 12%;
     }
 
-
     /* Testimonials Area */
     .testimonials__slider {
         padding-bottom: 0 !important;
@@ -13124,6 +13270,17 @@ ul.green li::marker {
     /* Solution Case Area */
     .solution-case__wrapper {
         padding: 24px;
+    }
+
+
+    /* Security Trust Area  */
+    .security-trust--style-two .security-trust__cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .security-trust--style-two .trust-card {
+        padding: 2rem 1rem;
     }
 }
 
