@@ -11649,6 +11649,10 @@ ul.green li::marker {
     max-width: 39rem;
 }
 
+.bulk--find-mobile .bulk__header-area{
+    max-width: 37rem;
+}
+
 .bulk--find-mobile .bulk__item--lg .bulk__item-text,
 .bulk--find-mobile .bulk__item--lg .bulk__item-title {
     max-width: 52rem;
