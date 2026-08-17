@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 ============================== */
 document.addEventListener("DOMContentLoaded", () => {
 
-    const hero = document.querySelector(".hero--home");
+    const hero = document.querySelector('[data-animation="hero"]');
     if (!hero) return;
 
     /* ---------- Split hero title into words for stagger reveal ---------- */

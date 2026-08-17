@@ -790,6 +790,9 @@ h6,
     right: -3vw;
     bottom: 3rem;
     max-width: 19rem;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .hero__play-btn {
@@ -1433,7 +1436,9 @@ h6,
     gap: 2rem;
     justify-content: space-between;
     background: var(--white);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-xl);
+    border: 1px solid #E0E7FF;
+    box-shadow: 0 4.894px 24px 0 rgba(147, 181, 213, 0.16);
 }
 
 .features__item-img-wrap {
@@ -2443,7 +2448,7 @@ h6,
 
 .benefits__item-img-wrap {
     border-radius: var(--radius-xl);
-    max-height: 19rem;
+    max-height: 22rem;
     overflow: hidden;
 }
 
@@ -2628,10 +2633,6 @@ h6,
     transform: translate(-50%, 0);
 }
 
-.hero--people-search .hero__cta-wrap {
-    justify-content: start;
-}
-
 .hero--people-search .hero__header-area {
     max-width: 44rem;
 }
@@ -2653,6 +2654,7 @@ h6,
     object-fit: cover;
 }
 
+
 .hero--people-search .hero__video-wrap video {
     height: 100%;
     object-fit: contain;
@@ -2666,17 +2668,17 @@ h6,
 .hero--people-search .hero__image--small {
     position: absolute;
     left: -3rem;
-    top: 50%;
-    transform: translateY(-50%);
-    max-height: 21rem;
+    bottom: 8rem;
+    max-height: fit-content;
 }
 
 /* ==============================
    Hero Lead Finder Area
 ============================== */
-.hero--lead-finder{
+.hero--lead-finder {
     position: relative;
 }
+
 .hero--lead-finder .hero__header-area {
     max-width: 45rem;
 }
@@ -11649,13 +11651,35 @@ ul.green li::marker {
     max-width: 39rem;
 }
 
-.bulk--find-mobile .bulk__header-area{
+.bulk--find-mobile .bulk__header-area {
     max-width: 37rem;
 }
 
 .bulk--find-mobile .bulk__item--lg .bulk__item-text,
 .bulk--find-mobile .bulk__item--lg .bulk__item-title {
     max-width: 52rem;
+}
+
+/* ==============================
+   Hero Company Search Area
+============================== */
+.hero--company-search {
+    position: relative;
+}
+
+.hero__image-wrap {
+    max-width: 90%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero--company-search .hero__header-area {
+    max-width: 44rem;
+}
+
+.hero--company-search .hero__image--small {
+    left: -6rem;
+    bottom: 0;
 }
 
 /* ==============================
@@ -11674,6 +11698,13 @@ ul.green li::marker {
 /* ==============================
    Responsive Styles
 ============================== */
+@media (max-width: 1524px) {
+    .hero--people-search .hero__image--small {
+        left: 2rem;
+        bottom: 1rem;
+    }
+}
+
 @media (max-width: 1400px) {
 
     /* Hero Outbound Area  */
@@ -12667,6 +12698,11 @@ ul.green li::marker {
     .hero__image--small {
         max-width: 9rem;
         bottom: 0;
+        display: none;
+    }
+
+    .hero__image-wrap {
+        max-width: 100%;
     }
 
     /* Reach Area */
