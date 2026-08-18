@@ -512,8 +512,60 @@ document.querySelectorAll('.how-it-works__item').forEach((item) => {
             }
         );
 
-    }, item); // scope করা হলো শুধু এই item এর ভেতরে
+    }, item);  
 });
 
+/* ==============================
+   Hero About
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+  // Check if target hero section exists
+  const heroSection = document.querySelector(".hero.hero--about");
 
+  if (heroSection) {
+    const tl = gsap.timeline({
+      defaults: {
+        ease: "power3.out",
+        duration: 0.8,
+      },
+    });
+
+    // Animate Left Column Elements (Stagger)
+    tl.from(
+      [
+        heroSection.querySelector(".subtitle__wrapper"),
+        heroSection.querySelector(".hero__title"),
+        heroSection.querySelector(".hero__desc"),
+        heroSection.querySelector(".hero__cta-wrap"),
+      ],
+      {
+        y: 40,
+        opacity: 0,
+        stagger: 0.15,
+      }
+    )
+      // Animate Right Image Component
+      .from(
+        heroSection.querySelector(".hero__img"),
+        {
+          y: 30,
+          scale: 0.95,
+          rotation: -2,
+          opacity: 0,
+          duration: 1,
+        },
+        "-=0.6" // Starts slightly before text animation finishes
+      )
+      // Subtle background reveal
+      .from(
+        heroSection.querySelector(".bg-img"),
+        {
+          opacity: 0,
+          scale: 1.05,
+          duration: 1.2,
+        },
+        0 // Plays in background simultaneously
+      );
+  }
+});
 
