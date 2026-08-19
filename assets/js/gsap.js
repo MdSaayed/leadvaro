@@ -473,7 +473,6 @@ document.querySelectorAll('.problems__item--how-it-work').forEach((container) =>
     });
 });
 
-
 document.querySelectorAll('.how-it-works__item').forEach((item) => {
     let ctx = gsap.context(() => {
 
@@ -512,60 +511,391 @@ document.querySelectorAll('.how-it-works__item').forEach((item) => {
             }
         );
 
-    }, item);  
+    }, item);
 });
+
+
+// Global Registration (Only Once)
+if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 /* ==============================
-   Hero About
+   Section Animation
 ============================== */
 document.addEventListener("DOMContentLoaded", () => {
-  // Check if target hero section exists
-  const heroSection = document.querySelector(".hero.hero--about");
 
-  if (heroSection) {
-    const tl = gsap.timeline({
-      defaults: {
-        ease: "power3.out",
-        duration: 0.8,
-      },
-    });
+    // Helper Function: Safe query Selector Array (Eliminates 'null' warnings)
+    const getExisting = (parent, selectors) => {
+        if (!parent) return [];
+        return selectors
+            .map(selector => parent.querySelector(selector))
+            .filter(Boolean); // Only returns elements that actually exist in DOM
+    };
 
-    // Animate Left Column Elements (Stagger)
-    tl.from(
-      [
-        heroSection.querySelector(".subtitle__wrapper"),
-        heroSection.querySelector(".hero__title"),
-        heroSection.querySelector(".hero__desc"),
-        heroSection.querySelector(".hero__cta-wrap"),
-      ],
-      {
-        y: 40,
-        opacity: 0,
-        stagger: 0.15,
-      }
-    )
-      // Animate Right Image Component
-      .from(
-        heroSection.querySelector(".hero__img"),
-        {
-          y: 30,
-          scale: 0.95,
-          rotation: -2,
-          opacity: 0,
-          duration: 1,
-        },
-        "-=0.6" // Starts slightly before text animation finishes
-      )
-      // Subtle background reveal
-      .from(
-        heroSection.querySelector(".bg-img"),
-        {
-          opacity: 0,
-          scale: 1.05,
-          duration: 1.2,
-        },
-        0 // Plays in background simultaneously
-      );
-  }
+    /* ==============================
+       1. Hero About Section
+    ============================== */
+    const heroAbout = document.querySelector(".hero.hero--about");
+    if (heroAbout) {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+
+        const leftElements = getExisting(heroAbout, [
+            ".subtitle__wrapper",
+            ".hero__title",
+            ".hero__desc",
+            ".hero__cta-wrap"
+        ]);
+
+        if (leftElements.length) {
+            tl.from(leftElements, { y: 40, opacity: 0, stagger: 0.15 });
+        }
+
+        const heroImg = heroAbout.querySelector(".hero__img");
+        if (heroImg) {
+            tl.from(heroImg, { y: 30, scale: 0.95, rotation: -2, opacity: 0, duration: 1 }, "-=0.6");
+        }
+
+        const bgImg = heroAbout.querySelector(".bg-img");
+        if (bgImg) {
+            tl.from(bgImg, { opacity: 0, scale: 1.05, duration: 1.2 }, 0);
+        }
+    }
+
+    /* ==============================
+       2. Our Journey Area
+    ============================== */
+    const journeySection = document.querySelector(".our-journey");
+    if (journeySection) {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: journeySection,
+                start: "top 80%",
+                toggleActions: "play none none none",
+            },
+            defaults: { ease: "power3.out", duration: 0.8 },
+        });
+
+        const headerEls = getExisting(journeySection, [".our-journey__badge", ".our-journey__title"]);
+        if (headerEls.length) {
+            tl.from(headerEls, { y: 35, opacity: 0, stagger: 0.15 });
+        }
+
+        const journeyItems = journeySection.querySelectorAll(".our-journey__item");
+        journeyItems.forEach((item) => {
+            const icon = item.querySelector("[class*='our-journey__icon']");
+            const line = item.querySelector(".our-journey__line");
+            const year = item.querySelector(".our-journey__year");
+
+            if (icon) {
+                gsap.set(icon, { transformOrigin: "center center" });
+                tl.from(icon, { scale: 0, opacity: 0, duration: 0.4, ease: "back.out(1.7)" }, "-=0.2");
+            }
+            if (line) {
+                gsap.set(line, { transformOrigin: "left center" });
+                tl.from(line, { scaleX: 0, opacity: 0, duration: 0.5 }, "-=0.2");
+            }
+            if (year) {
+                tl.from(year, { y: 20, opacity: 0, duration: 0.4 }, "-=0.4");
+            }
+        });
+    }
+
+    /* ==============================
+       3. Hero API Docs
+    ============================== */
+    const apiHero = document.querySelector(".hero.hero--api-docs");
+    if (apiHero) {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+
+        const leftEls = getExisting(apiHero, [
+            ".subtitle__wrapper",
+            ".hero__title",
+            ".hero__desc",
+            ".hero__cta-wrap"
+        ]);
+
+        if (leftEls.length) {
+            tl.from(leftEls, { y: 35, opacity: 0, stagger: 0.12 });
+        }
+
+        const heroImg = apiHero.querySelector(".hero__img");
+        if (heroImg) {
+            tl.from(heroImg, { y: 40, scale: 0.96, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.5");
+        }
+
+        const bgImg = apiHero.querySelector(".bg-img");
+        if (bgImg) {
+            tl.from(bgImg, { opacity: 0, scale: 1.05, duration: 1.2 }, 0);
+        }
+    }
+
+    /* ==============================
+       4. Hero Blog Area
+    ============================== */
+    const blogHero = document.querySelector(".hero--blog");
+    if (blogHero) {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+
+        const contentEls = getExisting(blogHero, [
+            ".subtitle__wrapper",
+            ".hero__title",
+            ".hero__desc",
+            ".search-bar"
+        ]);
+
+        if (contentEls.length) {
+            tl.from(contentEls, { y: 35, opacity: 0, stagger: 0.15 });
+        }
+
+        const bgImg = blogHero.querySelector(".bg-img");
+        if (bgImg) {
+            tl.from(bgImg, { opacity: 0, scale: 1.05, duration: 1.2 }, 0);
+        }
+    }
+
+    /* ==============================
+       5. Hero Find Decision Area
+    ============================== */
+    const findDecisionHero = document.querySelector(".hero--find-dicision");
+    if (findDecisionHero) {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+
+        const headerEls = getExisting(findDecisionHero, [
+            ".subtitle__wrapper",
+            ".hero__title",
+            ".hero__desc",
+            ".hero__cta-wrap"
+        ]);
+
+        if (headerEls.length) {
+            tl.from(headerEls, { y: 35, opacity: 0, stagger: 0.12 });
+        }
+
+        const heroImg = findDecisionHero.querySelector(".hero__image");
+        if (heroImg) {
+            tl.from(heroImg, { y: 45, scale: 0.96, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.5");
+        }
+
+        const bgImg = findDecisionHero.querySelector(".bg-img");
+        if (bgImg) {
+            tl.from(bgImg, { opacity: 0, scale: 1.04, duration: 1.2 }, 0);
+        }
+    }
+
+    /* ==============================
+       6. Hero Case Study 2 Area
+    ============================== */
+    const caseStudyHeroTwo = document.querySelector(".hero--case-study-two");
+    if (caseStudyHeroTwo) {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+
+        const leftEls = getExisting(caseStudyHeroTwo, [
+            ".hero__badge",
+            ".hero__titl",
+            ".hero__desc",
+            ".hero__cta",
+            ".hero__short-wrap"
+        ]);
+
+        if (leftEls.length) {
+            tl.from(leftEls, { y: 35, opacity: 0, stagger: 0.12 });
+        }
+
+        const heroImg = caseStudyHeroTwo.querySelector(".hero__img");
+        if (heroImg) {
+            tl.from(heroImg, { y: 40, scale: 0.95, opacity: 0, duration: 1, ease: "power2.out" }, "-=0.6");
+        }
+    }
+
+    /* ==============================
+       7. Hero Case Study Area
+    ============================== */
+    const caseStudyHero = document.querySelector(".hero--case-study");
+    if (caseStudyHero) {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+
+        const headerEls = getExisting(caseStudyHero, [
+            ".subtitle__wrapper",
+            ".hero__title",
+            ".hero__desc",
+            ".hero__cta-wrap"
+        ]);
+
+        if (headerEls.length) {
+            tl.from(headerEls, { y: 35, opacity: 0, stagger: 0.12 });
+        }
+
+        const cards = caseStudyHero.querySelectorAll(".hero__card");
+        if (cards.length) {
+            tl.from(cards, {
+                y: 30,
+                scale: 0.95,
+                opacity: 0,
+                duration: 0.7,
+                stagger: 0.15,
+                ease: "back.out(1.2)"
+            }, "-=0.4");
+        }
+
+        const bgImg = caseStudyHero.querySelector(".bg-img");
+        if (bgImg) {
+            tl.from(bgImg, { opacity: 0, scale: 1.05, duration: 1.2 }, 0);
+        }
+    }
+
+    /* ==============================
+       8. Breadcrumbs Area
+    ============================== */
+    const breadcrumbsSection = document.querySelector(".breadcrumbs");
+    if (breadcrumbsSection) {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+
+        const breadcrumbEls = getExisting(breadcrumbsSection, [
+            ".breadcrumbs__link-wrap",
+            ".breadcrumbs__subtitle",
+            ".breadcrumbs__title",
+            ".breadcrumbs__desc",
+            ".breadcrumbs__meta-wrap"
+        ]);
+
+        if (breadcrumbEls.length) {
+            tl.from(breadcrumbEls, { y: 30, opacity: 0, stagger: 0.1 });
+        }
+
+        const bgImg = breadcrumbsSection.querySelector(".bg-img");
+        if (bgImg) {
+            tl.from(bgImg, { opacity: 0, scale: 1.05, duration: 1.2 }, 0);
+        }
+    }
+
+    /* ==============================
+       9. Hero Changelog Area
+    ============================== */
+    const changelogHero = document.querySelector(".hero--changelog");
+    if (changelogHero) {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+
+        const elements = getExisting(changelogHero, [
+            ".hero__badge-group",
+            ".hero__title",
+            ".hero__description",
+            ".hero__form"
+        ]);
+
+        if (elements.length) {
+            tl.from(elements, { y: 35, opacity: 0, stagger: 0.12 });
+        }
+    }
+
+    /* ==============================
+       10. Hero Prospeo Area
+    ============================== */
+    const prospeoHero = document.querySelector(".hero--prospeo-alt");
+    if (prospeoHero) {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
+
+        const elements = getExisting(prospeoHero, [
+            ".subtitle",
+            ".hero__title",
+            ".hero__desc",
+            ".hero__cta-wrap",
+            ".hero__list"
+        ]);
+
+        if (elements.length) {
+            tl.from(elements, { y: 35, opacity: 0, stagger: 0.12 });
+        }
+
+        const bgImg = prospeoHero.querySelector(".bg-img");
+        if (bgImg) {
+            tl.from(bgImg, { opacity: 0, scale: 1.05, duration: 1.2 }, 0);
+        }
+    }
+
+    /* ==============================
+       11. Hero Contact Area
+    ============================== */
+    const contactHero = document.querySelector(".hero--contact");
+    if (contactHero) {
+        const tl = gsap.timeline({
+            delay: 0.2,
+            defaults: { ease: "power3.out", duration: 1.1 },
+        });
+
+        const headerElements = contactHero.querySelectorAll(".subtitle, .hero__title, .hero__desc");
+        if (headerElements.length) {
+            tl.from(headerElements, { y: 40, opacity: 0, stagger: 0.18 });
+        }
+
+        const cards = contactHero.querySelectorAll(".info-card");
+        if (cards.length) {
+            tl.from(cards, { y: 45, opacity: 0, stagger: 0.12 }, "-=0.5");
+        }
+    }
+
+    /* ==============================
+       12. Home Hero Area (.hero--home)
+    ============================== */
+    const homeHeroSection = document.querySelector(".hero--home");
+    if (homeHeroSection) {
+        const heroTl = gsap.timeline({
+            delay: 0.1,
+            defaults: { ease: "power3.out", duration: 0.8 },
+        });
+
+        const heroEls = getExisting(homeHeroSection, [
+            ".subtitle",
+            ".hero__title",
+            ".hero__desc",
+            ".hero__cta-wrap"
+        ]);
+
+        if (heroEls.length) {
+            heroTl.from(heroEls, { opacity: 0, y: 30, stagger: 0.12 });
+        }
+
+        const heroImages = homeHeroSection.querySelectorAll(".hero__image, .hero__image--small, .hero__play-btn");
+        if (heroImages.length) {
+            heroTl.from(
+                heroImages,
+                { opacity: 0, y: 40, scale: 0.95, stagger: 0.15, ease: "power2.out" },
+                "-=0.5"
+            );
+        }
+    }
+
+    /* ==============================
+       13. Generic Scroll Reveal (Scoped per Section)
+    ============================== */
+    // 'reveal-section' ক্লাস ব্যবহার করে শুধু নির্দিষ্ট সেকশনে জেনারেল অ্যানিমেশন দেওয়া ভালো,
+    // যাতে অন্য নির্দিষ্ট লেআউটের সেকশনে কনফ্লিক্ট না করে।
+    const genericRevealSections = document.querySelectorAll("section.reveal-section");
+
+    if (genericRevealSections.length > 0) {
+        genericRevealSections.forEach((section) => {
+            const targets = section.querySelectorAll(
+                "h1, h2, h3, p, span, a, img, button, [class*='card'], [class*='form']"
+            );
+
+            if (targets.length > 0) {
+                gsap.from(targets, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 82%",
+                        toggleActions: "play none none reverse",
+                    },
+                    opacity: 0,
+                    y: 40,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "power3.out",
+                });
+            }
+        });
+    }
+
 });
 
+
+  

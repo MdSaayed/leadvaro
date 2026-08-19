@@ -9138,6 +9138,7 @@ ul.green li::marker {
     padding: 100px 20px;
     background-color: var(--white);
     text-align: center;
+    border-bottom: 1px solid var(--color-primary-light);
 }
 
 .free-trial-cta__container {
