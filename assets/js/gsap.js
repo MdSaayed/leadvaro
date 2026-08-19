@@ -1321,3 +1321,108 @@ document.addEventListener("DOMContentLoaded", () => {
         }, "-=0.3");
 });
 
+/* ==============================
+  Hero Free Trail Area
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Target parent container with modifier class
+    const heroSection = document.querySelector(".hero--free-trail");
+    if (!heroSection) return;
+
+    // Scoped Selector Initialization
+    const q = gsap.utils.selector(heroSection);
+
+    // Timeline Setup
+    const tl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    // 2. Badge Wrapper
+    tl.from(q(".hero__badge-wrapper, .hero__badge"), {
+        y: -15,
+        opacity: 0,
+        duration: 0.6,
+        clearProps: "opacity,transform"
+    })
+
+        // 3. Hero Title
+        .from(q(".hero__title"), {
+            y: 25,
+            opacity: 0,
+            scale: 0.98,
+            duration: 0.9,
+            clearProps: "opacity,transform"
+        }, "-=0.4")
+
+        // 4. Hero Description
+        .from(q(".hero__description, .hero__desc"), {
+            y: 20,
+            opacity: 0,
+            duration: 0.7,
+            clearProps: "opacity,transform"
+        }, "-=0.6")
+
+        // 5. Feature List Items
+        .from(q(".hero__feature-item, .hero__features li"), {
+            x: -20,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "back.out(1.2)",
+            clearProps: "opacity,transform"
+        }, "-=0.5")
+
+        // 6. Avatar / Social Proof Area
+        .from(q(".hero__avatar-area, .hero__reviews"), {
+            y: 15,
+            opacity: 0,
+            duration: 0.6,
+            clearProps: "opacity,transform"
+        }, "-=0.3")
+
+        // 7. Signup Card Container
+        .from(q(".signup-card, .hero__form-card"), {
+            x: 45,
+            y: 20,
+            opacity: 0,
+            scale: 0.97,
+            duration: 1.0,
+            ease: "power4.out",
+            clearProps: "opacity,transform"
+        }, "-=0.6")
+
+        // 8. Card Title & Subtitle
+        .from(q(".signup-card__title, .signup-card__subtitle"), {
+            y: 15,
+            opacity: 0,
+            stagger: 0.08,
+            duration: 0.5,
+            clearProps: "opacity,transform"
+        }, "-=0.6")
+
+        // 9. Input Form Groups
+        .from(q(".signup-card__form-group"), {
+            y: 15,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            clearProps: "opacity,transform"
+        }, "-=0.3")
+
+        // 10. Buttons
+        .from(q(".signup-card__btn"), {
+            y: 15,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "back.out(1.2)",
+            clearProps: "opacity,transform"
+        }, "-=0.3")
+
+        // 11. Card Footer
+        .from(q(".signup-card__footer"), {
+            opacity: 0,
+            duration: 0.4,
+            clearProps: "opacity,transform"
+        }, "-=0.2");
+});
