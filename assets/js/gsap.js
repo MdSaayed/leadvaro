@@ -1851,3 +1851,125 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const heroOutbound = document.querySelector(".hero--outbound");
+    if (!heroOutbound) return;
+
+    // Scoped Selector
+    const q = gsap.utils.selector(heroOutbound);
+
+    // Initial Hide (Prevent FOUC)
+    gsap.set(
+        q(".hero__badge-group, .hero__title, .hero__desc, .hero__cta-wrap, .hero__short-desc, .hero__image-wrap, .stat-card"),
+        { autoAlpha: 0 }
+    );
+
+    // 1. Page Load Animation Timeline
+    const loadTl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    loadTl
+        .fromTo(
+            q(".hero__badge-group"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 }
+        )
+        .fromTo(
+            q(".hero__title"),
+            { y: 25, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.7 },
+            "-=0.3"
+        )
+        .fromTo(
+            q(".hero__desc"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.6 },
+            "-=0.4"
+        )
+        .fromTo(
+            q(".hero__cta-wrap"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 },
+            "-=0.4"
+        )
+        .fromTo(
+            q(".hero__short-desc"),
+            { y: 15, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 },
+            "-=0.3"
+        )
+        // Dashboard Image Lift Entrance
+        .fromTo(
+            q(".hero__image-wrap"),
+            { y: 50, scale: 0.95, autoAlpha: 0 },
+            {
+                y: 0,
+                scale: 1,
+                autoAlpha: 1,
+                duration: 0.9,
+                ease: "power4.out"
+            },
+            "-=0.3"
+        )
+        // Floating Stat Card Bounce Pop
+        .fromTo(
+            q(".stat-card"),
+            { x: 30, y: 30, scale: 0.85, autoAlpha: 0 },
+            {
+                x: 0,
+                y: 0,
+                scale: 1,
+                autoAlpha: 1,
+                duration: 0.7,
+                ease: "back.out(1.6)",
+                onComplete: animateStatCounter
+            },
+            "-=0.5"
+        );
+
+    // Number Counter Animation with Comma Formatting
+    function animateStatCounter() {
+        const valueEl = q(".stat-card__value")[0];
+        if (!valueEl) return;
+
+        const targetVal = parseFloat(valueEl.getAttribute("data-counter")) || 3240;
+        const counterObj = { val: 0 };
+
+        gsap.to(counterObj, {
+            val: targetVal,
+            duration: 1.6,
+            ease: "power2.out",
+            onUpdate: () => {
+                // Formats numbers like 3,240 using toLocaleString
+                valueEl.textContent = Math.floor(counterObj.val).toLocaleString();
+            }
+        });
+    }
+
+    // 2. Scroll Parallax Effect (Floating Card Offset)
+    gsap.to(q(".stat-card"), {
+        scrollTrigger: {
+            trigger: heroOutbound,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1.5
+        },
+        y: -40,
+        ease: "none"
+    });
+
+    gsap.to(q(".hero__image"), {
+        scrollTrigger: {
+            trigger: heroOutbound,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1
+        },
+        y: -15,
+        ease: "none"
+    });
+});
