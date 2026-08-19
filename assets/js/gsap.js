@@ -1676,3 +1676,87 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "none"
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const heroLeadPro = document.querySelector(".hero--lead-pro");
+    if (!heroLeadPro) return;
+
+    // Scoped Selector
+    const q = gsap.utils.selector(heroLeadPro);
+
+    // Initial Hide (Prevent FOUC)
+    gsap.set(
+        q(".subtitle__wrapper, .hero__title, .hero__desc, .hero__cta-wrap, .hero__list, .hero__right, .bg-wrap"),
+        { autoAlpha: 0 }
+    );
+
+    // 1. Page Load Animation Timeline
+    const loadTl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    loadTl
+        // Background Soft Entrance
+        .to(q(".bg-wrap"), {
+            autoAlpha: 1,
+            duration: 1
+        })
+        // Left Column Elements Stagger
+        .fromTo(
+            q(".subtitle__wrapper"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 },
+            "-=0.7"
+        )
+        .fromTo(
+            q(".hero__title"),
+            { y: 25, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.7 },
+            "-=0.3"
+        )
+        .fromTo(
+            q(".hero__desc"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.6 },
+            "-=0.4"
+        )
+        .fromTo(
+            q(".hero__cta-wrap"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 },
+            "-=0.4"
+        )
+        .fromTo(
+            q(".hero__list"),
+            { y: 15, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 },
+            "-=0.3"
+        )
+        // Right Side Comparison Card Reveal
+        .fromTo(
+            q(".hero__right"),
+            { x: 40, scale: 0.96, autoAlpha: 0 },
+            {
+                x: 0,
+                scale: 1,
+                autoAlpha: 1,
+                duration: 0.9,
+                ease: "power4.out"
+            },
+            "-=0.8"
+        );
+
+    // 2. Scroll Parallax Effect for Comparison Card
+    gsap.to(q(".hero__right"), {
+        scrollTrigger: {
+            trigger: heroLeadPro,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1.2
+        },
+        y: -30,
+        ease: "none"
+    });
+});
