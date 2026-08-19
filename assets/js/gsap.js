@@ -1852,6 +1852,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+/* ==============================
+  Hero Outbound Area
+============================== */
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -1970,6 +1973,271 @@ document.addEventListener("DOMContentLoaded", () => {
             scrub: 1
         },
         y: -15,
+        ease: "none"
+    });
+});
+
+/* ==============================
+  Hero Pricing Area
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const pricingHero = document.querySelector(".hero--pricing");
+    if (!pricingHero) return;
+
+    const q = gsap.utils.selector(pricingHero);
+
+    // Initial Hide (Prevent FOUC)
+    gsap.set(
+        q(".subtitle__wrapper, .hero__title, .hero__avatar-area, .pricing-card__filter-wrap, .pricing-card__item"),
+        { autoAlpha: 0 }
+    );
+
+    // 1. Page Entrance Timeline
+    const entranceTl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.7 }
+    });
+
+    entranceTl
+        .fromTo(
+            q(".subtitle__wrapper"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 }
+        )
+        .fromTo(
+            q(".hero__title"),
+            { y: 25, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.7 },
+            "-=0.3"
+        )
+        .fromTo(
+            q(".hero__avatar-area"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.6 },
+            "-=0.4"
+        )
+        .fromTo(
+            q(".pricing-card__filter-wrap"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 },
+            "-=0.3"
+        )
+        // Pricing Cards Stagger Animation
+        .fromTo(
+            q(".pricing-card__item"),
+            { y: 40, autoAlpha: 0 },
+            {
+                y: 0,
+                autoAlpha: 1,
+                duration: 0.8,
+                stagger: 0.12,
+                ease: "power2.out"
+            },
+            "-=0.2"
+        );
+
+    // 2. Interactive Monthly / Annual Price Switcher
+    const filterBtns = q(".pricing-card__filter-btn");
+    const priceElements = q(".pricing-card__price");
+
+    filterBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            const billingType = this.getAttribute("data-billing");
+
+            // Update Active Class
+            filterBtns.forEach((b) => b.classList.remove("pricing-card__filter-btn--active"));
+            this.classList.add("pricing-card__filter-btn--active");
+
+            // Animate Price Text Swap
+            priceElements.forEach((priceEl) => {
+                const newPrice = priceEl.getAttribute(`data-${billingType}`);
+                if (!newPrice || priceEl.innerHTML === newPrice) return;
+
+                gsap.to(priceEl, {
+                    y: -10,
+                    opacity: 0,
+                    duration: 0.2,
+                    ease: "power2.in",
+                    onComplete: () => {
+                        priceEl.innerHTML = newPrice;
+                        gsap.fromTo(
+                            priceEl,
+                            { y: 10, opacity: 0 },
+                            { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }
+                        );
+                    }
+                });
+            });
+        });
+    });
+
+    // 3. Subtle Background Image Scroll Parallax
+    gsap.to(q(".bg-img"), {
+        scrollTrigger: {
+            trigger: pricingHero,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1
+        },
+        y: 40,
+        ease: "none"
+    });
+});
+
+/* ==============================
+  Hero Sales Prospecting Area
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const heroSection = document.querySelector(".hero--sales-prospecting");
+    if (!heroSection) return;
+
+    const q = gsap.utils.selector(heroSection);
+
+    // Initial Hide (Prevent FOUC - Flash of Unstyled Content)
+    gsap.set(
+        q(".hero__badge, .hero__title, .hero__description, .hero__cta, .hero__avatar-area, .hero__footer-note, .hero__media"),
+        { autoAlpha: 0 }
+    );
+
+    // 1. Page Entrance Timeline
+    const heroTl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    heroTl
+        // Badge Fade Slide
+        .fromTo(
+            q(".hero__badge"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 }
+        )
+        // Main Title Reveal
+        .fromTo(
+            q(".hero__title"),
+            { y: 30, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.7 },
+            "-=0.3"
+        )
+        // Description
+        .fromTo(
+            q(".hero__description"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.6 },
+            "-=0.4"
+        )
+        // CTA Buttons (Staggered scale & fade)
+        .fromTo(
+            q(".hero__btn"),
+            { y: 20, autoAlpha: 0, scale: 0.95 },
+            { y: 0, autoAlpha: 1, scale: 1, duration: 0.5, stagger: 0.1 },
+            "-=0.3"
+        )
+        // Avatars & Social Proof
+        .fromTo(
+            q(".hero__avatar-area"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.6 },
+            "-=0.3"
+        )
+        // Footer Note
+        .fromTo(
+            q(".hero__footer-note"),
+            { y: 15, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 },
+            "-=0.4"
+        )
+        // Right Media Showcase Reveal
+        .fromTo(
+            q(".hero__media"),
+            { x: 40, y: 20, autoAlpha: 0, scale: 0.98 },
+            { x: 0, y: 0, autoAlpha: 1, scale: 1, duration: 1, ease: "power2.out" },
+            "-=0.8"
+        );
+
+    // 2. Continuous Floating Effect for Product Composition
+    gsap.to(q(".hero__img"), {
+        y: -12,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.easeInOut"
+    });
+
+    // 3. Scroll Parallax Effect
+    gsap.to(q(".hero__media"), {
+        scrollTrigger: {
+            trigger: heroSection,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1.2
+        },
+        y: 40,
+        ease: "none"
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const heroAltSection = document.querySelector(".hero--prospeo-alt");
+    if (!heroAltSection) return;
+
+    const q = gsap.utils.selector(heroAltSection);
+
+    // Entrance Timeline
+    const heroTl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    heroTl
+        .fromTo(
+            q(".subtitle"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 }
+        )
+        .fromTo(
+            q(".hero__title"),
+            { y: 30, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.7 },
+            "-=0.3"
+        )
+        .fromTo(
+            q(".hero__desc"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.6 },
+            "-=0.4"
+        )
+        .fromTo(
+            q(".hero__cta-wrap .btn"),
+            { y: 20, autoAlpha: 0, scale: 0.95 },
+            { y: 0, autoAlpha: 1, scale: 1, duration: 0.5, stagger: 0.1 },
+            "-=0.3"
+        )
+        .fromTo(
+            q(".hero__list"),
+            { y: 15, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 },
+            "-=0.3"
+        )
+        .fromTo(
+            q(".bg-img"),
+            { autoAlpha: 0 },
+            { autoAlpha: 1, duration: 1 },
+            "-=0.8"
+        );
+
+    // Scroll Parallax
+    gsap.to(q(".bg-img"), {
+        scrollTrigger: {
+            trigger: heroAltSection,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1
+        },
+        y: 50,
         ease: "none"
     });
 });
