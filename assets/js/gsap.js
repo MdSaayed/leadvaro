@@ -898,4 +898,67 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-  
+/* ==============================
+   Domain Search Hero Area
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+    // Scope element selection strictly to this section
+    const heroSection = document.querySelector(".hero--domain-search");
+
+    if (!heroSection) return;
+
+    const q = gsap.utils.selector(heroSection);
+
+    // Initial timeline for Page Load
+    const tl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    tl
+        // 1. Subtitle & Icon reveal
+        .from(q(".subtitle"), {
+            y: -20,
+            opacity: 0,
+        })
+
+        // 2. Main Heading reveal (Slight scale-up effect)
+        .from(q(".hero__title"), {
+            y: 30,
+            opacity: 0,
+            scale: 0.98,
+        }, "-=0.5")
+
+        // 3. Description reveal
+        .from(q(".hero__desc"), {
+            y: 20,
+            opacity: 0,
+        }, "-=0.6")
+
+        // 4. Consultation CTA Button reveal
+        .from(q(".hero__cta-wrap"), {
+            y: 20,
+            opacity: 0,
+            scale: 0.95,
+        }, "-=0.5")
+
+        // 5. Search Card Container reveal
+        .from(q(".search-card"), {
+            y: 40,
+            opacity: 0,
+            duration: 1,
+        }, "-=0.4")
+
+        // 6. Search Card Inner Form Elements stagger reveal
+        .from([q(".search-card__top"), q(".search-card__bottom")], {
+            y: 15,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 0.6,
+        }, "-=0.6")
+
+        // 7. Background image subtle fade-in
+        .from(q(".bg-wrap"), {
+            opacity: 0,
+            duration: 1.2,
+        }, "-=1.2");
+});
