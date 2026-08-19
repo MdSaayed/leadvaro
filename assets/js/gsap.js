@@ -1426,3 +1426,178 @@ document.addEventListener("DOMContentLoaded", () => {
             clearProps: "opacity,transform"
         }, "-=0.2");
 });
+
+/* ==============================
+  Hero Hub Spot Area
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+    const hubspotHero = document.querySelector(".hero--hub-spot");
+    if (!hubspotHero) return;
+
+    // 1. Instantly make the parent container visible to prevent FOUC
+    gsap.set(hubspotHero, { autoAlpha: 1 });
+
+    const q = gsap.utils.selector(hubspotHero);
+
+    // 2. Setup Timeline with autoAlpha
+    const tl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    tl.from(q(".subtitle-group"), {
+        y: -15,
+        autoAlpha: 0,
+        duration: 0.6,
+        clearProps: "all"
+    })
+        .from(q(".hero__title"), {
+            y: 25,
+            autoAlpha: 0,
+            scale: 0.98,
+            duration: 0.9,
+            clearProps: "all"
+        }, "-=0.4")
+        .from(q(".hero__desc"), {
+            y: 20,
+            autoAlpha: 0,
+            duration: 0.7,
+            clearProps: "all"
+        }, "-=0.6")
+        .from(q(".cta-wrap .btn"), {
+            y: 15,
+            autoAlpha: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "back.out(1.2)",
+            clearProps: "all"
+        }, "-=0.4")
+        .from(q(".hero__short-desc"), {
+            autoAlpha: 0,
+            duration: 0.5,
+            clearProps: "all"
+        }, "-=0.3")
+        .from(q(".hubspot-integration__visual-card"), {
+            y: 40,
+            autoAlpha: 0,
+            scale: 0.96,
+            duration: 0.9,
+            ease: "power4.out",
+            clearProps: "all"
+        }, "-=0.4")
+        .from(q(".hubspot-integration__card-item"), {
+            scale: 0.85,
+            autoAlpha: 0,
+            stagger: 0.15,
+            duration: 0.6,
+            ease: "back.out(1.5)",
+            clearProps: "all"
+        }, "-=0.5")
+        .from(q(".hubspot-integration__sync-indicator"), {
+            scaleX: 0,
+            autoAlpha: 0,
+            duration: 0.4,
+            clearProps: "all"
+        }, "-=0.3")
+        .from(q(".hubspot-integration__tag"), {
+            y: 12,
+            autoAlpha: 0,
+            stagger: 0.06,
+            duration: 0.4,
+            ease: "power2.out",
+            clearProps: "all"
+        }, "-=0.2");
+
+    // Sync Dots Animation
+    gsap.to(q(".hubspot-integration__sync-dots span"), {
+        y: -3,
+        opacity: 0.4,
+        stagger: {
+            each: 0.15,
+            repeat: -1,
+            yoyo: true
+        },
+        duration: 0.4,
+        ease: "sine.inOut"
+    });
+});
+
+/* ==============================
+  Quick Setup Area
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+    // Register ScrollTrigger Plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 1. Target parent section
+    const quickSetupSection = document.querySelector(".quick-setup");
+    if (!quickSetupSection) return;
+
+    // Scoped Selector Initialization
+    const q = gsap.utils.selector(quickSetupSection);
+
+    // Initial State - Prevent FOUC
+    gsap.set(q(".quick-setup__badge, .quick-setup__title, .quick-setup__description, .quick-setup__step, .quick-setup__docs-link, .quick-setup__card"), {
+        autoAlpha: 0
+    });
+
+    // 2. Timeline with ScrollTrigger
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: quickSetupSection,
+            start: "top 75%", // Starts animation when top of section hits 75% of viewport
+            toggleActions: "play none none reverse"
+        },
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    // 3. Left Content Reveal
+    tl.to(q(".quick-setup__badge"), {
+        y: 0,
+        autoAlpha: 1,
+        duration: 0.5
+    })
+        .to(q(".quick-setup__title"), {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.7
+        }, "-=0.3")
+        .to(q(".quick-setup__description"), {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.6
+        }, "-=0.5")
+
+        // 4. Stepper Items Sequence
+        .fromTo(q(".quick-setup__step"),
+            { x: -30, autoAlpha: 0 },
+            {
+                x: 0,
+                autoAlpha: 1,
+                stagger: 0.18,
+                duration: 0.6,
+                ease: "back.out(1.2)",
+                clearProps: "all"
+            },
+            "-=0.4"
+        )
+
+        // 5. Right Side Image Card Reveal
+        .fromTo(q(".quick-setup__card"),
+            { x: 40, scale: 0.95, autoAlpha: 0 },
+            {
+                x: 0,
+                scale: 1,
+                autoAlpha: 1,
+                duration: 0.9,
+                ease: "power4.out",
+                clearProps: "all"
+            },
+            "-=0.8"
+        )
+
+        // 6. Docs Link Reveal
+        .to(q(".quick-setup__docs-link"), {
+            autoAlpha: 1,
+            duration: 0.4
+        }, "-=0.3");
+});
