@@ -1053,3 +1053,109 @@ document.addEventListener("DOMContentLoaded", () => {
             clearProps: "opacity,transform"
         }, "-=0.3");
 });
+
+/* ==============================
+  Hero Features Area
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+    const heroFeatures = document.querySelector(".hero--features");
+    if (!heroFeatures) return;
+
+    const q = gsap.utils.selector(heroFeatures);
+
+    const tl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    tl.from(q(".hero__badge-group"), {
+        y: -20,
+        opacity: 0,
+        clearProps: "opacity,transform"
+    })
+        .from(q(".hero__title"), {
+            y: 30,
+            opacity: 0,
+            scale: 0.98,
+            clearProps: "opacity,transform"
+        }, "-=0.5")
+        .from(q(".hero__desc"), {
+            y: 20,
+            opacity: 0,
+            clearProps: "opacity,transform"
+        }, "-=0.6")
+        .from(q(".hero__cta-wrap"), {
+            y: 20,
+            opacity: 0,
+            scale: 0.95,
+            clearProps: "opacity,transform"
+        }, "-=0.5")
+        .from(q(".hero__tag"), {
+            y: 15,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            clearProps: "opacity,transform"
+        }, "-=0.4");
+});
+
+/* ==============================
+  Feature Spine Area
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+    const spineSection = document.querySelector(".feature-spine");
+    if (!spineSection) return;
+
+    const q = gsap.utils.selector(spineSection);
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: spineSection,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        },
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    tl.from([q(".feature-spine__badge"), q(".feature-spine__title"), q(".feature-spine__description")], {
+        y: 30,
+        opacity: 0,
+        stagger: 0.15,
+        clearProps: "opacity,transform"
+    })
+        .from(q(".feature-spine__line"), {
+            scaleX: 0,
+            transformOrigin: "left center",
+            duration: 1,
+            ease: "power2.inOut",
+            clearProps: "opacity,transform"
+        }, "-=0.3")
+        .from(q(".feature-spine__step-badge"), {
+            scale: 0,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "back.out(1.7)",
+            clearProps: "opacity,transform"
+        }, "-=0.6")
+        .from(q(".feature-spine__card"), {
+            y: 40,
+            opacity: 0,
+            stagger: 0.12,
+            duration: 0.7,
+            clearProps: "opacity,transform"
+        }, "-=0.4")
+        .from(q(".feature-spine__footer-note"), {
+            y: 15,
+            opacity: 0,
+            duration: 0.5,
+            clearProps: "opacity,transform"
+        }, "-=0.2");
+});
+
+/* ==============================
+  Hero Features Area
+============================== */
+
+
