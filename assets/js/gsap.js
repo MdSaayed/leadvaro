@@ -1601,3 +1601,92 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 0.4
         }, "-=0.3");
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 1. Target parent container
+    const integrationsHero = document.querySelector(".hero-integrations");
+    if (!integrationsHero) return;
+
+    // Scoped Selector Initialization
+    const q = gsap.utils.selector(integrationsHero);
+
+    // Prevent FOUC: Set section visible
+    gsap.set(integrationsHero, { autoAlpha: 1 });
+
+    // Initial state setup for animated elements
+    gsap.set(
+        q(
+            ".hero-integrations__badge-group, .hero-integrations__title, .hero-integrations__description, .hero-integrations__actions, .hero-integrations__app-card"
+        ),
+        { autoAlpha: 0 }
+    );
+
+    // 2. Timeline with ScrollTrigger
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: integrationsHero,
+            start: "top 75%",
+            toggleActions: "play none none reverse"
+        },
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    // 3. Content Entrance Sequence
+    tl.to(q(".hero-integrations__badge-group"), {
+        y: -10,
+        autoAlpha: 1,
+        duration: 0.5
+    })
+        .to(q(".hero-integrations__title"), {
+            y: -15,
+            autoAlpha: 1,
+            duration: 0.8,
+            clearProps: "transform"
+        }, "-=0.3")
+        .to(q(".hero-integrations__description"), {
+            y: -10,
+            autoAlpha: 1,
+            duration: 0.6,
+            clearProps: "transform"
+        }, "-=0.5")
+        .to(q(".hero-integrations__actions"), {
+            y: -10,
+            autoAlpha: 1,
+            duration: 0.6,
+            clearProps: "transform"
+        }, "-=0.4")
+
+        // 4. App Cards Stagger Reveal (Scale + Arc Rise)
+        .fromTo(
+            q(".hero-integrations__app-card"),
+            { y: 50, scale: 0.8, autoAlpha: 0 },
+            {
+                y: 0,
+                scale: 1,
+                autoAlpha: 1,
+                stagger: {
+                    each: 0.08,
+                    from: "center" // Smooth ripple effect starting from the center card (Zapier)
+                },
+                duration: 0.8,
+                ease: "back.out(1.4)",
+                clearProps: "opacity,visibility"
+            },
+            "-=0.4"
+        );
+
+    // 5. Subtle Floating Animation for App Cards (Continuous Loop)
+    gsap.to(q(".hero-integrations__app-card"), {
+        y: "-=8",
+        duration: 2.5,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        stagger: {
+            each: 0.2,
+            from: "random"
+        }
+    });
+});
