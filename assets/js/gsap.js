@@ -1602,6 +1602,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }, "-=0.3");
 });
 
+/* ==============================
+  Hero Lead Finder Area
+============================== */
 document.addEventListener("DOMContentLoaded", () => {
     const heroLeadFinder = document.querySelector(".hero--lead-finder");
     if (!heroLeadFinder) return;
@@ -1677,6 +1680,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+/* ==============================
+  Hero Lead Pro Area
+============================== */
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -1759,4 +1765,89 @@ document.addEventListener("DOMContentLoaded", () => {
         y: -30,
         ease: "none"
     });
+});
+
+/* ==============================
+  Hero Our Data Area
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const heroOurData = document.querySelector(".hero--our-data");
+    if (!heroOurData) return;
+
+    // Scoped Selector
+    const q = gsap.utils.selector(heroOurData);
+
+    // Initial Hide (Prevent FOUC)
+    gsap.set(
+        q(".subtitle, .hero__title, .hero__description, .hero__stat-item, .bg-wrap"),
+        { autoAlpha: 0 }
+    );
+
+    // 1. Page Load Animation Timeline
+    const loadTl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    loadTl
+        // Background Soft Entrance
+        .to(q(".bg-wrap"), {
+            autoAlpha: 1,
+            duration: 1
+        })
+        // Header Content Reveal
+        .fromTo(
+            q(".subtitle"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 },
+            "-=0.7"
+        )
+        .fromTo(
+            q(".hero__title"),
+            { y: 25, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.7 },
+            "-=0.3"
+        )
+        .fromTo(
+            q(".hero__description"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.6 },
+            "-=0.4"
+        )
+        // Stat Items Stagger Reveal
+        .fromTo(
+            q(".hero__stat-item"),
+            { y: 35, autoAlpha: 0 },
+            {
+                y: 0,
+                autoAlpha: 1,
+                duration: 0.7,
+                stagger: 0.15,
+                ease: "power2.out",
+                onComplete: startCounters // Stat items ভেসে উঠার পর কাউন্টার শুরু হবে
+            },
+            "-=0.3"
+        );
+
+    // 2. Number Counter Animation Function
+    function startCounters() {
+        const statNumbers = q(".hero__stat-number");
+
+        statNumbers.forEach((el) => {
+            const targetVal = parseFloat(el.getAttribute("data-counter")) || 0;
+            const suffix = el.getAttribute("data-suffix") || "";
+            const counterObj = { val: 0 };
+
+            gsap.to(counterObj, {
+                val: targetVal,
+                duration: 1.8,
+                ease: "power2.out",
+                onUpdate: () => {
+                    // Integer formatting with suffix
+                    el.textContent = Math.floor(counterObj.val) + suffix;
+                }
+            });
+        });
+    }
 });
