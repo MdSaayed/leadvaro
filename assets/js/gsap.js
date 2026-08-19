@@ -1603,90 +1603,76 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger);
+    const heroLeadFinder = document.querySelector(".hero--lead-finder");
+    if (!heroLeadFinder) return;
 
-    // 1. Target parent container
-    const integrationsHero = document.querySelector(".hero-integrations");
-    if (!integrationsHero) return;
+    // Scoped Selector
+    const q = gsap.utils.selector(heroLeadFinder);
 
-    // Scoped Selector Initialization
-    const q = gsap.utils.selector(integrationsHero);
-
-    // Prevent FOUC: Set section visible
-    gsap.set(integrationsHero, { autoAlpha: 1 });
-
-    // Initial state setup for animated elements
+    // Initial Hide (Prevent FOUC)
     gsap.set(
-        q(
-            ".hero-integrations__badge-group, .hero-integrations__title, .hero-integrations__description, .hero-integrations__actions, .hero-integrations__app-card"
-        ),
+        q(".subtitle, .hero__title, .hero__desc, .hero__cta-wrap, .hero__image-wrap, .bg-wrap"),
         { autoAlpha: 0 }
     );
 
-    // 2. Timeline with ScrollTrigger
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: integrationsHero,
-            start: "top 75%",
-            toggleActions: "play none none reverse"
-        },
+    // 1. Page Load Animation Timeline (Content Load Sequence)
+    const loadTl = gsap.timeline({
         defaults: { ease: "power3.out", duration: 0.8 }
     });
 
-    // 3. Content Entrance Sequence
-    tl.to(q(".hero-integrations__badge-group"), {
-        y: -10,
-        autoAlpha: 1,
-        duration: 0.5
-    })
-        .to(q(".hero-integrations__title"), {
-            y: -15,
+    loadTl
+        .to(q(".bg-wrap"), {
             autoAlpha: 1,
-            duration: 0.8,
-            clearProps: "transform"
-        }, "-=0.3")
-        .to(q(".hero-integrations__description"), {
-            y: -10,
-            autoAlpha: 1,
-            duration: 0.6,
-            clearProps: "transform"
-        }, "-=0.5")
-        .to(q(".hero-integrations__actions"), {
-            y: -10,
-            autoAlpha: 1,
-            duration: 0.6,
-            clearProps: "transform"
-        }, "-=0.4")
-
-        // 4. App Cards Stagger Reveal (Scale + Arc Rise)
+            duration: 1.2
+        })
         .fromTo(
-            q(".hero-integrations__app-card"),
-            { y: 50, scale: 0.8, autoAlpha: 0 },
+            q(".subtitle"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 },
+            "-=0.8"
+        )
+        .fromTo(
+            q(".hero__title"),
+            { y: 30, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.8 },
+            "-=0.3"
+        )
+        .fromTo(
+            q(".hero__desc"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.6 },
+            "-=0.5"
+        )
+        .fromTo(
+            q(".hero__cta-wrap"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.6 },
+            "-=0.4"
+        )
+        // Dashboard Image Entrance
+        .fromTo(
+            q(".hero__image-wrap"),
+            { y: 60, scale: 0.94, autoAlpha: 0 },
             {
                 y: 0,
                 scale: 1,
                 autoAlpha: 1,
-                stagger: {
-                    each: 0.08,
-                    from: "center" // Smooth ripple effect starting from the center card (Zapier)
-                },
-                duration: 0.8,
-                ease: "back.out(1.4)",
-                clearProps: "opacity,visibility"
+                duration: 1,
+                ease: "power4.out"
             },
             "-=0.4"
         );
 
-    // 5. Subtle Floating Animation for App Cards (Continuous Loop)
-    gsap.to(q(".hero-integrations__app-card"), {
-        y: "-=8",
-        duration: 2.5,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true,
-        stagger: {
-            each: 0.2,
-            from: "random"
-        }
+    // 2. Scroll-Driven Animation (Interactive Parallax Effect on Scroll)
+    gsap.to(q(".hero__image"), {
+        scrollTrigger: {
+            trigger: heroLeadFinder,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1.2 // Smooth Scrubbing
+        },
+        y: -40,
+        scale: 1.02,
+        ease: "none"
     });
 });
