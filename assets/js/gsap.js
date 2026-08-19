@@ -962,3 +962,94 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 1.2,
         }, "-=1.2");
 });
+
+
+/* ==============================
+   Hero Email Finder Area 
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+    const heroSection = document.querySelector(".hero--find-email");
+    if (!heroSection) return;
+
+    const q = gsap.utils.selector(heroSection);
+
+    const tl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    tl.from(q(".subtitle__wrapper"), {
+        y: -20,
+        opacity: 0
+    })
+        .from(q(".hero__title"), {
+            y: 30,
+            opacity: 0,
+            scale: 0.98
+        }, "-=0.5")
+        .from(q(".hero__desc"), {
+            y: 20,
+            opacity: 0
+        }, "-=0.6")
+        .from(q(".find-email"), {
+            y: 40,
+            opacity: 0,
+            duration: 1
+        }, "-=0.4")
+        .from(q(".find-email__tab"), {
+            y: 15,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            clearProps: "opacity,transform"
+        }, "-=0.6")
+        .from(q(".find-email__card"), {
+            y: 20,
+            opacity: 0,
+            duration: 0.6
+        }, "-=0.4")
+        .from(q(".bg-wrap"), {
+            opacity: 0,
+            duration: 1.2
+        }, "-=1.2");
+});
+
+/* ==============================
+   Email Validator Area
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+    const validatorSection = document.querySelector(".email-validator");
+    if (!validatorSection) return;
+
+    const q = gsap.utils.selector(validatorSection);
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: validatorSection,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+        },
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    tl.from(q(".email-validator__title"), {
+        y: 30,
+        opacity: 0,
+        clearProps: "opacity,transform"
+    })
+        .from(q(".email-card"), {
+            y: 40,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 0.8,
+            clearProps: "opacity,transform"
+        }, "-=0.4")
+        .from(q(".email-card__status"), {
+            scale: 0.8,
+            opacity: 0,
+            stagger: 0.15,
+            duration: 0.5,
+            clearProps: "opacity,transform"
+        }, "-=0.3");
+});
