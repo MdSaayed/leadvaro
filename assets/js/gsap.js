@@ -1218,4 +1218,106 @@ document.addEventListener("DOMContentLoaded", () => {
         }, "-=1.2");
 });
 
+/* ==============================
+  Hero Find Mobile Number Area
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+    const heroSection = document.querySelector(".hero, .hero--find-dicision");
+    if (!heroSection) return;
+
+    const q = gsap.utils.selector(heroSection);
+
+    const tl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    tl.from(q(".hero__badge, .subtitle__wrapper"), {
+        y: -15,
+        opacity: 0,
+        duration: 0.6,
+        clearProps: "opacity,transform"
+    })
+
+        .from(q(".hero__title"), {
+            y: 25,
+            opacity: 0,
+            scale: 0.98,
+            duration: 0.9,
+            clearProps: "opacity,transform"
+        }, "-=0.4")
+
+        .from(q(".hero__subtitle, .hero__desc"), {
+            y: 20,
+            opacity: 0,
+            duration: 0.7,
+            clearProps: "opacity,transform"
+        }, "-=0.6")
+
+        .from(q(".hero__cta-wrap > *, .hero__action-buttons > *, .hero__cta-wrap .btn, .hero__action-buttons .btn"), {
+            y: 20,
+            opacity: 0,
+            stagger: 0.12,
+            duration: 0.6,
+            ease: "back.out(1.4)",
+            clearProps: "opacity,transform"
+        }, "-=0.5")
+
+        .from(q(".hero__client-reviews"), {
+            y: 15,
+            opacity: 0,
+            duration: 0.6,
+            clearProps: "opacity,transform"
+        }, "-=0.4")
+
+        .from(q(".search-card, .hero__image-wrap"), {
+            y: 45,
+            opacity: 0,
+            scale: 0.97,
+            duration: 1.0,
+            ease: "power4.out",
+            clearProps: "opacity,transform"
+        }, "-=0.4")
+
+        .from(q(".find-email__tab"), {
+            y: 15,
+            opacity: 0,
+            stagger: 0.08,
+            duration: 0.5,
+            ease: "back.out(1.2)",
+            clearProps: "opacity,transform"
+        }, "-=0.6")
+
+        .from(q(".search-card__input-group, .search-card__btn--primary"), {
+            y: 15,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            clearProps: "opacity,transform"
+        }, "-=0.3")
+
+        .from(q(".search-card__divider"), {
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.4,
+            clearProps: "opacity,transform"
+        }, "-=0.3")
+
+        .from(q(".search-card__toggle-btn"), {
+            y: 15,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "back.out(1.2)",
+            clearProps: "opacity,transform"
+        }, "-=0.3")
+
+        .from(q(".search-card__action-btn"), {
+            y: 15,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "back.out(1.2)",
+            clearProps: "opacity,transform"
+        }, "-=0.3");
+});
 
