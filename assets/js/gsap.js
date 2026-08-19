@@ -1099,7 +1099,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==============================
-  Feature Spine Area
+  Find CEO Hero Area
 ============================== */
 document.addEventListener("DOMContentLoaded", () => {
     const spineSection = document.querySelector(".feature-spine");
