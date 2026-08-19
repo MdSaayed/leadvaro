@@ -6071,7 +6071,7 @@ ul.green li::marker {
 /* ==============================
    Hero Find Decision
 ============================== */
-.hero--find-dicision {
+.hero--find-decision {
     position: relative;
     background: var(--color-surface);
 }
@@ -6081,7 +6081,7 @@ ul.green li::marker {
     z-index: 2;
 }
 
-.hero--find-dicision .hero__header-area {
+.hero--find-decision .hero__header-area {
     max-width: 50rem;
 }
 
@@ -20196,7 +20196,7 @@ ul.green li::marker {
 /* ==============================
    Hero Find Decision
 ============================== */
-.hero--find-dicision {
+.hero--find-decision {
     position: relative;
     background: var(--color-surface);
 }
@@ -20206,7 +20206,7 @@ ul.green li::marker {
     z-index: 2;
 }
 
-.hero--find-dicision .hero__header-area {
+.hero--find-decision .hero__header-area {
     max-width: 50rem;
 }
 

@@ -657,7 +657,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ==============================
        5. Hero Find Decision Area
     ============================== */
-    const findDecisionHero = document.querySelector(".hero--find-dicision");
+    const findDecisionHero = document.querySelector(".hero--find-decision");
     if (findDecisionHero) {
         const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.8 } });
 
@@ -1155,7 +1155,67 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==============================
-  Hero Features Area
+  Hero Find decision Area
 ============================== */
+document.addEventListener("DOMContentLoaded", () => {
+    const heroDecision = document.querySelector(".hero--find-dicision");
+    if (!heroDecision) return;
+
+    const q = gsap.utils.selector(heroDecision);
+
+    const tl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    tl.from(q(".subtitle__wrapper"), {
+        y: -15,
+        opacity: 0,
+        duration: 0.6,
+        clearProps: "opacity,transform"
+    })
+
+        // ২. মেইন টাইটেল নিচ থেকে স্মুথলি স্কেল হয়ে ভেসে উঠবে
+        .from(q(".hero__title"), {
+            y: 25,
+            opacity: 0,
+            scale: 0.98,
+            duration: 0.9,
+            clearProps: "opacity,transform"
+        }, "-=0.4")
+
+        // ৩. ডেসক্রিপশন টেক্সট স্লাইড ইন করবে
+        .from(q(".hero__desc"), {
+            y: 20,
+            opacity: 0,
+            duration: 0.7,
+            clearProps: "opacity,transform"
+        }, "-=0.6")
+
+        // ৪. দুটি বাটন একের পর এক (stagger) পপ-ইন করবে
+        .from(q(".hero__cta-wrap .btn"), {
+            y: 20,
+            opacity: 0,
+            stagger: 0.12,
+            duration: 0.6,
+            ease: "back.out(1.4)",
+            clearProps: "opacity,transform"
+        }, "-=0.5")
+
+        // ৫. UI ড্যাশবোর্ড ইমেজ নিচ থেকে ৩D ফিল নিয়ে স্মুথলি রিভিল হবে
+        .from(q(".hero__image-wrap"), {
+            y: 50,
+            opacity: 0,
+            scale: 0.96,
+            duration: 1.1,
+            ease: "power4.out",
+            clearProps: "opacity,transform"
+        }, "-=0.4")
+
+        .from(q(".bg-wrap"), {
+            opacity: 0,
+            duration: 1.2,
+            clearProps: "opacity,transform"
+        }, "-=1.2");
+});
 
 
