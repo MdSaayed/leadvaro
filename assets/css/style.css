@@ -49,15 +49,15 @@
     --radius-full: 9999px;
 }
 
+/* ==============================
+   Base Styles
+============================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ==============================
-   Base Styles
-============================== */
 body {
     font-family: var(--font-primary);
     background: var(--color-surface);
@@ -176,7 +176,6 @@ h6,
     gap: 2rem;
 }
 
-
 .subtitle {
     display: inline-flex;
     align-items: center;
@@ -186,6 +185,10 @@ h6,
     background: var(--color-muted);
     max-width: max-content;
     margin-bottom: 0.5rem;
+}
+
+.d-none {
+    display: none;
 }
 
 .spacing-xxl {
@@ -251,7 +254,9 @@ h6,
     object-fit: cover;
 }
 
-/* ===== NAVBAR ===== */
+/* ==============================
+   Header Area
+============================== */
 .header {
     width: 100%;
     position: fixed;
@@ -736,7 +741,6 @@ h6,
     font-size: 0.9375rem;
 }
 
-
 /* =============================
     Hero Area
 ============================= */
@@ -1103,6 +1107,17 @@ h6,
     color: var(--color-primary);
 }
 
+.stats--one .stats__card {
+    background: transparent;
+    text-align: center;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-gray-blue);
+}
+
+.stats--one .stats__number {
+    color: var(--text-color-navy);
+}
+
 .stats--two .stats__container {
     padding-top: 0;
 }
@@ -1407,7 +1422,6 @@ h6,
     letter-spacing: 0.05788rem;
 }
 
-
 /* =============================
    Use Cases Area
 ============================= */
@@ -1427,8 +1441,6 @@ h6,
     max-width: 23rem;
     margin: 0 auto;
 }
-
-
 
 .features__list {
     display: flex;
@@ -1549,7 +1561,6 @@ h6,
     z-index: 10;
 }
 
-
 .reach-card__author-name {
     color: var(--text-color-navy);
     font-size: 0.67556rem;
@@ -1608,7 +1619,6 @@ h6,
     color: var(--color-primary);
 }
 
-/* Reach Card Positioning */
 .reach-card__1 {
     top: 31%;
     left: 8%;
@@ -1643,8 +1653,6 @@ h6,
     bottom: 14%;
     right: 7%;
 }
-
-
 
 /* =============================
    Use Cases Area
@@ -1696,7 +1704,6 @@ h6,
     height: 100%;
 }
 
-
 .use-cases__item-icon {
     max-width: 2.5rem;
     max-height: 2.5rem;
@@ -1739,7 +1746,6 @@ h6,
     left: -6rem;
     z-index: 1;
 }
-
 
 .use-cases__item:nth-child(even)::before,
 .use-cases__item:nth-child(even)::after,
@@ -2068,7 +2074,6 @@ h6,
     height: fit-content !important;
 }
 
-
 /* Thumbnail Slider */
 .testimonials__slider--thumb {
     max-width: 25rem;
@@ -2187,7 +2192,6 @@ h6,
     gap: 1.25rem;
 }
 
-
 .faq__subtitle {
     margin-top: 2rem;
     font-size: 2.2rem;
@@ -2201,7 +2205,6 @@ h6,
     line-height: 1.55;
     max-width: 24.625rem;
 }
-
 
 .faq__content {
     display: flex;
@@ -2217,7 +2220,6 @@ h6,
     border-radius: 1rem;
     cursor: pointer;
 }
-
 
 .faq__answer {
     overflow: hidden;
@@ -2294,7 +2296,6 @@ h6,
 /* ===============================================================
                 Cta Styles
 =============================================================== */
-
 
 .cta__content {
     position: relative;
@@ -2578,7 +2579,6 @@ h6,
     max-width: 22rem;
 }
 
-/* Tabs Styling */
 .feature-showcase__tabs {
     display: flex;
     flex-wrap: wrap;
@@ -2611,7 +2611,6 @@ h6,
     color: var(--text-color-white);
 }
 
-/* Content Layout (Card) */
 .feature-showcase__card {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -2623,7 +2622,6 @@ h6,
     border: 1px solid var(--color-light-indigo);
     border-radius: var(--radius-xl);
 }
-
 
 .feature-showcase__info-desc {
     margin-top: 1.5rem;
@@ -2651,7 +2649,6 @@ h6,
     flex-shrink: 0;
 }
 
-/* Preview Column / Image */
 .feature-showcase__preview {
     width: 100%;
     display: flex;
@@ -2698,7 +2695,6 @@ h6,
     width: 100%;
     object-fit: cover;
 }
-
 
 .hero--people-search .hero__video-wrap video {
     height: 100%;
@@ -2761,7 +2757,6 @@ h6,
     padding: 0.15rem 0.60rem;
 }
 
-
 .find-email {
     max-width: 66rem;
     margin: 0 auto;
@@ -2772,14 +2767,12 @@ h6,
     box-shadow: var(--shadow-md);
 }
 
-/* Element: tabs */
 .find-email__tabs {
     display: flex;
     gap: 8px;
     margin-bottom: 16px;
 }
 
-/* Element: tab (button inside tabs) */
 .find-email__tab {
     flex: 1;
     display: flex;
@@ -2801,7 +2794,6 @@ h6,
     border-color: var(--color-primary);
 }
 
-/* Modifier: active tab */
 .find-email__tab--active {
     background: var(--color-primary);
     border-color: var(--color-primary);
@@ -2819,7 +2811,6 @@ h6,
     flex-shrink: 0;
 }
 
-/* Element: card (white content area) */
 .find-email__card {
     background: var(--text-color-white);
     border-radius: var(--radius-xl);
@@ -2970,8 +2961,6 @@ h6,
     padding: 0.25rem;
 }
 
-
-
 /* ==============================
    Enrichment Hero Area
 ============================== */
@@ -2983,7 +2972,6 @@ h6,
 .hero--enrichment .hero__cta-wrap {
     justify-content: start;
 }
-
 
 /* ==============================
    Enrich Data Area
@@ -3026,7 +3014,6 @@ h6,
     max-width: 30rem;
 }
 
-
 .services__heder-left {
     max-width: 27rem;
 }
@@ -3056,7 +3043,6 @@ h6,
 .services__card-title {
     font-weight: 500;
 }
-
 
 /* ==============================
    Bulk Area
@@ -3302,8 +3288,6 @@ h6,
     padding-left: 0 !important;
 }
 
-
-
 .toc-card__item a {
     color: var(--text-color-primary);
     text-decoration: none;
@@ -3328,7 +3312,6 @@ h6,
 .toc-card__item:hover a {
     color: var(--color-navys);
 }
-
 
 .toc-card__link {
     display: flex;
@@ -3409,7 +3392,6 @@ h6,
     box-shadow: 0 11.21px 14.947px -3.737px rgba(10, 13, 18, 0.08), 0 3.737px 5.605px -1.868px rgba(10, 13, 18, 0.03), 0 1.868px 1.868px -0.934px rgba(10, 13, 18, 0.04);
 }
 
-/* --- BEM: Elements --- */
 .search-card__top {
     background-color: var(--text-color-white);
     padding: 2rem 1.6rem 1.5rem;
@@ -3712,7 +3694,6 @@ h6,
     line-height: 1.4;
 }
 
-
 /* ==============================
    Pain Points
 ============================== */
@@ -3917,266 +3898,6 @@ h6,
 
 .pricing-addon__tick:nth-child(2n + 1) .pricing-addon__tick-label {
     display: block;
-}
-
-@media (max-width: 72rem) {
-
-    .pricing-addon__tick-label {
-        display: none;
-    }
-
-    .pricing-addon__tick:nth-child(4n + 1) .pricing-addon__tick-label {
-        display: block;
-    }
-
-    .pricing-addon__tick-label {
-        font-size: 0.75rem;
-    }
-}
-
-@media (max-width: 62rem) {
-
-    .pricing-addon__price {
-        text-align: right;
-        width: 100%;
-    }
-
-    .pricing-addon__tick-label {
-        display: none;
-    }
-
-    .pricing-addon__tick:nth-child(6n + 1) .pricing-addon__tick-label {
-        display: block;
-    }
-
-    .pricing-addon__tick-label {
-        font-size: 0.6875rem;
-    }
-}
-
-@media (max-width: 48rem) {
-
-    .pricing-addon__header {
-        flex-direction: column;
-        align-items: flex-start;
-        row-gap: 1rem;
-    }
-
-    .pricing-addon__price {
-        white-space: normal;
-    }
-
-    .pricing-addon__ticks {
-        position: relative;
-        display: block;
-        height: 2.75rem;
-        margin-top: 1.25rem;
-    }
-
-    /* Keep all tick marks */
-
-    .pricing-addon__tick {
-        position: absolute;
-        top: 0;
-        width: 0;
-    }
-
-    .pricing-addon__tick::before {
-        top: 0;
-        left: 0;
-        transform: translateX(-50%);
-        width: 0.0625rem;
-        height: 0.5rem;
-    }
-
-    /* Evenly distribute all 33 ticks */
-
-    .pricing-addon__tick:nth-child(1) {
-        left: 0%;
-    }
-
-    .pricing-addon__tick:nth-child(2) {
-        left: 3.125%;
-    }
-
-    .pricing-addon__tick:nth-child(3) {
-        left: 6.25%;
-    }
-
-    .pricing-addon__tick:nth-child(4) {
-        left: 9.375%;
-    }
-
-    .pricing-addon__tick:nth-child(5) {
-        left: 12.5%;
-    }
-
-    .pricing-addon__tick:nth-child(6) {
-        left: 15.625%;
-    }
-
-    .pricing-addon__tick:nth-child(7) {
-        left: 18.75%;
-    }
-
-    .pricing-addon__tick:nth-child(8) {
-        left: 21.875%;
-    }
-
-    .pricing-addon__tick:nth-child(9) {
-        left: 25%;
-    }
-
-    .pricing-addon__tick:nth-child(10) {
-        left: 28.125%;
-    }
-
-    .pricing-addon__tick:nth-child(11) {
-        left: 31.25%;
-    }
-
-    .pricing-addon__tick:nth-child(12) {
-        left: 34.375%;
-    }
-
-    .pricing-addon__tick:nth-child(13) {
-        left: 37.5%;
-    }
-
-    .pricing-addon__tick:nth-child(14) {
-        left: 40.625%;
-    }
-
-    .pricing-addon__tick:nth-child(15) {
-        left: 43.75%;
-    }
-
-    .pricing-addon__tick:nth-child(16) {
-        left: 46.875%;
-    }
-
-    .pricing-addon__tick:nth-child(17) {
-        left: 50%;
-    }
-
-    .pricing-addon__tick:nth-child(18) {
-        left: 53.125%;
-    }
-
-    .pricing-addon__tick:nth-child(19) {
-        left: 56.25%;
-    }
-
-    .pricing-addon__tick:nth-child(20) {
-        left: 59.375%;
-    }
-
-    .pricing-addon__tick:nth-child(21) {
-        left: 62.5%;
-    }
-
-    .pricing-addon__tick:nth-child(22) {
-        left: 65.625%;
-    }
-
-    .pricing-addon__tick:nth-child(23) {
-        left: 68.75%;
-    }
-
-    .pricing-addon__tick:nth-child(24) {
-        left: 71.875%;
-    }
-
-    .pricing-addon__tick:nth-child(25) {
-        left: 75%;
-    }
-
-    .pricing-addon__tick:nth-child(26) {
-        left: 78.125%;
-    }
-
-    .pricing-addon__tick:nth-child(27) {
-        left: 81.25%;
-    }
-
-    .pricing-addon__tick:nth-child(28) {
-        left: 84.375%;
-    }
-
-    .pricing-addon__tick:nth-child(29) {
-        left: 87.5%;
-    }
-
-    .pricing-addon__tick:nth-child(30) {
-        left: 90.625%;
-    }
-
-    .pricing-addon__tick:nth-child(31) {
-        left: 93.75%;
-    }
-
-    .pricing-addon__tick:nth-child(32) {
-        left: 96.875%;
-    }
-
-    .pricing-addon__tick:nth-child(33) {
-        left: 100%;
-    }
-
-    /* Hide all labels */
-
-    .pricing-addon__tick-label {
-        display: none !important;
-    }
-
-    /* Show only evenly spaced major labels */
-
-    .pricing-addon__tick:nth-child(1) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(5) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(9) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(13) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(18) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(23) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(27) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(33) .pricing-addon__tick-label {
-        display: block !important;
-        position: absolute;
-        top: 1rem;
-        left: 50%;
-        transform: translateX(-92%);
-        font-size: 0.625rem;
-        white-space: nowrap;
-    }
-}
-
-@media (max-width: 30rem) {
-
-    .pricing-addon__ticks {
-        height: 2.5rem;
-    }
-
-    .pricing-addon__tick:nth-child(1) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(5) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(18) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(23) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(33) .pricing-addon__tick-label {
-        font-size: 0.5625rem;
-    }
-
-    .pricing-addon__range {
-        height: 0.375rem;
-    }
-}
-
-@media (max-width: 22.5rem) {
-
-    .pricing-addon__tick:nth-child(1) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(5) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(18) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(23) .pricing-addon__tick-label,
-    .pricing-addon__tick:nth-child(33) .pricing-addon__tick-label {
-        font-size: 0.5rem;
-    }
 }
 
 /* ==============================
@@ -4386,7 +4107,6 @@ tr .pricing-comparison__row--category {
     max-height: calc(100% - 28rem);
 }
 
-
 .hero__avatar-area {
     display: flex;
     flex-wrap: wrap;
@@ -4408,7 +4128,6 @@ tr .pricing-comparison__row--category {
     margin-left: -1.2rem;
 }
 
-/* Filter Toggle Buttons */
 .pricing-card__filter-wrap {
     display: flex;
     justify-content: center;
@@ -4442,7 +4161,6 @@ tr .pricing-comparison__row--category {
     border: 1px solid var(--color-primary);
 }
 
-/* Grid Layout */
 .pricing-card__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -4451,7 +4169,6 @@ tr .pricing-comparison__row--category {
     align-items: flex-start;
 }
 
-/* Card Container */
 .pricing-card__item {
     background: var(--text-color-white);
     border-radius: 16px;
@@ -4464,7 +4181,6 @@ tr .pricing-comparison__row--category {
     height: 100%;
 }
 
-/* Highlighted / Best Value Card */
 .pricing-card__item--featured {
     border: 1px solid var(--color-primary);
     box-shadow: 0 10px 30px rgba(79, 70, 229, 0.12);
@@ -4489,7 +4205,6 @@ tr .pricing-comparison__row--category {
     border-top-right-radius: 14px;
 }
 
-/* Icon */
 .pricing-card__icon {
     width: 2.5rem;
     height: 2.5rem;
@@ -4504,7 +4219,6 @@ tr .pricing-comparison__row--category {
     width: 100%;
 }
 
-/* Card Content */
 .pricing-card__title {
     font-weight: 500;
     color: var(--color-primary);
@@ -4539,12 +4253,10 @@ tr .pricing-comparison__row--category {
     color: var(--color-primary);
 }
 
-
 .pricing-card__btn {
     margin-bottom: 2rem;
 }
 
-/* Features List */
 .pricing-card__features {
     list-style: none;
     padding: 0;
@@ -4617,7 +4329,6 @@ tr .pricing-comparison__row--category {
 .info-card__link:hover {
     color: var(--color-primary);
 }
-
 
 /* ==============================
    Contact (Contact Page)
@@ -4721,7 +4432,6 @@ tr .pricing-comparison__row--category {
     padding-right: 1.5rem;
 }
 
-
 .contact--page .contact__form-wrapper {
     background-color: #EFF6FF;
     padding: 1.5rem;
@@ -4791,7 +4501,6 @@ tr .pricing-comparison__row--category {
 /* ==============================
    Hero Free Trail
 ============================== */
-/* BEM Block: Hero Section */
 .hero--free-trail {
     position: relative;
     display: flex;
@@ -4803,7 +4512,6 @@ tr .pricing-comparison__row--category {
     max-height: 100%;
 }
 
-/* Dedicated Extra Wrapper for CSS Grid */
 .hero--free-trail .hero__grid {
     display: grid;
     grid-template-columns: 5.5fr 4.5fr;
@@ -4811,7 +4519,6 @@ tr .pricing-comparison__row--category {
     align-items: center;
 }
 
-/* BEM Element: Hero Content Area (Left Side) */
 .hero--free-trail .hero__content {
     display: flex;
     flex-direction: column;
@@ -4853,7 +4560,6 @@ tr .pricing-comparison__row--category {
     line-height: 1.6;
 }
 
-/* Feature List */
 .hero--free-trail .hero__features {
     list-style: none;
     display: flex;
@@ -4887,8 +4593,6 @@ tr .pricing-comparison__row--category {
     justify-content: start;
 }
 
-
-/* BEM Block: Signup Card (Right Side) */
 .hero--free-trail .signup-card {
     width: 100%;
     background: var(--text-color-white);
@@ -4943,7 +4647,6 @@ tr .pricing-comparison__row--category {
     margin-top: 0.25rem;
 }
 
-/* Buttons with Modifiers */
 .signup-card__btn {
     width: 100%;
     padding: 0.85rem;
@@ -5011,7 +4714,6 @@ tr .pricing-comparison__row--category {
     background: var(--color-muted);
 }
 
-/* Dedicated CSS Grid Wrapper */
 .trial-feature__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -5019,7 +4721,6 @@ tr .pricing-comparison__row--category {
     align-items: center;
 }
 
-/* Left Content Column */
 .trial-feature__content {
     display: flex;
     flex-direction: column;
@@ -5044,8 +4745,6 @@ tr .pricing-comparison__row--category {
     font-weight: 400;
 }
 
-
-/* Highlight Stats List */
 .trial-feature__stats {
     display: flex;
     flex-direction: column;
@@ -5089,7 +4788,6 @@ tr .pricing-comparison__row--category {
 /* ==============================
    .How It Works
 ============================== */
-/* --- Block: how-it-works --- */
 .how-it-works--style-two {
     background: var(--color-muted);
 }
@@ -5119,7 +4817,6 @@ tr .pricing-comparison__row--category {
     margin-top: 1.5rem;
 }
 
-/* --- Block: step-card --- */
 .how-it-works--style-two .step-card {
     background: var(--text-color-white);
     border-radius: var(--radius-lg);
@@ -5392,7 +5089,6 @@ tr .pricing-comparison__row--category {
     color: var(--color-primary);
 }
 
-
 /* ==============================
    Agenda Area
 ============================== */
@@ -5446,7 +5142,6 @@ tr .pricing-comparison__row--category {
 /* ==============================
    Animation
 ============================== */
-/* --- Booking Section --- */
 .booking {
     width: 100%;
     display: flex;
@@ -5472,8 +5167,6 @@ tr .pricing-comparison__row--category {
 .booking__title {
     letter-spacing: -0.225rem;
 }
-
-
 
 .booking__meta-title {
     font-size: 0.8125rem;
@@ -5536,7 +5229,6 @@ tr .pricing-comparison__row--category {
     color: var(--color-charcoal-blue);
 }
 
-/* --- Right Side Card / Calendar --- */
 .booking__card {
     border-radius: var(--radius-lg);
     border: 1px solid rgba(16, 24, 40, 0.06);
@@ -5575,7 +5267,6 @@ tr .pricing-comparison__row--category {
     line-height: 1.2;
 }
 
-/* --- Dynamic Calendar Grid --- */
 .calendar__nav {
     display: flex;
     justify-content: space-between;
@@ -5665,7 +5356,6 @@ tr .pricing-comparison__row--category {
     font-weight: 600;
 }
 
-/* --- Time Slots --- */
 .calendar__times-label {
     font-size: 0.8125rem;
     font-weight: 600;
@@ -5802,7 +5492,6 @@ ul.green li::marker {
 /* ==============================
    Reason Area
 ============================== */
-/* Block: Reasons */
 .reasons {
     background-color: var(--color-surface);
 }
@@ -5817,7 +5506,6 @@ ul.green li::marker {
     gap: 1.5rem;
 }
 
-/* Card Elements */
 .reasons__card {
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-moon-gray);
@@ -5859,11 +5547,9 @@ ul.green li::marker {
     color: #535B68;
 }
 
-
 /* ==============================
    Comparison Area
 ============================== */
-/* Block: Comparison */
 .comparison {
     background: var(--text-color-white)
 }
@@ -5878,7 +5564,6 @@ ul.green li::marker {
     color: var(--color-steel-gray);
 }
 
-/* Table Card Wrapper */
 .comparison__table-wrapper {
     background-color: var(--text-color-white);
     border: 1px solid #eaecf0;
@@ -5902,7 +5587,6 @@ ul.green li::marker {
     padding: 1.25rem 2rem
 }
 
-/* Table Head */
 .comparison__th {
     font-size: 0.75rem;
     font-weight: 500;
@@ -5963,7 +5647,6 @@ ul.green li::marker {
     font-weight: 500;
 }
 
-/* Category Header Rows */
 .comparison__category-row {
     border-top: 1px solid #EAEEF3;
     background: var(--color-surface);
@@ -5985,7 +5668,6 @@ ul.green li::marker {
     color: var(--color-primary);
 }
 
-/* Table Body Cells */
 .comparison__cell {
     padding: 1rem 1.5rem;
     font-size: 0.875rem;
@@ -6015,7 +5697,6 @@ ul.green li::marker {
     margin-top: 0.125rem;
 }
 
-/* Status Indicators (Check / Cross) */
 .comparison__status {
     display: inline-flex;
     align-items: center;
@@ -6049,7 +5730,6 @@ ul.green li::marker {
     color: var(--text-color-navy);
 }
 
-/* Disabled Pseudo Element Icon Container */
 .comparison__status--disabled::before {
     content: "";
     background-color: #FDEDED;
@@ -6113,14 +5793,12 @@ ul.green li::marker {
     max-width: 40rem;
 }
 
-/* Grid Layout */
 .switch-reasons__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
-/* Card Elements */
 .switch-reasons__card {
     background-color: var(--text-color-white);
     border: 1px solid var(--color-muted);
@@ -6133,7 +5811,6 @@ ul.green li::marker {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
-/* Featured / Middle Card */
 .switch-reasons__card--featured {
     background-color: var(--color-light-indigo);
     border-color: transparent;
@@ -6191,14 +5868,12 @@ ul.green li::marker {
     line-height: 1.6;
 }
 
-/* Grid Layout */
 .outreach__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
 }
 
-/* Card Block */
 .outreach-card {
     padding: 2.5rem;
     border-radius: var(--radius-lg);
@@ -6208,7 +5883,6 @@ ul.green li::marker {
     border: 1px solid rgba(16, 24, 40, 0.06);
 }
 
-/* Modifiers for Cards */
 .outreach-card--light {
     background-color: var(--text-color-white);
     border: 1px solid #f0f0f0;
@@ -6220,7 +5894,6 @@ ul.green li::marker {
     color: var(--text-color-white);
 }
 
-/* Badges */
 .outreach-card__badge {
     align-self: flex-start;
     padding: 0.25rem 0.63rem;
@@ -6247,7 +5920,6 @@ ul.green li::marker {
     font-weight: 500;
 }
 
-/* List Elements */
 .outreach-card__list {
     list-style: none;
     display: flex;
@@ -6275,7 +5947,6 @@ ul.green li::marker {
     color: var(--text-color-white);
 }
 
-/* Icons */
 .outreach-card__icon {
     display: inline-flex;
     align-items: center;
@@ -6298,15 +5969,12 @@ ul.green li::marker {
     color: var(--color-silver-ash);
 }
 
-
 /* ==============================
    Features Step Area
 ============================== */
 .feature-steps {
     background: var(--color-surface);
 }
-
-
 
 .feature-steps__tag {
     display: inline-block;
@@ -6324,7 +5992,6 @@ ul.green li::marker {
     color: var(--text-color-navy);
 }
 
-/* Card Grid */
 .feature-steps__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -6376,7 +6043,6 @@ ul.green li::marker {
     background: var(--color-surface);
 }
 
-/* Header Structure */
 .trust-metrics__header {
     max-width: 24rem;
 }
@@ -6385,7 +6051,6 @@ ul.green li::marker {
     max-width: 21rem;
 }
 
-/* Card Grid Layout */
 .trust-metrics__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -6393,7 +6058,6 @@ ul.green li::marker {
     overflow: hidden;
 }
 
-/* Individual Card Block */
 .trust-card {
     padding: 1.25rem;
     display: flex;
@@ -6516,7 +6180,6 @@ ul.green li::marker {
 /* ==============================
    Blog Hero Area
 ============================== */
-/* Hero Blog */
 .hero--blog {
     position: relative;
 }
@@ -6533,7 +6196,6 @@ ul.green li::marker {
     max-width: 35rem;
 }
 
-/* Container Box styling */
 .search-bar {
     display: flex;
     align-items: center;
@@ -6550,7 +6212,6 @@ ul.green li::marker {
     margin-top: 1.5rem;
 }
 
-/* Icon styling */
 .search-bar__icon {
     width: 1.1rem;
     height: 1.1rem;
@@ -6558,7 +6219,6 @@ ul.green li::marker {
     flex-shrink: 0;
 }
 
-/* Input styling */
 .search-bar__input {
     flex: 1;
     border: none;
@@ -6573,7 +6233,6 @@ ul.green li::marker {
     font-weight: 400;
 }
 
-/* Shortcut badge styling */
 .search-bar__shortcut {
     display: inline-flex;
     align-items: center;
@@ -6600,7 +6259,6 @@ ul.green li::marker {
     position: relative;
 }
 
-/* Header & Categories */
 .blog__header {
     display: flex;
     justify-content: space-between;
@@ -6644,7 +6302,6 @@ ul.green li::marker {
     outline: none;
 }
 
-/* Section Labels */
 .blog__section-label {
     text-transform: uppercase;
     font-weight: 400;
@@ -6669,7 +6326,6 @@ ul.green li::marker {
     color: var(--color-gray-blue);
 }
 
-/* Featured Post Card */
 .blog__featured-card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -6713,7 +6369,6 @@ ul.green li::marker {
     max-width: fit-content;
 }
 
-/* Shared Meta & Author Styles */
 .blog__post-meta {
     display: flex;
     align-items: center;
@@ -6762,14 +6417,12 @@ ul.green li::marker {
     line-height: 1;
 }
 
-/* Grid Layout */
 .blog__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
-/* Post Cards */
 .blog__card {
     background: var(--text-color-white);
     overflow: hidden;
@@ -6778,7 +6431,6 @@ ul.green li::marker {
     flex-direction: column;
     border: 1px solid var(--color-soft-indigo);
 }
-
 
 .blog__card-media {
     width: 100%;
@@ -6815,7 +6467,6 @@ ul.green li::marker {
     margin-bottom: 0.75rem;
 }
 
-/* Pagination */
 .blog__pagination {
     display: flex;
     justify-content: center;
@@ -6901,7 +6552,6 @@ ul.green li::marker {
     display: block;
 }
 
-/* Main Layout Grid */
 .blog--details .blog__layout {
     display: grid;
     grid-template-columns: 1fr 16.3rem;
@@ -6917,7 +6567,6 @@ ul.green li::marker {
     font-weight: 500;
 }
 
-/* Blockquote */
 .blog--details .blog__quote {
     border-left: 3px solid var(--color-primary);
     padding-left: 1.2rem;
@@ -6928,13 +6577,11 @@ ul.green li::marker {
     line-height: 1.5;
 }
 
-/* Callout Box */
 .blog--details .blog__callout {
     background-color: var(--color-light-indigo);
     padding: 1.75rem;
 }
 
-/* Bullet List */
 .blog--details .blog__list {
     list-style: none;
     padding: 0;
@@ -6966,7 +6613,6 @@ ul.green li::marker {
     color: var(--text-color-navy);
 }
 
-/* Article Tags */
 .blog--details .blog__tags {
     display: flex;
     flex-wrap: wrap;
@@ -6990,7 +6636,6 @@ ul.green li::marker {
     color: var(--color-primary);
 }
 
-/* Sidebar Column */
 .blog--details .blog__sidebar {
     display: flex;
     flex-direction: column;
@@ -6999,7 +6644,6 @@ ul.green li::marker {
     top: 20px;
 }
 
-/* Table of Contents Widget */
 .blog--details .blog__toc-card {
     background-color: var(--text-color-white);
     padding: 20px;
@@ -7211,7 +6855,6 @@ ul.green li::marker {
     transform: rotate(-2deg);
 }
 
-
 /* ==============================
    Isolated Trusted By
 ============================== */
@@ -7223,7 +6866,6 @@ ul.green li::marker {
     box-sizing: border-box;
 }
 
-/* Section Header Title */
 .trusted-by .trusted-by__title {
     color: var(--color-charcoal-blue);
     text-align: center;
@@ -7235,7 +6877,6 @@ ul.green li::marker {
     margin-bottom: 2rem;
 }
 
-/* Grid Layout for Brands */
 .trusted-by .trusted-by__grid {
     display: flex;
     align-items: center;
@@ -7245,7 +6886,6 @@ ul.green li::marker {
     margin-bottom: 50px;
 }
 
-/* Single Brand Item */
 .trusted-by .trusted-by__item {
     display: flex;
     flex-direction: column;
@@ -7254,7 +6894,6 @@ ul.green li::marker {
     flex: 1;
 }
 
-/* Brand Name / Logo Typography */
 .trusted-by .trusted-by__logo-name {
     color: var(--text-color-navy);
     font-family: Geist;
@@ -7265,7 +6904,6 @@ ul.green li::marker {
     letter-spacing: -0.0375rem;
 }
 
-/* Pill / Badge */
 .trusted-by .trusted-by__badge {
     display: inline-block;
     color: var(--color-primary);
@@ -7279,7 +6917,6 @@ ul.green li::marker {
     white-space: nowrap;
 }
 
-/* Divider Line */
 .trusted-by .trusted-by__divider {
     width: 100%;
     height: 1px;
@@ -7287,12 +6924,9 @@ ul.green li::marker {
     margin-top: 10px;
 }
 
-
 /* ==============================
    Story Card
 ============================== */
-/* Isolated Featured Story Card Styles */
-
 .story-card--featured {
     background-color: var(--color-surface);
 }
@@ -7301,7 +6935,6 @@ ul.green li::marker {
     box-sizing: border-box;
 }
 
-/* Outer Card Wrapper */
 .story-card--featured .story-card__wrapper {
     display: grid;
     grid-template-columns: 6fr 4fr;
@@ -7313,7 +6946,6 @@ ul.green li::marker {
     background: linear-gradient(90deg, var(--color-light-indigo) 0%, var(--color-surface) 55%, var(--text-color-white) 100%);
 }
 
-/* Left Content Column */
 .story-card--featured .story-card__content {
     max-width: 600px;
 }
@@ -7360,7 +6992,6 @@ ul.green li::marker {
     font-weight: 400;
 }
 
-/* Author Info */
 .story-card--featured .story-card__author {
     display: flex;
     align-items: center;
@@ -7463,7 +7094,6 @@ ul.green li::marker {
     color: var(--text-color-white);
 }
 
-/* Main Layout Grid */
 .customer-stories .customer-stories__layout {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -7476,7 +7106,6 @@ ul.green li::marker {
     gap: 24px;
 }
 
-/* Card Base Structure */
 .customer-stories .customer-stories__card {
     background-color: var(--text-color-white);
     overflow: hidden;
@@ -7502,7 +7131,6 @@ ul.green li::marker {
     width: fit-content;
 }
 
-/* Large Featured Card */
 .customer-stories .customer-stories__card--large {
     background-color: #edf2ff;
     padding: 1.25rem;
@@ -7538,7 +7166,6 @@ ul.green li::marker {
     max-width: 530px;
 }
 
-/* Medium Cards */
 .customer-stories .customer-stories__card--medium {
     padding: 1.5rem;
     gap: 1.5rem;
@@ -7557,7 +7184,6 @@ ul.green li::marker {
     padding-top: 0;
 }
 
-/* Image Cards (Bottom Row) */
 .customer-stories .customer-stories__card--image {
     grid-column: span 1;
     border-radius: 0;
@@ -7601,7 +7227,6 @@ ul.green li::marker {
     margin: 0 0 0.75rem 0;
 }
 
-/* Author Section */
 .customer-stories .customer-stories__author {
     display: flex;
     align-items: center;
@@ -7641,13 +7266,11 @@ ul.green li::marker {
     color: var(--color-charcoal-blue);
 }
 
-/* Footer / Load More */
 .customer-stories .customer-stories__footer {
     display: flex;
     justify-content: center;
     margin-top: 48px;
 }
-
 
 /* ==============================
    API Docs
@@ -7724,8 +7347,6 @@ ul.green li::marker {
     text-transform: uppercase;
 }
 
-
-/* Stats Card Wrapper */
 .hero--our-data .hero__stats-card {
     margin-top: 3.25rem;
     border-radius: var(--radius-2xl);
@@ -7753,7 +7374,6 @@ ul.green li::marker {
     background: rgba(255, 255, 255, 0.18);
 }
 
-/* Stat Numbers with Color Variations */
 .hero--our-data .hero__stat-number {
     font-weight: 400;
     margin: 0 0 0.5rem 0;
@@ -7762,7 +7382,6 @@ ul.green li::marker {
 .hero--our-data .hero__stat-number {
     color: var(--color-primary);
 }
-
 
 .hero--our-data .hero__stat-title {
     color: var(--text-color-navy);
@@ -7917,14 +7536,12 @@ ul.green li::marker {
     letter-spacing: 0.08em;
 }
 
-/* Grid Layout */
 .user-feedback__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
-/* Card Element */
 .user-feedback__card {
     border-radius: var(--radius-xl);
     border: 1px solid var(--color-moon-gray);
@@ -8004,7 +7621,6 @@ ul.green li::marker {
     line-height: 1.6;
 }
 
-/* Cards Grid Layout */
 .sales-triggers__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -8012,7 +7628,6 @@ ul.green li::marker {
     margin-bottom: 3rem;
 }
 
-/* Card Element */
 .sales-triggers__card {
     background: var(--text-color-white);
     border: 1px solid var(--color-moon-gray);
@@ -8084,14 +7699,12 @@ ul.green li::marker {
     max-width: fit-content;
 }
 
-/* Grid Layout */
 .quick-start__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
-/* Card Element */
 .quick-start__card {
     background-color: var(--text-color-white);
     border: 1px solid rgba(16, 24, 40, 0.06);
@@ -8105,7 +7718,6 @@ ul.green li::marker {
 .quick-start__step-badge {
     max-width: fit-content;
 }
-
 
 .quick-start__img {
     width: 100%;
@@ -8131,7 +7743,6 @@ ul.green li::marker {
     gap: 1rem;
 }
 
-/* Card Element */
 .sdk-integrations__card {
     background-color: var(--text-color-white);
     padding: 1.87rem 1rem;
@@ -8156,7 +7767,6 @@ ul.green li::marker {
     font-weight: 500;
 }
 
-/* Code Installation Box */
 .sdk-integrations__command {
     width: 100%;
     background-color: var(--color-light-indigo);
@@ -8166,8 +7776,6 @@ ul.green li::marker {
     overflow-x: auto;
     white-space: nowrap;
 }
-
-
 
 /* ==============================
    Animation
@@ -8182,8 +7790,6 @@ ul.green li::marker {
     margin-bottom: 48px;
 }
 
-
-/* Flow Container (Cards + Arrows) */
 .enrichment-events__flow {
     display: flex;
     align-items: center;
@@ -8191,7 +7797,6 @@ ul.green li::marker {
     gap: 16px;
 }
 
-/* Card Element */
 .enrichment-events__card {
     flex: 1;
     background-color: var(--text-color-white);
@@ -8227,7 +7832,6 @@ ul.green li::marker {
     white-space: nowrap;
 }
 
-/* Arrow Icon Between Cards */
 .enrichment-events__arrow {
     display: flex;
     align-items: center;
@@ -8240,7 +7844,6 @@ ul.green li::marker {
     width: 20px;
     height: auto;
 }
-
 
 /* ==============================
    Animation
@@ -8311,7 +7914,6 @@ ul.green li::marker {
     color: var(--text-color-navy);
 }
 
-
 .lead-sourcing__number {
     position: absolute;
     top: 48px;
@@ -8335,7 +7937,6 @@ ul.green li::marker {
     align-items: center;
 }
 
-
 .hero-integrations__content {
     max-width: 48rem;
     margin-left: auto;
@@ -8357,7 +7958,6 @@ ul.green li::marker {
     margin: 0;
     background: transparent;
 }
-
 
 .hero-integrations__actions {
     margin-top: 3rem;
@@ -8401,30 +8001,6 @@ ul.green li::marker {
     font-size: 12px;
     font-weight: 600;
     color: var(--text-color-navy);
-}
-
-@media (max-width: 992px) {
-
-    .hero-integrations__apps {
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    .hero-integrations__app-card,
-    .hero-integrations__app-card--offset-1,
-    .hero-integrations__app-card--offset-2,
-    .hero-integrations__app-card--offset-3,
-    .hero-integrations__app-card--offset-4 {
-        transform: translateY(0);
-        width: 100px;
-    }
-}
-
-@media (max-width: 640px) {
-
-    .hero-integrations__app-card {
-        width: 85px;
-    }
 }
 
 /* ==============================
@@ -8555,7 +8131,6 @@ ul.green li::marker {
 .data-responsibility__card-text {
     color: var(--text-color-white);
 }
-
 
 /* ==============================
    Hero About Area
@@ -8697,12 +8272,10 @@ ul.green li::marker {
     background-color: var(--color-surface);
 }
 
-
 .modern-platform__header {
     text-align: center;
     max-width: 48rem;
 }
-
 
 .modern-platform__description {
     font-size: 14px;
@@ -8734,7 +8307,6 @@ ul.green li::marker {
     border-radius: 16px;
     box-shadow: 0 24px 48px 0 rgba(16, 24, 40, 0.32);
 }
-
 
 /* ==============================
    Press News Area
@@ -9036,7 +8608,6 @@ ul.green li::marker {
     font-size: 18px;
     user-select: none;
 }
-
 
 /* ==============================
    Animation
@@ -10589,7 +10160,6 @@ ul.green li::marker {
     display: block;
 }
 
-
 /* ==============================
    Hero Outbound Area
 ============================== */
@@ -10614,15 +10184,12 @@ ul.green li::marker {
     max-width: 57rem;
 }
 
-
-
 .hero--outbound .hero__content {
     position: relative;
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
-
 
 /* ==============================
    Whole Stack Area
@@ -10795,7 +10362,6 @@ ul.green li::marker {
     margin: 0;
 }
 
-
 /* ==============================
    Outbound Teams Area
 ============================== */
@@ -10866,7 +10432,6 @@ ul.green li::marker {
 .outbound-teams__link:hover .outbound-teams__arrow {
     transform: translateX(3px);
 }
-
 
 /* ==============================
    Animation
@@ -11688,7 +11253,6 @@ ul.green li::marker {
     grid-column: span 4;
 }
 
-
 .department__card:nth-child(4) {
     grid-column: span 4;
 }
@@ -11967,7 +11531,6 @@ ul.green li::marker {
     border-radius: var(--radius-xl);
 }
 
-/* Left Group (Icon + Info) */
 .compliance__info-group {
     display: flex;
     align-items: center;
@@ -12061,7 +11624,6 @@ ul.green li::marker {
     overflow: hidden;
 }
 
-/* Tool Card */
 .tool-card {
     padding: 2.5rem 2rem;
     display: flex;
@@ -12076,7 +11638,6 @@ ul.green li::marker {
     background-color: var(--color-cloud-white);
 }
 
-/* 3-Column Desktop Border Management */
 .tool-card:nth-child(3n) {
     border-right: none;
 }
@@ -12122,11 +11683,6 @@ ul.green li::marker {
     color: var(--color-primary);
     text-decoration: underline;
 }
-
-.d-none {
-    display: none;
-}
-
 
 /* ==============================
    Animation
@@ -12270,7 +11826,6 @@ ul.green li::marker {
         gap: 3rem;
     }
 
-
     /* Solution Case Area */
     .solution-case__wrapper {
         grid-template-columns: 1fr;
@@ -12304,6 +11859,19 @@ ul.green li::marker {
 
     .hero__floating-card--stats {
         transform: rotate(4deg) translateX(10%);
+    }
+
+    /* Pricing Addon Area */
+    .pricing-addon__tick-label {
+        display: none;
+    }
+
+    .pricing-addon__tick:nth-child(4n + 1) .pricing-addon__tick-label {
+        display: block;
+    }
+
+    .pricing-addon__tick-label {
+        font-size: 0.75rem;
     }
 }
 
@@ -13065,6 +12633,52 @@ ul.green li::marker {
     .tool-card:nth-last-child(-n + 2) {
         border-bottom: none !important;
     }
+
+    /* Results Impact Area */
+    .results-impact__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .results-impact__cards {
+        margin: 2.5rem 0;
+    }
+
+    .results-impact__table-box {
+        margin-bottom: 2.5rem;
+    }
+
+    /* Hero Integrations */
+    .hero-integrations__apps {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .hero-integrations__app-card,
+    .hero-integrations__app-card--offset-1,
+    .hero-integrations__app-card--offset-2,
+    .hero-integrations__app-card--offset-3,
+    .hero-integrations__app-card--offset-4 {
+        transform: translateY(0);
+        width: 100px;
+    }
+
+    /* Pricing Addon Area */
+    .pricing-addon__price {
+        text-align: right;
+        width: 100%;
+    }
+
+    .pricing-addon__tick-label {
+        display: none;
+    }
+
+    .pricing-addon__tick:nth-child(6n + 1) .pricing-addon__tick-label {
+        display: block;
+    }
+
+    .pricing-addon__tick-label {
+        font-size: 0.6875rem;
+    }
 }
 
 @media (max-width: 850px) {
@@ -13243,7 +12857,6 @@ ul.green li::marker {
     }
 
     /* Reach Area */
-
     .reach__map-wrap {
         min-height: 19.5rem;
     }
@@ -13597,6 +13210,195 @@ ul.green li::marker {
     .hero__floating-card--stats {
         display: none;
     }
+
+    /* Pricing Addon Area */
+    .pricing-addon__header {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 1rem;
+    }
+
+    .pricing-addon__price {
+        white-space: normal;
+    }
+
+    .pricing-addon__ticks {
+        position: relative;
+        display: block;
+        height: 2.75rem;
+        margin-top: 1.25rem;
+    }
+
+    /* Keep all tick marks */
+    .pricing-addon__tick {
+        position: absolute;
+        top: 0;
+        width: 0;
+    }
+
+    .pricing-addon__tick::before {
+        top: 0;
+        left: 0;
+        transform: translateX(-50%);
+        width: 0.0625rem;
+        height: 0.5rem;
+    }
+
+    /* Evenly distribute all 33 ticks */
+    .pricing-addon__tick:nth-child(1) {
+        left: 0%;
+    }
+
+    .pricing-addon__tick:nth-child(2) {
+        left: 3.125%;
+    }
+
+    .pricing-addon__tick:nth-child(3) {
+        left: 6.25%;
+    }
+
+    .pricing-addon__tick:nth-child(4) {
+        left: 9.375%;
+    }
+
+    .pricing-addon__tick:nth-child(5) {
+        left: 12.5%;
+    }
+
+    .pricing-addon__tick:nth-child(6) {
+        left: 15.625%;
+    }
+
+    .pricing-addon__tick:nth-child(7) {
+        left: 18.75%;
+    }
+
+    .pricing-addon__tick:nth-child(8) {
+        left: 21.875%;
+    }
+
+    .pricing-addon__tick:nth-child(9) {
+        left: 25%;
+    }
+
+    .pricing-addon__tick:nth-child(10) {
+        left: 28.125%;
+    }
+
+    .pricing-addon__tick:nth-child(11) {
+        left: 31.25%;
+    }
+
+    .pricing-addon__tick:nth-child(12) {
+        left: 34.375%;
+    }
+
+    .pricing-addon__tick:nth-child(13) {
+        left: 37.5%;
+    }
+
+    .pricing-addon__tick:nth-child(14) {
+        left: 40.625%;
+    }
+
+    .pricing-addon__tick:nth-child(15) {
+        left: 43.75%;
+    }
+
+    .pricing-addon__tick:nth-child(16) {
+        left: 46.875%;
+    }
+
+    .pricing-addon__tick:nth-child(17) {
+        left: 50%;
+    }
+
+    .pricing-addon__tick:nth-child(18) {
+        left: 53.125%;
+    }
+
+    .pricing-addon__tick:nth-child(19) {
+        left: 56.25%;
+    }
+
+    .pricing-addon__tick:nth-child(20) {
+        left: 59.375%;
+    }
+
+    .pricing-addon__tick:nth-child(21) {
+        left: 62.5%;
+    }
+
+    .pricing-addon__tick:nth-child(22) {
+        left: 65.625%;
+    }
+
+    .pricing-addon__tick:nth-child(23) {
+        left: 68.75%;
+    }
+
+    .pricing-addon__tick:nth-child(24) {
+        left: 71.875%;
+    }
+
+    .pricing-addon__tick:nth-child(25) {
+        left: 75%;
+    }
+
+    .pricing-addon__tick:nth-child(26) {
+        left: 78.125%;
+    }
+
+    .pricing-addon__tick:nth-child(27) {
+        left: 81.25%;
+    }
+
+    .pricing-addon__tick:nth-child(28) {
+        left: 84.375%;
+    }
+
+    .pricing-addon__tick:nth-child(29) {
+        left: 87.5%;
+    }
+
+    .pricing-addon__tick:nth-child(30) {
+        left: 90.625%;
+    }
+
+    .pricing-addon__tick:nth-child(31) {
+        left: 93.75%;
+    }
+
+    .pricing-addon__tick:nth-child(32) {
+        left: 96.875%;
+    }
+
+    .pricing-addon__tick:nth-child(33) {
+        left: 100%;
+    }
+
+    /* Hide all labels */
+    .pricing-addon__tick-label {
+        display: none !important;
+    }
+
+    /* Show only evenly spaced major labels */
+    .pricing-addon__tick:nth-child(1) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(5) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(9) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(13) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(18) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(23) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(27) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(33) .pricing-addon__tick-label {
+        display: block !important;
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-92%);
+        font-size: 0.625rem;
+        white-space: nowrap;
+    }
 }
 
 @media (max-width: 640px) {
@@ -13702,7 +13504,6 @@ ul.green li::marker {
         gap: 1.5rem;
     }
 
-
     /* Data Metrics Area */
     .data-metrics__stats {
         grid-template-columns: repeat(2, 1fr);
@@ -13775,6 +13576,10 @@ ul.green li::marker {
         border-bottom: none !important;
     }
 
+    /* Hero Integrations Area */
+    .hero-integrations__app-card {
+        width: 85px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -13915,6 +13720,11 @@ ul.green li::marker {
     .security-trust--style-two .trust-card {
         padding: 2rem 1rem;
     }
+
+    /* Results Impact Area */
+    .results-impact__cards {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
@@ -14009,10 +13819,38 @@ ul.green li::marker {
     .story-card--featured .story-card__wrapper {
         padding: 2rem 1rem;
     }
+
+    /* Pricing Addon Area */
+    .pricing-addon__ticks {
+        height: 2.5rem;
+    }
+
+    .pricing-addon__tick:nth-child(1) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(5) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(18) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(23) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(33) .pricing-addon__tick-label {
+        font-size: 0.5625rem;
+    }
+
+    .pricing-addon__range {
+        height: 0.375rem;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .pricing-addon__tick:nth-child(1) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(5) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(18) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(23) .pricing-addon__tick-label,
+    .pricing-addon__tick:nth-child(33) .pricing-addon__tick-label {
+        font-size: 0.5rem;
+    }
 }
 
 /* ===================================
-   Responsive
+   Responsive 
 =================================== */
 @media (max-width: 992px) {
 
@@ -14023,8 +13861,6 @@ ul.green li::marker {
     .gap-xxl {
         gap: 3rem;
     }
-
-    /* Headings */
 
     h1,
     .text-h1 {
@@ -14085,19 +13921,6 @@ ul.green li::marker {
     .text-sm {
         font-size: inherit;
     }
-
-    /* Results Impact Area */
-    .results-impact__cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .results-impact__cards {
-        margin: 2.5rem 0;
-    }
-
-    .results-impact__table-box {
-        margin-bottom: 2.5rem;
-    }
 }
 
 @media (max-width: 768px) {
@@ -14109,8 +13932,6 @@ ul.green li::marker {
     .gap-xxl {
         gap: 2.5rem;
     }
-
-    /* Headings */
 
     h1,
     .text-h1 {
@@ -14154,8 +13975,6 @@ ul.green li::marker {
         letter-spacing: -0.025rem;
     }
 
-    /* Text */
-
     .text-2xl {
         font-size: 1.5rem;
         line-height: 1.35;
@@ -14178,8 +13997,6 @@ ul.green li::marker {
     .gap-xxl {
         gap: 2rem;
     }
-
-    /* Headings */
 
     h1,
     .text-h1 {
@@ -14223,8 +14040,6 @@ ul.green li::marker {
         letter-spacing: -0.02rem;
     }
 
-    /* Text */
-
     .text-2xl {
         font-size: 1.375rem;
         line-height: 1.35;
@@ -14236,11 +14051,6 @@ ul.green li::marker {
         line-height: 1.45;
         letter-spacing: -0.01rem;
     }
-
-    /* Results Impact Area */
-    .results-impact__cards {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 480px) {
@@ -14248,8 +14058,6 @@ ul.green li::marker {
     .container {
         padding: 4rem 1rem;
     }
-
-    /* Headings */
 
     h1,
     .text-h1 {
@@ -14292,8 +14100,6 @@ ul.green li::marker {
         line-height: 1.4;
         letter-spacing: -0.015rem;
     }
-
-    /* Text */
 
     .text-2xl {
         font-size: 1.25rem;
