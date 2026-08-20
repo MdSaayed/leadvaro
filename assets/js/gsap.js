@@ -1174,7 +1174,6 @@ document.addEventListener("DOMContentLoaded", () => {
         clearProps: "opacity,transform"
     })
 
-        // ২. মেইন টাইটেল নিচ থেকে স্মুথলি স্কেল হয়ে ভেসে উঠবে
         .from(q(".hero__title"), {
             y: 25,
             opacity: 0,
@@ -1183,7 +1182,6 @@ document.addEventListener("DOMContentLoaded", () => {
             clearProps: "opacity,transform"
         }, "-=0.4")
 
-        // ৩. ডেসক্রিপশন টেক্সট স্লাইড ইন করবে
         .from(q(".hero__desc"), {
             y: 20,
             opacity: 0,
@@ -1191,7 +1189,6 @@ document.addEventListener("DOMContentLoaded", () => {
             clearProps: "opacity,transform"
         }, "-=0.6")
 
-        // ৪. দুটি বাটন একের পর এক (stagger) পপ-ইন করবে
         .from(q(".hero__cta-wrap .btn"), {
             y: 20,
             opacity: 0,
@@ -1201,7 +1198,6 @@ document.addEventListener("DOMContentLoaded", () => {
             clearProps: "opacity,transform"
         }, "-=0.5")
 
-        // ৫. UI ড্যাশবোর্ড ইমেজ নিচ থেকে ৩D ফিল নিয়ে স্মুথলি রিভিল হবে
         .from(q(".hero__image-wrap"), {
             y: 50,
             opacity: 0,

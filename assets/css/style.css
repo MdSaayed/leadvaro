@@ -3562,6 +3562,83 @@ h6,
     margin-bottom: 0;
 }
 
+.hero--for-agencies .hero__content {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.hero--for-agencies .hero__image-wrap {
+    max-width: 100%;
+    width: 100%;
+}
+
+.hero__floating-card {
+    padding: 0.75rem 1rem;
+    border-radius: 0.875rem;
+    border: 1px solid var(--white);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 12px 32px -6px rgba(16, 24, 40, 0.12);
+    backdrop-filter: blur(10px);
+    max-width: fit-content;
+    position: absolute;
+}
+
+.hero__floating-card .hero__floating-card-icon svg {
+    background: #E8F6ED;
+    border-radius: var(--radius-full);
+}
+
+.hero__floating-card--notification {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    left: 0;
+    top: 3rem;
+    transform: rotate(-3deg) translateX(-50%);
+}
+
+.hero__floating-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero__floating-card-title {
+    color: var(--color-navy);
+    font-weight: 500;
+}
+
+.hero__floating-card-text {
+    color: #676E7B;
+    font-family: Geist;
+    font-size: 0.6875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.hero__floating-card-value {
+    font-weight: 500;
+    color: var(--color-navy);
+}
+
+.hero__floating-card-info {
+    color: #16A34A;
+}
+
+.hero__floating-card--stats .hero__floating-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.38rem;
+}
+
+.hero__floating-card--stats {
+    bottom: 4rem;
+    right: 0;
+    transform: rotate(4deg) translateX(80%);
+}
+
 /* ==============================
    Reporting
 ============================== */
@@ -10533,21 +10610,7 @@ ul.green li::marker {
     max-width: 57rem;
 }
 
-.hero--outbound .stat-card {
-    background: var(--primary);
-    padding: 1.2rem;
-    box-shadow: 0 16px 36px -6px rgba(15, 23, 41, 0.22);
-    border-radius: var(--radius-xl);
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    margin: 0.5rem 0;
-    max-width: 14.80rem;
-    width: 100%;
-    position: absolute;
-    top: 8rem;
-    right: -5rem;
-}
+
 
 .hero--outbound .hero__content {
     position: relative;
@@ -10556,14 +10619,6 @@ ul.green li::marker {
     margin-right: auto;
 }
 
-.hero--outbound .stat-card__label,
-.hero--outbound .stat-card__subtitle {
-    font-size: 0.75rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.33;
-    letter-spacing: 0.025rem;
-}
 
 /* ==============================
    Whole Stack Area
@@ -11704,7 +11759,6 @@ ul.green li::marker {
 }
 
 .hero__image-wrap {
-    max-width: 90%;
     width: 100%;
     margin: 0 auto;
 }
@@ -12014,12 +12068,6 @@ ul.green li::marker {
 
 @media (max-width: 1400px) {
 
-    /* Hero Outbound Area  */
-    .hero--outbound .stat-card {
-        top: 8rem;
-        right: -2rem;
-    }
-
     /* Hero Area Case Study Two */
     .hero--case-study-two .hero__content {
         grid-template-columns: 1fr 1fr;
@@ -12040,12 +12088,6 @@ ul.green li::marker {
     .b2b-sellers__grid {
         grid-template-columns: 4fr 6fr;
         gap: 4rem;
-    }
-
-    /* Hero Outbound Area */
-    .hero--outbound .stat-card {
-        top: 5rem;
-        right: -1rem;
     }
 
     /* Hero Area Case Study Two */
@@ -12123,13 +12165,6 @@ ul.green li::marker {
     .quick-setup__grid {
         grid-template-columns: repeat(1, 1fr);
         gap: 3rem;
-    }
-
-    /* Hero Outbound Area */
-    .hero--outbound .stat-card {
-        top: 2rem;
-        right: -1rem;
-        max-width: 12rem;
     }
 
     /* Solution Case Area */
@@ -13521,13 +13556,6 @@ ul.green li::marker {
         gap: 1.5rem;
     }
 
-    /* Hero Outbound Area */
-    .hero--outbound .stat-card {
-        top: 1rem;
-        right: -1rem;
-        max-width: fit-content;
-    }
-
     /* Data Metrics Area */
     .data-metrics__stats {
         grid-template-columns: repeat(2, 1fr);
@@ -13819,12 +13847,6 @@ ul.green li::marker {
     /* Story Card Area */
     .story-card--featured .story-card__wrapper {
         padding: 2rem 1rem;
-    }
-
-    /* Hero Outbound Area */
-    .hero--outbound .stat-card {
-        display: none;
-
     }
 }
 
@@ -15215,18 +15237,18 @@ h6,
     flex-grow: 0;
 }
 
-
-
 .stats__label {
     font-weight: 500;
     color: #334155;
     margin-top: 0.370rem;
-    text-align: center; 
+    text-align: center;
+    display: block;
 }
 
 .stats__number {
     color: var(--color-navy);
     text-align: center;
+    display: block;
 }
 
 .stats--two .stats__container {
@@ -16551,6 +16573,11 @@ h6,
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+.spring__badge svg {
+    max-width: 6rem;
+    max-height: fit-content;
 }
 
 .spring__reviews--style-two .spring__badge-wrap {
@@ -24667,37 +24694,7 @@ ul.green li::marker {
     max-width: 57rem;
 }
 
-.hero--outbound .stat-card {
-    background: var(--primary);
-    padding: 1.2rem;
-    box-shadow: 0 16px 36px -6px rgba(15, 23, 41, 0.22);
-    border-radius: var(--radius-xl);
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    margin: 0.5rem 0;
-    max-width: 14.80rem;
-    width: 100%;
-    position: absolute;
-    top: 8rem;
-    right: -5rem;
-}
 
-.hero--outbound .hero__content {
-    position: relative;
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero--outbound .stat-card__label,
-.hero--outbound .stat-card__subtitle {
-    font-size: 0.75rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.33;
-    letter-spacing: 0.025rem;
-}
 
 /* ==============================
    Whole Stack Area
@@ -25838,7 +25835,6 @@ ul.green li::marker {
 }
 
 .hero__image-wrap {
-    max-width: 90%;
     width: 100%;
     margin: 0 auto;
 }
@@ -26122,6 +26118,98 @@ ul.green li::marker {
     text-transform: uppercase;
 }
 
+.stats__double-counter {
+    display: flex;
+}
+
+
+/* ==============================
+   Tools Suite Area
+============================== */
+/* Tools Suite Section */
+.tools-suite {
+    background-color: #F8FAFC;
+}
+
+.tools-suite__header-area {
+    max-width: 40rem;
+}
+
+.tools-suite__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    border: 1px solid #E5EBF2;
+    overflow: hidden;
+}
+
+/* Tool Card */
+.tool-card {
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #E5EBF2;
+    border-bottom: 1px solid #E5EBF2;
+    background-color: var(--white);
+    transition: background-color 0.2s ease;
+}
+
+.tool-card:hover {
+    background-color: #f8fafc;
+}
+
+/* 3-Column Desktop Border Management */
+.tool-card:nth-child(3n) {
+    border-right: none;
+}
+
+.tool-card:nth-last-child(-n + 3) {
+    border-bottom: none;
+}
+
+.tool-card__icon {
+    width: 3.75rem;
+    height: 3.75rem;
+    padding: 0.38rem;
+    border-radius: var(--radius-md);
+    background-color: #EEF2FF;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.tool-card__title {
+    font-weight: 400;
+    color: var(--color-navy);
+    margin: 0 0 1rem;
+    letter-spacing: -0.01em;
+}
+
+.tool-card__text {
+    margin: 0 0 3.75rem;
+    flex-grow: 1;
+}
+
+.tool-card__link {
+    color: var(--primary);
+    text-decoration: underline;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.tool-card__link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.d-none{
+    display: none;
+}
+
 
 /* ==============================
    Animation
@@ -26148,12 +26236,6 @@ ul.green li::marker {
 
 @media (max-width: 1400px) {
 
-    /* Hero Outbound Area  */
-    .hero--outbound .stat-card {
-        top: 8rem;
-        right: -2rem;
-    }
-
     /* Hero Area Case Study Two */
     .hero--case-study-two .hero__content {
         grid-template-columns: 1fr 1fr;
@@ -26176,15 +26258,19 @@ ul.green li::marker {
         gap: 4rem;
     }
 
-    /* Hero Outbound Area */
-    .hero--outbound .stat-card {
-        top: 5rem;
-        right: -1rem;
-    }
-
     /* Hero Area Case Study Two */
     .hero--case-study-two .hero__content {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1350px) {
+    .hero__floating-card--notification {
+        transform: rotate(-3deg) translateX(-20%);
+    }
+
+    .hero__floating-card--stats {
+        transform: rotate(4deg) translateX(30%);
     }
 }
 
@@ -26259,12 +26345,6 @@ ul.green li::marker {
         gap: 3rem;
     }
 
-    /* Hero Outbound Area */
-    .hero--outbound .stat-card {
-        top: 2rem;
-        right: -1rem;
-        max-width: 12rem;
-    }
 
     /* Solution Case Area */
     .solution-case__wrapper {
@@ -26290,6 +26370,15 @@ ul.green li::marker {
     .email-validator__content {
         padding: 3.5rem;
         border-radius: var(--radius-3xl);
+    }
+
+    /* Hero Floatig Card */
+    .hero__floating-card--notification {
+        transform: rotate(-3deg) translateX(-10%);
+    }
+
+    .hero__floating-card--stats {
+        transform: rotate(4deg) translateX(10%);
     }
 }
 
@@ -27024,6 +27113,32 @@ ul.green li::marker {
     .email-validator__grid {
         grid-template-columns: 1fr;
     }
+
+    /* Tools Suite Area */
+    .tools-suite__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tool-card {
+        border-right: 1px solid #E5EBF2 !important;
+        border-bottom: 1px solid #E5EBF2 !important;
+    }
+
+    .tool-card__icon {
+        margin-bottom: 3rem;
+    }
+
+    .tool-card__text {
+        margin-bottom: 2rem;
+    }
+
+    .tool-card:nth-child(2n) {
+        border-right: none !important;
+    }
+
+    .tool-card:nth-last-child(-n + 2) {
+        border-bottom: none !important;
+    }
 }
 
 @media (max-width: 850px) {
@@ -27550,6 +27665,12 @@ ul.green li::marker {
     .search-card {
         padding: 1.5rem;
     }
+
+    /* Hero Floatig Card */
+    .hero__floating-card--notification,
+    .hero__floating-card--stats {
+        display: none;
+    }
 }
 
 @media (max-width: 640px) {
@@ -27655,12 +27776,6 @@ ul.green li::marker {
         gap: 1.5rem;
     }
 
-    /* Hero Outbound Area */
-    .hero--outbound .stat-card {
-        top: 1rem;
-        right: -1rem;
-        max-width: fit-content;
-    }
 
     /* Data Metrics Area */
     .data-metrics__stats {
@@ -27718,6 +27833,20 @@ ul.green li::marker {
 
     .compliance__badges {
         flex-wrap: wrap;
+    }
+
+    /* Tools Suite Area */
+    .tools-suite__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tool-card {
+        border-right: none !important;
+        border-bottom: 1px solid #E5EBF2 !important;
+    }
+
+    .tool-card:last-child {
+        border-bottom: none !important;
     }
 
 }
@@ -27953,12 +28082,6 @@ ul.green li::marker {
     /* Story Card Area */
     .story-card--featured .story-card__wrapper {
         padding: 2rem 1rem;
-    }
-
-    /* Hero Outbound Area */
-    .hero--outbound .stat-card {
-        display: none;
-
     }
 }
 
