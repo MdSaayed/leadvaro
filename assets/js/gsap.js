@@ -2237,3 +2237,82 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "none"
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const integrationsSection = document.querySelector(".hero-integrations");
+    if (!integrationsSection) return;
+
+    const q = gsap.utils.selector(integrationsSection);
+
+    const mainTl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.8 }
+    });
+
+    mainTl
+        .fromTo(
+            q(".hero-integrations__badge-group"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.5 }
+        )
+        .fromTo(
+            q(".hero-integrations__title"),
+            { y: 30, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.7 },
+            "-=0.3"
+        )
+        .fromTo(
+            q(".hero-integrations__description"),
+            { y: 20, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.6 },
+            "-=0.4"
+        )
+        .fromTo(
+            q(".hero-integrations__btn"),
+            { y: 20, autoAlpha: 0, scale: 0.95 },
+            { y: 0, autoAlpha: 1, scale: 1, duration: 0.5, stagger: 0.1 },
+            "-=0.3"
+        )
+        .fromTo(
+            q(".hero-integrations__app-card"),
+            { y: 50, autoAlpha: 0, scale: 0.9 },
+            {
+                y: 0,
+                autoAlpha: 1,
+                scale: 1,
+                duration: 0.8,
+                stagger: {
+                    each: 0.08,
+                    from: "center" // মাঝখানের কার্ড থেকে দু'পাশে ওয়েভ আকারে রিভিল হবে
+                },
+                ease: "back.out(1.4)"
+            },
+            "-=0.3"
+        );
+
+    // 2. Continuous Floating Animation for App Cards
+    const appCards = q(".hero-integrations__app-card");
+    appCards.forEach((card, index) => {
+        gsap.to(card, {
+            y: index % 2 === 0 ? -10 : -16,
+            duration: 2.5 + (index * 0.2),
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.easeInOut",
+            delay: 1.2 + (index * 0.1)
+        });
+    });
+
+    // 3. Scroll Parallax Effect
+    gsap.to(q(".hero-integrations__apps"), {
+        scrollTrigger: {
+            trigger: integrationsSection,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1.2
+        },
+        y: 40,
+        ease: "none"
+    });
+});
