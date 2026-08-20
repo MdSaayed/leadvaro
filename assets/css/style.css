@@ -26272,6 +26272,14 @@ ul.green li::marker {
     .hero__floating-card--stats {
         transform: rotate(4deg) translateX(30%);
     }
+
+    .tool-card__icon {
+        margin-bottom: 3.75rem;
+    }
+
+    .tool-card__text {
+        margin-bottom: 2.5rem;
+    }
 }
 
 @media (max-width: 1150px) {
@@ -27122,14 +27130,15 @@ ul.green li::marker {
     .tool-card {
         border-right: 1px solid #E5EBF2 !important;
         border-bottom: 1px solid #E5EBF2 !important;
+        padding: 1.5rem;
     }
 
     .tool-card__icon {
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
     }
 
     .tool-card__text {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
 
     .tool-card:nth-child(2n) {
