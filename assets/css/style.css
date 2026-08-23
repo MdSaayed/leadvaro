@@ -3025,7 +3025,8 @@ h6,
     padding: 0.25rem;
 }
 
-.why-us__card-cta {
+.why-us__card-cta,
+.bulk__card-cta {
     margin-top: 3.75rem;
 }
 
@@ -12384,7 +12385,8 @@ ul.green li::marker {
         gap: 1rem;
     }
 
-    .why-us__card-cta {
+    .why-us__card-cta,
+    .bulk__card-cta {
         margin-top: 2.5rem;
     }
 
