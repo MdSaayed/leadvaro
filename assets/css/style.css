@@ -8031,10 +8031,10 @@ ul.green li::marker {
    Hero Integrations Area
 ============================== */
 .hero-integrations {
-    background-color: var(--color-surface);
     overflow: hidden;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .hero-integrations__content {
