@@ -2293,6 +2293,10 @@ h6,
     margin: 0 auto;
 }
 
+.faq--three {
+    background: var( --color-muted);
+}
+
 /* ===============================================================
                 Cta Styles
 =============================================================== */
@@ -2368,6 +2372,10 @@ h6,
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 0.5rem;
+}
+
+.cta--style-two{
+    background: var( --color-muted);
 }
 
 /* ===============================================================
@@ -3084,7 +3092,7 @@ h6,
     max-width: 27.5rem;
 }
 
-.services--two .services__heder-left  {
+.services--two .services__heder-left {
     max-width: 30rem;
 }
 
@@ -3222,6 +3230,10 @@ h6,
 
 .services--three .services__heder-left {
     max-width: 44rem;
+}
+
+.services--three .services__card-link {
+    text-decoration: underline;
 }
 
 /* ==============================
@@ -4869,7 +4881,7 @@ tr .pricing-comparison__row--category {
    .How It Works
 ============================== */
 .how-it-works--style-two {
-    background: var(--color-muted);
+    background: var(--text-color-white);
 }
 
 .how-it-works--style-two .how-it-works__header {
