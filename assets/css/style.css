@@ -201,6 +201,10 @@ h6,
     padding-bottom: 5rem;
 }
 
+.bg-cloud-white{
+    background: var(--color-cloud-white) !important;
+}
+
 .header-area {
     display: flex;
     flex-direction: column;
@@ -2294,7 +2298,7 @@ h6,
 }
 
 .faq--three {
-    background: var( --color-muted);
+    background: var(--color-muted);
 }
 
 /* ===============================================================
@@ -2374,8 +2378,8 @@ h6,
     margin-top: 0.5rem;
 }
 
-.cta--style-two{
-    background: var( --color-muted);
+.cta--style-two {
+    background: var(--color-muted);
 }
 
 /* ===============================================================
@@ -6132,7 +6136,7 @@ ul.green li::marker {
    Animation
 ============================== */
 .trust-metrics {
-    background: var(--color-surface);
+    background: var(--color-cloud-white);
 }
 
 .trust-metrics__header {
@@ -6267,6 +6271,10 @@ ul.green li::marker {
 
 .audience-card__description {
     color: var(--color-charcoal-blue);
+}
+
+.audience-card__link {
+    text-decoration: underline !important;
 }
 
 /* ==============================
