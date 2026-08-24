@@ -8237,6 +8237,7 @@ ul.green li::marker {
 ============================== */
 .hero--about {
     position: relative;
+    background: var(--color-surface);
 }
 
 .hero--about .bg-wrap {
