@@ -325,7 +325,7 @@ function updatePricingAddon() {
     const progress = (value / range.max) * 100;
 
     range.style.setProperty('--progress', `${progress}%`);
-    
+
     if (prices[value] !== undefined) {
         price.textContent = `$${prices[value].toLocaleString()}/year`;
     }
@@ -395,5 +395,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /* =============================
-  6. Booking Calendar
+  6. Features Filtering 
 ============================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".feature-showcase__tab");
+    const cards = document.querySelectorAll(".feature-showcase__card");
+
+    if (!tabs.length || !cards.length) return;
+
+    const filterCards = (filterValue) => {
+        cards.forEach(card => {
+            const cardFilter = card.getAttribute("data-filter");
+
+            if (cardFilter === filterValue) {
+                card.style.display = "grid";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    };
+
+    const initialActiveTab = document.querySelector(".feature-showcase__tab.is-active") || tabs[0];
+    if (initialActiveTab) {
+        const initialFilter = initialActiveTab.getAttribute("data-filter");
+        filterCards(initialFilter);
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            // Active class & ARIA update
+            tabs.forEach(t => {
+                t.classList.remove("is-active");
+                t.setAttribute("aria-selected", "false");
+            });
+
+            tab.classList.add("is-active");
+            tab.setAttribute("aria-selected", "true");
+
+            // Filter trigger
+            const filterValue = tab.getAttribute("data-filter");
+            filterCards(filterValue);
+        });
+    });
+});

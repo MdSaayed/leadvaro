@@ -2092,12 +2092,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const q = gsap.utils.selector(heroSection);
 
-    // Initial Hide (Prevent FOUC - Flash of Unstyled Content)
-    gsap.set(
-        q(".hero__badge, .hero__title, .hero__description, .hero__cta, .hero__avatar-area, .hero__footer-note, .hero__media"),
-        { autoAlpha: 0 }
-    );
-
+    // Initial Hide (gsap.set বাদ দিয়ে CSS বা সরাসরি fromTo ব্যবহার করা সবচেয়ে নিরাপদ)
     // 1. Page Entrance Timeline
     const heroTl = gsap.timeline({
         defaults: { ease: "power3.out", duration: 0.8 }
@@ -2124,7 +2119,7 @@ document.addEventListener("DOMContentLoaded", () => {
             { y: 0, autoAlpha: 1, duration: 0.6 },
             "-=0.4"
         )
-        // CTA Buttons (Staggered scale & fade)
+        // CTA Buttons Fix (সরাসরি cta কনটেইনার বা বাটনের ওপর সঠিক টার্গেট)
         .fromTo(
             q(".hero__btn"),
             { y: 20, autoAlpha: 0, scale: 0.95 },
@@ -2153,14 +2148,16 @@ document.addEventListener("DOMContentLoaded", () => {
             "-=0.8"
         );
 
-    // 2. Continuous Floating Effect for Product Composition
-    gsap.to(q(".hero__img"), {
-        y: -12,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.easeInOut"
-    });
+    // 2. Continuous Floating Effect
+    if (q(".hero__img").length) {
+        gsap.to(q(".hero__img"), {
+            y: -12,
+            duration: 3,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.easeInOut"
+        });
+    }
 
     // 3. Scroll Parallax Effect
     gsap.to(q(".hero__media"), {
