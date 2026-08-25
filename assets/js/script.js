@@ -437,4 +437,56 @@ document.addEventListener("DOMContentLoaded", () => {
             filterCards(filterValue);
         });
     });
+
+    // Refresh GSAP ScrollTrigger after DOM layout updates
+    if (window.ScrollTrigger) {
+        setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 50);
+    }
+});
+
+/* =============================
+  6. Services Filtering 
+============================= */
+document.addEventListener('DOMContentLoaded', () => {
+    const filterWrap = document.querySelector('.services__filter-wrap');
+    const cards = document.querySelectorAll('.services__card');
+
+    if (!filterWrap || !cards.length) return;
+
+    filterWrap.addEventListener('click', (e) => {
+        const targetBtn = e.target.closest('.filter__btn');
+
+        if (!targetBtn || targetBtn.classList.contains('filter__btn--active')) return;
+
+        // Active class update
+        filterWrap.querySelectorAll('.filter__btn').forEach(btn => {
+            btn.classList.remove('filter__btn--active');
+        });
+        targetBtn.classList.add('filter__btn--active');
+
+        const filterValue = targetBtn.getAttribute('data-filter');
+
+        cards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+
+            if (filterValue === 'all' || cardCategory === filterValue) {
+                card.style.display = 'block';
+                // GSAP animation dynamic reset
+                if (window.gsap) {
+                    gsap.set(card, { clearProps: "all" });
+                }
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Refresh GSAP ScrollTrigger after DOM layout updates
+        if (window.ScrollTrigger) {
+            setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 50);
+        }
+    });
 });

@@ -211,7 +211,7 @@ h6,
     gap: 1rem;
 }
 
-.header-area-center {
+.header-area-center  {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -2304,6 +2304,27 @@ h6,
     margin: 0 auto;
 }
 
+.faq--style-two .faq__item {
+    background: transparent;
+    padding: 1.25rem 1.5rem;
+    counter-increment: faq-counter;
+}
+
+.faq--style-two .faq__content {
+    counter-reset: faq-counter;
+}
+
+.faq--style-two .faq__question-text::before {
+    content: counter(faq-counter, decimal-leading-zero);
+    padding-right: 1rem;
+}
+
+.faq--style-two .faq__toggle {
+    color: var(--color-primary);
+    font-weight: 400;
+    border: none;
+}
+
 .faq--three {
     background: var(--color-muted);
 }
@@ -2446,6 +2467,7 @@ h6,
 .spring__reviews-title {
     color: var(--text-color-navy);
     margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .spring__badge-wrap {
@@ -3152,10 +3174,26 @@ h6,
     gap: 1.25rem;
     padding: 2.25rem;
     border: 1px solid var(--color-soft-indigo);
+    will-change: opacity, transform;
+
 }
 
 .services__card-title {
     font-weight: 500;
+}
+
+.filter__btn {
+    width: fit-content !important;
+    background: var(--text-color-white);
+    color: var(--text-color-primary);
+    border: 1px solid var(--color-soft-indigo);
+}
+
+.filter__btn--active {
+    background: var(--color-primary);
+    color: var(--text-color-white);
+    opacity: 1;
+    pointer-events: none;
 }
 
 /* ==============================
@@ -8084,6 +8122,10 @@ ul.green li::marker {
     flex-wrap: wrap;
     gap: 0.5rem;
 }
+.badge-group-center{
+    justify-content: center;
+    width: 100%;
+}
 
 .hero-integrations__badge-text,
 .subtitle-transparent {
@@ -11779,7 +11821,7 @@ ul.green li::marker {
 }
 
 .tools-suite__header-area {
-    max-width: 40rem;
+    max-width: 39rem;
 }
 
 .tools-suite__grid {
@@ -13043,6 +13085,17 @@ ul.green li::marker {
     .pricing-addon__tick-label {
         font-size: 0.6875rem;
     }
+
+    /* Lead Sourcing Area */
+    .lead-sourcing__visual {
+        aspect-ratio: unset;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .lead-sourcing__visual img {
+        width: 100%;
+    }
 }
 
 @media (max-width: 850px) {
@@ -13935,6 +13988,13 @@ ul.green li::marker {
 
 @media (max-width: 576px) {
 
+    /* Button */
+    .btn--primary,
+    .btn--secondary {
+        display: block;
+        width: 100%;
+    }
+
     /* Features Area */
     .features__list-inner.col-3,
     .features__list-inner.col-2 {
@@ -13952,7 +14012,7 @@ ul.green li::marker {
 
     /* Testimonials Area */
     .testimonials__slider {
-        padding-bottom: 0 !important;
+        padding-bottom: 1rem !important;
     }
 
     .testimonials__slider--thumb.swiper.swiper-initialized.swiper-horizontal.swiper-free-mode.swiper-watch-progress.swiper-backface-hidden.swiper-thumbs {
