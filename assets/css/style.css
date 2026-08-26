@@ -2990,6 +2990,36 @@ h6,
     transform: translateY(1px);
 }
 
+/* Find Email Image */
+.hero--find-email .hero__img,
+.hero--domain-search .hero__img ,
+.hero--find-mobile .hero__img {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hero--find-email .hero__content ,
+.hero--domain-search .hero__content ,
+.hero--find-mobile .hero__content {
+    position: relative;
+    justify-content: center;
+    max-width: 67rem;
+    margin: 0 auto;
+}
+
+.hero--find-email .hero__header-area  {
+    max-width: 38rem;
+}
+
+.hero--find-email .bg-wrap ,
+.hero--domain-search .bg-wrap ,
+.hero--find-mobile .bg-wrap {
+    max-height: 790px;
+}
+
+
 /* ==============================
    Hero Email Finder Area
 ============================== */
@@ -4159,10 +4189,10 @@ h6,
 }
 
 .pricing-comparison__category-title {
-    padding: 32px 20px 16px 0;
+    padding: 1rem;
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--color-primary);
     text-align: left;
 }
 
@@ -4243,6 +4273,10 @@ tr .pricing-comparison__row--category {
 
 .pricing-comparison__table--hidden {
     display: none !important;
+}
+
+tr.pricing-comparison__row.pricing-comparison__row--category {
+    background: transparent;
 }
 
 .pricing-comparison__table--active {
