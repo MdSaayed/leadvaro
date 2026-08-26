@@ -14110,8 +14110,15 @@ ul.green li::marker {
     }
 
     /* Hero Domain Search */
-    .search-card__top,
+    .search-card__top {
+        padding: 1rem;
+    }
+
     .search-card__bottom {
+        padding: 1rem 0;
+    }
+
+    .search-card {
         padding: 1rem;
     }
 
