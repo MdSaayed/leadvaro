@@ -768,10 +768,6 @@ h6,
     z-index: 2;
 }
 
-.hero--home .hero__container {
-    padding-bottom: 0;
-}
-
 .hero--home .hero__header-area {
     max-width: 48rem;
 }
@@ -839,7 +835,7 @@ h6,
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding-top: 4rem;
+    padding-top: 0 !important;
     padding-bottom: 4rem;
 }
 
@@ -2786,10 +2782,6 @@ h6,
     position: relative;
 }
 
-.hero--people-search .hero__container {
-    padding-bottom: 0 !important;
-}
-
 .hero--people-search .hero__content {
     margin-top: 0 !important;
 }
@@ -2992,7 +2984,7 @@ h6,
 
 /* Find Email Image */
 .hero--find-email .hero__img,
-.hero--domain-search .hero__img ,
+.hero--domain-search .hero__img,
 .hero--find-mobile .hero__img {
     margin: 0 auto;
     max-width: 100%;
@@ -3000,8 +2992,8 @@ h6,
     object-fit: cover;
 }
 
-.hero--find-email .hero__content ,
-.hero--domain-search .hero__content ,
+.hero--find-email .hero__content,
+.hero--domain-search .hero__content,
 .hero--find-mobile .hero__content {
     position: relative;
     justify-content: center;
@@ -3009,12 +3001,12 @@ h6,
     margin: 0 auto;
 }
 
-.hero--find-email .hero__header-area  {
+.hero--find-email .hero__header-area {
     max-width: 38rem;
 }
 
-.hero--find-email .bg-wrap ,
-.hero--domain-search .bg-wrap ,
+.hero--find-email .bg-wrap,
+.hero--domain-search .bg-wrap,
 .hero--find-mobile .bg-wrap {
     max-height: 790px;
 }
@@ -3324,8 +3316,8 @@ h6,
 /* ==============================
    Services Three
 ============================== */
-.services--three .header-grid {
-    grid-template-columns: 1.3fr 0.8fr;
+.services--three .services__desc {
+    max-width: 29rem;
 }
 
 .services--three .services__heder-left {
@@ -3724,17 +3716,12 @@ h6,
     flex-shrink: 0;
 }
 
-
 /* ==============================
    For Agencies
 ============================== */
 .hero--for-agencies {
     position: relative;
     background: var(--color-surface);
-}
-
-.hero--for-agencies .hero__container {
-    padding-bottom: 0;
 }
 
 .hero--for-agencies .hero__header-area {
@@ -4301,6 +4288,10 @@ tr.pricing-comparison__row.pricing-comparison__row--category {
 ============================== */
 .hero--pricing {
     position: relative;
+}
+
+.hero--pricing .hero__title{
+    max-width: 37rem;
 }
 
 .hero--pricing .bg-wrap {
@@ -4913,6 +4904,10 @@ tr.pricing-comparison__row.pricing-comparison__row--category {
 .trial-feature,
 .brands--free-trail {
     background: var(--color-muted);
+}
+
+.brands--free-trail .brands__container {
+    padding-top: 4rem !important;
 }
 
 .trial-feature__grid {
@@ -6473,6 +6468,10 @@ ul.green li::marker {
     margin-bottom: 3.75rem;
 }
 
+.blog__header-btn {
+    max-width: fit-content !important;
+}
+
 .blog__categories {
     display: flex;
     gap: 0.5rem;
@@ -7722,7 +7721,6 @@ ul.green li::marker {
    User Feedback
 ============================== */
 .user-feedback {
-    padding: 80px 20px;
     background-color: var(--text-color-white);
 }
 
@@ -11592,10 +11590,6 @@ ul.green li::marker {
     position: relative;
 }
 
-.hero--company-search .hero__container {
-    padding-bottom: 0 !important;
-}
-
 .hero__image-wrap {
     width: 100%;
     margin: 0 auto;
@@ -12471,7 +12465,7 @@ ul.green li::marker {
 
     /* Brands Area */
     .brands__container {
-        padding-top: 2rem;
+        padding-top: 0;
         padding-bottom: 2rem;
     }
 
@@ -13200,6 +13194,11 @@ ul.green li::marker {
     .lead-sourcing__visual img {
         width: 100%;
     }
+
+    /* Why Us Card Area */
+    .why-us__card--reverse .why-us__content {
+        order: initial;
+    }
 }
 
 @media (max-width: 850px) {
@@ -13457,6 +13456,10 @@ ul.green li::marker {
     }
 
     /* Footer Styles */
+    .footer {
+        max-width: calc(100% - 1rem);
+    }
+
     .footer__content {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -13596,7 +13599,7 @@ ul.green li::marker {
 
     /* Data Breakdown */
     .data-breakdown__card-content {
-        padding: 1.5rem;
+        padding: 1rem 0;
     }
 
     /* User Feedback */
@@ -13922,6 +13925,17 @@ ul.green li::marker {
         font-size: 0.625rem;
         white-space: nowrap;
     }
+
+    /* Lead Sourcing */
+    .lead-sourcing {
+        max-width: 100%;
+    }
+
+    /* Blog Area */
+    .blog__featured-body {
+        padding: 1.5rem 1rem;
+    }
+
 }
 
 @media (max-width: 640px) {
@@ -14258,6 +14272,11 @@ ul.green li::marker {
     .results-impact__cards {
         grid-template-columns: 1fr;
     }
+
+    /* Reporting Area */
+    .reporting .bulk__item {
+        padding: 2rem 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -14338,6 +14357,10 @@ ul.green li::marker {
         align-items: center;
     }
 
+    .metrics-card__title ,.metrics-card__description{
+        text-align: center;
+    }
+
     /* Footer Styles */
     .footer__content {
         grid-template-columns: repeat(1, 1fr);
@@ -14368,6 +14391,11 @@ ul.green li::marker {
 
     .pricing-addon__range {
         height: 0.375rem;
+    }
+
+    /* Features Showcase Area */
+    .feature-showcase__content {
+        padding: 1.5rem 1rem;
     }
 }
 
