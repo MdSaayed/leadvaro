@@ -3200,6 +3200,11 @@ h6,
 
 }
 
+.services__link {
+    text-decoration: underline !important;
+    display: inline-block;
+}
+
 .services__card-title {
     font-weight: 500;
 }
@@ -4290,7 +4295,7 @@ tr.pricing-comparison__row.pricing-comparison__row--category {
     position: relative;
 }
 
-.hero--pricing .hero__title{
+.hero--pricing .hero__title {
     max-width: 37rem;
 }
 
@@ -14357,7 +14362,8 @@ ul.green li::marker {
         align-items: center;
     }
 
-    .metrics-card__title ,.metrics-card__description{
+    .metrics-card__title,
+    .metrics-card__description {
         text-align: center;
     }
 
