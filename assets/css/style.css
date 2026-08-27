@@ -4003,8 +4003,8 @@ h6,
     outline: none;
     cursor: pointer;
     background: linear-gradient(to right,
-            #071028 0%,
-            #071028 var(--progress),
+            var(--color-primary) 0%,
+            var(--color-primary) var(--progress),
             var(--border-1) var(--progress),
             var(--border-1) 100%);
 }
@@ -7860,6 +7860,10 @@ ul.green li::marker {
 
 .sales-triggers__card-title {
     font-weight: 500;
+}
+
+.sales-triggers__card-link{
+    text-decoration: underline !important;
 }
 
 .sales-triggers__footer {
